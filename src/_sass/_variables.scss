@@ -1,0 +1,85 @@
+$asset_suffix: if($variant == 'dark', '-dark', '');
+$asset_suffix_light: if($titlebar == 'light' and $variant == 'light', '', '-dark');
+$extra_background_clip: if($variant == 'light', padding-box, border-box);
+
+// opacities
+$higher_opacity: 0.9;
+$middle_opacity: 0.6;
+$lower_opacity: 0.3;
+
+$secondary_opacity: 0.75;
+$hint_opacity: 0.6;
+$disabled_opacity: 0.5;
+
+// sizes
+$small_size: if($compact == 'false', 24px, 20px);
+$medium_size: if($compact == 'false', 36px, 32px);
+$large_size: if($compact == 'false', 42px, 38px);
+
+$container_padding: if($compact == 'false', 6px, 6px);
+
+$bar_size: 4px;
+$menuitem_size: 28px;
+
+// font families
+$font-family: "M+ 1c", Roboto, Cantarell, Sans-Serif;
+$large-font-family: Roboto, "M+ 1c", Cantarell, Sans-Serif;
+
+// font sizes
+$root-font-size: if($compact == 'false', 14px, 13px);
+$subheading-size: if($compact == 'false', 16px, 15px);
+
+// radiuses
+$buttons_radius: 7px;
+$menu_radius: 5px;
+$windows_radius: 13px;
+$material_radius: 5px;
+$circular_radius: 9999px;
+$panel-corner-radius: 0; // For gnome-shell
+
+// durations
+$shorter_duration: 100ms;
+$longer_duration: 225ms;
+$ripple_duration: 300ms;
+
+// timing functions
+$standard_curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$deceleration_curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+$acceleration_curve: cubic-bezier(0.4, 0.0, 1, 1);
+$sharp_curve: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+// transition shorthands
+$shorter_transition: all $shorter_duration $deceleration_curve;
+$longer_transition: all $longer_duration $deceleration_curve;
+$shadow_transition: box-shadow $shorter_duration $deceleration_curve;
+
+// Side-bar shadows
+$sidebar-light-ltr: inset -2px 0 3px -3px rgba(0, 0, 0, 0.05),
+                    inset -3px 0 5px -3px rgba(0, 0, 0, 0.05),
+                    inset -3px 0 10px -3px rgba(0, 0, 0, 0.03);
+$sidebar-light-rtl: inset 2px 0 3px -3px rgba(0, 0, 0, 0.05),
+                    inset 3px 0 5px -3px rgba(0, 0, 0, 0.05),
+                    inset 3px 0 10px -3px rgba(0, 0, 0, 0.03);
+$sidebar-dark-ltr: inset -2px 0 3px -3px rgba(0, 0, 0, 0.05),
+                   inset -3px 0 5px -3px rgba(0, 0, 0, 0.05),
+                   inset -3px 0 10px -3px rgba(0, 0, 0, 0.03);
+$sidebar-dark-rtl: inset 2px 0 3px -3px rgba(0, 0, 0, 0.08),
+                   inset 3px 0 5px -3px rgba(0, 0, 0, 0.05),
+                   inset 3px 0 10px -3px rgba(0, 0, 0, 0.03);
+
+// shadows
+// based shadow values:
+// https://material-design.storage.googleapis.com/images/layout-principles-dimensionality-shadows-08_large_mdpi.png
+
+// box-shadow 1px blur doesn't draw correctly, see
+// https://bugzilla.gnome.org/show_bug.cgi?id=738484
+// $shadow_1: 0 1px 1.5px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.24);
+$shadow_0: 0 0 transparent;
+$shadow_1: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.10);
+$shadow_2: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
+$shadow_3: 0 10px 10px rgba(0, 0, 0, 0.19), 0 6px 3px rgba(0, 0, 0, 0.23);
+$shadow_4: 0 14px 14px rgba(0, 0, 0, 0.25), 0 10px 5px rgba(0, 0, 0, 0.22);
+$shadow_5: 0 19px 19px rgba(0, 0, 0, 0.30), 0 15px 6px rgba(0, 0, 0, 0.22);
+$shadow_6: 0 3px 3px -3px rgba(0, 0, 0, 0.12), 0 5px 5px -5px rgba(0, 0, 0, 0.06);
+$header_shadow_dark: 0 1px 1px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
+$header_shadow_light: 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.08);
