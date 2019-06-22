@@ -613,7 +613,7 @@ button:checked {
   color: #FFFFFF;
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
   background-size: auto auto;
-  background-position: centry centry;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -807,7 +807,7 @@ button.suggested-action {
   color: #FFFFFF;
   background-image: linear-gradient(to bottom, #4FC3F7, #42A5F5);
   background-size: auto auto;
-  background-position: centry centry;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -851,7 +851,7 @@ button.destructive-action {
   color: #FFFFFF;
   background-image: linear-gradient(to bottom, #EF5350, #FF5252);
   background-size: auto auto;
-  background-position: centry centry;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -1384,7 +1384,7 @@ headerbar button:not(.suggested-action):not(.destructive-action):checked {
   color: #FFFFFF;
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
   background-size: auto auto;
-  background-position: centry centry;
+  background-position: center center;
   background-repeat: no-repeat;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
 }
@@ -4185,7 +4185,7 @@ progressbar progress {
   background-color: #5D7DFB;
   background-image: linear-gradient(to left, #BA68C8, #7E57C2);
   background-size: auto auto;
-  background-position: centry centry;
+  background-position: center center;
   background-repeat: no-repeat;
 }
 
@@ -5504,7 +5504,7 @@ button.emoji-section:last-child {
 .nautilus-window headerbar .path-bar-box {
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
   background-size: auto auto;
-  background-position: centry centry;
+  background-position: center center;
   background-repeat: no-repeat;
   border-radius: 100px;
   padding-left: 22px;
@@ -5540,7 +5540,7 @@ button.emoji-section:last-child {
   color: transparent;
   background-image: url("assets/scalable/side-paned.svg");
   background-size: 20px 750px;
-  background-position: left centry;
+  background-position: left center;
   background-repeat: no-repeat;
 }
 

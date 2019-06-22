@@ -67,7 +67,7 @@
   .path-bar-box { // Fixed nautilus 3.30 pathbar
     background-image: $theme_image;
     background-size: auto auto;
-    background-position: centry centry;
+    background-position: center center;
     background-repeat: no-repeat;
     border-radius: 100px;
     padding-left: 22px;
@@ -119,7 +119,7 @@
   color: transparent;
   background-image: url("assets/scalable/side-paned.svg");
   background-size: 20px 750px;
-  background-position: left centry;
+  background-position: left center;
   background-repeat: no-repeat;
 }
 

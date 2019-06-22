@@ -523,7 +523,7 @@ button {
       color: $inverse_fg_color;
       background-image: $b_image;
       background-size: auto auto;
-      background-position: centry centry;
+      background-position: center center;
       background-repeat: no-repeat;
 
       &:disabled {
@@ -1112,7 +1112,7 @@ headerbar {
       color: $inverse_fg_color;
       background-image: $theme_image;
       background-size: auto auto;
-      background-position: centry centry;
+      background-position: center center;
       background-repeat: no-repeat;
       box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
 
@@ -2923,7 +2923,7 @@ progressbar {
     background-color: $progress_color;
     background-image: $progress_image;
     background-size: auto auto;
-    background-position: centry centry;
+    background-position: center center;
     background-repeat: no-repeat;
   }
 
