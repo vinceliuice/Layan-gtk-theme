@@ -131,8 +131,8 @@
   background-repeat: no-repeat;
 
   headerbar {
-    background-color: rgba($base_color, 0.97);
-    background-image: url("assets/scalable/header-icon.svg");
+    background-color: rgba($titlebar_bg_color, 0.97);
+    background-image: if($titlebar == 'dark' and $variant == 'light', url("assets/scalable/header-icon-alt.svg"), url("assets/scalable/header-icon.svg"));
     background-size: 48px auto;
     background-position: left bottom;
     background-repeat: no-repeat;

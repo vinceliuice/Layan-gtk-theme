@@ -60,8 +60,8 @@ $alt_keyboard_bg_color:  if($variant == 'light', $blue_grey_300, fade($blue_grey
 
 $button_bg_color: if($variant == 'light', $base_color, $lighter_bg_color);
 
-$titlebar_bg_color:     $base_color;
-$alt_titlebar_bg_color: if($titlebar == 'dark', $blue_grey_800, $blue_grey_800);
+$titlebar_bg_color:     if($titlebar == 'light', $white, fade($blue_grey_850));
+$alt_titlebar_bg_color: if($titlebar == 'light', $blue_grey_50, $blue_grey_800);
 
 $sidebar_bg_color:      if($variant == 'light', $white, $blue_grey_850);
 $alt_sidebar_bg_color:  if($variant == 'light', $white, $blue_grey_850);

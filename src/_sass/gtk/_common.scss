@@ -1646,10 +1646,10 @@ menu,
 
     &:hover {
       transition: none;
-      background-color: rgba($divider_color, 0.08);
-      color: if($variant == 'light', $alt_primary_color, lighten($alt_primary_color, 10%));
+      background-color: rgba($menu_fg_color, 0.08);
+      color: if($titlebar == 'light', $alt_primary_color, white);
 
-      accelerator { color: if($variant == 'light', $alt_primary_color, lighten($alt_primary_color, 10%)); }
+      accelerator { color: if($titlebar == 'light', $alt_primary_color, white); }
     }
 
     &:disabled { color: $menu_disabled_fg; }
