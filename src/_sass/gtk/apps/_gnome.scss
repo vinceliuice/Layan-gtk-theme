@@ -141,10 +141,11 @@
   }
 
   &.csd.background {
-    background-color: rgba($base_color, 0.98);
+    background-color: rgba($base_color, 0.97);
     border-radius: 0 0 $windows_radius $windows_radius; // It also has an effect on nautilus notebook stacks background
   }
 
+  &.maximized.csd.background,
   &.maximized placessidebar { border-radius: 0; }
 
   placessidebar.sidebar {

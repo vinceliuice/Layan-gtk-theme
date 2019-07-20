@@ -1357,6 +1357,7 @@ headerbar .linked:not(.vertical) > entry:not(.flat) {
 
 .titlebar:not(headerbar) .linked:not(.vertical) > button,
 headerbar .linked:not(.vertical) > button {
+  border-radius: 7px;
   -gtk-outline-radius: 7px;
 }
 
@@ -5562,10 +5563,11 @@ button.emoji-section:last-child {
 }
 
 .nautilus-window.csd.background {
-  background-color: rgba(255, 255, 255, 0.98);
+  background-color: rgba(255, 255, 255, 0.97);
   border-radius: 0 0 13px 13px;
 }
 
+.nautilus-window.maximized.csd.background,
 .nautilus-window.maximized placessidebar {
   border-radius: 0;
 }
