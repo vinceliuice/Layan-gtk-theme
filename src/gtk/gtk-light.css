@@ -7007,8 +7007,8 @@ window.background:not(.csd) > window.background > menu > separator {
 }
 
 window.background.chromium {
-  background-color: #fafafa;
-  color: #565656;
+  background-color: #f4f4f9;
+  color: rgba(0, 0, 0, 0.75);
 }
 
 window.background.chromium headerbar.titlebar button.titlebutton.close, window.background.chromium headerbar.titlebar button.titlebutton.maximize, window.background.chromium headerbar.titlebar button.titlebutton.minimize {
@@ -7034,12 +7034,13 @@ window.background.chromium headerbar.titlebar button.titlebutton.close:active, w
 window.background.chromium button {
   border-width: 1px;
   border-style: solid;
-  border-color: #e6e5e5;
+  border-color: #dadaeb;
+  color: rgba(0, 0, 0, 0.75);
 }
 
 window.background.chromium entry.chromium {
   border-image: none;
-  border: 1px solid #e6e5e5;
+  border: 1px solid #dadaeb;
 }
 
 window.background.chromium entry.chromium:focus {
@@ -7047,8 +7048,8 @@ window.background.chromium entry.chromium:focus {
 }
 
 window.background.chromium > textview.view {
-  background-color: #fafafa;
-  color: #565656;
+  background-color: #f4f4f9;
+  color: rgba(0, 0, 0, 0.75);
 }
 
 window.background.chromium > menubar {

@@ -228,9 +228,9 @@ window.background:not(.csd) {
 //
 // Chrome(ium)
 //
-$chrome_borders_color: darken(white, 10%);
-$chrome_bg_color: #fafafa;
-$chrome_fg_color: #565656;
+$chrome_borders_color: $solid_border_color;
+$chrome_bg_color: $bg_color;
+$chrome_fg_color: $fg_color;
 $chrome_menu_bg_color: #ffffff;
 $chrome_menu_fg_color: #565656;
 
@@ -274,6 +274,7 @@ window.background.chromium {
     border-width: 1px;
     border-style: solid;
     border-color: $chrome_borders_color;
+    color: $chrome_fg_color;
   }
 
   entry.chromium {
@@ -297,12 +298,12 @@ window.background.chromium {
   > menu {
     color: $chrome_menu_fg_color;
     background-color: $chrome_menu_bg_color;
-    border: 1px solid $chrome_borders_color;
+    border: 1px solid darken(white, 10%);
     border-radius: 0;
 
     > separator, .separator {
-      background-color: $chrome_borders_color;
-      color: $chrome_borders_color;
+      background-color: darken(white, 10%);
+      color: darken(white, 10%);
       border: none;
     }
 
