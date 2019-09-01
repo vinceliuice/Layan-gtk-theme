@@ -85,6 +85,7 @@
         border-radius: 100px;
 
         &:not(:only-child):last-child {
+          color: $inverse_fg_color;
           border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                         $inverse_fg_color 100%,
                                         transparent 0%)
@@ -92,6 +93,7 @@
 
 
           &:backdrop {
+            color: $inverse_disabled_fg_color;
             border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                           $inverse_disabled_fg_color 100%,
                                           transparent 0%)

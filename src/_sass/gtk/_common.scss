@@ -1267,6 +1267,7 @@ headerbar {
   &.default-decoration {
     min-height: $small_size;
     padding: $container_padding 12px;
+    box-shadow: none;
 
     .tiled &,
     .maximized &,
@@ -1283,11 +1284,6 @@ headerbar {
     // workaround for non-animatable buttons
     .background:not(.csd) & button.titlebutton:active { background-size: 1000% 1000%; }
   }
-
-  &.default-decoration,
-  .csd &.default-decoration,             // needed under wayland, since all gtk3 windows are csd windows
-  &.default-decoration:backdrop,
-  .csd &.default-decoration:backdrop { box-shadow: inset 0 1px $titlebar_highlight_color; }
 
   .solid-csd & {
     &:dir(rtl), &:dir(ltr) { // specificity bump
@@ -1623,7 +1619,7 @@ menu,
 .context-menu {
   margin: 4px 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: 4px;
-  box-shadow: inset 0 1px $menu_border_color;
+  box-shadow: inset 0 1px rgba($menu_border_color, 0.06);
   background-color: rgba($menu_bg_color, 0.96);
   border: 1px solid $menu_border_color; // adds borders in a non composited env
   border-radius: $menu_radius;

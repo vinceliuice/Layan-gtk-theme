@@ -1601,6 +1601,7 @@ headerbar {
 headerbar.default-decoration {
   min-height: 20px;
   padding: 6px 12px;
+  box-shadow: none;
 }
 
 .tiled .default-decoration.titlebar:not(headerbar),
@@ -1625,18 +1626,6 @@ headerbar.default-decoration button.titlebutton {
 .background:not(.csd) .default-decoration.titlebar:not(headerbar) button.titlebutton:active, .background:not(.csd)
 headerbar.default-decoration button.titlebutton:active {
   background-size: 1000% 1000%;
-}
-
-.default-decoration.titlebar:not(headerbar),
-.csd .default-decoration.titlebar:not(headerbar), .default-decoration.titlebar:backdrop:not(headerbar),
-.csd .default-decoration.titlebar:backdrop:not(headerbar),
-headerbar.default-decoration,
-.csd
-headerbar.default-decoration,
-headerbar.default-decoration:backdrop,
-.csd
-headerbar.default-decoration:backdrop {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .solid-csd .titlebar:dir(rtl):not(headerbar), .solid-csd .titlebar:dir(ltr):not(headerbar), .solid-csd
@@ -2008,7 +1997,7 @@ menu,
 .context-menu {
   margin: 4px 0;
   padding: 4px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.06);
   background-color: rgba(60, 60, 70, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
@@ -5519,11 +5508,13 @@ button.emoji-section:last-child {
 
 .nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button:not(:only-child):last-child,
 .nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button:not(:only-child):last-child {
+  color: #FFFFFF;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFFFFF 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
 .nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.text-button:not(:only-child):last-child:backdrop,
 .nautilus-window headerbar .path-bar-box .linked.nautilus-path-bar button.image-button.text-button:not(:only-child):last-child:backdrop {
+  color: rgba(255, 255, 255, 0.5);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), rgba(255, 255, 255, 0.5) 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
