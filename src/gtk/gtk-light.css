@@ -1601,7 +1601,7 @@ headerbar {
 headerbar.default-decoration {
   min-height: 20px;
   padding: 6px 12px;
-  box-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0);
 }
 
 .tiled .default-decoration.titlebar:not(headerbar),
@@ -1662,6 +1662,11 @@ headerbar.titlebar,
 .solid-csd headerbar,
 box headerbar:only-child {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0), inset 0 -1px rgba(0, 0, 0, 0.08);
+}
+
+headerbar.titlebar.default-decoration,
+.csd headerbar.titlebar.default-decoration {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0);
 }
 
 box headerbar:not(:only-child):first-child,
@@ -1949,6 +1954,7 @@ menubar,
 .menubar {
   -GtkWidget-window-dragging: true;
   padding: 0;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
   background-color: #FFFFFF;
   color: rgba(0, 0, 0, 0.54);
 }
@@ -6555,6 +6561,19 @@ dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
 .background.csd scrolledwindow.view > viewport.frame > stack > list > row.activatable:not(:hover):not(:active):not(:selected), window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow.view > viewport.frame > stack > list > treeview.view:not(:hover):not(:active):not(:selected),
 .background.csd scrolledwindow.view > viewport.frame > stack > list > .view:not(:hover):not(:active):not(:selected), .background.csd scrolledwindow.view > viewport.frame > stack > list > iconview:not(:hover):not(:active):not(:selected), .background.csd treeview.view header scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected), treeview.view header .background.csd scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected), .background.csd .budgie-menu scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected), .budgie-menu .background.csd scrolledwindow.view > viewport.frame > stack > list > button:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
+}
+
+window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
+window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
+  border-right-style: none;
+  background: none;
+  min-width: 0;
+}
+
+window.background.csd > box.horizontal > separator.sidebar,
+window.background.csd > hdyleaflet > separator.sidebar {
+  background: none;
+  min-width: 0;
 }
 
 /************************

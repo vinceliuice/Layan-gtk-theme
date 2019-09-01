@@ -1229,6 +1229,23 @@ dialog.background.csd {
   }
 }
 
+window.background.csd {
+  > headerbar.titlebar { // gnome 3.32
+    > box.horizontal > separator.sidebar,
+    > hdyleaflet > separator.sidebar {
+      border-right-style: none;
+      background: none;
+      min-width: 0;
+    }
+  }
+
+  > box.horizontal > separator.sidebar,
+  > hdyleaflet > separator.sidebar {
+    background: none;
+    min-width: 0;
+  }
+}
+
 /************************
  * Gnome system monitor *
  ************************/
