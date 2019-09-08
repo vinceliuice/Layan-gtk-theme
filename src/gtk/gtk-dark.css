@@ -5476,13 +5476,13 @@ button.emoji-section:last-child {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window,
-.nautilus-window notebook {
+.nautilus-window.background.csd,
+.nautilus-window.background.csd, notebook {
   background-color: transparent;
   border-radius: 0 0 13px 13px;
 }
 
-.nautilus-window notebook > stack {
+.nautilus-window.background.csd notebook > stack {
   background-color: transparent;
   border-radius: 13px;
 }
