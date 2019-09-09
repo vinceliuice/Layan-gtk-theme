@@ -1325,8 +1325,9 @@ headerbar {
     margin-bottom: $container_padding - 1px;
   }
 
-  &.titlebar,
   .csd &,
+  &.titlebar,
+  .titlebar &,
   .solid-csd &,
   box &:only-child {
     // draw hilight and shadows
@@ -1625,13 +1626,14 @@ menu,
   margin: 4px 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
   padding: 4px;
   box-shadow: inset 0 1px rgba($menu_border_color, 0.06);
-  background-color: rgba($menu_bg_color, 0.96);
+  background-color: $menu_bg_color;
   border: 1px solid $menu_border_color; // adds borders in a non composited env
   border-radius: $menu_radius;
   color: $menu_fg_color;
 
   .csd & {
     border: none; // axes borders in a composited env
+    background-color: if($solid == 'false', rgba($menu_bg_color, 0.95), $menu_bg_color);
   }
 
   menuitem {
@@ -1816,11 +1818,12 @@ $popover_border: rgba($white, 0.12);
 }
 
 popover,
-popover.background {
+popover.background,
+popover.background.menu {
   transition: $shadow_transition;
   padding: 2px;
   box-shadow: $shadow_2; // TODO: this should really have a highlight
-  background-color: rgba($popover_bg, 0.95);
+  background-color: if($solid == 'false', rgba($popover_bg, 0.95), $popover_bg);
   color: $popover_fg;
 
   &:backdrop { box-shadow: $shadow_1; color: rgba($popover_fg, 0.75); }
@@ -1893,6 +1896,15 @@ popover.background {
     &.combo {
       @extend %combo_flat;
       @extend %popover_button;
+    }
+
+    &.radio {
+      background-color: rgba($white, 0.08);
+
+      &:hover {
+        color: $inverse_fg_color;
+        background-color: rgba($white, 0.15);
+      }
     }
 
     .linked > & {
@@ -2403,7 +2415,7 @@ switch {
     -gtk-outline-radius: $circular_radius;
     box-shadow: $shadow_1;
     background-color: $button_bg_color;
-		color: transparent;
+    color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-image: -gtk-scaled(url('assets/switch-slider-unchecked#{$asset_suffix}.png'),

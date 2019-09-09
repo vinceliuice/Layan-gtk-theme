@@ -16,13 +16,15 @@ SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Layan
 COLOR_VARIANTS=('' '-light' '-dark')
+SOLID_VARIANTS=('' '-solid')
 
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
   printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
   printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [light|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
+  printf "  %-25s%s\n" "-s, --solid VARIANTS" "Specify theme solid variant(s) [standard|solid] (Default: All variants)"
   printf "  %-25s%s\n" "-h, --help" "Show this help"
 }
 
@@ -30,11 +32,12 @@ install() {
   local dest=${1}
   local name=${2}
   local color=${3}
+  local solid=${4}
 
   [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
   [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
 
-  local THEME_DIR=${dest}/${name}${color}
+  local THEME_DIR=${dest}/${name}${color}${solid}
 
   [[ -d ${THEME_DIR} ]] && rm -rf ${THEME_DIR}
 
@@ -46,13 +49,13 @@ install() {
 
   echo "[Desktop Entry]" >> ${THEME_DIR}/index.theme
   echo "Type=X-GNOME-Metatheme" >> ${THEME_DIR}/index.theme
-  echo "Name=${name}${color}" >> ${THEME_DIR}/index.theme
+  echo "Name=${name}${color}${solid}" >> ${THEME_DIR}/index.theme
   echo "Comment=An Flat Gtk+ theme based on Material Design" >> ${THEME_DIR}/index.theme
   echo "Encoding=UTF-8" >> ${THEME_DIR}/index.theme
   echo "" >> ${THEME_DIR}/index.theme
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
-  echo "GtkTheme=${name}${color}" >> ${THEME_DIR}/index.theme
-  echo "MetacityTheme=${name}${color}" >> ${THEME_DIR}/index.theme
+  echo "GtkTheme=${name}${color}${solid}" >> ${THEME_DIR}/index.theme
+  echo "MetacityTheme=${name}${color}${solid}" >> ${THEME_DIR}/index.theme
   echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
@@ -73,15 +76,9 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-3.0/assets
-  cp -ur ${SRC_DIR}/src/gtk/gtk${color}.css                                          ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk/gtk${color}${solid}.css                                  ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk/gtk-dark.css                                             ${THEME_DIR}/gtk-3.0/gtk-dark.css
-}
-
-install_theme() {
-  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}"
-  done
+  cp -ur ${SRC_DIR}/src/gtk/gtk-dark${solid}.css                                     ${THEME_DIR}/gtk-3.0/gtk-dark.css
 }
 
 while [[ $# -gt 0 ]]; do
@@ -125,6 +122,29 @@ while [[ $# -gt 0 ]]; do
         esac
       done
       ;;
+    -s|--solid)
+      shift
+      for solid in "${@}"; do
+        case "${solid}" in
+          standard)
+            colors+=("${SOLID_VARIANTS[0]}")
+            shift
+            ;;
+          solid)
+            colors+=("${SOLID_VARIANTS[1]}")
+            shift
+            ;;
+          -*|--*)
+            break
+            ;;
+          *)
+            echo "ERROR: Unrecognized color variant '$1'."
+            echo "Try '$0 --help' for more information."
+            exit 1
+            ;;
+        esac
+      done
+      ;;
     -h|--help)
       usage
       exit 0
@@ -136,6 +156,14 @@ while [[ $# -gt 0 ]]; do
       ;;
   esac
 done
+
+install_theme() {
+  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+    for solid in "${solids[@]:-${SOLID_VARIANTS[@]}}"; do
+      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+    done
+  done
+}
 
 install_theme
 

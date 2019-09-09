@@ -133,7 +133,7 @@
   background-repeat: no-repeat;
 
   headerbar {
-    background-color: rgba($titlebar_bg_color, 0.97);
+    background-color: if($solid == 'false', rgba($titlebar_bg_color, 0.97), $titlebar_bg_color);
     background-image: if($titlebar == 'dark' and $variant == 'light', url("assets/scalable/header-icon-alt.svg"), url("assets/scalable/header-icon.svg"));
     background-size: 48px auto;
     background-position: left bottom;
@@ -143,7 +143,7 @@
   }
 
   &.csd.background {
-    background-color: rgba($base_color, 0.97);
+    background-color: if($solid == 'false', rgba($titlebar_bg_color, 0.97), $titlebar_bg_color);
     border-radius: 0 0 $windows_radius $windows_radius; // It also has an effect on nautilus notebook stacks background
   }
 
@@ -458,7 +458,7 @@ frame.gedit-map-frame > border {
 }
 
 paned.titlebar.horizontal { // show border
-  headerbar { box-shadow: inset 0 -1px $border_color; }
+  headerbar { box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color; }
 }
 
 .gedit-side-panel-paned.horizontal {
