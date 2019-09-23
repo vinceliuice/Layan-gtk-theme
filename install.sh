@@ -79,6 +79,8 @@ install() {
   cp -ur ${SRC_DIR}/src/gtk/gtk${color}${solid}.css                                  ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
   cp -ur ${SRC_DIR}/src/gtk/gtk-dark${solid}.css                                     ${THEME_DIR}/gtk-3.0/gtk-dark.css
+
+  cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
 }
 
 while [[ $# -gt 0 ]]; do

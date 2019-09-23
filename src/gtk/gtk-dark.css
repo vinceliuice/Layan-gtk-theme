@@ -3983,12 +3983,12 @@ radio {
 
 
 radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1315789474, to(#7C4DFF), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.13158, to(#7C4DFF), to(transparent));
 }
 
 
 radio:checked:not(:indeterminate):disabled {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1315789474, to(rgba(124, 77, 255, 0.5)), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.13158, to(rgba(124, 77, 255, 0.5)), to(transparent));
 }
 
 window.background:not(.csd) > widget > checkbutton > check,
@@ -7227,20 +7227,20 @@ window.background.chromium > menubar {
 }
 
 window.background.chromium > menu {
-  color: #565656;
-  background-color: #ffffff;
-  border: 1px solid #e6e5e5;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: #3c3c46;
+  border: 1px solid #474751;
   border-radius: 0;
 }
 
 window.background.chromium > menu > separator, window.background.chromium > menu .separator {
-  background-color: #e6e5e5;
-  color: #e6e5e5;
+  background-color: #474751;
+  color: #474751;
   border: none;
 }
 
 window.background.chromium > menu > menuitem {
-  color: #565656;
+  color: rgba(255, 255, 255, 0.7);
   border-radius: 0;
 }
 
@@ -7250,11 +7250,11 @@ window.background.chromium > menu > menuitem:hover {
 }
 
 window.background.chromium > menu > menuitem:disabled {
-  color: rgba(86, 86, 86, 0.45);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 window.background.chromium > menu > menuitem accelerator {
-  color: rgba(86, 86, 86, 0.45);
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /*************
