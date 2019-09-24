@@ -241,6 +241,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -slider-active-border-color: transparent;
   -slider-border-width: 0;
   -slider-handle-radius: 7px;
+  -slider-handle-border-width: 0;
+  -slider-handle-border-color: rgba(0, 0, 0, 0.08);
   -barlevel-height: 2px;
   -barlevel-background-color: rgba(0, 0, 0, 0.26);
   -barlevel-border-color: transparent;
@@ -732,6 +734,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Popovers/Menus */
 .popup-menu {
   min-width: 200px;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .popup-menu .popup-sub-menu {
