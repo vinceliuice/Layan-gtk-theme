@@ -576,7 +576,7 @@ StScrollBar {
 
 .popup-menu {
   min-width: 200px;
-  color: $secondary_fg_color;
+  color: $fg_color;
 
   // .popup-menu-arrow { } //defined globally in the TOP BAR
 
@@ -632,7 +632,7 @@ StScrollBar {
   .popup-inactive-menu-item { //all icons and other graphical elements
     color: $fg_color;
 
-    &:insensitive { color: $hint_fg_color; }
+    &:insensitive { color: $disabled_fg_color; }
   }
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is

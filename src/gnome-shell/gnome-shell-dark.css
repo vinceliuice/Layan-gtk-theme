@@ -734,7 +734,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* Popovers/Menus */
 .popup-menu {
   min-width: 200px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #FFFFFF;
 }
 
 .popup-menu .popup-sub-menu {
