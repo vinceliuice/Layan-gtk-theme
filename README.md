@@ -6,6 +6,10 @@ This theme is based on materia gtk theme of nana-4. Thanks nana-4 sincerely for 
 
 #### materia gtk theme: https://github.com/nana-4/materia-theme
 
+## Previews
+![Layan-gtk-light](https://i.imgur.com/rZkkwDk.png)
+![Layan-gtk-dark](https://i.imgur.com/OTBv3iU.png)
+
 ## Info
 
 ### GTK+ 3.20 or later
