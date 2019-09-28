@@ -641,8 +641,10 @@ button:checked:disabled {
 modelbutton.flat,
 .menuitem.button.flat, spinbutton:not(.vertical) button, spinbutton.vertical button, notebook > header > tabs > arrow, scrollbar button, check,
 radio, calendar.button, messagedialog .dialog-action-area button, messagedialog.csd .dialog-action-area button, button.sidebar-button, .gedit-search-slider button, popover.messagepopover .popover-action-area button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .budgie-popover button, .raven .raven-header:not(.top) button, .drop-shadow button, .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-session-dialog .linked.horizontal > button, .lightdm-gtk-greeter button, :not(headerbar) .caja-pathbar button, .caja-pathbar :not(headerbar) button, :not(headerbar) .path-bar button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, layouttabbar button, .mate-panel-menu-bar button, PanelToplevel.horizontal > grid > button, .budgie-panel button, .raven stackswitcher.linked > button, toolbar button, .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action),
-headerbar button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button,
+.budgie-session-dialog .linked.horizontal > button, .lightdm-gtk-greeter button, :not(headerbar) .caja-pathbar button, .caja-pathbar :not(headerbar) button, :not(headerbar) .path-bar button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, layouttabbar button, .mate-panel-menu-bar button, PanelToplevel.horizontal > grid > button, .budgie-panel button, .raven stackswitcher.linked > button, toolbar button,
+.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action),
+headerbar button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button, .nemo-window .toolbar button,
 button.flat {
   transition: 100ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 600ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px transparent;
@@ -657,8 +659,9 @@ button.flat {
 modelbutton.flat:hover,
 .menuitem.button.flat:hover, spinbutton:not(.vertical) button:hover, spinbutton.vertical button:hover, notebook > header > tabs > arrow:hover, scrollbar button:hover, check:hover,
 radio:hover, calendar.button:hover, messagedialog .dialog-action-area button:hover, button.sidebar-button:hover, .gedit-search-slider button:hover, popover.messagepopover .popover-action-area button:hover, #mate-menu button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, .budgie-popover button:hover, .raven .raven-header:not(.top) button:hover, .drop-shadow button:hover, .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-session-dialog .linked.horizontal > button:hover, .lightdm-gtk-greeter button:hover, :not(headerbar) .caja-pathbar button:hover, .caja-pathbar :not(headerbar) button:hover, :not(headerbar) .path-bar button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, layouttabbar button:hover, .mate-panel-menu-bar button:hover, PanelToplevel.horizontal > grid > button:hover, .budgie-panel button:hover, .raven stackswitcher.linked > button:hover, toolbar button:hover, .titlebar:not(headerbar) button:hover:not(.suggested-action):not(.destructive-action),
-headerbar button:hover:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:hover,
+.budgie-session-dialog .linked.horizontal > button:hover, .lightdm-gtk-greeter button:hover, :not(headerbar) .caja-pathbar button:hover, .caja-pathbar :not(headerbar) button:hover, :not(headerbar) .path-bar button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, layouttabbar button:hover, .mate-panel-menu-bar button:hover, PanelToplevel.horizontal > grid > button:hover, .budgie-panel button:hover, .raven stackswitcher.linked > button:hover, toolbar button:hover,
+.titlebar:not(headerbar) button:hover:not(.suggested-action):not(.destructive-action),
+headerbar button:hover:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:hover, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:hover, .nemo-window .toolbar button:hover,
 button.flat:hover {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.15);
   color: rgba(0, 0, 0, 0.75);
@@ -667,8 +670,9 @@ button.flat:hover {
 modelbutton.flat:active,
 .menuitem.button.flat:active, spinbutton:not(.vertical) button:active, spinbutton.vertical button:active, notebook > header > tabs > arrow:active, scrollbar button:active, check:active,
 radio:active, calendar.button:active, messagedialog .dialog-action-area button:active, button.sidebar-button:active, .gedit-search-slider button:active, popover.messagepopover .popover-action-area button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .budgie-popover button:active, .raven .raven-header:not(.top) button:active, .drop-shadow button:active, .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-session-dialog .linked.horizontal > button:active, .lightdm-gtk-greeter button:active, :not(headerbar) .caja-pathbar button:active, .caja-pathbar :not(headerbar) button:active, :not(headerbar) .path-bar button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, PanelToplevel.horizontal > grid > button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, toolbar button:active, .titlebar:not(headerbar) button:active:not(.suggested-action):not(.destructive-action),
-headerbar button:active:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:active,
+.budgie-session-dialog .linked.horizontal > button:active, .lightdm-gtk-greeter button:active, :not(headerbar) .caja-pathbar button:active, .caja-pathbar :not(headerbar) button:active, :not(headerbar) .path-bar button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, PanelToplevel.horizontal > grid > button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, toolbar button:active,
+.titlebar:not(headerbar) button:active:not(.suggested-action):not(.destructive-action),
+headerbar button:active:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:active, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:active, .nemo-window .toolbar button:active,
 button.flat:active {
   transition: 100ms, border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   animation: ripple_effect 100ms cubic-bezier(0, 0, 0.2, 1) forwards;
@@ -681,23 +685,26 @@ button.flat:active {
 modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, spinbutton:not(.vertical) button:disabled, spinbutton.vertical button:disabled, notebook > header > tabs > arrow:disabled, scrollbar button:disabled, check:disabled,
 radio:disabled, calendar.button:disabled, messagedialog .dialog-action-area button:disabled, button.sidebar-button:disabled, .gedit-search-slider button:disabled, popover.messagepopover .popover-action-area button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover button:disabled, .raven .raven-header:not(.top) button:disabled, .drop-shadow button:disabled, .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-session-dialog .linked.horizontal > button:disabled, .lightdm-gtk-greeter button:disabled, :not(headerbar) .caja-pathbar button:disabled, .caja-pathbar :not(headerbar) button:disabled, :not(headerbar) .path-bar button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, PanelToplevel.horizontal > grid > button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, toolbar button:disabled, .titlebar:not(headerbar) button:disabled:not(.suggested-action):not(.destructive-action),
-headerbar button:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:disabled,
+.budgie-session-dialog .linked.horizontal > button:disabled, .lightdm-gtk-greeter button:disabled, :not(headerbar) .caja-pathbar button:disabled, .caja-pathbar :not(headerbar) button:disabled, :not(headerbar) .path-bar button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, PanelToplevel.horizontal > grid > button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, toolbar button:disabled,
+.titlebar:not(headerbar) button:disabled:not(.suggested-action):not(.destructive-action),
+headerbar button:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:disabled, .nemo-window .toolbar button:disabled,
 button.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
 }
 
-:not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar) .path-bar button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, PanelToplevel.horizontal > grid > button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, toolbar button:checked, .titlebar:not(headerbar) button:checked:not(.suggested-action):not(.destructive-action),
-headerbar button:checked:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:checked,
+:not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar) .path-bar button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, PanelToplevel.horizontal > grid > button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, toolbar button:checked,
+.titlebar:not(headerbar) button:checked:not(.suggested-action):not(.destructive-action),
+headerbar button:checked:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:checked, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:checked, .nemo-window .toolbar button:checked,
 button.flat:checked {
   background-color: rgba(0, 0, 0, 0.26);
   color: rgba(0, 0, 0, 0.75);
 }
 
-:not(headerbar) .caja-pathbar button:checked:disabled, .caja-pathbar :not(headerbar) button:checked:disabled, :not(headerbar) .path-bar button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, toolbar button:checked:disabled, .titlebar:not(headerbar) button:checked:disabled:not(.suggested-action):not(.destructive-action),
-headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:checked:disabled,
+:not(headerbar) .caja-pathbar button:checked:disabled, .caja-pathbar :not(headerbar) button:checked:disabled, :not(headerbar) .path-bar button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, toolbar button:checked:disabled,
+.titlebar:not(headerbar) button:checked:disabled:not(.suggested-action):not(.destructive-action),
+headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:checked:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:checked:disabled, .nemo-window .toolbar button:checked:disabled,
 button.flat:checked:disabled {
   background-color: rgba(0, 0, 0, 0.12);
   color: rgba(0, 0, 0, 0.38);
@@ -730,32 +737,44 @@ button.text-button.image-button image:not(:only-child) {
   margin: 0 4px;
 }
 
-toolbar .linked > button, .titlebar:not(headerbar) .linked > button:not(.suggested-action):not(.destructive-action),
+toolbar .linked > button,
+.titlebar:not(headerbar) .linked > button:not(.suggested-action):not(.destructive-action),
 headerbar .linked > button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box .linked > button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification .linked > button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button, .nemo-window .toolbar .linked > button,
 toolbar .linked.vertical > button,
 .titlebar:not(headerbar) .linked.vertical > button:not(.suggested-action):not(.destructive-action),
 headerbar .linked.vertical > button:not(.suggested-action):not(.destructive-action),
 actionbar > revealer > box .linked.vertical > button:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-.app-notification .linked.vertical > button, .linked >
+.app-notification .linked.vertical > button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised.vertical > button,
+.nemo-window .toolbar .linked.vertical > button, .linked >
 button.flat,
 .linked.vertical >
 button.flat {
   border-radius: 7px;
 }
 
-toolbar .linked > button.image-button, .titlebar:not(headerbar) .linked > button.image-button:not(.suggested-action):not(.destructive-action),
-headerbar .linked > button.image-button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box .linked > button.image-button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification .linked > button.image-button, toolbar .linked > button.text-button.image-button, .titlebar:not(headerbar) .linked > button.text-button.image-button:not(.suggested-action):not(.destructive-action),
+toolbar .linked > button.image-button,
+.titlebar:not(headerbar) .linked > button.image-button:not(.suggested-action):not(.destructive-action),
+headerbar .linked > button.image-button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box .linked > button.image-button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification .linked > button.image-button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button.image-button, .nemo-window .toolbar .linked > button.image-button, toolbar .linked > button.text-button.image-button,
+.titlebar:not(headerbar) .linked > button.text-button.image-button:not(.suggested-action):not(.destructive-action),
 headerbar .linked > button.text-button.image-button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box .linked > button.text-button.image-button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification .linked > button.text-button.image-button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button.text-button.image-button, .nemo-window .toolbar .linked > button.text-button.image-button,
 toolbar .linked.vertical > button.image-button,
 .titlebar:not(headerbar) .linked.vertical > button.image-button:not(.suggested-action):not(.destructive-action),
 headerbar .linked.vertical > button.image-button:not(.suggested-action):not(.destructive-action),
 actionbar > revealer > box .linked.vertical > button.image-button:not(.suggested-action):not(.destructive-action):not(.server-list-button),
 .app-notification .linked.vertical > button.image-button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised.vertical > button.image-button,
+.nemo-window .toolbar .linked.vertical > button.image-button,
 toolbar .linked.vertical > button.text-button.image-button,
 .titlebar:not(headerbar) .linked.vertical > button.text-button.image-button:not(.suggested-action):not(.destructive-action),
 headerbar .linked.vertical > button.text-button.image-button:not(.suggested-action):not(.destructive-action),
 actionbar > revealer > box .linked.vertical > button.text-button.image-button:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-.app-notification .linked.vertical > button.text-button.image-button, .linked >
+.app-notification .linked.vertical > button.text-button.image-button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised.vertical > button.text-button.image-button,
+.nemo-window .toolbar .linked.vertical > button.text-button.image-button, .linked >
 button.flat.image-button, .linked >
 button.flat.text-button.image-button,
 .linked.vertical >
@@ -947,6 +966,7 @@ button {
   -gtk-icon-shadow: none;
 }
 
+
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action),
 headerbar button:not(.suggested-action):not(.destructive-action), .titlebar:not(headerbar) button.suggested-action, .titlebar:not(headerbar) button.destructive-action,
 headerbar button.suggested-action,
@@ -956,7 +976,8 @@ radio, row button.image-button, headerbar button.titlebutton, .csd headerbar but
 .csd headerbar.default-decoration button.titlebutton,
 .titlebar button.titlebutton, .csd .titlebar button.titlebutton,
 .titlebar.default-decoration button.titlebutton,
-.csd .titlebar.default-decoration button.titlebutton, .solid-csd headerbar:not(.default-decoration) button.titlebutton, .nautilus-window headerbar > revealer > button, .terminix-session-sidebar button.tilix-sidebar-close-button,
+.csd .titlebar.default-decoration button.titlebutton, .solid-csd headerbar:not(.default-decoration) button.titlebutton, .nautilus-window headerbar > revealer > button, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button, .terminix-session-sidebar button.tilix-sidebar-close-button,
 .tilix-session-sidebar button.tilix-sidebar-close-button, widget > box.terminal-titlebar > button.image-button, widget > box.terminal-titlebar > button.image-button.toggle, .raven .raven-header:not(.top) button.image-button, .raven .expander-button,
 button.close,
 button.circular {
@@ -1379,22 +1400,27 @@ headerbar .linked:not(.vertical) > button {
   -gtk-outline-radius: 7px;
 }
 
+
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action),
 headerbar button:not(.suggested-action):not(.destructive-action) {
   border-image: none;
   color: rgba(0, 0, 0, 0.54);
 }
 
-.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):hover, .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):active,
+
+.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):hover,
+.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):active,
 headerbar button:not(.suggested-action):not(.destructive-action):hover,
 headerbar button:not(.suggested-action):not(.destructive-action):active {
   color: rgba(0, 0, 0, 0.75);
 }
 
+
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):disabled,
 headerbar button:not(.suggested-action):not(.destructive-action):disabled {
   color: rgba(0, 0, 0, 0.26);
 }
+
 
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):checked,
 headerbar button:not(.suggested-action):not(.destructive-action):checked {
@@ -1408,33 +1434,40 @@ headerbar button:not(.suggested-action):not(.destructive-action):checked {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
 }
 
+
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):checked:disabled,
 headerbar button:not(.suggested-action):not(.destructive-action):checked:disabled {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(86, 87, 245, 0.5);
 }
 
+
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop,
 headerbar button:not(.suggested-action):not(.destructive-action):backdrop {
   color: rgba(0, 0, 0, 0.38);
 }
 
-.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:hover, .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:active,
+
+.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:hover,
+.titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:active,
 headerbar button:not(.suggested-action):not(.destructive-action):backdrop:hover,
 headerbar button:not(.suggested-action):not(.destructive-action):backdrop:active {
   color: rgba(0, 0, 0, 0.54);
 }
+
 
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:disabled,
 headerbar button:not(.suggested-action):not(.destructive-action):backdrop:disabled {
   color: rgba(0, 0, 0, 0.26);
 }
 
+
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:checked,
 headerbar button:not(.suggested-action):not(.destructive-action):backdrop:checked {
   background-image: none;
   color: rgba(255, 255, 255, 0.7);
 }
+
 
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled,
 headerbar button:not(.suggested-action):not(.destructive-action):backdrop:checked:disabled {
@@ -5455,7 +5488,7 @@ window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical
 iconview selection,
 .view:selected, iconview:selected, flowbox flowboxchild:selected, spinbutton:not(.vertical) selection,
 entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, row:selected, calendar:selected, text:selected, .budgie-menu button:checked {
+.menuitem.button.flat:selected, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, text:selected, .budgie-menu button:checked {
   background-color: #5657f5;
 }
 
@@ -5464,7 +5497,7 @@ row:selected label, label:selected, window#gnome-system-monitor.background.csd >
 iconview selection,
 .view:selected, iconview:selected, flowbox flowboxchild:selected, spinbutton:not(.vertical) selection,
 entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, row:selected, calendar:selected, text:selected, .budgie-menu button:checked {
+.menuitem.button.flat:selected, row:selected, calendar:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, text:selected, .budgie-menu button:checked {
   color: #FFFFFF;
 }
 
@@ -5473,7 +5506,7 @@ row:selected label:disabled, label:disabled:selected, window#gnome-system-monito
 iconview selection:disabled,
 .view:disabled:selected, iconview:disabled:selected, flowbox flowboxchild:disabled:selected, label:disabled selection, spinbutton:not(.vertical) selection:disabled,
 entry selection:disabled, modelbutton.flat:disabled:selected,
-.menuitem.button.flat:disabled:selected, row:disabled:selected, calendar:disabled:selected, text:disabled:selected, .budgie-menu button:disabled:checked {
+.menuitem.button.flat:disabled:selected, row:disabled:selected, calendar:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, text:disabled:selected, .budgie-menu button:disabled:checked {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -6929,6 +6962,123 @@ dialog.background.csd box.dialog-vbox > stack > stack > scrolledwindow iconview:
 
 dialog.background.csd box.dialog-vbox notebook > stack {
   border-radius: 0 0 13px 13px;
+}
+
+.nemo-window .nemo-places-sidebar {
+  background-color: #f4f4f9;
+}
+
+.nemo-window .nemo-places-sidebar.frame {
+  border-width: 0;
+}
+
+.nemo-window .nemo-places-sidebar .places-treeview:not(:hover):not(:selected) {
+  background-color: transparent;
+}
+
+.nemo-window .nemo-window-pane widget.entry {
+  border-radius: 3px;
+  padding: 3px 10px;
+  border: 2px solid #5657f5;
+  background-color: rgba(86, 87, 245, 0.1);
+}
+
+.nemo-window toolbar.primary-toolbar {
+  transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1), color 225ms cubic-bezier(0, 0, 0.2, 1);
+  padding: 0 6px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  background-color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.75);
+  border: none;
+}
+
+.nemo-window toolbar.primary-toolbar:backdrop {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button {
+  min-height: 32px;
+  min-width: 32px;
+  margin: 4px 2px;
+  padding: 0 0;
+  border-image: none;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:hover, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:active,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:hover,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:active {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:disabled,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:checked,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:checked {
+  border-image: none;
+  background-color: #5657f5;
+  color: #FFFFFF;
+  background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
+  background-size: auto auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1), 0 2px 3px rgba(0, 0, 0, 0.08);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:checked:disabled,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:checked:disabled {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(86, 87, 245, 0.5);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:backdrop,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:backdrop {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:backdrop:hover, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:backdrop:active,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:backdrop:hover,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:backdrop:active {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:backdrop:disabled,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:backdrop:disabled {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:backdrop:checked,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:backdrop:checked {
+  background-image: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:backdrop:checked:disabled,
+.nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:backdrop:checked:disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button {
+  min-height: 0;
+  margin: 4px 0;
+  padding: 0 10px;
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button:first-child, .nemo-window toolbar.primary-toolbar .linked.path-bar > button:last-child {
+  padding: 0 6px;
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button image, .nemo-window toolbar.primary-toolbar .linked.path-bar > button label {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nemo-window .sidebar scrolledwindow.frame {
+  border: none;
 }
 
 /*********

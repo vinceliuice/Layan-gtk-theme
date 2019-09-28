@@ -1099,6 +1099,7 @@ headerbar {
     -gtk-outline-radius: $buttons_radius;
   }
 
+  %header_button,
   button:not(.suggested-action):not(.destructive-action) {
     @extend %button_basic.flat;
     border-image: none;
