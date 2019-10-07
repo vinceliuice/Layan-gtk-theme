@@ -275,6 +275,12 @@ StScrollBar {
 
 }
 
+.show-processes-dialog-subject,
+.mount-dialog-subject,
+.end-session-dialog-subject { //this should be a generic header class
+  @include font(title);
+}
+
   .mount-dialog-subject,
   .end-session-dialog-subject { //this should be a generic header class
     @include font(title);
@@ -542,6 +548,30 @@ StScrollBar {
 /* Access Dialog */
 .access-dialog {
   spacing: 30px;
+}
+
+.access-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.access-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.access-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.access-dialog-title {
+  font-weight: bold;
+}
+
+.access-dialog-subtitle {
+  color: $secondary_fg_color;
+  font-weight: bold;
 }
 
 /* Geolocation Dialog */
@@ -1224,6 +1254,7 @@ StScrollBar {
         .message {
           min-height: $menuitem_size * 2;
           background-color: transparent;
+          border: none;
           &:hover,&:focus { background-color: $divider_color; }
           &:active { background-color: $track_color; }
           border-radius: $buttons_radius;

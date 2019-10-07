@@ -125,6 +125,8 @@
   background-repeat: no-repeat;
 }
 
+$nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color, $titlebar_bg_color);
+
 // Nautilus placessidebar
 .nautilus-window {
   background-image: $theme_image;
@@ -143,7 +145,7 @@
   }
 
   &.csd.background {
-    background-color: if($solid == 'false', rgba($titlebar_bg_color, 0.97), $titlebar_bg_color);
+    background-color: if($solid == 'false', rgba($nautilus_bg_color, 0.97), $nautilus_bg_color);
     border-radius: 0 0 $windows_radius $windows_radius; // It also has an effect on nautilus notebook stacks background
   }
 

@@ -340,8 +340,8 @@ window.background:not(.csd) {
 $chrome_borders_color: $solid_border_color;
 $chrome_bg_color: $bg_color;
 $chrome_fg_color: $fg_color;
-$chrome_menu_bg_color: $menu_bg_color;
-$chrome_menu_fg_color: $menu_fg_color;
+$chrome_menu_bg_color: if($variant == 'light', $base_color, $menu_bg_color);
+$chrome_menu_fg_color: $fg_color;
 
 window.background.chromium {
   // checked-tab & toolbar & button widgets
@@ -393,6 +393,14 @@ window.background.chromium {
 
     &:focus {
       border-color: $primary_color;
+    }
+  }
+
+  tooltip {
+    &.background {
+      &, &.csd {
+        color: #565656;
+      }
     }
   }
 

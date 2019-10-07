@@ -3248,6 +3248,12 @@ messagedialog { // Message Dialog styling
     &:backdrop { color: $popover_disabled_fg; }
   }
 
+  list, row, .view, textview.view > text {
+    color: $popover_fg;
+    background-color: darken($popover_bg, 3%);
+    border-color: $popover_border;
+  }
+
   .dialog-action-area button {
     @extend %simple_flat_button;
     padding: 4px 12px;
@@ -3597,15 +3603,13 @@ infobar {
  * Tooltips *
  ************/
 tooltip {
-  &.background {
-    &, &.csd {
-      // background-color needs to be set this way otherwise it gets drawn twice
-      // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
-      border-radius: $buttons_radius;
-      box-shadow: inset 0 1px $titlebar_highlight_color;
-      background-color: rgba($popover_bg, $higher_opacity);
-      color: $popover_fg
-    }
+  &.background.csd {
+    // background-color needs to be set this way otherwise it gets drawn twice
+    // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
+    border-radius: $buttons_radius;
+    box-shadow: inset 0 1px $titlebar_highlight_color;
+    background-color: rgba($popover_bg, $higher_opacity);
+    color: $popover_fg;
   }
 
   // @extend %osd;
@@ -3632,9 +3636,9 @@ tooltip {
   * {
     // workaround for Eclipse.
     // do not include any declaration here.
-    // padding: 0;
-    // background-color: transparent;
-    // color: inherit;
+    padding: 0;
+    background-color: transparent;
+    color: inherit;
   }
 }
 
