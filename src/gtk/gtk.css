@@ -6927,26 +6927,21 @@ button.title label {
 /*********
  * Geary *
  *********/
-.geary-titlebar-left:dir(ltr) {
-  margin-right: 5px;
-  padding-right: 0;
+window#GearyMainWindow.background.csd box.vertical > paned.horizontal > box.sidebar.vertical {
+  border-bottom-left-radius: 13px;
 }
 
-.geary-titlebar-left:dir(rtl) {
-  margin-left: 5px;
-  padding-left: 0;
+window#GearyMainWindow.background.csd box.vertical > paned.horizontal > box.sidebar.vertical statusbar {
+  border-bottom-left-radius: 13px;
 }
 
-.geary-titlebar-left > separator {
-  background-color: rgba(0, 0, 0, 0.05);
+window#GearyMainWindow.background.csd stack#conversation_viewer {
+  border-bottom-right-radius: 13px;
 }
 
-.geary-titlebar-right:dir(ltr) {
-  margin-left: -5px;
-}
-
-.geary-titlebar-right:dir(rtl) {
-  margin-right: -5px;
+window#GearyMainWindow.background.csd stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox {
+  background: none;
+  border-bottom-right-radius: 13px;
 }
 
 /***********
