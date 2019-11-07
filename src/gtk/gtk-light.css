@@ -2020,12 +2020,12 @@ menubar > menuitem,
 
 menubar > menuitem menu,
 .menubar > menuitem menu {
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 8px 8px;
 }
 
 menubar > menuitem menu menu,
 .menubar > menuitem menu menu {
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 menubar > menuitem:hover,
@@ -2057,7 +2057,7 @@ menu,
   box-shadow: inset 0 1px rgba(0, 0, 0, 0.06);
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 8px;
   color: rgba(0, 0, 0, 0.54);
 }
 
@@ -2085,7 +2085,7 @@ menu menuitem:hover,
 .menu menuitem:hover,
 .context-menu menuitem:hover {
   transition: none;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(92, 107, 192, 0.1);
   color: #5C6BC0;
 }
 
@@ -2796,6 +2796,39 @@ popover.background.menu separator,
 popover.background.menu separator {
   border: none;
   background-color: rgba(255, 255, 255, 0.12);
+}
+
+popover calendar,
+popover.background calendar,
+popover.background.menu calendar {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+popover calendar:disabled,
+popover.background calendar:disabled,
+popover.background.menu calendar:disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+popover calendar.header,
+popover.background calendar.header,
+popover.background.menu calendar.header {
+  border-style: none none solid;
+  border-color: rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+}
+
+popover calendar.highlight,
+popover.background calendar.highlight,
+popover.background.menu calendar.highlight {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+popover calendar:indeterminate,
+popover.background calendar:indeterminate,
+popover.background.menu calendar:indeterminate {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 /*************
@@ -5238,7 +5271,7 @@ decoration:backdrop {
 }
 
 .csd.popup decoration {
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
 }
 
@@ -8616,12 +8649,12 @@ popover.background.places-menu row {
 
 .budgie-panel menubar > menuitem menu,
 .budgie-panel .menubar > menuitem menu {
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 8px 8px;
 }
 
 .budgie-panel menubar > menuitem menu menu,
 .budgie-panel .menubar > menuitem menu menu {
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 .budgie-panel .alert {
