@@ -1575,6 +1575,7 @@ StScrollBar {
     padding: 0 8px;
     border-radius: 0;
     color: $inverse_hint_fg_color;
+    caret-color: $inverse_fg_color;
     selection-background-color: $inverse_track_color;
     selected-color: $inverse_fg_color;
     @include entry(normal,$fc:$inverse_track_color);

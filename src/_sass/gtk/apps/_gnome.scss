@@ -1189,12 +1189,6 @@ window.background > box.vertical box.horizontal {
  /************************
   * Gnome Control Center *
   ************************/
-window.background.csd > stack {
-  border-radius: 0 0 $windows_radius $windows_radius;
-}
-
-stack.background { background: none; }
-
 // users section
 stack > box.vertical > widget > overlay grid.horizontal > stack {
   > button.toggle { margin: 8px 6px; } // Show the button shadow completely
@@ -1213,24 +1207,6 @@ dialog.background.csd {
   }
 }
 
-// > 3.25.90
-.background.csd scrolledwindow.view {
-  background-color: $base_color;
-  border-bottom-left-radius: $windows_radius;
-
-  > viewport.frame > stack {
-    background-color: transparent;
-
-    > list { // left-pane
-      background-color: transparent;
-
-      > row.activatable:not(:hover):not(:active):not(:selected) {
-        background-color: transparent;
-      }
-    }
-  }
-}
-
 window.background.csd {
   > headerbar.titlebar { // gnome 3.32
     > box.horizontal > separator.sidebar,
@@ -1245,6 +1221,44 @@ window.background.csd {
   > hdyleaflet > separator.sidebar {
     background: none;
     min-width: 0;
+  }
+
+  > stack {
+    border-radius: 0 0 $windows_radius $windows_radius;
+  }
+
+  > hdyleaflet > stack.background, // > 3.34.0
+  > box.horizontal > stack.background {
+    > widget {
+      > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
+        > scrolledwindow > viewport.frame {
+          background-color: $base_color;
+          border-bottom-right-radius: $windows_radius + 1px;
+
+          > box.vertical {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
+  > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
+    background-color: $base_color;
+    border-bottom-left-radius: $windows_radius + 1px;
+
+    > viewport.frame > stack {
+      background-color: transparent;
+
+      list { // left-pane
+        background-color: transparent;
+
+        row.activatable:not(:hover):not(:active):not(:selected) {
+          background-color: transparent;
+        }
+      }
+    }
   }
 }
 
