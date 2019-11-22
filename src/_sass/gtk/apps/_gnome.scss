@@ -1217,14 +1217,14 @@ window.background.csd {
     }
   }
 
+  > stack, hdyleaflet > stack.background {
+    border-radius: 0 0 $windows_radius $windows_radius;
+  }
+
   > box.horizontal > separator.sidebar,
   > hdyleaflet > separator.sidebar {
     background: none;
     min-width: 0;
-  }
-
-  > stack {
-    border-radius: 0 0 $windows_radius $windows_radius;
   }
 
   > hdyleaflet > stack.background, // > 3.34.0
@@ -1235,7 +1235,7 @@ window.background.csd {
           background-color: $base_color;
           border-bottom-right-radius: $windows_radius + 1px;
 
-          > box.vertical {
+          > box.vertical.view {
             background: none;
           }
         }

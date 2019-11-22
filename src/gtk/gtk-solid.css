@@ -6786,14 +6786,14 @@ window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
   min-width: 0;
 }
 
+window.background.csd > stack, window.background.csd hdyleaflet > stack.background {
+  border-radius: 0 0 13px 13px;
+}
+
 window.background.csd > box.horizontal > separator.sidebar,
 window.background.csd > hdyleaflet > separator.sidebar {
   background: none;
   min-width: 0;
-}
-
-window.background.csd > stack {
-  border-radius: 0 0 13px 13px;
 }
 
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
@@ -6802,8 +6802,8 @@ window.background.csd > box.horizontal > stack.background > widget > box.vertica
   border-bottom-right-radius: 14px;
 }
 
-window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical,
-window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical {
+window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view,
+window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view {
   background: none;
 }
 
