@@ -3996,18 +3996,6 @@ radio:not(:checked):not(:indeterminate):not(:disabled):not(:hover) {
   color: rgba(0, 0, 0, 0.54);
 }
 
-menu menuitem check:hover, menu menuitem check:checked:hover, menu menuitem check:indeterminate:hover, menu menuitem
-radio:hover, menu menuitem
-radio:checked:hover, menu menuitem
-radio:indeterminate:hover {
-  color: #FFFFFF;
-}
-
-menu menuitem check:disabled, menu menuitem
-radio:disabled {
-  color: rgba(255, 255, 255, 0.5);
-}
-
 menu menuitem check, menu menuitem check:hover, menu menuitem check:disabled, menu menuitem
 radio, menu menuitem
 radio:hover, menu menuitem
@@ -5835,6 +5823,7 @@ button.emoji-section:last-child {
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
   background-color: rgba(0, 0, 0, 0);
+  transition: none;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
@@ -6786,7 +6775,7 @@ window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
   min-width: 0;
 }
 
-window.background.csd > stack, window.background.csd hdyleaflet > stack.background {
+window.background.csd > stack:not(.titlebar), window.background.csd > hdyleaflet > stack.background {
   border-radius: 0 0 13px 13px;
 }
 
@@ -7314,32 +7303,37 @@ window.background:not(.csd) .menu {
   border-radius: 0;
 }
 
-window.background:not(.csd) > window > menu,
+window.background:not(.csd) > window:not(.csd) > menu,
 window.background:not(.csd) > menu > menu {
   border: none;
   border-radius: 0;
+  padding: 4px 0;
 }
 
-window.background:not(.csd) > window > menu menuitem,
+window.background:not(.csd) > window:not(.csd) > menu menuitem,
 window.background:not(.csd) > menu > menu menuitem {
   transition: none;
   border-radius: 0;
 }
 
-window.background:not(.csd) > window > menu menuitem:hover,
+window.background:not(.csd) > window:not(.csd) > menu menuitem:hover,
 window.background:not(.csd) > menu > menu menuitem:hover {
   background-color: #5657f5;
 }
 
-window.background:not(.csd) > window > menu menuitem:hover, window.background:not(.csd) > window > menu menuitem:hover image,
+window.background:not(.csd) > window:not(.csd) > menu menuitem:hover, window.background:not(.csd) > window:not(.csd) > menu menuitem:hover image,
 window.background:not(.csd) > menu > menu menuitem:hover,
 window.background:not(.csd) > menu > menu menuitem:hover image {
   color: #FFFFFF;
 }
 
-window.background:not(.csd) > window > menu menuitem:hover accelerator,
+window.background:not(.csd) > window:not(.csd) > menu menuitem:hover accelerator,
 window.background:not(.csd) > menu > menu menuitem:hover accelerator {
   color: rgba(255, 255, 255, 0.7);
+}
+
+window.background:not(.csd) > window.csd > menu menuitem {
+  transition: none;
 }
 
 window.background:not(.csd) > widget > menubar {
@@ -7747,7 +7741,7 @@ box.vertical > widget > widget:selected {
 }
 
 XfdesktopIconView.view {
-  border-radius: 2px;
+  border-radius: 5px;
   background: transparent;
   color: #FFFFFF;
   text-shadow: 0 0 1px rgba(0, 0, 0, 0.26), 0 1px 2px rgba(0, 0, 0, 0.32), 0 2px 3px rgba(0, 0, 0, 0.12);
@@ -7784,7 +7778,12 @@ window#whiskermenu-window scrolledwindow treeview.view:selected:hover {
   color: rgba(0, 0, 0, 0.75);
 }
 
+window.thunar .sidebar {
+  border-top: none;
+}
+
 window.thunar toolbar#location-toolbar {
+  background-color: #31313a;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -7799,6 +7798,24 @@ window.thunar notebook stack > scrolledwindow.frame.standard-view {
 
 window.thunar notebook header.top tab.reorderable-page > box > label {
   min-height: 0;
+}
+
+menubar.-vala-panel-appmenu-private,
+menubar.-vala-panel-background {
+  background: none;
+  border: none;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem,
+menubar.-vala-panel-background > menuitem {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: normal;
+}
+
+menubar.-vala-panel-appmenu-private > menuitem:hover,
+menubar.-vala-panel-background > menuitem:hover {
+  color: #FFFFFF;
+  border-radius: 0 0 0 0;
 }
 
 /*********

@@ -78,6 +78,10 @@ install() {
   [[ ${color} != '-dark' ]] && \
   cp -ur ${SRC_DIR}/src/gtk/gtk-dark${solid}.css                                     ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
+  mkdir -p                                                                           ${THEME_DIR}/xfwm4
+  cp -ur ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                              ${THEME_DIR}/xfwm4
+  cp -ur ${SRC_DIR}/src/xfwm4/themerc${ELSE_LIGHT}                                   ${THEME_DIR}/xfwm4/themerc
+
   cp -ur ${SRC_DIR}/src/plank                                                        ${THEME_DIR}
 }
 

@@ -174,6 +174,7 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
 
       &:hover {
         background-color: rgba($divider_color, 0.0);
+        transition: none;
       }
 
       &:backdrop { opacity: 0.85; }
@@ -1217,7 +1218,7 @@ window.background.csd {
     }
   }
 
-  > stack, hdyleaflet > stack.background {
+  > stack:not(.titlebar), > hdyleaflet > stack.background {
     border-radius: 0 0 $windows_radius $windows_radius;
   }
 

@@ -1619,7 +1619,9 @@ menubar,
   }
 }
 
-.csd.popup { background-color: transparent; } // Need this for transparent menus
+.csd.popup { // Need this for transparent menus
+  background-color: transparent;
+}
 
 menu,
 .menu,
@@ -2578,9 +2580,8 @@ radio {
 
     &:not(:checked):not(:indeterminate):not(:disabled):not(:hover) { color: $secondary_fg_color; }
 
-    &:hover, &:checked:hover, &:indeterminate:hover { color: $inverse_fg_color; }
-
-    &:disabled { color: $inverse_disabled_fg_color; }
+    // &:hover, &:checked:hover, &:indeterminate:hover { color: $inverse_fg_color; }
+    // &:disabled { color: $inverse_disabled_fg_color; }
 
     &, &:hover, &:disabled {
       box-shadow: none;

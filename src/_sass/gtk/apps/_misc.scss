@@ -265,10 +265,11 @@ window.background:not(.csd) {
     // border: none;
   }
 
-  > window > menu,
+  > window:not(.csd) > menu,
   > menu > menu {
     border: none; // remove ugly border around the menus
     border-radius: 0;
+    padding: 4px 0;
 
     menuitem {
       transition: none; // Fixed plank menu background issue
@@ -280,6 +281,12 @@ window.background:not(.csd) {
         &, image { color: $inverse_fg_color; }
         accelerator { color: $inverse_secondary_fg_color; }
       }
+    }
+  }
+
+  > window.csd > menu {
+    menuitem {
+      transition: none; // Fixed plank menu background issue
     }
   }
 }
@@ -763,7 +770,7 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
 }
 
 XfdesktopIconView.view {
-  border-radius: 2px;
+  border-radius: $material_radius;
   background: transparent;
   color: $inverse_fg_color;
   text-shadow: $text_shadow;
@@ -813,7 +820,12 @@ window#whiskermenu-window {
 //
 
 window.thunar {
+  .sidebar {
+    border-top: none;
+  }
+
   toolbar#location-toolbar {
+    background-color: $titlebar_bg_color;
     border-bottom: 1px solid $border_color;
 
     // FIXME: need to unset for weird allocation height
@@ -830,5 +842,22 @@ window.thunar {
     // an allocation height of label node affects to close button's
     // image height (it's quite weird).
     header.top tab.reorderable-page > box > label { min-height: 0; }
+  }
+}
+
+// vala-panel-appmenu
+menubar.-vala-panel-appmenu-private, // xfce4 appmenu plugin
+menubar.-vala-panel-background {
+  background: none;
+  border: none;
+
+  > menuitem {
+    color: $panel_fg_color;
+    font-weight: normal;
+
+    &:hover {
+      color: $inverse_fg_color;
+      border-radius: 0 0 0 0 ;
+    }
   }
 }

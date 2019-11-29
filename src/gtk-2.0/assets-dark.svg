@@ -87,44 +87,44 @@
     <linearGradient
        id="color-primary">
       <stop
-         stop-color="#5D7DFB"
+         stop-color="#5657f5"
          id="stop23" />
     </linearGradient>
     <linearGradient
        id="color-accent">
       <stop
-         stop-color="#5D7DFB"
+         stop-color="#5657f5"
          id="stop26" />
     </linearGradient>
     <linearGradient
        id="color-accent-insensitive">
       <stop
-         stop-color="#5D7DFB"
+         stop-color="#5657f5"
          stop-opacity="0.5"
          id="stop29" />
     </linearGradient>
     <linearGradient
        id="color-bg">
       <stop
-         stop-color="#323232"
+         stop-color="#34343B"
          id="stop32" />
     </linearGradient>
     <linearGradient
        id="color-bg-lighter">
       <stop
-         stop-color="#414141"
+         stop-color="#3B3B43"
          id="stop35" />
     </linearGradient>
     <linearGradient
        id="color-base">
       <stop
-         stop-color="#414141"
+         stop-color="#44454B"
          id="stop38" />
     </linearGradient>
     <linearGradient
        id="color-base-alt">
       <stop
-         stop-color="#323232"
+         stop-color="#44454B"
          id="stop41" />
     </linearGradient>
     <linearGradient
@@ -1331,7 +1331,7 @@
      y="28"
      xlink:href="#base-entry"
      id="entry"
-     style="fill:#323232;fill-opacity:1"
+     style="fill:#34343B;fill-opacity:1"
      fill="url(#color-bg)" />
   <use
      x="104"
@@ -1339,56 +1339,56 @@
      xlink:href="#base-entry-active"
      fill="url(#color-bg)"
      id="entry-active"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="104"
      y="68"
      xlink:href="#base-entry-insensitive"
      fill="url(#color-bg)"
      id="entry-insensitive"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="124"
      y="28"
      xlink:href="#base-combo-ltr-entry"
      fill="url(#color-bg)"
      id="combo-ltr-entry"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="124"
      y="48"
      xlink:href="#base-combo-ltr-entry-active"
      fill="url(#color-bg)"
      id="combo-ltr-entry-active"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="124"
      y="68"
      xlink:href="#base-combo-ltr-entry-insensitive"
      fill="url(#color-bg)"
      id="combo-ltr-entry-insensitive"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="128"
      y="28"
      xlink:href="#base-combo-rtl-entry"
      fill="url(#color-bg)"
      id="combo-rtl-entry"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="128"
      y="48"
      xlink:href="#base-combo-rtl-entry-active"
      fill="url(#color-bg)"
      id="combo-rtl-entry-active"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="128"
      y="68"
      xlink:href="#base-combo-rtl-entry-insensitive"
      fill="url(#color-bg)"
      id="combo-rtl-entry-insensitive"
-     style="fill:#323232;fill-opacity:1" />
+     style="fill:#34343B;fill-opacity:1" />
   <use
      x="152"
      y="28"
