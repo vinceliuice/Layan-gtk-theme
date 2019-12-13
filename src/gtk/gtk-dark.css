@@ -640,8 +640,8 @@ button:checked:disabled {
 
 modelbutton.flat,
 .menuitem.button.flat, spinbutton:not(.vertical) button, spinbutton.vertical button, notebook > header > tabs > arrow, scrollbar button, check,
-radio, calendar.button, messagedialog .dialog-action-area button, messagedialog.csd .dialog-action-area button, button.sidebar-button, .gedit-search-slider button, popover.messagepopover .popover-action-area button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .budgie-popover button, .raven .raven-header:not(.top) button, .drop-shadow button, .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-session-dialog .linked.horizontal > button, .lightdm-gtk-greeter button, :not(headerbar) .caja-pathbar button, .caja-pathbar :not(headerbar) button, :not(headerbar) .path-bar button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, layouttabbar button, .mate-panel-menu-bar button, PanelToplevel.horizontal > grid > button, .budgie-panel button, .raven stackswitcher.linked > button, toolbar button,
+radio, calendar.button, messagedialog .dialog-action-area button, messagedialog.csd .dialog-action-area button, button.sidebar-button, .gedit-search-slider button, popover.messagepopover .popover-action-area button, #mate-menu button, .budgie-settings-window buttonbox.inline-toolbar button, .budgie-popover button, .raven stackswitcher.linked > button, .raven .raven-header:not(.top) button, .raven .raven-header.top stackswitcher button, .drop-shadow button, .budgie-polkit-dialog .linked.horizontal > button,
+.budgie-session-dialog .linked.horizontal > button, .lightdm-gtk-greeter button, :not(headerbar) .caja-pathbar button, .caja-pathbar :not(headerbar) button, :not(headerbar) .path-bar button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, layouttabbar button, .mate-panel-menu-bar button, PanelToplevel.horizontal > grid > button, .budgie-panel button, toolbar button,
 .titlebar:not(headerbar) button:not(.suggested-action):not(.destructive-action),
 headerbar button:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button,
 .nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button, .nemo-window .toolbar button,
@@ -658,8 +658,8 @@ button.flat {
 
 modelbutton.flat:hover,
 .menuitem.button.flat:hover, spinbutton:not(.vertical) button:hover, spinbutton.vertical button:hover, notebook > header > tabs > arrow:hover, scrollbar button:hover, check:hover,
-radio:hover, calendar.button:hover, messagedialog .dialog-action-area button:hover, button.sidebar-button:hover, .gedit-search-slider button:hover, popover.messagepopover .popover-action-area button:hover, #mate-menu button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, .budgie-popover button:hover, .raven .raven-header:not(.top) button:hover, .drop-shadow button:hover, .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-session-dialog .linked.horizontal > button:hover, .lightdm-gtk-greeter button:hover, :not(headerbar) .caja-pathbar button:hover, .caja-pathbar :not(headerbar) button:hover, :not(headerbar) .path-bar button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, layouttabbar button:hover, .mate-panel-menu-bar button:hover, PanelToplevel.horizontal > grid > button:hover, .budgie-panel button:hover, .raven stackswitcher.linked > button:hover, toolbar button:hover,
+radio:hover, calendar.button:hover, messagedialog .dialog-action-area button:hover, button.sidebar-button:hover, .gedit-search-slider button:hover, popover.messagepopover .popover-action-area button:hover, #mate-menu button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, .budgie-popover button:hover, .raven stackswitcher.linked > button:hover, .raven .raven-header:not(.top) button:hover, .raven .raven-header.top stackswitcher button:hover, .drop-shadow button:hover, .budgie-polkit-dialog .linked.horizontal > button:hover,
+.budgie-session-dialog .linked.horizontal > button:hover, .lightdm-gtk-greeter button:hover, :not(headerbar) .caja-pathbar button:hover, .caja-pathbar :not(headerbar) button:hover, :not(headerbar) .path-bar button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, layouttabbar button:hover, .mate-panel-menu-bar button:hover, PanelToplevel.horizontal > grid > button:hover, .budgie-panel button:hover, toolbar button:hover,
 .titlebar:not(headerbar) button:hover:not(.suggested-action):not(.destructive-action),
 headerbar button:hover:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:hover, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:hover, .nemo-window .toolbar button:hover,
 button.flat:hover {
@@ -669,8 +669,8 @@ button.flat:hover {
 
 modelbutton.flat:active,
 .menuitem.button.flat:active, spinbutton:not(.vertical) button:active, spinbutton.vertical button:active, notebook > header > tabs > arrow:active, scrollbar button:active, check:active,
-radio:active, calendar.button:active, messagedialog .dialog-action-area button:active, button.sidebar-button:active, .gedit-search-slider button:active, popover.messagepopover .popover-action-area button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .budgie-popover button:active, .raven .raven-header:not(.top) button:active, .drop-shadow button:active, .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-session-dialog .linked.horizontal > button:active, .lightdm-gtk-greeter button:active, :not(headerbar) .caja-pathbar button:active, .caja-pathbar :not(headerbar) button:active, :not(headerbar) .path-bar button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, PanelToplevel.horizontal > grid > button:active, .budgie-panel button:active, .raven stackswitcher.linked > button:active, toolbar button:active,
+radio:active, calendar.button:active, messagedialog .dialog-action-area button:active, button.sidebar-button:active, .gedit-search-slider button:active, popover.messagepopover .popover-action-area button:active, #mate-menu button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, .budgie-popover button:active, .raven stackswitcher.linked > button:active, .raven .raven-header:not(.top) button:active, .raven .raven-header.top stackswitcher button:active, .drop-shadow button:active, .budgie-polkit-dialog .linked.horizontal > button:active,
+.budgie-session-dialog .linked.horizontal > button:active, .lightdm-gtk-greeter button:active, :not(headerbar) .caja-pathbar button:active, .caja-pathbar :not(headerbar) button:active, :not(headerbar) .path-bar button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, layouttabbar button:active, .mate-panel-menu-bar button:active, PanelToplevel.horizontal > grid > button:active, .budgie-panel button:active, toolbar button:active,
 .titlebar:not(headerbar) button:active:not(.suggested-action):not(.destructive-action),
 headerbar button:active:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:active, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:active, .nemo-window .toolbar button:active,
 button.flat:active {
@@ -684,8 +684,8 @@ button.flat:active {
 
 modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, spinbutton:not(.vertical) button:disabled, spinbutton.vertical button:disabled, notebook > header > tabs > arrow:disabled, scrollbar button:disabled, check:disabled,
-radio:disabled, calendar.button:disabled, messagedialog .dialog-action-area button:disabled, button.sidebar-button:disabled, .gedit-search-slider button:disabled, popover.messagepopover .popover-action-area button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover button:disabled, .raven .raven-header:not(.top) button:disabled, .drop-shadow button:disabled, .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-session-dialog .linked.horizontal > button:disabled, .lightdm-gtk-greeter button:disabled, :not(headerbar) .caja-pathbar button:disabled, .caja-pathbar :not(headerbar) button:disabled, :not(headerbar) .path-bar button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, PanelToplevel.horizontal > grid > button:disabled, .budgie-panel button:disabled, .raven stackswitcher.linked > button:disabled, toolbar button:disabled,
+radio:disabled, calendar.button:disabled, messagedialog .dialog-action-area button:disabled, button.sidebar-button:disabled, .gedit-search-slider button:disabled, popover.messagepopover .popover-action-area button:disabled, #mate-menu button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, .budgie-popover button:disabled, .raven stackswitcher.linked > button:disabled, .raven .raven-header:not(.top) button:disabled, .raven .raven-header.top stackswitcher button:disabled, .drop-shadow button:disabled, .budgie-polkit-dialog .linked.horizontal > button:disabled,
+.budgie-session-dialog .linked.horizontal > button:disabled, .lightdm-gtk-greeter button:disabled, :not(headerbar) .caja-pathbar button:disabled, .caja-pathbar :not(headerbar) button:disabled, :not(headerbar) .path-bar button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, layouttabbar button:disabled, .mate-panel-menu-bar button:disabled, PanelToplevel.horizontal > grid > button:disabled, .budgie-panel button:disabled, toolbar button:disabled,
 .titlebar:not(headerbar) button:disabled:not(.suggested-action):not(.destructive-action),
 headerbar button:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:disabled, .nemo-window .toolbar button:disabled,
 button.flat:disabled {
@@ -694,7 +694,7 @@ button.flat:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-:not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar) .path-bar button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, PanelToplevel.horizontal > grid > button:checked, .budgie-panel button:checked, .raven stackswitcher.linked > button:checked, toolbar button:checked,
+:not(headerbar) .caja-pathbar button:checked, .caja-pathbar :not(headerbar) button:checked, :not(headerbar) .path-bar button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, layouttabbar button:checked, .mate-panel-menu-bar button:checked, PanelToplevel.horizontal > grid > button:checked, .budgie-panel button:checked, toolbar button:checked,
 .titlebar:not(headerbar) button:checked:not(.suggested-action):not(.destructive-action),
 headerbar button:checked:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:checked, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:checked, .nemo-window .toolbar button:checked,
 button.flat:checked {
@@ -702,7 +702,7 @@ button.flat:checked {
   color: #FFFFFF;
 }
 
-:not(headerbar) .caja-pathbar button:checked:disabled, .caja-pathbar :not(headerbar) button:checked:disabled, :not(headerbar) .path-bar button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .budgie-panel button:checked:disabled, .raven stackswitcher.linked > button:checked:disabled, toolbar button:checked:disabled,
+:not(headerbar) .caja-pathbar button:checked:disabled, .caja-pathbar :not(headerbar) button:checked:disabled, :not(headerbar) .path-bar button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, layouttabbar button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .budgie-panel button:checked:disabled, toolbar button:checked:disabled,
 .titlebar:not(headerbar) button:checked:disabled:not(.suggested-action):not(.destructive-action),
 headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .app-notification button:checked:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:checked:disabled, .nemo-window .toolbar button:checked:disabled,
 button.flat:checked:disabled {
@@ -791,29 +791,29 @@ button:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-row:selected button.sidebar-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .raven .raven-header.top stackswitcher button, .raven-mpris button.image-button, row:selected
+row:selected button.sidebar-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .raven-mpris button.image-button, row:selected
 button.flat {
   color: rgba(255, 255, 255, 0.7);
 }
 
-row:selected button.sidebar-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .raven .raven-header.top stackswitcher button:hover, .raven-mpris button.image-button:hover, row:selected button.sidebar-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .raven .raven-header.top stackswitcher button:active, .raven-mpris button.image-button:active, row:selected
+row:selected button.sidebar-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .raven-mpris button.image-button:hover, row:selected button.sidebar-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .raven-mpris button.image-button:active, row:selected
 button.flat:hover, row:selected
 button.flat:active {
   color: #FFFFFF;
 }
 
-row:selected button.sidebar-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .raven .raven-header.top stackswitcher button:disabled, .raven-mpris button.image-button:disabled, row:selected
+row:selected button.sidebar-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .raven-mpris button.image-button:disabled, row:selected
 button.flat:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-row:selected button.sidebar-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .raven .raven-header.top stackswitcher button:checked, .raven-mpris button.image-button:checked, row:selected
+row:selected button.sidebar-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .raven-mpris button.image-button:checked, row:selected
 button.flat:checked {
   background-color: rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
 }
 
-row:selected button.sidebar-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .raven .raven-header.top stackswitcher button:checked:disabled, .raven-mpris button.image-button:checked:disabled, row:selected
+row:selected button.sidebar-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .raven-mpris button.image-button:checked:disabled, row:selected
 button.flat:checked:disabled {
   background-color: rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.5);
@@ -8942,7 +8942,7 @@ frame.raven-frame > border {
 }
 
 .raven {
-  background-color: #34343b;
+  background-color: rgba(49, 49, 58, 0.95);
 }
 
 .raven > box {
@@ -8954,12 +8954,12 @@ frame.raven-frame > border {
 }
 
 .raven stackswitcher.linked > button {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA726 0%, transparent 0%) 0 0 0/0 0 0px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
   border-radius: 0;
 }
 
 .raven stackswitcher.linked > button:checked {
-  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #FFA726 100%, transparent 0%) 0 0 2/0 0 2px;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
   background-color: transparent;
 }
 
@@ -8974,8 +8974,8 @@ frame.raven-frame > border {
 
 .raven .raven-header.top {
   padding: 0;
-  background-color: #5657f5;
-  color: #FFFFFF;
+  background-color: #31313a;
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.08);
 }
 
 .raven .raven-header.top stackswitcher button {
@@ -9048,6 +9048,38 @@ frame.raven-frame > border {
 
 .raven .option-subtitle {
   font-size: smaller;
+}
+
+.raven .audio-widget scale.marks-after {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.raven .audio-widget scale.marks-after label {
+  font-size: 90%;
+  padding: 0;
+  margin: -10px 0 0 6px;
+}
+
+.raven .audio-widget button.flat.expander-button {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.raven .audio-widget list.devices-list.sound-devices > row.activatable:selected, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow list.devices-list.sound-devices > treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .raven .audio-widget list.devices-list.sound-devices > treeview.view:selected,
+.raven .audio-widget list.devices-list.sound-devices > .view:selected, .raven .audio-widget list.devices-list.sound-devices > iconview:selected, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:selected, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:selected, .raven .audio-widget .budgie-menu list.devices-list.sound-devices > button:selected, .budgie-menu .raven .audio-widget list.devices-list.sound-devices > button:selected, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow list.devices-list.sound-devices > treeview.view:checked, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .raven .audio-widget list.devices-list.sound-devices > treeview.view:checked,
+.raven .audio-widget list.devices-list.sound-devices > .view:checked, .raven .audio-widget list.devices-list.sound-devices > iconview:checked, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:checked, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:checked, .raven .audio-widget .budgie-menu list.devices-list.sound-devices > button:checked, .budgie-menu .raven .audio-widget list.devices-list.sound-devices > button:checked {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #FFFFFF;
+  box-shadow: inset 2px 0 #5657f5;
+}
+
+.raven .audio-widget list.devices-list.sound-devices > row.activatable:selected label, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow list.devices-list.sound-devices > treeview.view:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .raven .audio-widget list.devices-list.sound-devices > treeview.view:selected label, .raven .audio-widget list.devices-list.sound-devices > .view:selected label, .raven .audio-widget list.devices-list.sound-devices > iconview:selected label, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:selected label, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:selected label, .raven .audio-widget .budgie-menu list.devices-list.sound-devices > button:selected label, .budgie-menu .raven .audio-widget list.devices-list.sound-devices > button:selected label, .raven .audio-widget list.devices-list.sound-devices > row.activatable:checked label, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow list.devices-list.sound-devices > treeview.view:checked label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .raven .audio-widget list.devices-list.sound-devices > treeview.view:checked label, .raven .audio-widget list.devices-list.sound-devices > .view:checked label, .raven .audio-widget list.devices-list.sound-devices > iconview:checked label, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button:checked label, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button:checked label, .raven .audio-widget .budgie-menu list.devices-list.sound-devices > button:checked label, .budgie-menu .raven .audio-widget list.devices-list.sound-devices > button:checked label {
+  color: #FFFFFF;
+}
+
+.raven .audio-widget list.devices-list.sound-devices > row.activatable label, .raven .audio-widget window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow list.devices-list.sound-devices > treeview.view label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow .raven .audio-widget list.devices-list.sound-devices > treeview.view label, .raven .audio-widget list.devices-list.sound-devices > .view label, .raven .audio-widget list.devices-list.sound-devices > iconview label, .raven .audio-widget treeview.view header list.devices-list.sound-devices > button label, treeview.view header .raven .audio-widget list.devices-list.sound-devices > button label, .raven .audio-widget .budgie-menu list.devices-list.sound-devices > button label, .budgie-menu .raven .audio-widget list.devices-list.sound-devices > button label {
+  padding-left: 16px;
 }
 
 calendar.raven-calendar {

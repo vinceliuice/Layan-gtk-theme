@@ -595,7 +595,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
 // Raven
 .raven {
-  background-color: rgba($bg_color, 1);
+  background-color: if($solid == 'true', $base_color, rgba($base_color, 0.95));
 
   // for >=10.4
   > box { margin-bottom: -10px; }
@@ -606,17 +606,17 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
   // > stack > box:last-child > stack { margin-top: -6px; }
 
   stackswitcher.linked > button {
-    @extend %flat_button;
+    @extend %simple_flat_button;
 
     border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $warning_bg_color 0%,
+                                  $primary_color 0%,
                                   transparent 0%)
                                   0 0 0 / 0 0 0px;
     border-radius: 0;
 
     &:checked {
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $warning_bg_color 100%,
+                                    $primary_color 100%,
                                     transparent 0%)
                                     0 0 2 / 0 0 2px;
       background-color: transparent;
@@ -639,11 +639,12 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
 
     &.top {
       padding: 0;
-      background-color: $primary_color;
-      color: $inverse_fg_color;
+      background-color: $base_color;
+      // color: $inverse_fg_color;
+      box-shadow: inset 0 -1px $border_color;
 
       stackswitcher button {
-        @extend %button_selected.flat;
+        @extend %simple_flat_button;
         margin: -4px 0;
         min-height: $medium_size;
       }
@@ -711,6 +712,39 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
   }
 
   .option-subtitle { font-size: smaller; }
+
+  .audio-widget {
+    scale.marks-after {
+      padding-top: 0;
+      padding-bottom: 0;
+
+      label {
+        font-size: 90%;
+        padding: 0;
+        margin: -10px 0 0 6px;
+      }
+    }
+
+    button.flat.expander-button {
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+
+    list.devices-list.sound-devices {
+      > row.activatable {
+
+        &:selected, &:checked {
+          background-color: rgba($divider_color, 0.06);
+          color: $fg_color;
+          box-shadow: inset 2px 0 $primary_color;
+
+          label { color: $fg_color; }
+        }
+
+        label { padding-left: 16px; }
+      }
+    }
+  }
 }
 
 // Calendar
@@ -796,7 +830,7 @@ box.vertical > stack > box.vertical {
             image { padding: 0; }
           }
 
-//          box.horizontal > label:first-child { font-weight: 500; } // title labels
+          // box.horizontal > label:first-child { font-weight: 500; } // title labels
         }
       }
 
