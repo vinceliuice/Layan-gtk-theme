@@ -733,7 +733,7 @@ $text_shadow: 0 0 1px rgba(0, 0, 0, 0.26),
     // FIXME: unneeded 1px borders are reserved by its code itself
     border: none;
 
-//    &, &.marching-ants { transition: none; } // unset transitions
+    // &, &.marching-ants { transition: none; } // unset transitions
   }
 
   button.flat { @extend %panelbutton; }

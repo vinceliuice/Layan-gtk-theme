@@ -46,111 +46,42 @@
   }
 }
 
-.nautilus-window.background.csd,
-.nautilus-window.background.csd, notebook {
-  background-color: transparent;
-  border-radius: 0 0 $windows_radius $windows_radius;
-}
-
-.nautilus-window.background.csd notebook > stack {
-  background-color: transparent;
-  border-radius: $windows_radius;
-}
-
-// No border radius when window maximized
-.nautilus-window.maximized,
-.nautilus-window.maximized notebook,
-.nautilus-window.maximized notebook > stack { border-radius: 0; }
-
-.nautilus-window headerbar {
-
-  .path-bar-box { // Fixed nautilus 3.30 pathbar
-    background-image: $theme_image;
-    background-size: auto auto;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border-radius: 100px;
-    padding-left: 22px;
-    margin-left: 6px;
-    margin-right: 6px;
-    box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
-
-    button { @extend %pathbar_box_button; }
-
-    .linked.nautilus-path-bar { // for ≥ 3.31.90
-      button.text-button,
-      button.image-button.text-button {
-        margin-top: 0;
-        margin-bottom: 0;
-        border-radius: 100px;
-
-        &:not(:only-child):last-child {
-          color: $inverse_fg_color;
-          border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                        $inverse_fg_color 100%,
-                                        transparent 0%)
-                                        0 0 2 / 0 0 2px;
-
-
-          &:backdrop {
-            color: $inverse_disabled_fg_color;
-            border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                          $inverse_disabled_fg_color 100%,
-                                          transparent 0%)
-                                          0 0 2 / 0 0 2px;
-          }
-        }
-      }
-    }
-
-    &.width-maximized {
-      // button { @extend %pathbar_box_button; }
-    }
-
-    // workaround for 3.30.1
-    &.background.frame {
-      border: none;
-      background-color: transparent;
-    }
-  }
-}
-
-// Ensure paned separator rendering. See issue #84 for details.
-.nautilus-window paned > separator {
-  min-width: 20px;
-  color: transparent;
-  background-image: url("assets/scalable/side-paned.svg");
-  background-size: 20px 750px;
-  background-position: left center;
-  background-repeat: no-repeat;
-}
-
 $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color, $titlebar_bg_color);
 
-// Nautilus placessidebar
 .nautilus-window {
   background-image: $theme_image;
   background-size: 48px auto;
   background-position: left bottom;
   background-repeat: no-repeat;
 
-  headerbar {
-    background-color: if($solid == 'false', rgba($titlebar_bg_color, 0.97), $titlebar_bg_color);
-    background-image: if($titlebar == 'dark' and $variant == 'light', url("assets/scalable/header-icon-alt.svg"), url("assets/scalable/header-icon.svg"));
-    background-size: 48px auto;
-    background-position: left bottom;
-    background-repeat: no-repeat;
-    padding-left: 54px;
-    box-shadow: inset 0 1px $titlebar_highlight_color;
-  }
-
   &.csd.background {
     background-color: if($solid == 'false', rgba($nautilus_bg_color, 0.97), $nautilus_bg_color);
     border-radius: 0 0 $windows_radius $windows_radius; // It also has an effect on nautilus notebook stacks background
+
+    notebook {
+      background-color: transparent;
+      border-radius: 0 0 $windows_radius $windows_radius;
+
+      > stack {
+        background-color: transparent;
+        border-radius: $windows_radius;
+      }
+
+      scrolledwindow  .view:not(:hover):not(:active):not(:selected) {
+        background-color: transparent;
+
+        header button:not(:hover):not(:active):not(:checked) {
+          background-color: transparent;
+        }
+      }
+    }
   }
 
+  // No border radius when window maximized
   &.maximized.csd.background,
-  &.maximized placessidebar { border-radius: 0; }
+  &.maximized placessidebar,
+  &.maximized notebook,
+  &.maximized notebook > stack { border-radius: 0; }
 
   placessidebar.sidebar {
     background-color: transparent;
@@ -192,16 +123,173 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
 
     separator { background-color: transparent; }
   }
+
+  headerbar {
+    background-color: if($solid == 'false', rgba($titlebar_bg_color, 0.97), $titlebar_bg_color);
+    background-image: if($titlebar == 'dark' and $variant == 'light', url("assets/scalable/header-icon-alt.svg"), url("assets/scalable/header-icon.svg"));
+    background-size: 48px auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    padding-left: 54px;
+    box-shadow: inset 0 1px $titlebar_highlight_color;
+
+    > revealer > button { @extend %circular_button; } // Make operations button circular
+
+    .path-bar-box { // Fixed nautilus 3.30 pathbar
+      background-image: $theme_image;
+      background-size: auto auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 100px;
+      padding-left: 22px;
+      margin-left: 6px;
+      margin-right: 6px;
+      box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
+
+      button { @extend %pathbar_box_button; }
+
+      .linked.nautilus-path-bar { // for ≥ 3.31.90
+        button.text-button,
+        button.image-button.text-button {
+          margin-top: 0;
+          margin-bottom: 0;
+          border-radius: 100px;
+
+          &:not(:only-child):last-child {
+            color: $inverse_fg_color;
+            border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                          $inverse_fg_color 100%,
+                                          transparent 0%)
+                                          0 0 2 / 0 0 2px;
+
+
+            &:backdrop {
+              color: $inverse_disabled_fg_color;
+              border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                            $inverse_disabled_fg_color 100%,
+                                            transparent 0%)
+                                            0 0 2 / 0 0 2px;
+            }
+          }
+        }
+      }
+
+      // &.width-maximized {
+      //   button { @extend %pathbar_box_button; }
+      // }
+
+      // workaround for 3.30.1
+      &.background.frame {
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
+
+  paned > separator { // Ensure paned separator rendering. See issue #84 for details.
+    min-width: 20px;
+    color: transparent;
+    background-image: url("assets/scalable/side-paned.svg");
+    background-size: 20px 750px;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  // Floating status bar
+  .floating-bar {
+    @extend %osd;
+    // @extend .toolbar.osd;
+
+    min-height: 32px;
+    padding: 0;
+    border-style: solid solid none;
+    border-width: 1px;
+    border-color: $border_color;
+    border-radius: $windows_radius $windows_radius 0 0;
+    background-color: $base_color;
+    background-clip: $extra_background_clip;
+    transition: $longer_transition, border-width 0;
+
+    &.bottom.left { // axes left border and border radius
+      margin-right: 8px - 1px;
+      border-left-style: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: $windows_radius;
+    }
+
+    &.bottom.right { // axes right border and border radius
+      margin-left: 8px - 1px;
+      border-right-style: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: $windows_radius;
+    }
+
+    button {
+      margin: (32px - $small_size) / 2;
+
+      @extend %small_button;
+    }
+  }
+
+  // Reset maximized nautilus-window floating-bar border-radius
+  &.maximized .floating-bar {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  // Workaround for the double border of the searchbar since we use a revealer which
+  // always allocates at least 1 pixel
+  searchbar {
+    border-top: 1px solid $border_color;
+    background-color: rgba($bg_color, 0.65);
+  }
+
+  .searchbar-container { margin-top: -1px; }
+
+  // Icon view
+  flowboxchild {
+    // > widget > box > .icon-background { background-color: black; }
+
+    > widget > .icon-item-background {
+      padding: 4px;
+      border-radius: $material_radius;
+    }
+
+    &:selected {
+      background-color: transparent;
+
+      > widget > .icon-item-background {
+        background-color: $primary_color;
+      }
+    }
+  }
+
+  // Tweak to fix the messy sizing of the popover menu
+  > popover.menu:not(:last-child) {
+    padding: 3px;
+
+    > stack > box > box > box {
+      margin-top: -6px;
+
+      > box {
+        margin-bottom: -6px;
+
+        &.linked { margin-top: 1px; }
+      }
+    }
+
+    separator { margin-bottom: -2px; }
+  }
 }
 
 .nautilus-canvas-item {
   border-radius: $material_radius;
 }
 
-.nautilus-canvas-item.dim-label,
-.nautilus-list-dim-label {
-  // @extend .dim-label;
-}
+// .nautilus-canvas-item.dim-label,
+// .nautilus-list-dim-label {
+//   @extend .dim-label;
+// }
 
 .nautilus-desktop.nautilus-canvas-item:not(:selected) {
   // background-color: rgba($black, $lower_opacity);
@@ -222,49 +310,6 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
   animation: needs_attention_keyframes $longer_duration $standard_curve 4 alternate;
 }
 
-// Floating status bar
-.nautilus-window .floating-bar {
-  @extend %osd;
-
-  // @extend .toolbar.osd;
-
-  min-height: 32px;
-  padding: 0;
-  border-style: solid solid none;
-  border-width: 1px;
-  border-color: $border_color;
-  border-radius: $windows_radius $windows_radius 0 0;
-  background-color: $base_color;
-  background-clip: $extra_background_clip;
-  transition: $longer_transition, border-width 0;
-
-  &.bottom.left { // axes left border and border radius
-    margin-right: 8px - 1px;
-    border-left-style: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: $windows_radius;
-  }
-
-  &.bottom.right { // axes right border and border radius
-    margin-left: 8px - 1px;
-    border-right-style: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: $windows_radius;
-  }
-
-  button {
-    margin: (32px - $small_size) / 2;
-
-    @extend %small_button;
-  }
-}
-
-// Reset maximized nautilus-window floating-bar border-radius
-.nautilus-window.maximized .floating-bar {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
 .disk-space-display {
   // border-style: solid;
   // border-width: $buttons_radius;
@@ -276,44 +321,15 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
 
 // View
 // Hide superfluous treeview drop target indication
-.nautilus-list-view .view:not(.dnd) {
-  // border-bottom: 1px solid $border_color;
-}
+// .nautilus-list-view .view:not(.dnd) {
+//   border-bottom: 1px solid $border_color;
+// }
 
 .documents-entry-tag {
   @extend .entry-tag;
 }
 
-// Workaround for the double border of the searchbar since we use a revealer which
-// always allocates at least 1 pixel
-.nautilus-window {
-  searchbar {
-    border-top: 1px solid $border_color;
-    background-color: rgba($bg_color, 0.65);
-  }
-
-  .searchbar-container { margin-top: -1px; }
-}
-
 .conflict-row:not(:selected) { background-color: mix($warning_color, $base_color, percentage($lower_opacity)); }
-
-// Icon view
-.nautilus-window flowboxchild {
-  // > widget > box > .icon-background { background-color: black; }
-
-  > widget > .icon-item-background {
-    padding: 4px;
-    border-radius: $material_radius;
-  }
-
-  &:selected {
-    background-color: transparent;
-
-    > widget > .icon-item-background {
-      background-color: $primary_color;
-    }
-  }
-}
 
 // Batch rename dialog
 dialog.background > box.dialog-vbox.vertical > grid.horizontal {
@@ -328,23 +344,6 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
   }
 }
 
-// Tweak to fix the messy sizing of the popover menu
-.nautilus-window > popover.menu:not(:last-child) {
-  padding: 3px;
-
-  > stack > box > box > box {
-    margin-top: -6px;
-
-    > box {
-      margin-bottom: -6px;
-
-      &.linked { margin-top: 1px; }
-    }
-  }
-
-  separator { margin-bottom: -2px; }
-}
-
 .nautilus-menu-sort-heading {
   // min-height: 26px;
   // padding-left: 5px;
@@ -354,9 +353,6 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal {
 
   &:disabled { color: $hint_fg_color; }
 }
-
-// Make operations button circular
-.nautilus-window headerbar > revealer > button { @extend %circular_button; }
 
 
 /*********
@@ -1439,8 +1435,8 @@ window#GearyMainWindow.background.csd {
  * Dialogs *
  ***********/
 dialog.background.csd {
-  box.dialog-vbox {
-    grid.horizontal {
+  > box.dialog-vbox {
+    > grid.horizontal {
       > scrolledwindow.frame {
         > viewport.frame {
           list:first-child { border-radius: 0 0 0 $windows_radius; }

@@ -3344,6 +3344,29 @@ messagedialog { // Message Dialog styling
 }
 
 filechooser {
+  .background.csd &, .background.csd & placessidebar {
+    background: none;
+    border-radius: 0 0 $windows_radius $windows_radius;
+
+    list { background-color: transparent; }
+  }
+
+  .maximized & placessidebar { border-radius: 0; }
+
+  stack.view {
+    background-color: transparent;
+
+    scrolledwindow {
+      background-color: $base_color;
+      border-radius: 0 0 $windows_radius $windows_radius;
+
+      treeview.view {
+        @extend %view;
+        background-color: transparent;
+      }
+    }
+  }
+
   .dialog-action-box { border-top: 1px solid $border_color; }
 
   #pathbarbox {
