@@ -94,7 +94,6 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
     }
 
     row.sidebar-row {
-      transition: none;
       padding-left: 6px;
       border-radius: 0 $buttons_radius $buttons_radius 0;
 
@@ -105,7 +104,6 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
 
       &:hover {
         background-color: rgba($divider_color, 0.0);
-        transition: none;
       }
 
       &:backdrop { opacity: 0.85; }

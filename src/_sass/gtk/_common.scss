@@ -1689,14 +1689,14 @@ menu,
     color: $menu_fg_color;
 
     &.top {
-      margin-top: -4px;
+      margin: -4px -3px 0 -3px;
       border-bottom: 1px solid $menu_border_color;
       border-radius: $buttons_radius $buttons_radius 0 0;
       -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
     }
 
     &.bottom {
-      margin-bottom: -4px * 3;
+      margin: 8px -3px -12px -3px;
       border-top: 1px solid $menu_border_color;
       border-radius: 0 0 $buttons_radius $buttons_radius;
       -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');

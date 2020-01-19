@@ -2143,7 +2143,7 @@ menu > arrow,
 menu > arrow.top,
 .menu > arrow.top,
 .context-menu > arrow.top {
-  margin-top: -4px;
+  margin: -4px -3px 0 -3px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 7px 7px 0 0;
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
@@ -2152,7 +2152,7 @@ menu > arrow.top,
 menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom {
-  margin-bottom: -12px;
+  margin: 8px -3px 0 -3px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0 0 7px 7px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -4079,12 +4079,12 @@ radio {
 
 
 radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1315789474, to(#7C4DFF), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.13158, to(#7C4DFF), to(transparent));
 }
 
 
 radio:checked:not(:indeterminate):disabled {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1315789474, to(rgba(124, 77, 255, 0.5)), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.13158, to(rgba(124, 77, 255, 0.5)), to(transparent));
 }
 
 window.background:not(.csd) > widget > checkbutton > check,
@@ -5823,7 +5823,6 @@ button.emoji-section:last-child {
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row {
-  transition: none;
   padding-left: 6px;
   border-radius: 0 7px 7px 0;
 }
@@ -5839,7 +5838,6 @@ button.emoji-section:last-child {
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:hover {
   background-color: rgba(255, 255, 255, 0);
-  transition: none;
 }
 
 .nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
