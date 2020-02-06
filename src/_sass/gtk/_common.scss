@@ -3481,14 +3481,20 @@ placessidebar {
   row {
     // Needs overriding of the GtkListBoxRow padding
     min-height: 32px;
-    margin: -1px 0; // Remove unknown margins
+    margin: -1px 4px -1px 0; // Remove unknown margins
     padding: 0;
+    border-radius: 0 $buttons_radius $buttons_radius 0;
 
     // Using margins/padding directly in the SidebarRow
     // will make the animation of the new bookmark row jump
     > revealer { padding: 0 12px; }
 
-    &:selected { color: $inverse_fg_color; }
+    &:selected {
+      background-color: rgba($divider_color, 0.06);
+      color: $primary_color;
+
+      image.sidebar-icon, label.sidebar-label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }
+    }
 
     &:disabled { color: $disabled_fg_color; }
 

@@ -1092,11 +1092,7 @@ button:visited:active {
   color: #E040FB;
 }
 
-infobar.info *:link, infobar.info button:link,
-infobar.info button:visited, infobar.question *:link, infobar.question button:link,
-infobar.question button:visited, infobar.warning *:link, infobar.warning button:link,
-infobar.warning button:visited, infobar.error *:link, infobar.error button:link,
-infobar.error button:visited, *:link:selected, button:selected:link,
+infobar.info :link, infobar.question :link, infobar.warning :link, infobar.error :link, *:link:selected, button:selected:link,
 button:selected:visited, .selection-mode.titlebar:not(headerbar) .subtitle:link,
 headerbar.selection-mode .subtitle:link,
 *:selected *:link,
@@ -2152,7 +2148,7 @@ menu > arrow.top,
 menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom {
-  margin: 8px -3px 0 -3px;
+  margin: 8px -3px -12px -3px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0 0 7px 7px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
@@ -4079,12 +4075,12 @@ radio {
 
 
 radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.13158, to(#7C4DFF), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1315789474, to(#7C4DFF), to(transparent));
 }
 
 
 radio:checked:not(:indeterminate):disabled {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.13158, to(rgba(124, 77, 255, 0.5)), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1315789474, to(rgba(124, 77, 255, 0.5)), to(transparent));
 }
 
 window.background:not(.csd) > widget > checkbutton > check,
@@ -4999,8 +4995,9 @@ placessidebar list {
 
 placessidebar row {
   min-height: 32px;
-  margin: -1px 0;
+  margin: -1px 4px -1px 0;
   padding: 0;
+  border-radius: 0 7px 7px 0;
 }
 
 placessidebar row > revealer {
@@ -5008,7 +5005,12 @@ placessidebar row > revealer {
 }
 
 placessidebar row:selected {
-  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.06);
+  color: #5657f5;
+}
+
+placessidebar row:selected image.sidebar-icon, placessidebar row:selected label.sidebar-label {
+  color: #5657f5;
 }
 
 placessidebar row:disabled {
@@ -6896,6 +6898,59 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > vi
   background-color: transparent;
 }
 
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list), hdyleaflet frame.view, hdyleaflet list.view.frame {
+  border-radius: 7px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) row.activatable:first-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) treeview.view:first-child,
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) .view:first-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) iconview:first-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) treeview.view header button:first-child, treeview.view header hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) button:first-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) .budgie-menu button:first-child, .budgie-menu hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) button:first-child, hdyleaflet frame.view list row.activatable:first-child, hdyleaflet frame.view list filechooser stack.view scrolledwindow treeview.view:first-child, filechooser stack.view scrolledwindow hdyleaflet frame.view list treeview.view:first-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet frame.view list treeview.view:first-child,
+hdyleaflet frame.view list .view:first-child, hdyleaflet frame.view list iconview:first-child, hdyleaflet frame.view list treeview.view header button:first-child, treeview.view header hdyleaflet frame.view list button:first-child, hdyleaflet frame.view list .budgie-menu button:first-child, .budgie-menu hdyleaflet frame.view list button:first-child, hdyleaflet list.view.frame row.activatable:first-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:first-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet list.view.frame treeview.view:first-child,
+hdyleaflet list.view.frame .view:first-child, hdyleaflet list.view.frame iconview:first-child, hdyleaflet list.view.frame treeview.view header button:first-child, treeview.view header hdyleaflet list.view.frame button:first-child, hdyleaflet list.view.frame .budgie-menu button:first-child, .budgie-menu hdyleaflet list.view.frame button:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) row.activatable:last-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) treeview.view:last-child,
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) .view:last-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) iconview:last-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) treeview.view header button:last-child, treeview.view header hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) button:last-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) .budgie-menu button:last-child, .budgie-menu hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) button:last-child, hdyleaflet frame.view list row.activatable:last-child, hdyleaflet frame.view list filechooser stack.view scrolledwindow treeview.view:last-child, filechooser stack.view scrolledwindow hdyleaflet frame.view list treeview.view:last-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet frame.view list treeview.view:last-child,
+hdyleaflet frame.view list .view:last-child, hdyleaflet frame.view list iconview:last-child, hdyleaflet frame.view list treeview.view header button:last-child, treeview.view header hdyleaflet frame.view list button:last-child, hdyleaflet frame.view list .budgie-menu button:last-child, .budgie-menu hdyleaflet frame.view list button:last-child, hdyleaflet list.view.frame row.activatable:last-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:last-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet list.view.frame treeview.view:last-child,
+hdyleaflet list.view.frame .view:last-child, hdyleaflet list.view.frame iconview:last-child, hdyleaflet list.view.frame treeview.view header button:last-child, treeview.view header hdyleaflet list.view.frame button:last-child, hdyleaflet list.view.frame .budgie-menu button:last-child, .budgie-menu hdyleaflet list.view.frame button:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) row.activatable:only-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) treeview.view:only-child,
+hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) .view:only-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) iconview:only-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) treeview.view header button:only-child, treeview.view header hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) button:only-child, hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) .budgie-menu button:only-child, .budgie-menu hdyleaflet frame:not(.view):not(iconview) list:not(.contacts-contact-list) button:only-child, hdyleaflet frame.view list row.activatable:only-child, hdyleaflet frame.view list filechooser stack.view scrolledwindow treeview.view:only-child, filechooser stack.view scrolledwindow hdyleaflet frame.view list treeview.view:only-child, hdyleaflet frame.view list window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet frame.view list treeview.view:only-child,
+hdyleaflet frame.view list .view:only-child, hdyleaflet frame.view list iconview:only-child, hdyleaflet frame.view list treeview.view header button:only-child, treeview.view header hdyleaflet frame.view list button:only-child, hdyleaflet frame.view list .budgie-menu button:only-child, .budgie-menu hdyleaflet frame.view list button:only-child, hdyleaflet list.view.frame row.activatable:only-child, hdyleaflet list.view.frame window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:only-child, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet list.view.frame treeview.view:only-child,
+hdyleaflet list.view.frame .view:only-child, hdyleaflet list.view.frame iconview:only-child, hdyleaflet list.view.frame treeview.view header button:only-child, treeview.view header hdyleaflet list.view.frame button:only-child, hdyleaflet list.view.frame .budgie-menu button:only-child, .budgie-menu hdyleaflet list.view.frame button:only-child {
+  border-radius: 7px;
+}
+
+hdyleaflet frame > border {
+  border: none;
+}
+
+hdyleaflet frame.view list {
+  background: none;
+}
+
+hdyleaflet > box.vertical list:not(.view):not(iconview) row.activatable, hdyleaflet > box.vertical list:not(.view):not(iconview) filechooser stack.view scrolledwindow treeview.view, filechooser stack.view scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view, hdyleaflet > box.vertical list:not(.view):not(iconview) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view,
+hdyleaflet > box.vertical list:not(.view):not(iconview) .view, hdyleaflet > box.vertical list:not(.view):not(iconview) iconview, hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view header button, treeview.view header hdyleaflet > box.vertical list:not(.view):not(iconview) button, hdyleaflet > box.vertical list:not(.view):not(iconview) .budgie-menu button, .budgie-menu hdyleaflet > box.vertical list:not(.view):not(iconview) button {
+  margin-right: 4px;
+  border-radius: 0 7px 7px 0;
+}
+
+hdyleaflet > box.vertical list:not(.view):not(iconview) row.activatable:selected, hdyleaflet > box.vertical list:not(.view):not(iconview) filechooser stack.view scrolledwindow treeview.view:selected, filechooser stack.view scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view:selected, hdyleaflet > box.vertical list:not(.view):not(iconview) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view:selected,
+hdyleaflet > box.vertical list:not(.view):not(iconview) .view:selected, hdyleaflet > box.vertical list:not(.view):not(iconview) iconview:selected, hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view header button:selected, treeview.view header hdyleaflet > box.vertical list:not(.view):not(iconview) button:selected, hdyleaflet > box.vertical list:not(.view):not(iconview) .budgie-menu button:selected, .budgie-menu hdyleaflet > box.vertical list:not(.view):not(iconview) button:selected {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: #5657f5;
+}
+
+hdyleaflet > box.vertical list:not(.view):not(iconview) row.activatable:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) filechooser stack.view scrolledwindow treeview.view:selected image, filechooser stack.view scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected image, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) .view:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) iconview:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view header button:selected image, treeview.view header hdyleaflet > box.vertical list:not(.view):not(iconview) button:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) .budgie-menu button:selected image, .budgie-menu hdyleaflet > box.vertical list:not(.view):not(iconview) button:selected image, hdyleaflet > box.vertical list:not(.view):not(iconview) row.activatable:selected label, hdyleaflet > box.vertical list:not(.view):not(iconview) filechooser stack.view scrolledwindow treeview.view:selected label, filechooser stack.view scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view:selected label, hdyleaflet > box.vertical list:not(.view):not(iconview) window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected label, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view:selected label, hdyleaflet > box.vertical list:not(.view):not(iconview) .view:selected label, hdyleaflet > box.vertical list:not(.view):not(iconview) iconview:selected label, hdyleaflet > box.vertical list:not(.view):not(iconview) treeview.view header button:selected label, treeview.view header hdyleaflet > box.vertical list:not(.view):not(iconview) button:selected label, hdyleaflet > box.vertical list:not(.view):not(iconview) .budgie-menu button:selected label, .budgie-menu hdyleaflet > box.vertical list:not(.view):not(iconview) button:selected label {
+  color: #5657f5;
+}
+
 /************************
  * Gnome system monitor *
  ************************/
@@ -7080,6 +7135,14 @@ dialog.background.csd > box.dialog-vbox > stack > stack > scrolledwindow iconvie
 
 dialog.background.csd > box.dialog-vbox notebook > stack {
   border-radius: 0 0 13px 13px;
+}
+
+dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame {
+  border-radius: 7px;
+}
+
+dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame viewport.view.frame {
+  border-radius: 7px;
 }
 
 .nemo-window .nemo-places-sidebar {

@@ -1257,6 +1257,68 @@ window.background.csd {
   }
 }
 
+%circular_list {
+  border-radius: $buttons_radius;
+  box-shadow: none;
+  border: 1px solid $border_color;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $buttons_radius;
+    border-top-right-radius: $buttons_radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $buttons_radius;
+    border-bottom-right-radius: $buttons_radius;
+  }
+
+  &:only-child {
+    border-radius: $buttons_radius;
+  }
+}
+
+hdyleaflet {
+  frame > border { border: none; }
+
+  frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+
+  frame.view {
+    @extend %circular_list;
+
+    list {
+      background: none;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  list.view.frame {
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+
+  > box.vertical list:not(.view) {
+    row.activatable {
+      margin-right: 4px;
+      border-radius: 0 $buttons_radius $buttons_radius 0;
+
+      &:selected {
+        background-color: rgba($divider_color, 0.06);
+        color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
+
+        image, label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }
+      }
+    }
+  }
+}
+
 /************************
  * Gnome system monitor *
  ************************/
@@ -1458,6 +1520,14 @@ dialog.background.csd {
 
     notebook > stack {
       border-radius: 0 0 $windows_radius $windows_radius;
+    }
+
+    stack scrolledwindow.frame {
+      border-radius: $buttons_radius;
+
+      viewport.view.frame {
+        border-radius: $buttons_radius;
+      }
     }
   }
 }
