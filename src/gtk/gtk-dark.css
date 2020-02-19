@@ -7110,6 +7110,25 @@ window#GearyMainWindow.background.csd stack#conversation_viewer scrolledwindow.g
   border-bottom-right-radius: 13px;
 }
 
+/************
+ * Terminal *
+ ************/
+window.background > box.vertical > box.horizontal > frame > border {
+  border-width: 0 1px 0 0;
+}
+
+window.background > box.vertical > box.horizontal > frame > scrolledwindow > viewport.frame list {
+  border-bottom-left-radius: 13px;
+}
+
+window.background > box.vertical > box.horizontal > stack > widget > notebook.frame {
+  border-width: 0;
+}
+
+window.background > box.vertical > box.horizontal > stack > widget > notebook.frame > stack {
+  border-bottom-right-radius: 13px;
+}
+
 /***********
  * Dialogs *
  ***********/
