@@ -7152,15 +7152,23 @@ dialog.background.csd > box.dialog-vbox > stack > stack > scrolledwindow iconvie
   background-color: transparent;
 }
 
-dialog.background.csd > box.dialog-vbox notebook > stack {
-  border-radius: 0 0 13px 13px;
-}
-
 dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame {
   border-radius: 7px;
 }
 
-dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame viewport.view.frame {
+dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame textview.view {
+  border-radius: 7px;
+}
+
+dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame textview.view > text {
+  background: none;
+}
+
+dialog.background.csd > box.dialog-vbox stack scrolledwindow.frame treeview.view:not(:hover):not(:selected) {
+  background: none;
+}
+
+dialog.background.csd > box.dialog-vbox stack scrolledwindow viewport.frame.view {
   border-radius: 7px;
 }
 
@@ -8843,6 +8851,11 @@ popover.background.places-menu row {
 .budgie-panel menubar > menuitem menu menu,
 .budgie-panel .menubar > menuitem menu menu {
   border-radius: 8px;
+}
+
+.budgie-panel menubar > menuitem menu separator,
+.budgie-panel .menubar > menuitem menu separator {
+  background: none;
 }
 
 .budgie-panel .alert {

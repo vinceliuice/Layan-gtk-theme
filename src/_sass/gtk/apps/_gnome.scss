@@ -1545,15 +1545,23 @@ dialog.background.csd {
       }
     }
 
-    notebook > stack {
-      border-radius: 0 0 $windows_radius $windows_radius;
-    }
-
-    stack scrolledwindow.frame {
-      border-radius: $buttons_radius;
-
-      viewport.view.frame {
+    stack scrolledwindow {
+      &.frame {
         border-radius: $buttons_radius;
+
+        textview.view {
+          border-radius: $buttons_radius;
+
+          > text {
+            background: none;
+          }
+        }
+
+        treeview.view:not(:hover):not(:selected) { background: none; }
+      }
+
+      viewport.frame {
+        &.view { border-radius: $buttons_radius; }
       }
     }
   }

@@ -388,7 +388,7 @@ popover.background.places-menu {
 
   button {
     @extend %flat_button;
-//    @extend %button_selected.flat;
+    // @extend %button_selected.flat;
 
     min-height: 16px;
     min-width: 16px;
@@ -417,6 +417,8 @@ popover.background.places-menu {
         menu { //submenu
           border-radius: $menu_radius;
         }
+
+        separator { background: none; }
       }
     }
   }
