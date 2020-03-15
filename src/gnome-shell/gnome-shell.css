@@ -766,6 +766,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu {
   min-width: 200px;
   color: rgba(0, 0, 0, 0.75);
+  background: transparent; /*Fixes popup transparency issue on Pop_OS*/
 }
 
 .popup-menu .popup-sub-menu {
