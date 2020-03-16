@@ -766,6 +766,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .popup-menu {
   min-width: 200px;
   color: rgba(0, 0, 0, 0.75);
+  background: none;
 }
 
 .popup-menu .popup-sub-menu {
@@ -3381,4 +3382,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .search-entry:hover .search-entry-icon, .popup-menu .search-entry:focus .search-entry-icon {
   color: rgba(0, 0, 0, 0.75);
+}
+
+/* OpenWeather Extension */
+.openweather-button-action {
+  border: 1px solid transparent;
+  background: none;
 }
