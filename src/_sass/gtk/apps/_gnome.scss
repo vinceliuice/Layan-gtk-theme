@@ -1317,6 +1317,12 @@ hdyleaflet {
       }
     }
   }
+
+  > separator.sidebar {
+    border-right-style: none;
+    background: none;
+    min-width: 0;
+  }
 }
 
 /************************
@@ -1366,10 +1372,8 @@ window.background.csd {
       border-bottom-width: 0;
     }
 
-    > overlay > stack > box.horizontal > grid.horizontal {
-      > scrolledwindow.contacts-contact-form {
-        border-bottom-right-radius: $windows_radius;
-      }
+    .contacts-contact-form {
+      border-bottom-right-radius: $windows_radius;
     }
   }
 }

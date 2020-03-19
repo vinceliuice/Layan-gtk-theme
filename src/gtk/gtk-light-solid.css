@@ -6951,6 +6951,12 @@ hdyleaflet > box.vertical list:not(.view):not(iconview) row.activatable:selected
   color: #5657f5;
 }
 
+hdyleaflet > separator.sidebar {
+  border-right-style: none;
+  background: none;
+  min-width: 0;
+}
+
 /************************
  * Gnome system monitor *
  ************************/
@@ -6987,7 +6993,7 @@ window.background.csd > overlay > grid.horizontal > frame:dir(ltr) > border {
   border-bottom-width: 0;
 }
 
-window.background.csd > overlay > grid.horizontal > overlay > stack > box.horizontal > grid.horizontal > scrolledwindow.contacts-contact-form {
+window.background.csd > overlay > grid.horizontal .contacts-contact-form {
   border-bottom-right-radius: 13px;
 }
 
