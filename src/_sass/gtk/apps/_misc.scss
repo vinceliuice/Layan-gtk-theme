@@ -8,8 +8,6 @@
     &.frame { border-width: 0; }
 
     .places-treeview {
-      // @extend row.activatable;
-
       &:not(:hover):not(:selected) { background-color: transparent; }
     }
   }
@@ -48,7 +46,7 @@
       padding: 0 0;
       border-image: none;
       color: $titlebar_secondary_fg_color;
-      @extend %button_basic.flat;
+      @extend %flat_button;
       @extend %circular_button;
 
       &:hover, &:active { color: $titlebar_fg_color; }
@@ -104,7 +102,7 @@
     scrolledwindow.frame { border: none; } // Removed treeview double borders
   }
 
-  .toolbar button { @extend %button_basic.flat; }
+  .toolbar button { @extend %flat_button; }
 }
 
 /*********
@@ -791,7 +789,7 @@ window#whiskermenu-window {
     border-radius: 0;
   }
 
-  entry { @extend %entry.flat; }
+  entry { @extend %flat_entry; }
 
   scrolledwindow {
     > viewport button.radio {

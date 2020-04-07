@@ -117,7 +117,7 @@
   }
 
   entry,
-  spinbutton:not(.vertical) { @extend %entry.flat; }
+  spinbutton:not(.vertical) { @extend %flat_entry; }
 
   spinbutton:not(.vertical) entry { @extend %spinbutton_entry; }
   button.combo { @extend %combo_flat; }
@@ -277,7 +277,7 @@ window.budgie-popover:not(.csd) {
   }
 
   button {
-    @extend row.activatable;
+    @extend %row_activatable;
 
     min-height: 32px;
     padding: 0 8px;
@@ -388,7 +388,7 @@ popover.background.places-menu {
 
   button {
     @extend %flat_button;
-    // @extend %button_selected.flat;
+    // @extend %button_selected_flat;
 
     min-height: 16px;
     min-width: 16px;
@@ -435,7 +435,6 @@ popover.background.places-menu {
   #tasklist-button {
     padding: 0 4px;
     @extend %underscores;
-//    &:hover { @extend %budgie_flat_button:hover; }
   }
 
   &.vertical #tasklist-button { min-height: 32px; }
@@ -445,7 +444,8 @@ popover.background.places-menu {
     padding: 0;
     @extend %underscores;
     &:checked, &:active {
-      @extend %budgie_flat_button:checked;
+      background-color: rgba($inverse_fg_color, 0.15);
+      color: $inverse_fg_color;
       transition: background-color 0, border-image $ripple_duration $deceleration_curve;
     }
 
@@ -542,7 +542,9 @@ popover.background.places-menu {
       }
 
       &:checked {
-        @extend %budgie_flat_button:checked;
+        background-color: rgba($inverse_fg_color, 0.15);
+        color: $inverse_fg_color;
+
         &:hover { transition: none; }
         > image { background-image: none; }
       }
@@ -691,7 +693,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
     grid > label:first-child { min-height: $medium_size; } // workaround to fix vertical-align
 
     // for <10.4
-    spinbutton:not(.vertical) { @extend %entry.flat; }
+    spinbutton:not(.vertical) { @extend %flat_entry; }
 
     // for <10.4
     button.combo { @extend %combo_flat; }
@@ -771,7 +773,7 @@ calendar.raven-calendar {
   button.image-button {
     padding: ($large_size - 24px) / 2;
 
-    @extend %button_selected.flat;
+    @extend %button_selected_flat;
   }
 }
 

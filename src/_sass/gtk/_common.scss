@@ -83,9 +83,8 @@ notebook:focus tab,
   }
 }
 
-%view,
-.view {
-  @extend row.activatable;
+%view, .view {
+  @extend %row_activatable;
 
   background-color: $base_color;
   color: $fg_color;
@@ -107,7 +106,7 @@ textview {
 }
 
 iconview {
-  @extend .view;
+  @extend %view;
   border-radius: $material_radius;
 }
 
@@ -160,7 +159,7 @@ label {
   &:disabled {
     color: $disabled_fg_color;
 
-    selection { @extend %selected_items:disabled; }
+    selection { color: $inverse_disabled_fg_color; }
 
     tab &,
     button & { color: inherit; }
@@ -215,95 +214,92 @@ spinner {
 /****************
  * Text Entries *
  ****************/
-%entry,
-entry {
-  %entry_basic, & {
-    min-height: $medium_size;
-    padding: 0 8px;
-    border-radius: $buttons_radius;
+%entry, entry {
+  min-height: $medium_size;
+  padding: 0 8px;
+  border-radius: $buttons_radius;
 
-    @include entry(normal);
+  @include entry(normal);
 
-    &:focus { @include entry(focus); }
+  &:focus { @include entry(focus); }
 
-    &:disabled { @include entry(disabled); }
+  &:disabled { @include entry(disabled); }
 
-    &.flat {
-      border-radius: 0;
+  @at-root %flat_entry, &.flat {
+    border-radius: 0;
 
-      @include entry(flat-normal);
+    @include entry(flat-normal);
 
-      &:focus { @include entry(flat-focus); }
+    &:focus { @include entry(flat-focus); }
 
-      &:disabled { @include entry(flat-disabled); }
-    }
-
-    image { // icons inside the entry
-      // @extend %simple_flat_button;
-
-      // min-height: $small_size;
-      // min-width: $small_size;
-      // border-radius: $circular_radius;
-      // -gtk-outline-radius: $circular_radius;
-      color: $secondary_fg_color;
-
-      &:hover, &:active { color: $fg_color; }
-
-      &:disabled { color: $hint_fg_color; }
-
-      &.left {
-        margin-left: ($medium_size - 16px) / 2 - 8px;
-        margin-right: 6px;
-      }
-
-      &.right {
-        margin-left: 6px;
-        margin-right: ($medium_size - 16px) / 2 - 8px;
-      }
-    }
-
-    undershoot {
-      &.left { @include undershoot(left); }
-
-      &.right { @include undershoot(right); }
-    }
-
-    selection { @extend %selected_items; }
-
-    // entry error and warning style
-    @each $e_type, $e_color in (error, $error_color),
-                               (warning, $warning_color) {
-      &.#{$e_type} {
-        @include entry(normal, $e_color);
-
-        &:focus { @include entry(focus, $e_color); }
-
-        &:disabled { @include entry(disabled, $e_color); }
-
-        &.flat {
-          @include entry(flat-normal, $e_color);
-
-          &:focus { @include entry(flat-focus, $e_color); }
-
-          &:disabled { @include entry(flat-disabled, $e_color); }
-        }
-
-        image {
-          color: $inverse_secondary_fg_color;
-
-          &:hover, &:active { color: $inverse_fg_color; }
-
-          &:disabled { color: $inverse_hint_fg_color; }
-        }
-      }
-    }
-
-    &:drop(active) {
-      // box-shadow: inset 0 0 0 2px $accent_color;
-    }
-
-    .osd & { }
+    &:disabled { @include entry(flat-disabled); }
   }
+
+  image { // icons inside the entry
+    // @extend %simple_flat_button;
+
+    // min-height: $small_size;
+    // min-width: $small_size;
+    // border-radius: $circular_radius;
+    // -gtk-outline-radius: $circular_radius;
+    color: $secondary_fg_color;
+
+    &:hover, &:active { color: $fg_color; }
+
+    &:disabled { color: $hint_fg_color; }
+
+    &.left {
+      margin-left: ($medium_size - 16px) / 2 - 8px;
+      margin-right: 6px;
+    }
+
+    &.right {
+      margin-left: 6px;
+      margin-right: ($medium_size - 16px) / 2 - 8px;
+    }
+  }
+
+  undershoot {
+    &.left { @include undershoot(left); }
+
+    &.right { @include undershoot(right); }
+  }
+
+  selection { @extend %selected_items; }
+
+  // entry error and warning style
+  @each $e_type, $e_color in (error, $error_color),
+                             (warning, $warning_color) {
+    &.#{$e_type} {
+      @include entry(normal, $e_color);
+
+      &:focus { @include entry(focus, $e_color); }
+
+      &:disabled { @include entry(disabled, $e_color); }
+
+      &.flat {
+        @include entry(flat-normal, $e_color);
+
+        &:focus { @include entry(flat-focus, $e_color); }
+
+        &:disabled { @include entry(flat-disabled, $e_color); }
+      }
+
+      image {
+        color: $inverse_secondary_fg_color;
+
+        &:hover, &:active { color: $inverse_fg_color; }
+
+        &:disabled { color: $inverse_hint_fg_color; }
+      }
+    }
+  }
+
+  // &:drop(active) {
+    // box-shadow: inset 0 0 0 2px $accent_color;
+  // }
+
+  // .osd & { }
 
   progress {
     margin: 2px (2px - 8px);
@@ -483,7 +479,7 @@ button {
       color: $inverse_disabled_secondary_fg_color;
     }
 
-    &.flat {
+    @at-root %button_selected_flat, &.flat {
       color: $inverse_secondary_fg_color;
 
       &:hover, &:active { color: $inverse_fg_color; }
@@ -512,8 +508,8 @@ button {
   }
 
   // overlay / OSD style
-  @at-root %osd_button,
-  .osd & { }
+  // @at-root %osd_button,
+  // .osd & { }
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color, $b_image in (suggested-action, $suggested_color, $suggested_image),
@@ -608,11 +604,9 @@ button {
   // &.font { > box > box > label { font-weight: bold; }}
 
   // inline-toolbar buttons
-  .inline-toolbar & {
-    // @extend %button_basic.flat;
-
+  // .inline-toolbar & {
     // &:not(.text-button) { @extend %circular_button; }
-  }
+  // }
 
   .primary-toolbar & { -gtk-icon-shadow: none; } // tango icons don't need shadows
 
@@ -650,15 +644,8 @@ button {
 }
 
 // More inline toolbar buttons
-toolbar.inline-toolbar toolbutton {
-  // > button.flat { @extend %linked_middle; }
-
-  // &:first-child > button.flat { @extend %linked:first-child; }
-
-  // &:last-child > button.flat { @extend %linked:last-child; }
-
-  // &:only-child > button.flat { @extend %linked:only-child; }
-}
+// toolbar.inline-toolbar toolbutton {
+// }
 
 %linked_middle {
   border-radius: 0;
@@ -743,7 +730,7 @@ button.color {
 /*********
  * Links *
  *********/
-*:link {
+*:link, %links {
   &, &:hover, &:active { color: $link_color; }
 
   &:visited {
@@ -757,7 +744,7 @@ button.color {
 
 button:link,
 button:visited {
-  @extend *:link;
+  @extend %links;
 
   > label { text-decoration-line: underline; }
 }
@@ -911,15 +898,19 @@ combobox {
 
   &.linked {
     button:nth-child(2) {
-      &:dir(ltr) { @extend %linked:last-child; }
-      &:dir(rtl) { @extend %linked:first-child; }
+      &:dir(ltr) {
+        border-top-left-radius: $buttons_radius;
+        border-bottom-left-radius: $buttons_radius;
+      }
+      &:dir(rtl) {
+        border-top-right-radius: $buttons_radius;
+        border-bottom-right-radius: $buttons_radius;
+      }
     }
   }
 
   &:drop(active) { // FIXME: untested
     box-shadow: none;
-
-    // button.combo { @extend %button_basic:drop(active); }
   }
 }
 
@@ -930,21 +921,37 @@ combobox {
 .linked:not(.vertical) > combobox {
   > box > button.combo { @extend %linked_middle; }
 
-  &:first-child > box > button.combo { @extend %linked:first-child; }
+  &:first-child > box > button.combo {
+    border-top-left-radius: $buttons_radius;
+    border-bottom-left-radius: $buttons_radius;
+  }
 
-  &:last-child > box > button.combo { @extend %linked:last-child; }
+  &:last-child > box > button.combo {
+    border-bottom-left-radius: $buttons_radius;
+    border-bottom-right-radius: $buttons_radius;
+  }
 
-  &:only-child > box > button.combo { @extend %linked:only-child; }
+  &:only-child > box > button.combo {
+    border-radius: $buttons_radius;
+  }
 }
 
 .linked.vertical > combobox {
   > box > button.combo { @extend %linked_vertical_middle; }
 
-  &:first-child > box > button.combo { @extend %linked_vertical:first-child; }
+  &:first-child > box > button.combo {
+    border-top-left-radius: $buttons_radius;
+    border-top-right-radius: $buttons_radius;
+  }
 
-  &:last-child > box > button.combo { @extend %linked_vertical:last-child; }
+  &:last-child > box > button.combo {
+    border-bottom-left-radius: $buttons_radius;
+    border-bottom-right-radius: $buttons_radius;
+  }
 
-  &:only-child > box > button.combo { @extend %linked_vertical:only-child; }
+  &:only-child > box > button.combo {
+    border-radius: $buttons_radius;
+  }
 }
 
 %combo_flat {
@@ -978,13 +985,13 @@ toolbar {
   padding: 2px;
   background-color: $bg_color;
 
-  button { @extend %button_basic.flat; }
+  button { @extend %flat_button; }
 
   // on OSD
   .osd & { background-color: transparent; }
 
   // stand-alone OSD toolbars
-  &.osd {
+  @at-root %toolbar_osd, &.osd {
     transition: $shadow_transition;
     padding: $container_padding;
     border-radius: $buttons_radius;
@@ -1101,7 +1108,7 @@ headerbar {
 
   %header_button,
   button:not(.suggested-action):not(.destructive-action) {
-    @extend %button_basic.flat;
+    @extend %flat_button;
     border-image: none;
     color: $titlebar_secondary_fg_color;
     @extend %circular_button;
@@ -1160,7 +1167,7 @@ headerbar {
       color: $inverse_secondary_fg_color;
     }
 
-    .subtitle:link { @extend *:link:selected; }
+    .subtitle:link { @extend %link_selected; }
 
     button:not(.suggested-action):not(.destructive-action) {
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
@@ -1433,7 +1440,7 @@ headerbar { // headerbar border rounding
 
   > separator { background-color: $titlebar_bg_color; } // separator between titlebars
 
-  @extend %titlebar;
+  // @extend %titlebar;
 }
 
 /************
@@ -1549,7 +1556,7 @@ treeview.view {
 
   header {
     button {
-      @extend row.activatable;
+      @extend %row_activatable;
 
       padding: 2px 6px;
       border-style: none solid solid none;
@@ -1751,6 +1758,29 @@ $popover_fg: rgba($white, 0.7);
 $popover_disabled_fg: rgba($white, 0.3);
 $popover_border: rgba($white, 0.12);
 
+%popover_flat_button {
+  color: $popover_fg;
+  background-color: transparent;
+
+  &:hover {
+    box-shadow: inset 0 0 0 9999px $inverse_divider_color;
+    color: $inverse_fg_color;
+  }
+
+  &:checked, &:active {
+    color: $inverse_fg_color;
+    box-shadow: inset 0 0 0 9999px $inverse_divider_color;
+    background-image: radial-gradient(circle farthest-corner at center,
+                                      $inverse_divider_color 10%,
+                                      transparent 0%);
+  }
+
+  &:disabled {
+    color: $popover_disabled_fg;
+    background-color: transparent;
+  }
+}
+
 %popover_button {
   color: $popover_fg;
   background-color: transparent;
@@ -1778,26 +1808,7 @@ $popover_border: rgba($white, 0.12);
   }
 
   &.flat {
-    color: $popover_fg;
-    background-color: transparent;
-
-    &:hover {
-      box-shadow: inset 0 0 0 9999px $inverse_divider_color;
-      color: $inverse_fg_color;
-    }
-
-    &:checked, &:active {
-      color: $inverse_fg_color;
-      box-shadow: inset 0 0 0 9999px $inverse_divider_color;
-      background-image: radial-gradient(circle farthest-corner at center,
-                                        $inverse_divider_color 10%,
-                                        transparent 0%);
-    }
-
-    &:disabled {
-      color: $popover_disabled_fg;
-      background-color: transparent;
-    }
+    @extend %popover_flat_button;
   }
 }
 
@@ -1854,7 +1865,7 @@ popover.background.menu {
   }
 
   row.button.flat.menuitem.activatable,
-  row.activatable, .view { @extend %popover_button.flat; }
+  row.activatable, .view { @extend %popover_flat_button; }
 
   treeview.view header button { border-color: $popover_border; }
 
@@ -1891,7 +1902,7 @@ popover.background.menu {
   &.osd { @extend %osd; }
 
   .linked entry, entry,
-  spinbutton:not(.vertical) { @extend %entry.flat; @extend %popover_entry; }
+  spinbutton:not(.vertical) { @extend %flat_entry; @extend %popover_entry; }
 
   button {
     @extend %popover_button;
@@ -1929,7 +1940,7 @@ popover.background.menu {
 
   modelbutton.flat,
   menuitem.button.flat,
-  spinbutton.vertical button { @extend %popover_button.flat; }
+  spinbutton.vertical button { @extend %popover_flat_button; }
 
   &.menu button, button.model { border-radius: $buttons_radius; }
 
@@ -2262,7 +2273,7 @@ notebook {
     background-color: $base_color;
 
     entry:not(.search),
-    spinbutton:not(.vertical) { @extend %entry.flat; }
+    spinbutton:not(.vertical) { @extend %flat_entry; }
 
     spinbutton:not(.vertical) entry { &, &:focus, &:disabled { @extend %spinbutton_entry; }}
 
@@ -3050,13 +3061,13 @@ frame > border,
   &.flat { border-style: none; }
 }
 
-frame.flat > border { @extend .frame.flat; } // for backward compatibility
+frame.flat > border { border-style: none; } // for backward compatibility
 
 actionbar > revealer > box {
   padding: $container_padding;
   border-top: 1px solid $border_color;
 
-  button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %button_basic.flat; }
+  button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
 }
 
 scrolledwindow {
@@ -3125,7 +3136,7 @@ list {
 $row_transition: $shorter_transition, background-color 0, color 0;
 
 row {
-  &.activatable {
+  @at-root %row_activatable, &.activatable {
     transition: $row_transition,
                 background-size $ripple_duration $deceleration_curve,
                 background-image $ripple_duration * 2 $deceleration_curve;
@@ -3172,10 +3183,10 @@ row {
  *********************/
 .app-notification {
   @extend %osd;
-  @extend toolbar.osd;
+  @extend %toolbar_osd;
   margin: 8px;
 
-  button { @extend %button_basic.flat; }
+  button { @extend %flat_button; }
 
   &.frame,
   border { border-style: none; }
@@ -3339,7 +3350,7 @@ messagedialog { // Message Dialog styling
 
   entry {
     color: $popover_fg;
-    @extend %entry.flat;
+    @extend %flat_entry;
   }
 }
 
@@ -3513,7 +3524,7 @@ placessidebar {
 
       @extend %small_button;
 
-      row:selected & { @extend %button_selected.flat; }
+      row:selected & { @extend %button_selected_flat; }
     }
 
     &.sidebar-placeholder-row {
@@ -3638,7 +3649,7 @@ infobar {
 
     button {
       @extend %flat_button;
-      @extend %button_selected.flat;
+      @extend %button_selected_flat;
     }
 
     selection {}
@@ -3808,7 +3819,7 @@ colorchooser .popover.osd {
 
   &:backdrop { box-shadow: $shadow_1, inset 0 1px $highlight_color; }
 
-  spinbutton:not(.vertical) { @extend %entry.flat; }
+  spinbutton:not(.vertical) { @extend %flat_entry; }
 }
 
 
