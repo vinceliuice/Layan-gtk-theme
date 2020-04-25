@@ -312,7 +312,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Switches */
 .toggle-switch {
-  width: 50px;
+  width: 40px;
   height: 20px;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
@@ -786,7 +786,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-content {
-  padding: 8px 0;
+  padding: 10px 0;
 }
 
 .popup-menu .popup-menu-item {
@@ -1513,8 +1513,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Message list */
 .message-list {
-  width: 420px;
+  width: 31.5em;
+  padding: 0 12px;
   color: rgba(255, 255, 255, 0.7);
+}
+
+.message-list .message-list-placeholder {
+  spacing: 12px;
 }
 
 .message-list-clear-button.button {
@@ -1530,21 +1535,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.message-list-sections {
+.message-list-section,
+.message-list-sections,
+.message-list-section-list {
   spacing: 8px;
 }
 
-.message-list-section,
-.message-list-section-list {
-  spacing: 8px;
+.message-list-controls {
+  margin: 8px 16px 0;
+  padding: 4px;
+  spacing: 16px;
 }
 
 .message {
   min-height: 56px;
   background-color: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.7);
   border-radius: 7px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .message:hover, .message:focus {
@@ -1564,14 +1572,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-icon-bin > StIcon {
-  color: #FFFFFF;
-  icon-size: 1.2307692308em;
-  -st-icon-style: requested;
-  margin: 4px 0px 4px 4px;
+  icon-size: 32px;
+  -st-icon-style: symbolic;
+  margin: 8px 0px 8px 8px;
 }
 
 .message-icon-bin > StIcon:rtl {
-  margin: 4px 4px 4px 0px;
+  margin: 8px 8px 8px 0px;
 }
 
 .message-secondary-bin {
@@ -1583,8 +1590,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding-top: 2px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 1em;
-  /* HACK: the label should be baseline-aligned with a 1em label,
-                     fake this with some bottom padding */
   padding-bottom: 0;
 }
 
@@ -1607,27 +1612,34 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 1em;
 }
 
-.message-content * > StIcon {
-  icon-size: 16px;
-  border-radius: 16px;
-  padding: 2px;
+.message-close-button {
   color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
 }
 
-/* FIXME: how do you do this in sass? */
-.message-content *:hover > StIcon,
-.message-content *:focus > StIcon {
+.message-close-button:hover, .message-close-button:focus {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-.message-content *:active > StIcon {
+.message-close-button:active {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.message-close-button:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.message-body {
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .message-media-control {
-  margin: 16px 0;
+  margin: 16px 4px;
   padding: 8px;
   border-radius: 100px;
   color: rgba(255, 255, 255, 0.7);

@@ -6197,18 +6197,22 @@ button.title label {
 /*********
  * Geary *
  *********/
+window.geary-main-window.background.csd box.vertical > paned.horizontal > box.sidebar.vertical,
 window#GearyMainWindow.background.csd box.vertical > paned.horizontal > box.sidebar.vertical {
   border-bottom-left-radius: 13px;
 }
 
+window.geary-main-window.background.csd box.vertical > paned.horizontal > box.sidebar.vertical statusbar,
 window#GearyMainWindow.background.csd box.vertical > paned.horizontal > box.sidebar.vertical statusbar {
   border-bottom-left-radius: 13px;
 }
 
+window.geary-main-window.background.csd stack#conversation_viewer,
 window#GearyMainWindow.background.csd stack#conversation_viewer {
   border-bottom-right-radius: 13px;
 }
 
+window.geary-main-window.background.csd stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox,
 window#GearyMainWindow.background.csd stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox {
   background: none;
   border-bottom-right-radius: 13px;

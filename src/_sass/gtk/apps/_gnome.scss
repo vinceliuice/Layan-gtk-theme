@@ -1472,6 +1472,7 @@ button.title label { min-height: $medium_size; }
 /*********
  * Geary *
  *********/
+window.geary-main-window.background.csd, // gtk 3.36.0 or later
 window#GearyMainWindow.background.csd {
   box.vertical > paned.horizontal > box.sidebar.vertical {
     border-bottom-left-radius: $windows_radius;
