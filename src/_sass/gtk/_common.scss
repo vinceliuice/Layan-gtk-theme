@@ -2589,7 +2589,7 @@ radio {
     &:dir(ltr) { margin-right: 8px; }
     &:dir(rtl) { margin-left: 8px; }
 
-    &:not(:checked):not(:indeterminate):not(:disabled):not(:hover) { color: $secondary_fg_color; }
+    &:not(:checked):not(:indeterminate):not(:disabled) { color: $menu_fg_color; }
 
     // &:hover, &:checked:hover, &:indeterminate:hover { color: $inverse_fg_color; }
     // &:disabled { color: $inverse_disabled_fg_color; }
