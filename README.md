@@ -22,7 +22,7 @@ This theme is based on materia gtk theme of nana-4. Thanks nana-4 sincerely for 
 
 Fedora/RedHat distros:
 
-    yum install gtk-murrine-engine gtk2-engines
+    dnf install gtk-murrine-engine gtk2-engines
 
 Ubuntu/Mint/Debian distros:
 
