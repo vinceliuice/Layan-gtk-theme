@@ -1264,8 +1264,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/activities-active.svg");
 }
 
+.clock-display-box {
+  spacing: 4px;
+}
+
+.clock-display-box .clock {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
 #calendarArea {
-  padding: 8px 16px;
+  padding: 8px 12px;
 }
 
 .calendar {
@@ -1273,6 +1282,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background: none;
   box-shadow: none;
   border: none;
+  padding: 0;
 }
 
 .calendar,
@@ -1280,10 +1290,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .datemenu-displays-box,
 .message-list-sections {
   margin: 0 8px;
-}
-
-.datemenu-calendar-column {
-  spacing: 8px;
 }
 
 .datemenu-displays-section {
@@ -1295,7 +1301,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .datemenu-calendar-column {
+  spacing: 8px;
   border: 0 solid rgba(0, 0, 0, 0.08);
+  padding: 0 0;
 }
 
 .datemenu-calendar-column:ltr {
@@ -1304,15 +1312,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-calendar-column:rtl {
   border-right-width: 0;
-}
-
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.events-section-title {
-  min-height: 20px;
-  padding: 4px 8px;
-  border-radius: 7px;
 }
 
 .datemenu-today-button {
@@ -1331,6 +1330,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button,
 .weather-button,
 .events-section-title {
+  min-height: 20px;
+  padding: 4px 8px;
+  border-radius: 7px;
   background: none;
   box-shadow: none;
   border: none;
@@ -1348,10 +1350,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(0, 0, 0, 0.12);
 }
 
-.datemenu-today-button:active,
+.datemenu-today-button:active, .datemenu-today-button:checked,
 .world-clocks-button:active,
+.world-clocks-button:checked,
 .weather-button:active,
-.events-section-title:active {
+.weather-button:checked,
+.events-section-title:active,
+.events-section-title:checked {
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(0, 0, 0, 0.26);
 }
@@ -1368,12 +1373,74 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
-.world-clocks-grid {
+/* World Clock */
+.world-clocks-grid,
+.weather-grid {
   spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
 }
 
-.weather-box {
-  spacing: 0.4em;
+.world-clocks-city {
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: rgba(0, 0, 0, 0.38);
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: rgba(0, 0, 0, 0.38);
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+/* Weather */
+.weather-button {
+  padding: 12px;
+}
+
+.weather-button .weather-box {
+  spacing: 0.5em;
+}
+
+.weather-button .weather-header-box {
+  spacing: 6px;
+}
+
+.weather-button .weather-header {
+  color: rgba(0, 0, 0, 0.54);
+  font-weight: bold;
+}
+
+.weather-button .weather-header.location {
+  font-weight: normal;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.weather-button .weather-grid {
+  spacing-rows: 6px;
+  spacing-columns: 12px;
+}
+
+.weather-button .weather-forecast-time {
+  color: rgba(0, 0, 0, 0.54);
+  font-feature-settings: "tnum";
+  font-size: 9pt;
+  font-weight: normal;
+  padding-top: 0.2em;
+  padding-bottom: 0.4em;
+}
+
+.weather-button .weather-forecast-icon {
+  icon-size: 32px;
+}
+
+.weather-button .weather-forecast-temp {
+  font-weight: bold;
 }
 
 .calendar-month-label {
@@ -1431,8 +1498,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   height: 28px;
   padding: 0;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   color: rgba(0, 0, 0, 0.54);
+  font-feature-settings: "tnum";
 }
 
 .calendar-day-base:hover, .calendar-day-base:focus {
@@ -1483,7 +1551,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-today {
   font-weight: bold !important;
+  color: white;
+  background-color: #5657f5;
   border: none;
+}
+
+.calendar-today:hover, .calendar-today:focus {
+  background-color: #6465f6;
+  color: white;
+}
+
+.calendar-today:active, .calendar-today:selected {
+  background-color: #5657f5;
+  color: white;
+}
+
+.calendar-today:active:hover, .calendar-today:active:focus, .calendar-today:selected:hover, .calendar-today:selected:focus {
+  background-color: #6465f6;
+  color: white;
 }
 
 .calendar-day-with-events {
@@ -1491,6 +1576,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
   text-decoration: underline;
   background-image: none;
+}
+
+.calendar-day-with-events.calendar-work-day {
+  color: rgba(0, 0, 0, 0.38);
+  font-weight: bold;
 }
 
 .calendar-other-month-day {
@@ -1516,6 +1606,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 31.5em;
   padding: 0 12px;
   color: rgba(0, 0, 0, 0.54);
+  text-shadow: none;
 }
 
 .message-list .message-list-placeholder {
@@ -1553,6 +1644,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   border-radius: 7px;
   color: rgba(0, 0, 0, 0.54);
+  text-shadow: none;
 }
 
 .message:hover, .message:focus {

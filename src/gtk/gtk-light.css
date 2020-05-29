@@ -6381,6 +6381,15 @@ dialog.background.csd > box.dialog-vbox stack scrolledwindow viewport.frame.view
   min-height: 0;
   margin: 4px 0;
   padding: 0 10px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button:hover, .nemo-window toolbar.primary-toolbar .linked.path-bar > button:active, .nemo-window toolbar.primary-toolbar .linked.path-bar > button:checked {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button:disabled {
+  color: rgba(0, 0, 0, 0.26);
 }
 
 .nemo-window toolbar.primary-toolbar .linked.path-bar > button:first-child, .nemo-window toolbar.primary-toolbar .linked.path-bar > button:last-child {

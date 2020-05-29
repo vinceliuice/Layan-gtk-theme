@@ -1083,8 +1083,17 @@ StScrollBar {
 }
 
 // calendar popover
+.clock-display-box {
+  spacing: 4px;
+
+  .clock {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+
 #calendarArea {
-  padding: 8px 16px;
+  padding: 8px 12px;
 }
 
 .calendar {
@@ -1092,6 +1101,7 @@ StScrollBar {
   background: none;
   box-shadow: none;
   border: none;
+  padding: 0;
 }
 
 .calendar,
@@ -1101,23 +1111,15 @@ StScrollBar {
   margin: 0 8px;
 }
 
-.datemenu-calendar-column { spacing: 8px; }
 .datemenu-displays-section { padding-bottom: 0; }
 .datemenu-displays-box { spacing: 8px; }
 
 .datemenu-calendar-column {
+  spacing: 8px;
   border: 0 solid $border_color;
+  padding: 0 0;
   &:ltr { border-left-width: 0; }
   &:rtl { border-right-width: 0; }
-}
-
-.datemenu-today-button,
-.world-clocks-button,
-.weather-button,
-.events-section-title {
-  min-height: $menuitem_size - 4px * 2;
-  padding: 4px 8px;
-  border-radius: $buttons_radius;
 }
 
 .datemenu-today-button {
@@ -1136,13 +1138,16 @@ StScrollBar {
 .world-clocks-button,
 .weather-button,
 .events-section-title {
+  min-height: $menuitem_size - 4px * 2;
+  padding: 4px 8px;
+  border-radius: $buttons_radius;
   background: none;
   box-shadow: none;
   border: none;
   color: $secondary_fg_color;
 
-  &:hover,&:focus { color: $fg_color; background-color: $divider_color; }
-  &:active {
+  &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
+  &:active, &:checked {
     color: $fg_color;
     background-color: $track_color;
   }
@@ -1159,12 +1164,74 @@ StScrollBar {
   font-weight: bold;
 }
 
-.world-clocks-grid {
+/* World Clock */
+.world-clocks-grid,
+.weather-grid {
   spacing-rows: 0.4em;
+  spacing-columns: 0.8em;
 }
 
-.weather-box {
-  spacing: 0.4em;
+.world-clocks-city {
+  color: $hint_fg_color;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.world-clocks-time {
+  color: $hint_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 1.2em;
+}
+
+.world-clocks-timezone {
+  color: $hint_fg_color;
+  font-feature-settings: "tnum";
+  font-size: 0.9em;
+}
+
+/* Weather */
+.weather-button {
+  padding: 12px;
+
+  .weather-box {
+    spacing: 0.5em;
+  }
+
+  .weather-header-box {
+    spacing: 6px;
+  }
+
+  .weather-header {
+    color: $secondary_fg_color;
+    font-weight: bold;
+
+    &.location {
+      font-weight: normal;
+      color: $hint_fg_color;
+    }
+  }
+
+  .weather-grid {
+    spacing-rows: 6px;
+    spacing-columns: 12px;
+  }
+
+  .weather-forecast-time {
+    color: $secondary_fg_color;
+    font-feature-settings: "tnum";
+    font-size: 9pt;
+    font-weight: normal;
+    padding-top: 0.2em;
+    padding-bottom: 0.4em;
+  }
+
+  .weather-forecast-icon {
+    icon-size: 32px;
+  }
+
+  .weather-forecast-temp {
+    font-weight: bold;
+  }
 }
 
 .calendar-month-label {
@@ -1204,8 +1271,9 @@ StScrollBar {
   width: $menuitem_size; height: $menuitem_size;
   padding: 0;
   margin: 2px;
-  border-radius: 100px;
+  border-radius: 1000px;
   color: $secondary_fg_color;
+  font-feature-settings: "tnum";
   &:hover,&:focus { background-color: $divider_color; }
   &:active {
     color: inherit;
@@ -1240,15 +1308,35 @@ StScrollBar {
 }
 .calendar-today {
   font-weight: bold !important;
-  //color: $fg_color;
-  //background-color: transparent;
+  color: white;
+  background-color: $primary_color;
   border: none;
+
+  &:hover, &:focus {
+    background-color:lighten($primary_color, 3%);
+    color: white;
+  }
+
+  &:active, &:selected {
+    background-color: $primary_color;
+    color: white;
+
+    &:hover, &:focus {
+      background-color:lighten($primary_color, 3%);
+      color: white;
+    }
+  }
 }
 .calendar-day-with-events {
   color: $link_color;
   font-weight: normal;
   text-decoration: underline;
   background-image: none;
+
+  &.calendar-work-day {
+    color: $hint_fg_color;
+    font-weight: bold;
+  }
 }
 .calendar-other-month-day {
   color: $disabled_secondary_fg_color;
@@ -1271,6 +1359,7 @@ StScrollBar {
   width: 31.5em;
   padding: 0 12px;
   color: $secondary_fg_color;
+  text-shadow: none;
 
   .message-list-placeholder { spacing: 12px; }
 }
@@ -1302,6 +1391,7 @@ StScrollBar {
   border: none;
   border-radius: $buttons_radius;
   color: $secondary_fg_color;
+  text-shadow: none;
   &:hover,&:focus { background-color: $divider_color; }
   &:active { background-color: $track_color; }
 }

@@ -86,6 +86,11 @@
       min-height: 0;
       margin: 4px 0;
       padding: 0 10px;
+      color: $titlebar_secondary_fg_color;
+
+      &:hover, &:active, &:checked { color: $titlebar_fg_color; }
+
+      &:disabled { color: $titlebar_disabled_secondary_fg_color; }
 
       &:first-child, &:last-child {
         padding: 0 6px;
