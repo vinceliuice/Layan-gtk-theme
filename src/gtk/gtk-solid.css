@@ -1086,8 +1086,8 @@ combobox:drop(active) {
 }
 
 .linked:not(.vertical) > combobox:last-child > box > button.combo {
-  border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 .linked:not(.vertical) > combobox:only-child > box > button.combo {

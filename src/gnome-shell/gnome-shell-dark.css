@@ -853,11 +853,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-inactive-menu-item {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .popup-menu .popup-inactive-menu-item:insensitive {
-  color: transparent;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .popup-menu.panel-menu {
@@ -904,21 +904,22 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-separator-menu-item {
-  height: 1px;
-  margin: 0px 42px 12px 42px;
-  background: none;
-  border-color: rgba(255, 255, 255, 0.08);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-}
-
-.popup-separator-menu-item .popup-separator-menu-item-separator {
+  margin: 0;
+  padding: 0 0;
   background: none;
   border: none;
 }
 
+.popup-separator-menu-item .popup-separator-menu-item-separator {
+  height: 1px;
+  margin: 0 42px;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 0 0;
+}
+
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  background: none;
+  padding: 0 0;
+  margin: 0 54px 0 24px;
 }
 
 .background-menu {

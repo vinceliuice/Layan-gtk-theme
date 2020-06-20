@@ -927,8 +927,8 @@ combobox {
   }
 
   &:last-child > box > button.combo {
-    border-bottom-left-radius: $buttons_radius;
     border-bottom-right-radius: $buttons_radius;
+    border-top-right-radius: $buttons_radius;
   }
 
   &:only-child > box > button.combo {
