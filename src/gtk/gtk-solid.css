@@ -2659,6 +2659,12 @@ popover.background.menu separator, .csd popover.background.menu separator {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+popover label.separator,
+popover.background label.separator,
+popover.background.menu label.separator {
+  color: rgba(255, 255, 255, 0.7);
+}
+
 popover calendar,
 popover.background calendar,
 popover.background.menu calendar {
@@ -4144,6 +4150,18 @@ messagedialog.csd .dialog-action-area button:last-child {
 
 messagedialog entry {
   color: rgba(255, 255, 255, 0.7);
+}
+
+messagedialog expander title > arrow {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+messagedialog expander title > arrow:hover, messagedialog expander title > arrow:active {
+  color: #FFFFFF;
+}
+
+messagedialog expander title > arrow:disabled {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .background.csd filechooser, .background.csd filechooser placessidebar {
