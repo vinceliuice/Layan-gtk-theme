@@ -2376,6 +2376,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 /* App Folders */
+.app-folder {
+  background: none;
+}
+
 .app-folder .overview-icon {
   border-radius: 100px;
 }
