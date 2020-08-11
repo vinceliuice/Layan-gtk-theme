@@ -642,7 +642,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
     }
 
     &.top {
-      padding: 0;
+      padding: 0 0;
       background-color: $base_color;
       // color: $inverse_fg_color;
       box-shadow: inset 0 -1px $border_color;
@@ -651,6 +651,7 @@ $pos_list: ((top, bottom), (bottom, top), (left, right), (right, left));
         @extend %simple_flat_button;
         margin: -4px 0;
         min-height: $medium_size;
+        padding: $container_padding ($container_padding * 4);
       }
 
       // for <10.4
