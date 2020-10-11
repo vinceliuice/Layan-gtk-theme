@@ -26,3 +26,5 @@ scale-vert-marks-after-slider-dark
 scale-vert-marks-after-slider-disabled-dark
 switch-slider-checked-dark
 switch-slider-unchecked-dark
+header-icon
+header-icon-alt

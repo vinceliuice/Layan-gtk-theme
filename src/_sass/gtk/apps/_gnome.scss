@@ -122,9 +122,13 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
     separator { background-color: transparent; }
   }
 
+  $header-icon: if($titlebar == 'dark' and $variant == 'light',
+                -gtk-scaled(url('assets/header-icon-alt.png'), url('assets/header-icon-alt@2.png')),
+                -gtk-scaled(url('assets/header-icon.png'), url('assets/header-icon@2.png')));
+
   headerbar {
     background-color: if($solid == 'false', rgba($titlebar_bg_color, 0.97), $titlebar_bg_color);
-    background-image: if($titlebar == 'dark' and $variant == 'light', url("assets/scalable/header-icon-alt.svg"), url("assets/scalable/header-icon.svg"));
+    background-image: $header-icon;
     background-size: 48px auto;
     background-position: left bottom;
     background-repeat: no-repeat;
