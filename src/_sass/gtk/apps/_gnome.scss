@@ -83,39 +83,54 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
   &.maximized notebook,
   &.maximized notebook > stack { border-radius: 0; }
 
-  placessidebar.sidebar {
-    background-color: transparent;
-    border-radius: $windows_radius;
+  placessidebar {
+    background: none;
     margin-right: 6px;
 
     list {
-      background-color: transparent;
-      border-radius: $windows_radius;
+      background: none;
     }
 
-    row.sidebar-row {
+    row {
       padding-left: 6px;
-      border-radius: 0 $buttons_radius $buttons_radius 0;
+
+      &, &:hover, &:selected, &:active, &:selected:hover, &:selected:active, &:focus {
+        transition: none;
+        animation: none;
+        background: none;
+        box-shadow: none;
+      }
 
       &:selected button.sidebar-button  { @extend %selected_sidebar_button; }
 
-      image.sidebar-icon { color: $inverse_secondary_fg_color; }
-      label.sidebar-label { padding-left: 18px; color: $secondary_fg_color; }
+      image.sidebar-icon {
+        color: $inverse_secondary_fg_color;
+        margin-right: 6px;
+      }
+
+      label.sidebar-label {
+        padding-left: 18px;
+        color: $secondary_fg_color;
+        border-radius: 0 $buttons_radius $buttons_radius 0;
+      }
 
       &:hover {
-        background-color: rgba($divider_color, 0.0);
+        label.sidebar-label {
+          background-color: rgba($divider_color, 0.03);
+        }
       }
 
       &:backdrop { opacity: 0.85; }
 
       &:selected {
-        background-color: rgba($divider_color, 0.06);
         // font-weight: bold;
 
-        label.sidebar-label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }
-        image.sidebar-icon { color: $inverse_fg_color; }
+        label.sidebar-label {
+          color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
+          background-color: rgba($divider_color, 0.06);
+        }
 
-        &:active { box-shadow: none; }
+        image.sidebar-icon { color: $inverse_fg_color; }
       }
     }
 
@@ -1430,6 +1445,16 @@ task-list-view > box > revealer > box > button {
   scrolledwindow { border-top: none; }
 
   button { -gtk-outline-radius: $buttons_radius; }
+}
+
+
+/***********
+ * Fractal *
+ ***********/
+.background.csd.main-window {
+  .sidebar.rooms-sidebar {
+    border-bottom-left-radius: $windows_radius;
+  }
 }
 
 

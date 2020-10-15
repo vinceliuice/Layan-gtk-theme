@@ -4249,24 +4249,24 @@ stacksidebar row > label {
 /****************
  * File chooser *
  ****************/
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected button.sidebar-button {
+.nautilus-window placessidebar row:selected button.sidebar-button {
   color: rgba(86, 87, 245, 0.75);
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected button.sidebar-button:hover, .nautilus-window placessidebar.sidebar row.sidebar-row:selected button.sidebar-button:active {
+.nautilus-window placessidebar row:selected button.sidebar-button:hover, .nautilus-window placessidebar row:selected button.sidebar-button:active {
   color: #5657f5;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected button.sidebar-button:disabled {
+.nautilus-window placessidebar row:selected button.sidebar-button:disabled {
   color: rgba(86, 87, 245, 0.35);
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected button.sidebar-button:checked {
+.nautilus-window placessidebar row:selected button.sidebar-button:checked {
   background-color: rgba(86, 87, 245, 0.1);
   color: #5657f5;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected button.sidebar-button:checked:disabled {
+.nautilus-window placessidebar row:selected button.sidebar-button:checked:disabled {
   background-color: rgba(86, 87, 245, 0.05);
   color: rgba(86, 87, 245, 0.55);
 }
@@ -4961,56 +4961,55 @@ button.emoji-section:last-child {
   border-radius: 0;
 }
 
-.nautilus-window placessidebar.sidebar {
-  background-color: transparent;
-  border-radius: 13px;
+.nautilus-window placessidebar {
+  background: none;
   margin-right: 6px;
 }
 
-.nautilus-window placessidebar.sidebar list {
-  background-color: transparent;
-  border-radius: 13px;
+.nautilus-window placessidebar list {
+  background: none;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row {
+.nautilus-window placessidebar row {
   padding-left: 6px;
-  border-radius: 0 7px 7px 0;
 }
 
-.nautilus-window placessidebar.sidebar row.sidebar-row image.sidebar-icon {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row label.sidebar-label {
-  padding-left: 18px;
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row:hover {
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row:backdrop {
-  opacity: 0.85;
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected {
-  background-color: rgba(0, 0, 0, 0.06);
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected label.sidebar-label {
-  color: #5657f5;
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected image.sidebar-icon {
-  color: #FFFFFF;
-}
-
-.nautilus-window placessidebar.sidebar row.sidebar-row:selected:active {
+.nautilus-window placessidebar row, .nautilus-window placessidebar row:hover, .nautilus-window placessidebar row:selected, .nautilus-window placessidebar row:active, .nautilus-window placessidebar row:selected:hover, .nautilus-window placessidebar row:selected:active, .nautilus-window placessidebar row:focus {
+  transition: none;
+  animation: none;
+  background: none;
   box-shadow: none;
 }
 
-.nautilus-window placessidebar.sidebar separator {
+.nautilus-window placessidebar row image.sidebar-icon {
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: 6px;
+}
+
+.nautilus-window placessidebar row label.sidebar-label {
+  padding-left: 18px;
+  color: rgba(0, 0, 0, 0.54);
+  border-radius: 0 7px 7px 0;
+}
+
+.nautilus-window placessidebar row:hover label.sidebar-label {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.nautilus-window placessidebar row:backdrop {
+  opacity: 0.85;
+}
+
+.nautilus-window placessidebar row:selected label.sidebar-label {
+  color: #5657f5;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.nautilus-window placessidebar row:selected image.sidebar-icon {
+  color: #FFFFFF;
+}
+
+.nautilus-window placessidebar separator {
   background-color: transparent;
 }
 
@@ -6163,6 +6162,13 @@ task-list-view > box > revealer > box > button {
 
 #eog-thumb-nav button {
   -gtk-outline-radius: 7px;
+}
+
+/***********
+ * Fractal *
+ ***********/
+.background.csd.main-window .sidebar.rooms-sidebar {
+  border-bottom-left-radius: 13px;
 }
 
 /*************
