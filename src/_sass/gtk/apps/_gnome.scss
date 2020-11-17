@@ -1224,24 +1224,29 @@ dialog.background.csd {
 window.background.csd {
   > headerbar.titlebar { // gnome 3.32
     > box.horizontal > separator.sidebar,
-    > hdyleaflet > separator.sidebar {
+    > hdyleaflet > separator.sidebar,
+    > leaflet > separator.sidebar {
       border-right-style: none;
       background: none;
       min-width: 0;
     }
   }
 
-  > stack:not(.titlebar), > hdyleaflet > stack.background {
+  > stack:not(.titlebar),
+  > hdyleaflet > stack.background,
+  > leaflet > stack.background {
     border-radius: 0 0 $windows_radius $windows_radius;
   }
 
   > box.horizontal > separator.sidebar,
-  > hdyleaflet > separator.sidebar {
+  > hdyleaflet > separator.sidebar,
+  > leaflet > separator.sidebar {
     background: none;
     min-width: 0;
   }
 
   > hdyleaflet > stack.background, // > 3.34.0
+  > leaflet > stack.background, // > 3.38.0
   > box.horizontal > stack.background {
     > widget {
       > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
@@ -1258,6 +1263,7 @@ window.background.csd {
   }
 
   > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
+  > leaflet > box.vertical > scrolledwindow.view, // > 3.38.0
   > box.horizontal > box.vertical > scrolledwindow.view { // > 3.25.90
     background-color: $base_color;
     border-bottom-left-radius: $windows_radius + 1px;
@@ -1298,7 +1304,7 @@ window.background.csd {
   }
 }
 
-hdyleaflet {
+hdyleaflet, leaflet {
   frame > border { border: none; }
 
   frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
@@ -1384,6 +1390,23 @@ stack {
  * Gnome Contacts *
  ******************/
 window.background.csd {
+  > headerbar.titlebar.selection-mode {
+    > hdyleaflet > headerbar,
+    > leaflet > headerbar {
+      background-color: $primary_color;
+
+      &, &:hover, &:checked { color: $inverse_fg_color; }
+
+      &:disabled, &:checked:disabled { color: $inverse_disabled_fg_color; }
+
+      &:backdrop {
+        &, &:hover, &:checked { color: $inverse_secondary_fg_color; }
+
+        &:disabled, &:checked:disabled { color: $inverse_disabled_secondary_fg_color; }
+      }
+    }
+  }
+
   > overlay > grid.horizontal {
     > frame:dir(ltr) > border { // Removed ugly borders
       border-top-width: 0;
@@ -1418,6 +1441,42 @@ popover.background {
   }
 }
 
+/****************
+ * Gnome clocks *
+ ****************/
+window.background.csd.unified {
+  border-top-left-radius: $windows_radius;
+  border-top-right-radius: $windows_radius;
+
+  > deck > deck > deck {
+    > box.vertical > headerbar.titlebar.windowhandle {
+      > viewswitchertitle > squeezer {
+        > viewswitcher > box.horizontal {
+          > button.radio {
+            margin: 0;
+            border-radius: 0;
+            border: none;
+            padding: 0 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/****************
+ * Gnome Weather *
+ ****************/
+
+#weather-page,
+#weekly-forecast-frame {
+  border-bottom-right-radius: $windows_radius;
+}
+
+#weather-page-content-view {
+  border-bottom-right-radius: $windows_radius;
+  border-bottom-left-radius: $windows_radius;
+}
 
  /*********
   * To Do *
@@ -1454,6 +1513,7 @@ task-list-view > box > revealer > box > button {
 .background.csd.main-window {
   .sidebar.rooms-sidebar {
     border-bottom-left-radius: $windows_radius;
+    border-right: 1px solid $border_color;
   }
 }
 

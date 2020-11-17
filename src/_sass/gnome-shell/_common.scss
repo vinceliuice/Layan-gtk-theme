@@ -1102,6 +1102,7 @@ StScrollBar {
   box-shadow: none;
   border: none;
   padding: 0;
+  text-shadow: none;
 }
 
 .calendar,
@@ -1137,6 +1138,7 @@ StScrollBar {
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
+.events-button,
 .events-section-title {
   min-height: $menuitem_size - 4px * 2;
   padding: 4px 8px;
@@ -1145,6 +1147,7 @@ StScrollBar {
   box-shadow: none;
   border: none;
   color: $secondary_fg_color;
+  text-shadow: none;
 
   &:hover, &:focus { color: $fg_color; background-color: $divider_color; }
   &:active, &:checked {
@@ -1162,6 +1165,30 @@ StScrollBar {
 .events-section-title {
   color: $secondary_fg_color;
   font-weight: bold;
+}
+
+/* Events */
+.events-button {
+  .events-box {
+    spacing: 6px;
+  }
+
+  .events-list {
+    spacing: 12px;
+    text-shadow: none;
+  }
+
+  .events-title {
+    color: $secondary_fg_color;
+    font-weight: bold;
+    margin-bottom: 4px;
+    text-shadow: none;
+  }
+
+  .event-time {
+    color: $hint_fg_color;
+    font-feature-settings: "tnum";
+  }
 }
 
 /* World Clock */
@@ -1276,13 +1303,13 @@ StScrollBar {
   font-feature-settings: "tnum";
   &:hover,&:focus { background-color: $divider_color; }
   &:active {
-    color: inherit;
+    color: $secondary_fg_color;
     background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }
   &:selected {
-    color: $inverse_fg_color;
-    background-color: $primary_color;
+    color: $fg_color;
+    background-color: $track_color;
     border-color: transparent; //avoid jumparound due to today
   }
   &.calendar-day-heading {  //day of week heading
@@ -1328,10 +1355,8 @@ StScrollBar {
   }
 }
 .calendar-day-with-events {
-  color: $link_color;
-  font-weight: normal;
-  text-decoration: underline;
-  background-image: none;
+  color: $hint_fg_color;
+  background-image: url("assets/calendar-today.svg");
 
   &.calendar-work-day {
     color: $hint_fg_color;
@@ -2018,9 +2043,9 @@ StScrollBar {
 
   // expanded folder
   .app-folder-dialog {
-    border-radius: 16px;
+    border-radius: 24px;
     spacing: 12px;
-    background-color: rgba(#101010, 0.85);
+    background-color: rgba(#000, 0.9);
     box-shadow: none;
     border: none;
 

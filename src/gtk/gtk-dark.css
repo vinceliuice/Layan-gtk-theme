@@ -5976,97 +5976,107 @@ dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
 }
 
 window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
-window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar {
+window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar,
+window.background.csd > headerbar.titlebar > leaflet > separator.sidebar {
   border-right-style: none;
   background: none;
   min-width: 0;
 }
 
-window.background.csd > stack:not(.titlebar), window.background.csd > hdyleaflet > stack.background {
+window.background.csd > stack:not(.titlebar),
+window.background.csd > hdyleaflet > stack.background,
+window.background.csd > leaflet > stack.background {
   border-radius: 0 0 13px 13px;
 }
 
 window.background.csd > box.horizontal > separator.sidebar,
-window.background.csd > hdyleaflet > separator.sidebar {
+window.background.csd > hdyleaflet > separator.sidebar,
+window.background.csd > leaflet > separator.sidebar {
   background: none;
   min-width: 0;
 }
 
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame,
 window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame {
   background-color: #31313a;
   border-bottom-right-radius: 14px;
 }
 
 window.background.csd > hdyleaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view,
+window.background.csd > leaflet > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view,
 window.background.csd > box.horizontal > stack.background > widget > box.vertical > box.vertical > scrolledwindow > viewport.frame > box.vertical.view {
   background: none;
 }
 
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view,
+window.background.csd > leaflet > box.vertical > scrolledwindow.view,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view {
   background-color: #31313a;
   border-bottom-left-radius: 14px;
 }
 
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack,
+window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.frame > stack,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack {
   background-color: transparent;
 }
 
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list,
+window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list,
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack list {
   background-color: transparent;
 }
 
 window.background.csd > hdyleaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected),
+window.background.csd > leaflet > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected),
 window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > viewport.frame > stack list row.activatable:not(:hover):not(:active):not(:selected) {
   background-color: transparent;
 }
 
-hdyleaflet list.view.frame, hdyleaflet frame.view, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) {
+hdyleaflet list.view.frame, leaflet list.view.frame, hdyleaflet frame.view, leaflet frame.view, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list) {
   border-radius: 7px;
   box-shadow: none;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-hdyleaflet list.view.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child {
+hdyleaflet list.view.frame row.activatable:first-child, leaflet list.view.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, leaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
-hdyleaflet list.view.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child {
+hdyleaflet list.view.frame row.activatable:last-child, leaflet list.view.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, leaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
 
-hdyleaflet list.view.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child {
+hdyleaflet list.view.frame row.activatable:only-child, leaflet list.view.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, leaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child {
   border-radius: 7px;
 }
 
-hdyleaflet frame > border {
+hdyleaflet frame > border, leaflet frame > border {
   border: none;
 }
 
-hdyleaflet frame.view list {
+hdyleaflet frame.view list, leaflet frame.view list {
   background: none;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable {
+hdyleaflet > box.vertical list:not(.view) row.activatable, leaflet > box.vertical list:not(.view) row.activatable {
   margin-right: 4px;
   border-radius: 0 7px 7px 0;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable:selected {
+hdyleaflet > box.vertical list:not(.view) row.activatable:selected, leaflet > box.vertical list:not(.view) row.activatable:selected {
   background-color: rgba(255, 255, 255, 0.06);
   color: #9e9ff9;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable:selected image, hdyleaflet > box.vertical list:not(.view) row.activatable:selected label {
+hdyleaflet > box.vertical list:not(.view) row.activatable:selected image, hdyleaflet > box.vertical list:not(.view) row.activatable:selected label, leaflet > box.vertical list:not(.view) row.activatable:selected image, leaflet > box.vertical list:not(.view) row.activatable:selected label {
   color: #9e9ff9;
 }
 
-hdyleaflet > separator.sidebar {
+hdyleaflet > separator.sidebar, leaflet > separator.sidebar {
   border-right-style: none;
   background: none;
   min-width: 0;
@@ -6102,6 +6112,37 @@ stack > grid.vertical scrolledwindow.frame.emptyGrid {
 /******************
  * Gnome Contacts *
  ******************/
+window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar {
+  background-color: #5657f5;
+}
+
+window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar, window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:hover, window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:checked,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:hover,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:checked {
+  color: #FFFFFF;
+}
+
+window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:disabled, window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:checked:disabled,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:disabled,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:checked:disabled {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:backdrop, window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:backdrop:hover, window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:backdrop:checked,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:backdrop,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:backdrop:hover,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:backdrop:checked {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:backdrop:disabled, window.background.csd > headerbar.titlebar.selection-mode > hdyleaflet > headerbar:backdrop:checked:disabled,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:backdrop:disabled,
+window.background.csd > headerbar.titlebar.selection-mode > leaflet > headerbar:backdrop:checked:disabled {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 window.background.csd > overlay > grid.horizontal > frame:dir(ltr) > border {
   border-top-width: 0;
   border-left-width: 0;
@@ -6127,6 +6168,34 @@ popover.background datechooser day.day.other-month:hover, popover.background dat
 popover.background datechooser label.weekday {
   color: rgba(255, 255, 255, 0.7);
   font-weight: bold;
+}
+
+/****************
+ * Gnome clocks *
+ ****************/
+window.background.csd.unified {
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+}
+
+window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle > viewswitchertitle > squeezer > viewswitcher > box.horizontal > button.radio {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  padding: 0 8px;
+}
+
+/****************
+ * Gnome Weather *
+ ****************/
+#weather-page,
+#weekly-forecast-frame {
+  border-bottom-right-radius: 13px;
+}
+
+#weather-page-content-view {
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
 }
 
 /*********
@@ -6169,6 +6238,7 @@ task-list-view > box > revealer > box > button {
  ***********/
 .background.csd.main-window .sidebar.rooms-sidebar {
   border-bottom-left-radius: 13px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /*************
