@@ -1963,7 +1963,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-scroll-view {
-  border: none;
+  border: 2px solid #5555f8;
+  background: transparent;
 }
 
 .nm-dialog-header {
