@@ -1654,22 +1654,26 @@ StScrollBar {
 
 .nm-dialog-airplane-text { color: $fg_color; }
 .nm-dialog-header-icon { icon-size: 32px; }
-.nm-dialog-scroll-view { border: none; }
+
+.nm-dialog-scroll-view {
+  border: none;
+  background-color: transparent;
+}
+
 .nm-dialog-header { @include font(title); }
 
 .nm-dialog-item {
   font-size: 1em;
   border-bottom: none;
-  border-radius: $windows_radius;
+  border-radius: $buttons_radius;
   padding: 12px;
   spacing: 20px;
   &:hover, &:focus { background-color: $divider_color; }
   &:active { background-color: $track_color; }
-}
-
-.nm-dialog-item:selected {
-  background-color: $primary_color;
-  color: $inverse_fg_color;
+  &:selected {
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+  }
 }
 
 .nm-dialog-icons { spacing: .5em; }

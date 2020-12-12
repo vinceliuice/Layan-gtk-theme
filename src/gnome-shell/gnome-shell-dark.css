@@ -1964,6 +1964,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .nm-dialog-scroll-view {
   border: none;
+  background-color: transparent;
 }
 
 .nm-dialog-header {
@@ -1974,7 +1975,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .nm-dialog-item {
   font-size: 1em;
   border-bottom: none;
-  border-radius: 13px;
+  border-radius: 7px;
   padding: 12px;
   spacing: 20px;
 }
