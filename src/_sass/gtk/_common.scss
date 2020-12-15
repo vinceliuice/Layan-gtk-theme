@@ -2032,9 +2032,31 @@ popover.background.menu {
 /*************
  * Notebooks *
  *************/
+
+$notebook_radius: $windows_radius - 3px;
+$notebook_header_radius: $windows_radius - 4px;
+
 notebook {
   frame > paned > & > header,
   &.frame > header { background-color: $alt_base_color; }
+
+  &, &.frame {
+    background-color: $base_color;
+    border-radius: $notebook_radius;
+  }
+
+  &.frame frame {
+    > border {
+      border: none;
+      border-radius: $notebook_radius;
+    }
+
+    > list {
+      // @extend %circular_list;
+
+      row.activatable { border-radius: $notebook_radius; }
+    }
+  }
 
   > header {
     border-width: 1px;
@@ -2044,6 +2066,7 @@ notebook {
 
     &.top {
       border-bottom-style: solid;
+      border-radius: $notebook_header_radius $notebook_header_radius 0 0;
       > tabs {
         margin-bottom: -1px;
         > tab {
@@ -2057,6 +2080,7 @@ notebook {
 
     &.bottom {
       border-top-style: solid;
+      border-radius: 0 0 $notebook_header_radius $notebook_header_radius;
       > tabs {
         margin-top: -1px;
         > tab {
@@ -2070,6 +2094,7 @@ notebook {
 
     &.left {
       border-right-style: solid;
+      border-radius: $notebook_header_radius 0 0 $notebook_header_radius;
       > tabs {
         margin-right: -1px;
         > tab {
@@ -2083,6 +2108,7 @@ notebook {
 
     &.right {
       border-left-style: solid;
+      border-radius: 0 $notebook_header_radius $notebook_header_radius 0;
       > tabs {
         margin-left: -1px;
         > tab {
@@ -2273,6 +2299,7 @@ notebook {
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
     background-color: $base_color;
+    border-radius: $notebook_radius;
 
     entry:not(.search),
     spinbutton:not(.vertical) { @extend %flat_entry; }
@@ -3070,6 +3097,8 @@ actionbar > revealer > box {
   border-top: 1px solid $border_color;
 
   button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
+
+  .linked > button { border-radius: $buttons_radius; }
 }
 
 scrolledwindow {

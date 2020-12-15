@@ -1897,7 +1897,6 @@ StScrollBar {
     }
   }
   .app-well-app,
-  .app-well-app.app-folder,
   .show-apps,
   .grid-search-result {
     & .overview-icon {
@@ -1936,10 +1935,6 @@ StScrollBar {
     text-align: center;
   }
 
-  .app-well-app.app-folder > .overview-icon {
-    background-color: $inverse_track_color;
-  }
-
   .show-apps .show-apps-icon {
     color: $inverse_secondary_fg_color;
   }
@@ -1972,9 +1967,9 @@ StScrollBar {
 
   .app-folder-popup-bin { padding: 5px; }
   .app-folder-icon {
-    padding: 5px;
-    spacing-rows: 5px;
-    spacing-columns: 5px;
+    padding: 6px;
+    spacing-rows: 6px;
+    spacing-columns: 6px;
   }
 
   .page-indicator {
@@ -2030,7 +2025,7 @@ StScrollBar {
 
   .no-frequent-applications-label { @extend %status_text; }
 
-  .app-well-app > .overview-icon.overview-icon-with-label,
+  .app-well-app .overview-icon.overview-icon-with-label,
   .grid-search-result .overview-icon.overview-icon-with-label {
     padding: 10px 8px 15px 8px;
     spacing: 4px;
@@ -2041,17 +2036,23 @@ StScrollBar {
     background: none;
 
     .overview-icon {
-      border-radius: 100px;
+      background-color: $inverse_panel_bg_color;
+      border-radius: $circular_radius;
+    }
+
+    &:hover .overview-icon {
+      background-color: $inverse_divider_color;
     }
   }
 
   // expanded folder
   .app-folder-dialog {
-    border-radius: 24px;
+    border-radius: $buttons_radius * 4;
     spacing: 12px;
-    background-color: rgba(#000, 0.9);
+    background-color: rgba(#222, 0.95);
     box-shadow: none;
     border: none;
+    padding: 0;
 
     & .folder-name-container {
       padding: 24px 36px 0;
@@ -2084,9 +2085,42 @@ StScrollBar {
       }
     }
 
+    & .icon-grid {
+      row-spacing: $container_padding * 2;
+      column-spacing: $container_padding * 5;
+    }
+
+    & .page-indicators {
+      margin-bottom: 18px;
+
+      .page-indicator {
+        padding: 15px 12px;
+      }
+    }
+
     & StButton#vhandle,
     & StButton#vhandle:hover,
     & StButton#vhandle:active { background-color: transparent; }
+  }
+
+  .app-folder-dialog-container {
+    padding: $container_padding;
+    width: 600px;
+    height: 600px;
+  }
+
+  // Rename popup for app folders
+  .rename-folder-popup {
+    .rename-folder-popup-item {
+      spacing: $container_padding;
+      &:ltr, &:rtl { padding: 0 $container_padding * 2; }
+    }
+  }
+
+  // right-click app menu
+  .app-menu,
+  .app-well-menu {
+    max-width: 27.25em;
   }
 
   // Workspace pager

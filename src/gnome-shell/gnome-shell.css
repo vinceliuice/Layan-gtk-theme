@@ -2255,9 +2255,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-well-app:hover .overview-icon, .app-well-app:focus .overview-icon, .app-well-app:selected .overview-icon,
-.app-well-app.app-folder:hover .overview-icon,
-.app-well-app.app-folder:focus .overview-icon,
-.app-well-app.app-folder:selected .overview-icon,
 .show-apps:hover .overview-icon,
 .show-apps:focus .overview-icon,
 .show-apps:selected .overview-icon,
@@ -2271,8 +2268,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-well-app:active .overview-icon, .app-well-app:checked .overview-icon,
-.app-well-app.app-folder:active .overview-icon,
-.app-well-app.app-folder:checked .overview-icon,
 .show-apps:active .overview-icon,
 .show-apps:checked .overview-icon,
 .grid-search-result:active .overview-icon,
@@ -2291,7 +2286,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .search-provider-icon,
 .list-search-result, .app-well-app .overview-icon,
-.app-well-app.app-folder .overview-icon,
 .show-apps .overview-icon,
 .grid-search-result .overview-icon {
   color: #FFFFFF;
@@ -2300,10 +2294,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border: none;
   transition-duration: 225ms;
   text-align: center;
-}
-
-.app-well-app.app-folder > .overview-icon {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .show-apps .show-apps-icon {
@@ -2340,9 +2330,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-icon {
-  padding: 5px;
-  spacing-rows: 5px;
-  spacing-columns: 5px;
+  padding: 6px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
 }
 
 .page-indicator {
@@ -2397,7 +2387,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: none;
 }
 
-.app-well-app > .overview-icon.overview-icon-with-label,
+.app-well-app .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 15px 8px;
   spacing: 4px;
@@ -2409,15 +2399,21 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder .overview-icon {
-  border-radius: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+
+.app-folder:hover .overview-icon {
+  background-color: rgba(255, 255, 255, 0.12);
 }
 
 .app-folder-dialog {
-  border-radius: 24px;
+  border-radius: 28px;
   spacing: 12px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(34, 34, 34, 0.95);
   box-shadow: none;
   border: none;
+  padding: 0;
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2485,8 +2481,40 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 16px;
 }
 
+.app-folder-dialog .icon-grid {
+  row-spacing: 12px;
+  column-spacing: 30px;
+}
+
+.app-folder-dialog .page-indicators {
+  margin-bottom: 18px;
+}
+
+.app-folder-dialog .page-indicators .page-indicator {
+  padding: 15px 12px;
+}
+
 .app-folder-dialog StButton#vhandle, .app-folder-dialog StButton#vhandle:hover, .app-folder-dialog StButton#vhandle:active {
   background-color: transparent;
+}
+
+.app-folder-dialog-container {
+  padding: 6px;
+  width: 600px;
+  height: 600px;
+}
+
+.rename-folder-popup .rename-folder-popup-item {
+  spacing: 6px;
+}
+
+.rename-folder-popup .rename-folder-popup-item:ltr, .rename-folder-popup .rename-folder-popup-item:rtl {
+  padding: 0 12px;
+}
+
+.app-menu,
+.app-well-menu {
+  max-width: 27.25em;
 }
 
 .workspace-thumbnails {

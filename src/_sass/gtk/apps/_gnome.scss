@@ -526,10 +526,13 @@ paned.titlebar.horizontal { // show border
 .tweak-categories {
   // padding: 4px 0;
   // background-color: shade(@theme_bg_color, 0.99);
-  border-radius: 0 0 0 $windows_radius;
   background-image: image($lighter_bg_color);
 
   separator { @extend %hide_separators; }
+
+  .csd & {
+    border-bottom-left-radius: $windows_radius;
+  }
 }
 
 .tweak {
@@ -555,24 +558,27 @@ paned.titlebar.horizontal { // show border
 .tweak-group-startup {
   // background-color: @view_separators;
   background-image: image($base_color);
-  border: 1px solid $border_color;
+
+  @extend %circular_list;
+
+  row.activatable { @extend %circular_row; }
+
+  row.tweak-startup {
+    border-radius: $windows_radius;
+    background-color: transparent;
+    background-image: none;
+  }
 }
 
-//
 // Workaround for 3.26
-//
+list {
+  &.tweak-group {
+    list {
+      @extend %circular_list;
 
-row#Focus,
-row#StaticWorkspaceTweak, // for 3.26.0
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak, // for 3.26.0
-row#workspaces-only-on-primary {
-  padding: 0;
-  border: 1px solid $border_color;
-
-  row:not(:last-child) { border-bottom: 1px solid $border_color; }
-
-  &.tweak > list { margin-top: -3px; }
+      row.activatable { @extend %circular_row; }
+    }
+  }
 }
 
 // Add more spaces between title and list
@@ -1203,6 +1209,29 @@ window.background > box.vertical box.horizontal {
  /************************
   * Gnome Control Center *
   ************************/
+
+%circular_list {
+  border-radius: $buttons_radius + 1px;
+  box-shadow: none;
+  border: 1px solid $border_color;
+}
+
+%circular_row {
+  &:first-child {
+    border-top-left-radius: $buttons_radius;
+    border-top-right-radius: $buttons_radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $buttons_radius;
+    border-bottom-right-radius: $buttons_radius;
+  }
+
+  &:only-child {
+    border-radius: $buttons_radius;
+  }
+}
+
 // users section
 stack > box.vertical > widget > overlay grid.horizontal > stack {
   > button.toggle { margin: 8px 6px; } // Show the button shadow completely
@@ -1282,63 +1311,31 @@ window.background.csd {
   }
 }
 
-%circular_list {
-  border-radius: $buttons_radius;
-  box-shadow: none;
-  border: 1px solid $border_color;
-}
-
-%circular_row {
-  &:first-child {
-    border-top-left-radius: $buttons_radius;
-    border-top-right-radius: $buttons_radius;
-  }
-
-  &:last-child { // Not use ?
-    border-bottom-left-radius: $buttons_radius;
-    border-bottom-right-radius: $buttons_radius;
-  }
-
-  &:only-child {
-    border-radius: $buttons_radius;
-  }
-}
-
 hdyleaflet, leaflet {
   frame > border { border: none; }
 
-  frame:not(.view) list:not(.contacts-contact-list) { // Don't set this to Gnome-Contacts
-    @extend %circular_list;
+  stack.background, overlay {
+    scrolledwindow > viewport {
+      list {
+        @extend %circular_list;
 
-    row.activatable { @extend %circular_row; }
-  }
-
-  frame.view {
-    @extend %circular_list;
-
-    list {
-      background: none;
-
-      row.activatable { @extend %circular_row; }
+        row.activatable { @extend %circular_row; }
+      }
     }
   }
 
-  list.view.frame {
-    @extend %circular_list;
+  > box.vertical > scrolledwindow > viewport.frame {
+    list:not(.view):not(.tweak-group) {
+      row.activatable {
+        margin-right: 4px;
+        border-radius: 0 $buttons_radius $buttons_radius 0;
 
-    row.activatable { @extend %circular_row; }
-  }
+        &:selected {
+          background-color: rgba($divider_color, 0.06);
+          color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
 
-  > box.vertical list:not(.view) {
-    row.activatable {
-      margin-right: 4px;
-      border-radius: 0 $buttons_radius $buttons_radius 0;
-
-      &:selected {
-        background-color: rgba($divider_color, 0.06);
-        color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
-
-        image, label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }
+          image, label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }
+        }
       }
     }
   }
@@ -1450,16 +1447,28 @@ window.background.csd.unified {
 
   > deck > deck > deck {
     > box.vertical > headerbar.titlebar.windowhandle {
+      border-top-left-radius: $windows_radius;
+      border-top-right-radius: $windows_radius;
+      box-shadow: inset 0 -1px $border_color;
+
       > viewswitchertitle > squeezer {
+        margin: 0 0;
+        background: none;
+
         > viewswitcher > box.horizontal {
           > button.radio {
             margin: 0;
+            padding: 0;
             border-radius: 0;
-            border: none;
-            padding: 0 8px;
           }
         }
       }
+    }
+
+    list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
     }
   }
 }
@@ -1585,6 +1594,29 @@ window#GearyMainWindow.background.csd {
   }
 }
 
+preferencesgroup, .geary-accounts-editor-pane {
+  list {
+    @extend %circular_list;
+
+    row.activatable { @extend %circular_row; }
+  }
+}
+
+.geary-accounts-editor-pane {
+  frame:not(.geary-signature) > border,
+  scrolledwindow.frame { border: none; }
+}
+
+window.background.csd.unified {
+  > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp {
+    > list {
+      @extend %circular_list;
+
+      > row.activatable { @extend %circular_row; }
+    }
+  }
+}
+
 /************
  * Terminal *
  ************/
@@ -1611,6 +1643,43 @@ window.background { // gnome-terminal 3.32 setting
     }
   }
 }
+
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd {
+  > stack, // GameMode setting
+  > stack > scrolledwindow > viewport > box, // User Themes (Workspace) setting
+  > box > stack > scrolledwindow > viewport > box {
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  stack stack stack frame, // ArcMenu setting
+  > stack > stack > box > frame, // Night Theme Switcher setting
+  > stack > stack > box > box > frame, // Night Theme Switcher setting bottom lists
+  > stack > box > stack > box > frame, // ArcMenu setting
+  > stack > box > stack > scrolledwindow > viewport frame, // ArcMenu setting
+  > stack > box > stack > box > scrolledwindow > viewport > frame, // ArcMenu setting
+  > stack > grid > scrolledwindow > viewport > box > frame { // GSConnect setting
+    > border { border: none; }
+
+    > list {
+      @extend %circular_list;
+
+      row.activatable { @extend %circular_row; }
+    }
+  }
+
+  > stack > box > box > list { // ArcMenu setting sidebar
+    border-bottom-left-radius: $windows_radius;
+  }
+}
+
 
 /***********
  * Dialogs *

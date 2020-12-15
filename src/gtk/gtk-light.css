@@ -2705,6 +2705,20 @@ frame > paned > notebook > header, notebook.frame > header {
   background-color: #eaeaf4;
 }
 
+notebook, notebook.frame {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+notebook.frame frame > border {
+  border: none;
+  border-radius: 10px;
+}
+
+notebook.frame frame > list row.activatable {
+  border-radius: 10px;
+}
+
 notebook > header {
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.08);
@@ -2714,6 +2728,7 @@ notebook > header {
 
 notebook > header.top {
   border-bottom-style: solid;
+  border-radius: 9px 9px 0 0;
 }
 
 notebook > header.top > tabs {
@@ -2730,6 +2745,7 @@ notebook > header.top > tabs > tab:checked {
 
 notebook > header.bottom {
   border-top-style: solid;
+  border-radius: 0 0 9px 9px;
 }
 
 notebook > header.bottom > tabs {
@@ -2746,6 +2762,7 @@ notebook > header.bottom > tabs > tab:checked {
 
 notebook > header.left {
   border-right-style: solid;
+  border-radius: 9px 0 0 9px;
 }
 
 notebook > header.left > tabs {
@@ -2762,6 +2779,7 @@ notebook > header.left > tabs > tab:checked {
 
 notebook > header.right {
   border-left-style: solid;
+  border-radius: 0 9px 9px 0;
 }
 
 notebook > header.right > tabs {
@@ -2930,6 +2948,7 @@ notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs t
 
 notebook > stack:not(:only-child) {
   background-color: #FFFFFF;
+  border-radius: 10px;
 }
 
 /**************
@@ -3816,6 +3835,10 @@ frame.flat > border {
 actionbar > revealer > box {
   padding: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+actionbar > revealer > box .linked > button {
+  border-radius: 7px;
 }
 
 scrolledwindow viewport.frame {
@@ -5345,8 +5368,11 @@ paned.titlebar.horizontal headerbar {
   *  Gnome Tweak Tool  *
   **********************/
 .tweak-categories {
-  border-radius: 0 0 0 13px;
   background-image: image(#f4f4f9);
+}
+
+.csd .tweak-categories {
+  border-bottom-left-radius: 13px;
 }
 
 .tweak {
@@ -5370,32 +5396,12 @@ paned.titlebar.horizontal headerbar {
 
 .tweak-group-startup {
   background-image: image(#FFFFFF);
-  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-row#Focus,
-row#StaticWorkspaceTweak,
-row#dynamic-workspaces,
-row#PrimaryWorkspaceTweak,
-row#workspaces-only-on-primary {
-  padding: 0;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-row#Focus row:not(:last-child),
-row#StaticWorkspaceTweak row:not(:last-child),
-row#dynamic-workspaces row:not(:last-child),
-row#PrimaryWorkspaceTweak row:not(:last-child),
-row#workspaces-only-on-primary row:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-row#Focus.tweak > list,
-row#StaticWorkspaceTweak.tweak > list,
-row#dynamic-workspaces.tweak > list,
-row#PrimaryWorkspaceTweak.tweak > list,
-row#workspaces-only-on-primary.tweak > list {
-  margin-top: -3px;
+.tweak-group-startup row.tweak-startup {
+  border-radius: 13px;
+  background-color: transparent;
+  background-image: none;
 }
 
 row#Focus,
@@ -5959,6 +5965,34 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
 /************************
   * Gnome Control Center *
   ************************/
+window.background.csd stack stack stack frame > list,
+window.background.csd > stack > stack > box > frame > list,
+window.background.csd > stack > stack > box > box > frame > list,
+window.background.csd > stack > box > stack > box > frame > list,
+window.background.csd > stack > box > stack > scrolledwindow > viewport frame > list,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > list,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > list, window.background.csd > stack > list,
+window.background.csd > stack > scrolledwindow > viewport > box > list,
+window.background.csd > box > stack > scrolledwindow > viewport > box > list, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list, preferencesgroup list, .geary-accounts-editor-pane list, window.background.csd.unified > deck > deck > deck list, hdyleaflet stack.background scrolledwindow > viewport list, hdyleaflet overlay scrolledwindow > viewport list, leaflet stack.background scrolledwindow > viewport list, leaflet overlay scrolledwindow > viewport list, .tweak-group-startup, list.tweak-group list {
+  border-radius: 8px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child {
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child {
+  border-radius: 7px;
+}
+
 stack > box.vertical > widget > overlay grid.horizontal > stack > button.toggle {
   margin: 8px 6px;
 }
@@ -6034,45 +6068,21 @@ window.background.csd > box.horizontal > box.vertical > scrolledwindow.view > vi
   background-color: transparent;
 }
 
-hdyleaflet list.view.frame, leaflet list.view.frame, hdyleaflet frame.view, leaflet frame.view, hdyleaflet frame:not(.view) list:not(.contacts-contact-list), leaflet frame:not(.view) list:not(.contacts-contact-list) {
-  border-radius: 7px;
-  box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-hdyleaflet list.view.frame row.activatable:first-child, leaflet list.view.frame row.activatable:first-child, hdyleaflet frame.view list row.activatable:first-child, leaflet frame.view list row.activatable:first-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:first-child {
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-}
-
-hdyleaflet list.view.frame row.activatable:last-child, leaflet list.view.frame row.activatable:last-child, hdyleaflet frame.view list row.activatable:last-child, leaflet frame.view list row.activatable:last-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:last-child {
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-}
-
-hdyleaflet list.view.frame row.activatable:only-child, leaflet list.view.frame row.activatable:only-child, hdyleaflet frame.view list row.activatable:only-child, leaflet frame.view list row.activatable:only-child, hdyleaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child, leaflet frame:not(.view) list:not(.contacts-contact-list) row.activatable:only-child {
-  border-radius: 7px;
-}
-
 hdyleaflet frame > border, leaflet frame > border {
   border: none;
 }
 
-hdyleaflet frame.view list, leaflet frame.view list {
-  background: none;
-}
-
-hdyleaflet > box.vertical list:not(.view) row.activatable, leaflet > box.vertical list:not(.view) row.activatable {
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable {
   margin-right: 4px;
   border-radius: 0 7px 7px 0;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable:selected, leaflet > box.vertical list:not(.view) row.activatable:selected {
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected {
   background-color: rgba(0, 0, 0, 0.06);
   color: #5657f5;
 }
 
-hdyleaflet > box.vertical list:not(.view) row.activatable:selected image, hdyleaflet > box.vertical list:not(.view) row.activatable:selected label, leaflet > box.vertical list:not(.view) row.activatable:selected image, leaflet > box.vertical list:not(.view) row.activatable:selected label {
+hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label {
   color: #5657f5;
 }
 
@@ -6178,11 +6188,21 @@ window.background.csd.unified {
   border-top-right-radius: 13px;
 }
 
+window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle {
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+}
+
+window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle > viewswitchertitle > squeezer {
+  margin: 0 0;
+  background: none;
+}
+
 window.background.csd.unified > deck > deck > deck > box.vertical > headerbar.titlebar.windowhandle > viewswitchertitle > squeezer > viewswitcher > box.horizontal > button.radio {
   margin: 0;
+  padding: 0;
   border-radius: 0;
-  border: none;
-  padding: 0 8px;
 }
 
 /****************
@@ -6312,6 +6332,11 @@ window#GearyMainWindow.background.csd stack#conversation_viewer scrolledwindow.g
   border-bottom-right-radius: 13px;
 }
 
+.geary-accounts-editor-pane frame:not(.geary-signature) > border,
+.geary-accounts-editor-pane scrolledwindow.frame {
+  border: none;
+}
+
 /************
  * Terminal *
  ************/
@@ -6329,6 +6354,23 @@ window.background > box.vertical > box.horizontal > stack > widget > notebook.fr
 
 window.background > box.vertical > box.horizontal > stack > widget > notebook.frame > stack {
   border-bottom-right-radius: 13px;
+}
+
+/**************
+ * Extensions *
+ **************/
+window.background.csd stack stack stack frame > border,
+window.background.csd > stack > stack > box > frame > border,
+window.background.csd > stack > stack > box > box > frame > border,
+window.background.csd > stack > box > stack > box > frame > border,
+window.background.csd > stack > box > stack > scrolledwindow > viewport frame > border,
+window.background.csd > stack > box > stack > box > scrolledwindow > viewport > frame > border,
+window.background.csd > stack > grid > scrolledwindow > viewport > box > frame > border {
+  border: none;
+}
+
+window.background.csd > stack > box > box > list {
+  border-bottom-left-radius: 13px;
 }
 
 /***********
