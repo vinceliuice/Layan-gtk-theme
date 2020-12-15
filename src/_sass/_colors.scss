@@ -56,7 +56,7 @@ $lighter_bg_color: if($variant == 'light', $blue_grey_50, $blue_grey_750);
 $alt_lighter_bg_color: if($variant == 'light', $blue_grey_100, fade($blue_grey_800)); // for gnome-shell sub menu
 $darker_bg_color:  if($variant == 'light', $blue_grey_200, fade($blue_grey_900));
 $keyboard_bg_color:  if($variant == 'light', $blue_grey_50, fade($blue_grey_800)); // for gnome-shell keyboard
-$alt_keyboard_bg_color:  if($variant == 'light', $blue_grey_300, fade($blue_grey_900)); // for gnome-shell keyboard
+$alt_keyboard_bg_color:  if($variant == 'light', $blue_grey_200, fade($blue_grey_900)); // for gnome-shell keyboard
 
 $button_bg_color: if($variant == 'light', $base_color, $lighter_bg_color);
 
