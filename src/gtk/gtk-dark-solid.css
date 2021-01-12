@@ -560,7 +560,7 @@ button:checked:disabled {
 }
 
 .lightdm-gtk-greeter button, .budgie-polkit-dialog .linked.horizontal > button,
-.budgie-session-dialog .linked.horizontal > button, .drop-shadow button, .raven .raven-header.top stackswitcher button, .raven .raven-header:not(.top) button, .raven stackswitcher.linked > button, .budgie-popover button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, popover.messagepopover .popover-action-area button, .gedit-search-slider button, button.sidebar-button, messagedialog.csd .dialog-action-area button, messagedialog .dialog-action-area button, calendar.button, check,
+.budgie-session-dialog .linked.horizontal > button, .drop-shadow button, .raven .raven-header.top stackswitcher button, .raven .raven-header:not(.top) button, .raven stackswitcher.linked > button, .budgie-popover button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, popover.messagepopover .popover-action-area button, .gedit-search-slider button, placessidebar row button.sidebar-button, messagedialog.csd .dialog-action-area button, messagedialog .dialog-action-area button, calendar.button, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
 .menuitem.button.flat, .budgie-panel button, PanelToplevel.horizontal > grid > button, .mate-panel-menu-bar button, .nemo-window .toolbar button, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button,
 .nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button, layouttabbar button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), :not(headerbar) .caja-pathbar button, .caja-pathbar :not(headerbar) button, :not(headerbar) .path-bar button,
@@ -577,7 +577,7 @@ button.flat {
 }
 
 .lightdm-gtk-greeter button:hover, .budgie-polkit-dialog .linked.horizontal > button:hover,
-.budgie-session-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .raven .raven-header.top stackswitcher button:hover, .raven .raven-header:not(.top) button:hover, .raven stackswitcher.linked > button:hover, .budgie-popover button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, popover.messagepopover .popover-action-area button:hover, .gedit-search-slider button:hover, button.sidebar-button:hover, messagedialog .dialog-action-area button:hover, calendar.button:hover, check:hover,
+.budgie-session-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .raven .raven-header.top stackswitcher button:hover, .raven .raven-header:not(.top) button:hover, .raven stackswitcher.linked > button:hover, .budgie-popover button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, popover.messagepopover .popover-action-area button:hover, .gedit-search-slider button:hover, placessidebar row button.sidebar-button:hover, messagedialog .dialog-action-area button:hover, calendar.button:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
 .menuitem.button.flat:hover, .budgie-panel button:hover, PanelToplevel.horizontal > grid > button:hover, .mate-panel-menu-bar button:hover, .nemo-window .toolbar button:hover, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:hover,
 .nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:hover, layouttabbar button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), :not(headerbar) .caja-pathbar button:hover, .caja-pathbar :not(headerbar) button:hover, :not(headerbar) .path-bar button:hover,
@@ -588,7 +588,7 @@ button.flat:hover {
 }
 
 .lightdm-gtk-greeter button:active, .budgie-polkit-dialog .linked.horizontal > button:active,
-.budgie-session-dialog .linked.horizontal > button:active, .drop-shadow button:active, .raven .raven-header.top stackswitcher button:active, .raven .raven-header:not(.top) button:active, .raven stackswitcher.linked > button:active, .budgie-popover button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, popover.messagepopover .popover-action-area button:active, .gedit-search-slider button:active, button.sidebar-button:active, messagedialog .dialog-action-area button:active, calendar.button:active, check:active,
+.budgie-session-dialog .linked.horizontal > button:active, .drop-shadow button:active, .raven .raven-header.top stackswitcher button:active, .raven .raven-header:not(.top) button:active, .raven stackswitcher.linked > button:active, .budgie-popover button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, popover.messagepopover .popover-action-area button:active, .gedit-search-slider button:active, placessidebar row button.sidebar-button:active, messagedialog .dialog-action-area button:active, calendar.button:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
 .menuitem.button.flat:active, .budgie-panel button:active, PanelToplevel.horizontal > grid > button:active, .mate-panel-menu-bar button:active, .nemo-window .toolbar button:active, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:active,
 .nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:active, layouttabbar button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), :not(headerbar) .caja-pathbar button:active, .caja-pathbar :not(headerbar) button:active, :not(headerbar) .path-bar button:active,
@@ -603,7 +603,7 @@ button.flat:active {
 }
 
 .lightdm-gtk-greeter button:disabled, .budgie-polkit-dialog .linked.horizontal > button:disabled,
-.budgie-session-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .raven .raven-header.top stackswitcher button:disabled, .raven .raven-header:not(.top) button:disabled, .raven stackswitcher.linked > button:disabled, .budgie-popover button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, popover.messagepopover .popover-action-area button:disabled, .gedit-search-slider button:disabled, button.sidebar-button:disabled, messagedialog .dialog-action-area button:disabled, calendar.button:disabled, check:disabled,
+.budgie-session-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .raven .raven-header.top stackswitcher button:disabled, .raven .raven-header:not(.top) button:disabled, .raven stackswitcher.linked > button:disabled, .budgie-popover button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, popover.messagepopover .popover-action-area button:disabled, .gedit-search-slider button:disabled, placessidebar row button.sidebar-button:disabled, messagedialog .dialog-action-area button:disabled, calendar.button:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
 .menuitem.button.flat:disabled, .budgie-panel button:disabled, PanelToplevel.horizontal > grid > button:disabled, .mate-panel-menu-bar button:disabled, .nemo-window .toolbar button:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box.raised > button:disabled,
 .nemo-window toolbar.primary-toolbar > toolitem > box.linked.raised > button:disabled, layouttabbar button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), :not(headerbar) .caja-pathbar button:disabled, .caja-pathbar :not(headerbar) button:disabled, :not(headerbar) .path-bar button:disabled,
@@ -670,24 +670,24 @@ row:selected button:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.raven-mpris button.image-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, row:selected button.sidebar-button, row:selected button.flat {
+.raven-mpris button.image-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, row:selected button.flat {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.raven-mpris button.image-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, row:selected button.sidebar-button:hover, .raven-mpris button.image-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, row:selected button.sidebar-button:active, row:selected button.flat:hover, row:selected button.flat:active {
+.raven-mpris button.image-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .raven-mpris button.image-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, row:selected button.flat:hover, row:selected button.flat:active {
   color: #FFFFFF;
 }
 
-.raven-mpris button.image-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, row:selected button.sidebar-button:disabled, row:selected button.flat:disabled {
+.raven-mpris button.image-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, row:selected button.flat:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.raven-mpris button.image-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, row:selected button.sidebar-button:checked, row:selected button.flat:checked {
+.raven-mpris button.image-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, row:selected button.flat:checked {
   background-color: rgba(255, 255, 255, 0.3);
   color: #FFFFFF;
 }
 
-.raven-mpris button.image-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, row:selected button.sidebar-button:checked:disabled, row:selected button.flat:checked:disabled {
+.raven-mpris button.image-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, row:selected button.flat:checked:disabled {
   background-color: rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.5);
 }
@@ -847,7 +847,7 @@ button.circular {
   -gtk-outline-radius: 9999px;
 }
 
-.pluma-window paned.horizontal box.vertical box.horizontal button.flat, .gedit-search-slider button:dir(ltr), .gedit-search-slider button:dir(rtl), .gedit-document-panel row button.flat, .nautilus-window .floating-bar button, button.sidebar-button, notebook > header tab button.flat, spinbutton:not(.vertical) button {
+.pluma-window paned.horizontal box.vertical box.horizontal button.flat, .gedit-search-slider button:dir(ltr), .gedit-search-slider button:dir(rtl), .gedit-document-panel row button.flat, .nautilus-window .floating-bar button, placessidebar row button.sidebar-button, notebook > header tab button.flat, spinbutton:not(.vertical) button {
   min-height: 20px;
   min-width: 20px;
   padding: 0;
@@ -934,7 +934,7 @@ modelbutton.flat arrow.right {
 button.color {
   min-height: 20px;
   min-width: 20px;
-  padding: 6px;
+  padding: 4px;
 }
 
 /*********
@@ -1155,7 +1155,7 @@ toolbar {
 
 frame.documents-dropdown, .app-notification, toolbar.osd {
   transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
-  padding: 6px;
+  padding: 4px;
   border-radius: 7px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #31313a;
@@ -1202,11 +1202,11 @@ toolbar:not(.inline-toolbar):not(.osd) spinbutton button {
 }
 
 toolbar:not(.inline-toolbar):not(.osd) switch {
-  margin: 8px 2px;
+  margin: 6px 2px;
 }
 
 .inline-toolbar {
-  padding: 6px;
+  padding: 4px;
   border-style: solid;
   border-width: 0 1px 1px;
   border-color: rgba(255, 255, 255, 0.08);
@@ -1215,7 +1215,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
 
 searchbar > revealer > box,
 .location-bar {
-  padding: 6px;
+  padding: 4px;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: rgba(255, 255, 255, 0.08);
@@ -1225,7 +1225,7 @@ searchbar > revealer > box,
 
 searchbar > revealer > box {
   margin: -6px;
-  padding: 6px;
+  padding: 4px;
 }
 
 actionbar {
@@ -1239,7 +1239,7 @@ actionbar {
 headerbar {
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1), color 100ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 38px;
-  padding: 0 6px;
+  padding: 0 4px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(255, 255, 255, 0.08);
   background-color: #31313a;
   color: #FFFFFF;
@@ -1505,7 +1505,7 @@ headerbar .linked.stack-switcher:not(.vertical):not(.path-bar) > button.text-but
 
 headerbar.default-decoration {
   min-height: 20px;
-  padding: 6px 12px;
+  padding: 4px 12px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -1533,8 +1533,8 @@ headerbar.default-decoration button.titlebutton {
 headerbar entry,
 headerbar spinbutton,
 headerbar button {
-  margin-top: 6px;
-  margin-bottom: 6px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 headerbar switch {
@@ -1548,8 +1548,8 @@ headerbar spinbutton button {
 }
 
 headerbar .entry-tag, headerbar .photos-entry-tag, headerbar .documents-entry-tag {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .csd headerbar, headerbar.titlebar, .titlebar headerbar, .solid-csd headerbar, box headerbar:only-child {
@@ -2850,7 +2850,7 @@ notebook > header tab {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   min-height: 20px;
   min-width: 20px;
-  padding: 6px 12px;
+  padding: 4px 12px;
   outline-offset: -6px;
   border-width: 1px;
   border-color: transparent;
@@ -2901,13 +2901,13 @@ notebook > header tab button.flat {
 }
 
 notebook > header tab button.flat:last-child {
-  margin-left: 6px;
-  margin-right: -6px;
+  margin-left: 4px;
+  margin-right: -8px;
 }
 
 notebook > header tab button.flat:first-child {
-  margin-left: -6px;
-  margin-right: 6px;
+  margin-left: -8px;
+  margin-right: 4px;
 }
 
 notebook > header.top tabs, notebook > header.bottom tabs {
@@ -3100,7 +3100,7 @@ scrollbar.horizontal button.up {
  **********/
 switch {
   transition: all 225ms cubic-bezier(0, 0, 0.2, 1);
-  margin: 6px 0;
+  margin: 4px 0;
   padding: 0;
   min-height: 16px;
   min-width: 38px;
@@ -3129,7 +3129,7 @@ switch slider {
   transition: 100ms, box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
   min-width: 20px;
   min-height: 20px;
-  margin: -4px -3px;
+  margin: -4px -2px;
   border-radius: 9999px;
   -gtk-outline-radius: 9999px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -3833,7 +3833,7 @@ frame.flat > border {
 }
 
 actionbar > revealer > box {
-  padding: 6px;
+  padding: 4px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -5271,12 +5271,12 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:
 }
 
 .gedit-search-slider entry:dir(ltr) {
-  margin-right: -58px;
-  padding-right: 58px;
+  margin-right: -52px;
+  padding-right: 52px;
 }
 
 .gedit-search-slider entry:dir(ltr) .gedit-search-entry-occurrences-tag {
-  margin-left: 6px;
+  margin-left: 4px;
 }
 
 .gedit-search-slider entry:dir(ltr) image.right {
@@ -5284,12 +5284,12 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:
 }
 
 .gedit-search-slider entry:dir(rtl) {
-  margin-left: -58px;
-  padding-left: 58px;
+  margin-left: -52px;
+  padding-left: 52px;
 }
 
 .gedit-search-slider entry:dir(rtl) .gedit-search-entry-occurrences-tag {
-  margin-right: 6px;
+  margin-right: 4px;
 }
 
 .gedit-search-slider entry:dir(rtl) image.left {
@@ -5309,15 +5309,15 @@ dialog.background > box.dialog-vbox.vertical > grid.horizontal > box.horizontal:
 }
 
 .gedit-search-slider button {
-  border: solid 6px transparent;
+  border: solid 4px transparent;
 }
 
 .gedit-search-slider button:last-child:dir(ltr), .gedit-search-slider button:not(:first-child):dir(rtl) {
-  margin-left: -3px;
+  margin-left: -2px;
 }
 
 .gedit-search-slider button:first-child:dir(rtl), .gedit-search-slider button:not(:last-child):dir(ltr) {
-  margin-right: -3px;
+  margin-right: -2px;
 }
 
 frame.gedit-map-frame > border:dir(ltr) {
@@ -5576,7 +5576,7 @@ docktab {
   min-height: 20px;
   min-width: 20px;
   margin-bottom: -1px;
-  padding: 6px 6px;
+  padding: 4px 6px;
   outline-offset: -6px;
   border-width: 1px;
   border-color: transparent;
@@ -6784,7 +6784,7 @@ window.background:not(.csd) > window.background > menu > separator {
 #MozillaGtkWidget.background headerbar.titlebar.default-decoration button.titlebutton {
   min-width: 20px;
   min-height: 20px;
-  margin: 6px 2px;
+  margin: 4px 2px;
   padding: 0;
   color: rgba(255, 255, 255, 0.7);
   background-color: transparent;
@@ -8403,7 +8403,7 @@ frame.raven-frame > border {
 .raven .raven-header.top stackswitcher button {
   margin: -4px 0;
   min-height: 32px;
-  padding: 6px 24px;
+  padding: 4px 16px;
 }
 
 .raven .raven-header.top button.image-button:dir(ltr) {
@@ -8745,7 +8745,7 @@ box.vertical > stack > box.vertical .raven-background > viewport.frame list > ro
 
 .budgie-run-dialog entry.search {
   font-size: 120%;
-  padding: 6px 14px;
+  padding: 4px 12px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: transparent;
 }
