@@ -59,5 +59,6 @@ To connect the theme to an app run:
 sudo snap connect [other snap]:gtk-3-themes layan-themes:gtk-3-themes
 ```
 To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
-``` for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i layan-themes:gtk-3-themes; done
+``` 
+for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i layan-themes:gtk-3-themes; done
 ```
