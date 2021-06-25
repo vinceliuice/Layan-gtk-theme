@@ -814,7 +814,6 @@ StScrollBar {
 
 #panel {
   background-color: $panel_bg_color;
-  /* transition from solid to transparent */
   transition-duration: 250ms;
   font-weight: bold;
   height: $menuitem_size;
@@ -823,7 +822,7 @@ StScrollBar {
   &.unlock-screen,
   &.login-screen,
   &.lock-screen {
-    background-color: if($titlebar == 'light', rgba($panel_bg_color, 0.5), transparent);
+    background-color: transparent;
   }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
@@ -854,6 +853,19 @@ StScrollBar {
     color: $panel_secondary_fg_color;
     text-shadow: none;
     transition-duration: $longer_duration;
+    border-radius: 0;
+    border: none;
+
+    &.clock-display {
+      &, &:active, &:overview, &:focus, &:checked {
+        .clock {
+          background: none;
+          box-shadow: none;
+          border: none;
+          border-radius: 0;
+        }
+      }
+    }
 
     .app-menu-icon {
       -st-icon-style: symbolic;
@@ -870,6 +882,8 @@ StScrollBar {
 
     &:hover {
       color: $panel_fg_color;
+      background-color: $inverse_divider_color;
+      box-shadow: none;
       text-shadow: none;
 
       .system-status-icon,
@@ -882,14 +896,13 @@ StScrollBar {
     &:active, &:overview, &:focus, &:checked {
       // Trick due to St limitations. It needs a background to draw
       // a box-shadow
-      background-color: rgba($panel_bg_color, 0.01);
+      background-color: rgba(white, 0.05);
       box-shadow: inset 0 -2px 0px $primary_color;
       color: $panel_fg_color;
 
       & > .system-status-icon { icon-shadow: none; }
     }
 
-    .system-status-icon { icon-size: em(16px); padding: 0 4px; }
     .unlock-screen &,
     .login-screen &,
     .lock-screen & {
@@ -898,18 +911,15 @@ StScrollBar {
     }
   }
 
-  .panel-button.clock-display {
-    &:active, &:overview, &:focus, &:checked {
-      .clock {
-        background: none;
-        box-shadow: none;
-      }
-    }
+  .system-status-icon {
+    icon-size: 16px;
+    padding: 5px;
+    margin: 0 4px;
   }
 
-  .panel-status-indicators-box,
-  .panel-status-menu-box {
-    spacing: 2px;
+  .panel-status-indicators-box .system-status-icon,
+  .panel-status-menu-box .system-status-icon {
+    margin: 0;
   }
 
   // spacing between power icon and (optional) percentage label
@@ -918,41 +928,11 @@ StScrollBar {
   }
 
   .screencast-indicator { color: $warning_color; }
-  .remote-access-indicator { color: $warning_color; } // > 3.29.4
-
-  &.solid {
-    background-color: $solid_panel_bg_color;
-    /* transition from transparent to solid */
-    transition-duration: 250ms;
-    background-gradient-direction: none; // for Ubuntu session
-    text-shadow: none; // for Ubuntu session
-
-    &:overview { background-color: transparent; } // for Ubuntu session
-
-    .panel-corner {
-      -panel-corner-background-color: $solid_panel_bg_color;
-    }
-
-    .panel-button {
-      color: $panel_secondary_fg_color;
-      text-shadow: none;
-
-      &:hover, &:active, &:overview, &:focus, &:checked {
-        color: $panel_fg_color;
-      }
-    }
-
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: none;
-    }
-  }
+  .remote-access-indicator { color: $warning_color; } // > 3.29.
 }
 
 // Activities button
 #panel #panelActivities.panel-button {
-
   > * {
     background-image: url("assets/activities.svg");
     background-position: center top;
@@ -2022,58 +2002,43 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 
 // IBus Candidate Popup
 .candidate-popup-boxpointer {
-  -arrow-border-radius: 0;
-  -arrow-background-color: transparent;
-  -arrow-border-width: 0;
-  -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
-  -arrow-box-shadow: none;
-  margin: 5px 8px 12px 12px;
-  background-color: rgba($menu_bg_color, 0.95);
-  border-radius: $windows_radius;
-  box-shadow: $shadow_3;
+  @extend .popup-menu-boxpointer;
 }
 
 .candidate-popup-content {
-  padding: 8px;
-  spacing: 0;
-}
-
-.candidate-index {
-  padding: 0 4px 0 0;
-  color: $hint_fg_color;
-  .candidate-box:selected & { color: $inverse_hint_fg_color; }
+  background-color: $menu_bg_color;
+  border-radius: $buttons_radius;
+  box-shadow: $shadow_3;
+  margin: ($container_padding / 2) 8px;
+  padding: $container_padding;
+  spacing: $container_padding;
 }
 
 .candidate-box {
-  transition-duration: 0ms; // FIXME: needs more natural transitions
-  min-height: $menuitem_size;
-  padding: 0 8px;
-  border-radius: $windows_radius;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  margin-right: $container_padding / 2;
+  border-radius: $buttons_radius - $container_padding;
   &:hover { background-color: $divider_color; color: $fg_color; }
   &:active { background-color: $track_color; color: $fg_color; }
   &:selected { background-color: $primary_color; color: $inverse_fg_color; }
+  &:last-child { margin-right: 0; }
 }
 
 .candidate-page-button-box {
-  height: $menuitem_size;
-  .vertical & { padding-top: 0; }
-  .horizontal & { padding-left: 0; }
+  height: 2em;
+  .vertical & { padding-top: 0.5em; }
+  .horizontal & { padding-left: 0.5em; }
 }
 
 .candidate-page-button {
-  min-width: $menuitem_size;
-  min-height: $menuitem_size;
-  padding: 0;
+  padding: 4px;
 }
 
-.candidate-page-button-previous { border-radius: $buttons_radius; border-right-width: 0; }
-.candidate-page-button-next { border-radius: $buttons_radius;  }
-.candidate-page-button-icon { icon-size: em(16px); }
+.candidate-page-button-previous { border-radius: $buttons_radius 0px 0px $buttons_radius; border-right-width: 0; }
+.candidate-page-button-next { border-radius: 0px $buttons_radius $buttons_radius 0px;  }
+.candidate-page-button-icon { icon-size: 1em; }
 
 /* Auth Dialogs & Screen Shield */
-
 .framed-user-icon {
   background-size: contain;
   border: none;
@@ -2086,7 +2051,6 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 }
 
 // LOGIN DIALOG
-
 .login-dialog-banner-view {
   padding-top: 24px;
   max-width: 23em;
