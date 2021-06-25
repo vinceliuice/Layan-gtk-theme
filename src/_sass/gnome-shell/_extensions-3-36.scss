@@ -61,41 +61,26 @@
   padding: 6px 6px 6px 3px;
 }
 
-#dashtodockContainer .app-well-app-running-dot {
-  background-color: transparent;
+#dashtodockContainer .app-well-app-running-dot { //running apps indicator
+  width: 32px; height: 2px;
+  background-color: $inverse_secondary_fg_color;
+  margin-bottom: 0;
+
+  StWidget.focused & {
+    background-color: $primary_color;
+  }
 }
 
 #dashtodockContainer .dash-item-container > StWidget {
   background-size: cover;
 }
 
-@each $p, $pt in ('.left', 'left'),
-                 ('.right', 'right'),
-                 ('.top', 'top'),
-                 ('.bottom', 'bottom') {
-  @each $n, $nb in ('.running1', 'running1'),
-                   ('.running2', 'running2'),
-                   ('.running3', 'running3'),
-                   ('.running4', 'running4') {
-    @each $f, $fc in ('', ''),
-                     ('.focused', '-focused') {
-      #dashtodockContainer#{$p} .dash-item-container > StWidget#{$n}#{$f} {
-        background-image: url("assets/dash/#{$pt}-#{$nb}#{$fc}.svg");
-      }
-    }
-  }
-}
-
-
 /* Simple Dock */
-
 #dash:desktop {
   background-color: rgba($grey_900, 0.5);
 }
 
-
 /* GPaste */
-
 .popup-menu {
   .search-entry {
     color: $fg_color;

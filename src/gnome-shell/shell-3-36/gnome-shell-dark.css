@@ -224,19 +224,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: #FFFFFF;
 }
 
-#screenShieldNotifications StScrollBar StBin#trough, #overview StScrollBar StBin#trough {
+#overview StScrollBar StBin#trough, #screenShieldNotifications StScrollBar StBin#trough {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-#screenShieldNotifications StScrollBar StButton#vhandle, #overview StScrollBar StButton#vhandle, #screenShieldNotifications StScrollBar StButton#hhandle, #overview StScrollBar StButton#hhandle {
+#overview StScrollBar StButton#vhandle, #screenShieldNotifications StScrollBar StButton#vhandle, #overview StScrollBar StButton#hhandle, #screenShieldNotifications StScrollBar StButton#hhandle {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-#screenShieldNotifications StScrollBar StButton#vhandle:hover, #overview StScrollBar StButton#vhandle:hover, #screenShieldNotifications StScrollBar StButton#hhandle:hover, #overview StScrollBar StButton#hhandle:hover {
+#overview StScrollBar StButton#vhandle:hover, #screenShieldNotifications StScrollBar StButton#vhandle:hover, #overview StScrollBar StButton#hhandle:hover, #screenShieldNotifications StScrollBar StButton#hhandle:hover {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-#screenShieldNotifications StScrollBar StButton#vhandle:active, #overview StScrollBar StButton#vhandle:active, #screenShieldNotifications StScrollBar StButton#hhandle:active, #overview StScrollBar StButton#hhandle:active {
+#overview StScrollBar StButton#vhandle:active, #screenShieldNotifications StScrollBar StButton#vhandle:active, #overview StScrollBar StButton#hhandle:active, #screenShieldNotifications StScrollBar StButton#hhandle:active {
   background-color: #FFFFFF;
 }
 
@@ -532,77 +532,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-size: 1em;
 }
 
-/* ShellMountOperation Dialogs */
-.shell-mount-operation-icon {
-  icon-size: 48px;
-}
-
-.mount-dialog {
-  spacing: 24px;
-}
-
-.mount-dialog .message-dialog-title {
-  padding-top: 10px;
-  padding-left: 17px;
-  padding-bottom: 6px;
-  max-width: 34em;
-}
-
-.mount-dialog .message-dialog-title:rtl {
-  padding-left: 0px;
-  padding-right: 17px;
-}
-
-.mount-dialog .message-dialog-body {
-  padding-left: 17px;
-  width: 28em;
-}
-
-.mount-dialog .message-dialog-body:rtl {
-  padding-left: 0px;
-  padding-right: 17px;
-}
-
-.mount-dialog-app-list {
-  max-height: 200px;
-  padding-top: 24px;
-  padding-left: 49px;
-  padding-right: 32px;
-}
-
-.mount-dialog-app-list:rtl {
-  padding-right: 49px;
-  padding-left: 32px;
-}
-
-.mount-dialog-app-list-item {
-  color: #FFFFFF;
-}
-
-.mount-dialog-app-list-item:hover {
-  color: #FFFFFF;
-}
-
-.mount-dialog-app-list-item:ltr {
-  padding-right: 1em;
-}
-
-.mount-dialog-app-list-item:rtl {
-  padding-left: 1em;
-}
-
-.mount-dialog-app-list-item-icon:ltr {
-  padding-right: 17px;
-}
-
-.mount-dialog-app-list-item-icon:rtl {
-  padding-left: 17px;
-}
-
-.mount-dialog-app-list-item-name {
-  font-size: 1em;
-}
-
 /* Password or Authentication Dialog */
 .prompt-dialog {
   width: 34em;
@@ -712,66 +641,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   icon-size: 64px;
 }
 
-/* Access Dialog */
-.access-dialog {
-  spacing: 30px;
-}
-
-.access-dialog-main-layout {
-  padding: 12px 20px 0;
-  spacing: 12px;
-}
-
-.access-dialog-content {
-  max-width: 28em;
-  spacing: 20px;
-}
-
-.access-dialog-icon {
-  min-width: 48px;
-  icon-size: 48px;
-}
-
-.access-dialog-title {
-  font-weight: bold;
-}
-
-.access-dialog-subtitle {
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: bold;
-}
-
-/* Geolocation Dialog */
-.geolocation-dialog {
-  spacing: 30px;
-}
-
-/* Extension Dialog */
-.extension-dialog .message-dialog-main-layout {
-  spacing: 24px;
-  padding: 10px;
-}
-
-.extension-dialog .message-dialog-title {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* Inhibit-Shortcuts Dialog */
-.inhibit-shortcuts-dialog {
-  spacing: 30px;
-}
-
-/* Network Agent Dialog */
-.network-dialog-secret-table {
-  spacing-rows: 15px;
-  spacing-columns: 1em;
-}
-
-.keyring-dialog-control-table {
-  spacing-rows: 15px;
-  spacing-columns: 1em;
-}
-
 /* Popovers/Menus */
 .popup-menu {
   min-width: 15em;
@@ -787,6 +656,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu .popup-menu-content {
   padding: 10px 0;
+  margin: 5px 8px 12px 12px;
+  background-color: transparent;
+  background-color: rgba(60, 60, 70, 0.95);
+  border-radius: 13px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.19), 0 6px 3px rgba(0, 0, 0, 0.23);
 }
 
 .popup-menu .popup-menu-item {
@@ -816,7 +690,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
 }
 
-.popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked.selected {
   background-color: #6f70f7;
   color: #FFFFFF;
 }
@@ -881,28 +755,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   -arrow-box-shadow: none;
 }
 
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 0;
-  -arrow-background-color: transparent;
-  -arrow-border-width: 0;
-  -arrow-border-color: transparent;
-  -arrow-base: 0;
-  -arrow-rise: 0;
-  -arrow-box-shadow: none;
-  margin: 5px 8px 12px 12px;
-  background-color: rgba(60, 60, 70, 0.95);
-  border-radius: 13px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.19), 0 6px 3px rgba(0, 0, 0, 0.23);
-}
-
-.popup-menu-boxpointer .popup-menu-content {
-  margin: 5px 8px 12px 12px;
-  background-color: transparent;
-  background-color: rgba(60, 60, 70, 0.95);
-  border-radius: 13px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.19), 0 6px 3px rgba(0, 0, 0, 0.23);
-}
-
 .popup-separator-menu-item {
   margin: 0;
   padding: 0 0;
@@ -922,15 +774,47 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   margin: 0 54px 0 24px;
 }
 
+#appMenu {
+  spinner-image: url("process-working.svg");
+  spacing: 4px;
+}
+
+#appMenu .label-shadow {
+  color: transparent;
+}
+
+#appMenu .panel-status-menu-box {
+  padding: 0 6px;
+  spacing: 6px;
+}
+
+.aggregate-menu {
+  min-width: 21em;
+}
+
+.aggregate-menu .popup-menu-icon {
+  padding: 0 0;
+  margin: 0 0;
+  -st-icon-style: symbolic;
+}
+
+.aggregate-menu .popup-sub-menu .popup-menu-item :first-child:ltr {
+  /* 8px spacing + 2*4px padding */
+  padding-left: 10px;
+  margin-left: 1.2307692308em;
+}
+
+.aggregate-menu .popup-sub-menu .popup-menu-item :first-child:rtl {
+  /* 8px spacing + 2*4px padding */
+  padding-right: 10px;
+  margin-right: 1.2307692308em;
+}
+
 .background-menu {
   -boxpointer-gap: 4px;
   -arrow-rise: 0;
 }
 
-/* fallback menu
-- odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
-  app menu inside the main app window itself rather than the top bar
-*/
 /* OSD */
 .osd-window {
   text-align: center;
@@ -1523,7 +1407,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .world-clocks-button,
 .weather-button,
 .events-button {
-  padding: 4px 8px;
+  padding: 8px;
   border-radius: 5px;
   border: none;
   box-shadow: none;
@@ -1561,8 +1445,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .weather-grid,
 .world-clocks-grid {
-  spacing-rows: 8px;
-  spacing-columns: 16px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
 }
 
 .world-clocks-header,
@@ -1614,11 +1498,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .weather-button .weather-box {
-  spacing: 12px;
+  spacing: 6px;
 }
 
 .weather-button .weather-header-box {
-  spacing: 8px;
+  spacing: 12px;
 }
 
 .weather-button .weather-header.location {
@@ -1823,72 +1707,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.system-switch-user-submenu-icon.user-icon {
-  icon-size: 20px;
-  padding: 0 2px;
-}
-
-.system-switch-user-submenu-icon.default-icon {
-  icon-size: 16px;
-  padding: 0 4px;
-}
-
-#appMenu {
-  spinner-image: url("process-working.svg");
-  spacing: 4px;
-}
-
-#appMenu .label-shadow {
-  color: transparent;
-}
-
-.aggregate-menu {
-  min-width: 21em;
-}
-
-.aggregate-menu .popup-menu-icon {
-  padding: 0 0;
-  margin: 0 0;
-  -st-icon-style: symbolic;
-}
-
-.aggregate-menu .popup-sub-menu .popup-menu-item :first-child:ltr {
-  /* 8px spacing + 2*4px padding */
-  padding-left: 10px;
-  margin-left: 1.2307692308em;
-}
-
-.aggregate-menu .popup-sub-menu .popup-menu-item :first-child:rtl {
-  /* 8px spacing + 2*4px padding */
-  padding-right: 10px;
-  margin-right: 1.2307692308em;
-}
-
-.system-menu-action {
-  color: rgba(255, 255, 255, 0.7);
-  border-radius: 100px;
-  /* wish we could do 50% */
-  padding: 11px;
-  border: none;
-  -st-icon-style: symbolic;
-}
-
-.system-menu-action:hover, .system-menu-action:focus {
-  background-color: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
-  border: none;
-  padding: 11px;
-}
-
-.system-menu-action:active {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
-}
-
-.system-menu-action > StIcon {
-  icon-size: 16px;
-}
-
 .ripple-box {
   width: 48px;
   height: 48px;
@@ -1910,39 +1728,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-menu-icon {
   icon-size: 1.2307692308em;
-}
-
-.window-close {
-  transition-duration: 0ms;
-  height: 36px;
-  width: 36px;
-  -shell-close-overlap: 12px;
-  background-image: url("assets/window-close.svg");
-  background-size: 36px;
-  color: transparent;
-  background-color: transparent;
-  border: 0 none transparent;
-  box-shadow: none;
-}
-
-.window-close StIcon {
-  icon-size: 36px;
-}
-
-.window-close:hover {
-  height: 36px;
-  width: 36px;
-  background-size: 36px;
-  background-image: url("assets/window-close-hover.svg");
-  box-shadow: none;
-}
-
-.window-close:active {
-  height: 36px;
-  width: 36px;
-  background-size: 36px;
-  background-image: url("assets/window-close-active.svg");
-  box-shadow: none;
 }
 
 /* NETWORK DIALOGS */
@@ -2025,84 +1810,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   spacing: 12px;
 }
 
-/* OVERVIEW */
-#overview {
-  spacing: 24px;
-}
-
-#overview .app-view-controls {
-  width: 320px;
-  padding-bottom: 32px;
-}
-
-#overview .app-view-control {
-  padding: 0 16px;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-#overview .app-view-control:hover {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.12) !important;
-}
-
-#overview .app-view-control:active {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-#overview .app-view-control:checked {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.01) !important;
-  box-shadow: inset 0 2px #5657f5;
-}
-
-#overview .app-view-control:first-child {
-  border-right-width: 0;
-  border-radius: 7px;
-}
-
-#overview .app-view-control:first-child:checked {
-  border-radius: 0 0 7px 7px;
-}
-
-#overview .app-view-control:last-child {
-  border-radius: 7px;
-}
-
-#overview .app-view-control:last-child:checked {
-  border-radius: 0 0 7px 7px;
-}
-
 .overview-controls {
   padding-bottom: 32px;
-}
-
-.window-picker {
-  -horizontal-spacing: 16px;
-  -vertical-spacing: 16px;
-  padding: 0 16px 32px;
-}
-
-.window-picker.external-monitor {
-  padding: 16px;
-}
-
-.window-clone-border {
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  border-radius: 13px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
-}
-
-.window-caption {
-  spacing: 25px;
-  color: #FFFFFF;
-  background-color: #5657f5;
-  border-radius: 13px;
-  border: none;
-  padding: 4px 8px;
-  font-weight: normal;
-  font-size: 1em;
 }
 
 .search-entry {
@@ -2196,63 +1905,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 15px;
 }
 
-/* DASHBOARD */
-#dash {
-  font-size: 1em;
+.app-well-app .overview-icon,
+.show-apps .overview-icon,
+.grid-search-result .overview-icon, .search-provider-icon,
+.list-search-result {
   color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.12);
-  padding: 3px 0;
+  border-radius: 20px;
+  padding: 6px;
   border: none;
-  border-left: 0px;
-  border-radius: 0px 13px 13px 0px;
-}
-
-#dash:rtl {
-  border-radius: 13px 0 0 13px;
-}
-
-#dash .placeholder {
-  background-image: url("assets/dash-placeholder.svg");
-  background-size: contain;
-  height: 24px;
-}
-
-#dash .empty-dash-drop-target {
-  width: 24px;
-  height: 24px;
-}
-
-.dash-item-container > StWidget {
-  padding: 3px 6px;
-}
-
-.dash-label {
-  border-radius: 13px;
-  padding: 7px 8px;
-  color: #FFFFFF;
-  background-color: #44454b;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
+  transition-duration: 225ms;
   text-align: center;
-  -x-offset: 8px;
-}
-
-/* App Vault/Grid */
-.icon-grid {
-  spacing: 30px;
-  -shell-grid-horizontal-item-size: 136px;
-  -shell-grid-vertical-item-size: 136px;
-}
-
-.icon-grid .overview-icon {
-  icon-size: 96px;
-}
-
-.system-action-icon {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-  background-color: #212121;
-  color: #FFFFFF;
-  border-radius: 99px;
-  icon-size: 48px;
 }
 
 .search-provider-icon:focus, .search-provider-icon:selected, .search-provider-icon:hover,
@@ -2296,20 +1958,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-well-app-running-dot {
   width: 32px;
   height: 2px;
-  background-color: #5657f5;
+  background-color: rgba(255, 255, 255, 0.7);
   margin-bottom: 0;
 }
 
-.search-provider-icon,
-.list-search-result, .app-well-app .overview-icon,
-.show-apps .overview-icon,
-.grid-search-result .overview-icon {
-  color: #FFFFFF;
-  border-radius: 100px;
-  padding: 6px;
-  border: none;
-  transition-duration: 225ms;
-  text-align: center;
+StWidget.focused .app-well-app-running-dot {
+  background-color: #5657f5;
 }
 
 .show-apps .show-apps-icon {
@@ -2334,25 +1988,16 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-.app-folder-popup {
-  -arrow-border-radius: 13px;
-  -arrow-background-color: rgba(255, 255, 255, 0.1);
-  -arrow-base: 24px;
-  -arrow-rise: 12px;
-}
-
-.app-folder-popup-bin {
-  padding: 5px;
-}
-
-.app-folder-icon {
-  padding: 6px;
-  spacing-rows: 6px;
-  spacing-columns: 6px;
+.system-action-icon {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: #212121;
+  color: #FFFFFF;
+  border-radius: 9999px;
+  icon-size: 48px;
 }
 
 .page-indicator {
-  padding: 15px 20px;
+  padding: 16px;
 }
 
 .page-indicator .page-indicator-icon {
@@ -2405,18 +2050,24 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-well-app .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
-  padding: 10px 8px 15px 8px;
-  spacing: 4px;
+  padding: 10px 8px 5px 8px;
+}
+
+.app-well-app .overview-icon.overview-icon-with-label > StBoxLayout,
+.grid-search-result .overview-icon.overview-icon-with-label > StBoxLayout {
+  spacing: 6px;
 }
 
 /* App Folders */
 .app-folder {
-  background: none;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-radius: 20px;
 }
 
 .app-folder .overview-icon {
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
+  border-radius: 20px;
 }
 
 .app-folder:hover .overview-icon {
@@ -2425,11 +2076,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .app-folder-dialog {
   border-radius: 28px;
-  spacing: 12px;
+  padding: 12px 0px 12px 0px;
   background-color: rgba(34, 34, 34, 0.95);
   box-shadow: none;
   border: none;
-  padding: 0;
 }
 
 .app-folder-dialog .folder-name-container {
@@ -2498,8 +2148,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog .icon-grid {
-  row-spacing: 8px;
-  column-spacing: 20px;
+  row-spacing: 12px;
+  column-spacing: 30px;
+  page-padding-top: 0;
+  page-padding-bottom: 0;
+  page-padding-left: 0;
+  page-padding-right: 0;
 }
 
 .app-folder-dialog .page-indicators {
@@ -2507,7 +2161,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog .page-indicators .page-indicator {
-  padding: 15px 12px;
+  padding: 16px 12px;
 }
 
 .app-folder-dialog StButton#vhandle, .app-folder-dialog StButton#vhandle:hover, .app-folder-dialog StButton#vhandle:active {
@@ -2515,7 +2169,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog-container {
-  padding: 4px;
+  padding: 12px;
   width: 600px;
   height: 600px;
 }
@@ -2531,30 +2185,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .app-menu,
 .app-well-menu {
   max-width: 27.25em;
-}
-
-.workspace-thumbnails {
-  visible-width: 32px;
-  spacing: 12px;
-  padding: 12px;
-  border-radius: 13px 0 0 13px;
-}
-
-.workspace-thumbnails:rtl {
-  border-radius: 0 13px 13px 0;
-}
-
-.workspace-thumbnail-indicator {
-  border: 0 solid #5657f5;
-  border-left-width: 2px;
-  padding: 6px;
-  border-radius: 0;
-}
-
-.search-display > StBoxLayout,
-.all-apps,
-.frequent-apps > StBoxLayout {
-  padding: 0px 88px 10px 88px;
 }
 
 .workspace-thumbnails {
@@ -2705,61 +2335,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding-right: 4px;
 }
 
-.hotplug-transient-box {
-  spacing: 6px;
-  padding: 2px 72px 2px 12px;
-}
-
-.hotplug-notification-item {
-  padding: 2px 10px;
-}
-
-.hotplug-notification-item:focus {
-  padding: 1px 71px 1px 11px;
-}
-
-.hotplug-notification-item-icon {
-  icon-size: 24px;
-  padding: 2px 5px;
-}
-
-.hotplug-resident-box {
-  spacing: 8px;
-}
-
-.hotplug-resident-mount {
-  spacing: 8px;
-  border-radius: 13px;
-}
-
-.hotplug-resident-mount:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-}
-
-.hotplug-resident-mount:active {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.hotplug-resident-mount-label {
-  color: inherit;
-  padding-left: 6px;
-}
-
-.hotplug-resident-mount-icon {
-  icon-size: 24px;
-  padding-left: 6px;
-}
-
-.hotplug-resident-eject-icon {
-  icon-size: 16px;
-}
-
-.hotplug-resident-eject-button {
-  padding: 7px;
-  border-radius: 7px;
-  color: #FFFFFF;
-}
-
 .magnifier-zoom-region {
   border: 2px solid #5657f5;
 }
@@ -2881,6 +2456,20 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .emoji-panel .keyboard-key:latched {
   border-color: #6e6ff6;
   background-color: #5657f5;
+}
+
+.candidate-popup-boxpointer {
+  -arrow-border-radius: 0;
+  -arrow-background-color: transparent;
+  -arrow-border-width: 0;
+  -arrow-border-color: transparent;
+  -arrow-base: 0;
+  -arrow-rise: 0;
+  -arrow-box-shadow: none;
+  margin: 5px 8px 12px 12px;
+  background-color: rgba(60, 60, 70, 0.95);
+  border-radius: 13px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.19), 0 6px 3px rgba(0, 0, 0, 0.23);
 }
 
 .candidate-popup-content {
@@ -3228,83 +2817,6 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #FFFFFF;
 }
 
-.screen-shield-arrows {
-  padding-bottom: 3em;
-}
-
-.screen-shield-arrows Gjs_Arrow {
-  color: white;
-  width: 80px;
-  height: 48px;
-  -arrow-thickness: 12px;
-  -arrow-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.screen-shield-clock {
-  color: white;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
-  font-weight: normal;
-  text-align: center;
-  padding-bottom: 1.5em;
-}
-
-.screen-shield-clock-time {
-  font-size: 112px;
-  font-weight: 300;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.screen-shield-clock-date {
-  font-size: 45px;
-  font-weight: 400;
-}
-
-.screen-shield-notifications-container {
-  spacing: 6px;
-  width: 30em;
-  background-color: transparent;
-  max-height: 500px;
-}
-
-.screen-shield-notifications-container .summary-notification-stack-scrollview {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.screen-shield-notifications-container .notification,
-.screen-shield-notifications-container .screen-shield-notification-source {
-  padding: 8px;
-  border: none;
-  background-color: rgba(66, 66, 73, 0.85);
-  color: rgba(255, 255, 255, 0.8);
-  border-radius: 13px;
-}
-
-.screen-shield-notifications-container .notification {
-  margin-right: 16px;
-}
-
-.screen-shield-notification-label {
-  min-height: 18px;
-  padding: 2px 0px 0px 16px;
-  font-weight: bold;
-}
-
-.screen-shield-notification-count-text {
-  min-height: 18px;
-  padding: 2px 0px 0px 16px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-#panel.lock-screen {
-  background-color: rgba(66, 66, 73, 0.85);
-}
-
-.screen-shield-background {
-  background: black;
-  box-shadow: 0 19px 19px rgba(0, 0, 0, 0.3), 0 15px 6px rgba(0, 0, 0, 0.22);
-}
-
 #lockDialogGroup {
   background: #25252d;
   background-size: cover;
@@ -3474,6 +2986,499 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   box-shadow: 0 14px 14px rgba(0, 0, 0, 0.25), 0 10px 5px rgba(0, 0, 0, 0.22);
 }
 
+/* DASHBOARD */
+#dash {
+  font-size: 1em;
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 3px 0;
+  border: none;
+  border-left: 0px;
+  border-radius: 0px 13px 13px 0px;
+}
+
+#dash:rtl {
+  border-radius: 13px 0 0 13px;
+}
+
+#dash .placeholder {
+  background-image: url("assets/dash-placeholder.svg");
+  background-size: contain;
+  height: 24px;
+}
+
+#dash .empty-dash-drop-target {
+  width: 24px;
+  height: 24px;
+}
+
+.dash-item-container > StWidget {
+  padding: 3px 6px;
+}
+
+.dash-label {
+  border-radius: 13px;
+  padding: 7px 8px;
+  color: #FFFFFF;
+  background-color: #44454b;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  -x-offset: 8px;
+}
+
+/* App Vault/Grid */
+.icon-grid {
+  spacing: 30px;
+  -shell-grid-horizontal-item-size: 136px;
+  -shell-grid-vertical-item-size: 136px;
+}
+
+.icon-grid .overview-icon {
+  icon-size: 96px;
+}
+
+.app-folder-popup {
+  -arrow-border-radius: 13px;
+  -arrow-background-color: rgba(255, 255, 255, 0.1);
+  -arrow-base: 24px;
+  -arrow-rise: 12px;
+}
+
+.app-folder-popup-bin {
+  padding: 5px;
+}
+
+.app-folder-icon {
+  padding: 6px;
+  spacing-rows: 6px;
+  spacing-columns: 6px;
+}
+
+/* ShellMountOperation Dialogs */
+.shell-mount-operation-icon {
+  icon-size: 48px;
+}
+
+.mount-dialog {
+  spacing: 24px;
+}
+
+.mount-dialog .message-dialog-title {
+  padding-top: 10px;
+  padding-left: 17px;
+  padding-bottom: 6px;
+  max-width: 34em;
+}
+
+.mount-dialog .message-dialog-title:rtl {
+  padding-left: 0px;
+  padding-right: 17px;
+}
+
+.mount-dialog .message-dialog-body {
+  padding-left: 17px;
+  width: 28em;
+}
+
+.mount-dialog .message-dialog-body:rtl {
+  padding-left: 0px;
+  padding-right: 17px;
+}
+
+.mount-dialog-app-list {
+  max-height: 200px;
+  padding-top: 24px;
+  padding-left: 49px;
+  padding-right: 32px;
+}
+
+.mount-dialog-app-list:rtl {
+  padding-right: 49px;
+  padding-left: 32px;
+}
+
+.mount-dialog-app-list-item {
+  color: #FFFFFF;
+}
+
+.mount-dialog-app-list-item:hover {
+  color: #FFFFFF;
+}
+
+.mount-dialog-app-list-item:ltr {
+  padding-right: 1em;
+}
+
+.mount-dialog-app-list-item:rtl {
+  padding-left: 1em;
+}
+
+.mount-dialog-app-list-item-icon:ltr {
+  padding-right: 17px;
+}
+
+.mount-dialog-app-list-item-icon:rtl {
+  padding-left: 17px;
+}
+
+.mount-dialog-app-list-item-name {
+  font-size: 1em;
+}
+
+/* Access Dialog */
+.access-dialog {
+  spacing: 30px;
+}
+
+.access-dialog-main-layout {
+  padding: 12px 20px 0;
+  spacing: 12px;
+}
+
+.access-dialog-content {
+  max-width: 28em;
+  spacing: 20px;
+}
+
+.access-dialog-icon {
+  min-width: 48px;
+  icon-size: 48px;
+}
+
+.access-dialog-title {
+  font-weight: bold;
+}
+
+.access-dialog-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: bold;
+}
+
+/* Geolocation Dialog */
+.geolocation-dialog {
+  spacing: 30px;
+}
+
+/* Extension Dialog */
+.extension-dialog .message-dialog-main-layout {
+  spacing: 24px;
+  padding: 10px;
+}
+
+.extension-dialog .message-dialog-title {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Inhibit-Shortcuts Dialog */
+.inhibit-shortcuts-dialog {
+  spacing: 30px;
+}
+
+/* Network Agent Dialog */
+.network-dialog-secret-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+.keyring-dialog-control-table {
+  spacing-rows: 15px;
+  spacing-columns: 1em;
+}
+
+.hotplug-transient-box {
+  spacing: 6px;
+  padding: 2px 72px 2px 12px;
+}
+
+.hotplug-notification-item {
+  padding: 2px 10px;
+}
+
+.hotplug-notification-item:focus {
+  padding: 1px 71px 1px 11px;
+}
+
+.hotplug-notification-item-icon {
+  icon-size: 24px;
+  padding: 2px 5px;
+}
+
+.hotplug-resident-box {
+  spacing: 8px;
+}
+
+.hotplug-resident-mount {
+  spacing: 8px;
+  border-radius: 13px;
+}
+
+.hotplug-resident-mount:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.hotplug-resident-mount:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.hotplug-resident-mount-label {
+  color: inherit;
+  padding-left: 6px;
+}
+
+.hotplug-resident-mount-icon {
+  icon-size: 24px;
+  padding-left: 6px;
+}
+
+.hotplug-resident-eject-icon {
+  icon-size: 16px;
+}
+
+.hotplug-resident-eject-button {
+  padding: 7px;
+  border-radius: 7px;
+  color: #FFFFFF;
+}
+
+.system-switch-user-submenu-icon.user-icon {
+  icon-size: 20px;
+  padding: 0 2px;
+}
+
+.system-switch-user-submenu-icon.default-icon {
+  icon-size: 16px;
+  padding: 0 4px;
+}
+
+.system-menu-action {
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 100px;
+  /* wish we could do 50% */
+  padding: 11px;
+  border: none;
+  -st-icon-style: symbolic;
+}
+
+.system-menu-action:hover, .system-menu-action:focus {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: none;
+  padding: 11px;
+}
+
+.system-menu-action:active {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+}
+
+.system-menu-action > StIcon {
+  icon-size: 16px;
+}
+
+.screen-shield-arrows {
+  padding-bottom: 3em;
+}
+
+.screen-shield-arrows Gjs_Arrow {
+  color: white;
+  width: 80px;
+  height: 48px;
+  -arrow-thickness: 12px;
+  -arrow-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.screen-shield-clock {
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 1.5em;
+}
+
+.screen-shield-clock-time {
+  font-size: 112px;
+  font-weight: 300;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.screen-shield-clock-date {
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.screen-shield-notifications-container {
+  spacing: 6px;
+  width: 30em;
+  background-color: transparent;
+  max-height: 500px;
+}
+
+.screen-shield-notifications-container .summary-notification-stack-scrollview {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.screen-shield-notifications-container .notification,
+.screen-shield-notifications-container .screen-shield-notification-source {
+  padding: 8px;
+  border: none;
+  background-color: rgba(66, 66, 73, 0.85);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 13px;
+}
+
+.screen-shield-notifications-container .notification {
+  margin-right: 16px;
+}
+
+.screen-shield-notification-label {
+  min-height: 18px;
+  padding: 2px 0px 0px 16px;
+  font-weight: bold;
+}
+
+.screen-shield-notification-count-text {
+  min-height: 18px;
+  padding: 2px 0px 0px 16px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#panel.lock-screen {
+  background-color: rgba(66, 66, 73, 0.85);
+}
+
+.screen-shield-background {
+  background: black;
+  box-shadow: 0 19px 19px rgba(0, 0, 0, 0.3), 0 15px 6px rgba(0, 0, 0, 0.22);
+}
+
+/* OVERVIEW */
+#overview {
+  spacing: 24px;
+}
+
+#overview .app-view-controls {
+  width: 320px;
+  padding-bottom: 32px;
+}
+
+#overview .app-view-control {
+  padding: 0 16px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#overview .app-view-control:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+#overview .app-view-control:active {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+#overview .app-view-control:checked {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.01) !important;
+  box-shadow: inset 0 2px #5657f5;
+}
+
+#overview .app-view-control:first-child {
+  border-right-width: 0;
+  border-radius: 7px;
+}
+
+#overview .app-view-control:first-child:checked {
+  border-radius: 0 0 7px 7px;
+}
+
+#overview .app-view-control:last-child {
+  border-radius: 7px;
+}
+
+#overview .app-view-control:last-child:checked {
+  border-radius: 0 0 7px 7px;
+}
+
+.window-picker {
+  -horizontal-spacing: 16px;
+  -vertical-spacing: 16px;
+  padding: 0 16px 32px;
+}
+
+.window-picker.external-monitor {
+  padding: 16px;
+}
+
+.window-clone-border {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-radius: 13px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.window-caption {
+  spacing: 25px;
+  color: #FFFFFF;
+  background-color: #5657f5;
+  border-radius: 13px;
+  border: none;
+  padding: 4px 8px;
+  font-weight: normal;
+  font-size: 1em;
+}
+
+.window-close {
+  transition-duration: 0ms;
+  height: 36px;
+  width: 36px;
+  -shell-close-overlap: 12px;
+  background-image: url("assets/window-close.svg");
+  background-size: 36px;
+  color: transparent;
+  background-color: transparent;
+  border: 0 none transparent;
+  box-shadow: none;
+}
+
+.window-close StIcon {
+  icon-size: 36px;
+}
+
+.window-close:hover {
+  height: 36px;
+  width: 36px;
+  background-size: 36px;
+  background-image: url("assets/window-close-hover.svg");
+  box-shadow: none;
+}
+
+.window-close:active {
+  height: 36px;
+  width: 36px;
+  background-size: 36px;
+  background-image: url("assets/window-close-active.svg");
+  box-shadow: none;
+}
+
+.workspace-thumbnails {
+  visible-width: 32px;
+  spacing: 12px;
+  padding: 12px;
+  border-radius: 13px 0 0 13px;
+}
+
+.workspace-thumbnails:rtl {
+  border-radius: 0 13px 13px 0;
+}
+
+.workspace-thumbnail-indicator {
+  border: 0 solid #5657f5;
+  border-left-width: 2px;
+  padding: 6px;
+  border-radius: 0;
+}
+
 /* Dash to Dock */
 #dashtodockContainer #dash {
   background-color: rgba(33, 33, 33, 0.5);
@@ -3537,139 +3542,18 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dashtodockContainer .app-well-app-running-dot {
-  background-color: transparent;
+  width: 32px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+}
+
+StWidget.focused #dashtodockContainer .app-well-app-running-dot {
+  background-color: #5657f5;
 }
 
 #dashtodockContainer .dash-item-container > StWidget {
   background-size: cover;
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running1 {
-  background-image: url("assets/dash/left-running1.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running1.focused {
-  background-image: url("assets/dash/left-running1-focused.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running2 {
-  background-image: url("assets/dash/left-running2.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running2.focused {
-  background-image: url("assets/dash/left-running2-focused.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running3 {
-  background-image: url("assets/dash/left-running3.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running3.focused {
-  background-image: url("assets/dash/left-running3-focused.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running4 {
-  background-image: url("assets/dash/left-running4.svg");
-}
-
-#dashtodockContainer.left .dash-item-container > StWidget.running4.focused {
-  background-image: url("assets/dash/left-running4-focused.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running1 {
-  background-image: url("assets/dash/right-running1.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running1.focused {
-  background-image: url("assets/dash/right-running1-focused.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running2 {
-  background-image: url("assets/dash/right-running2.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running2.focused {
-  background-image: url("assets/dash/right-running2-focused.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running3 {
-  background-image: url("assets/dash/right-running3.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running3.focused {
-  background-image: url("assets/dash/right-running3-focused.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running4 {
-  background-image: url("assets/dash/right-running4.svg");
-}
-
-#dashtodockContainer.right .dash-item-container > StWidget.running4.focused {
-  background-image: url("assets/dash/right-running4-focused.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running1 {
-  background-image: url("assets/dash/top-running1.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running1.focused {
-  background-image: url("assets/dash/top-running1-focused.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running2 {
-  background-image: url("assets/dash/top-running2.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running2.focused {
-  background-image: url("assets/dash/top-running2-focused.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running3 {
-  background-image: url("assets/dash/top-running3.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running3.focused {
-  background-image: url("assets/dash/top-running3-focused.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running4 {
-  background-image: url("assets/dash/top-running4.svg");
-}
-
-#dashtodockContainer.top .dash-item-container > StWidget.running4.focused {
-  background-image: url("assets/dash/top-running4-focused.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running1 {
-  background-image: url("assets/dash/bottom-running1.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running1.focused {
-  background-image: url("assets/dash/bottom-running1-focused.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running2 {
-  background-image: url("assets/dash/bottom-running2.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running2.focused {
-  background-image: url("assets/dash/bottom-running2-focused.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running3 {
-  background-image: url("assets/dash/bottom-running3.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running3.focused {
-  background-image: url("assets/dash/bottom-running3-focused.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running4 {
-  background-image: url("assets/dash/bottom-running4.svg");
-}
-
-#dashtodockContainer.bottom .dash-item-container > StWidget.running4.focused {
-  background-image: url("assets/dash/bottom-running4-focused.svg");
 }
 
 /* Simple Dock */

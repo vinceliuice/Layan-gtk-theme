@@ -25,7 +25,11 @@ for color in "${_COLOR_VARIANTS[@]}"; do
   done
 done
 
-sassc $SASSC_OPT src/gnome-shell/gnome-shell.{scss,css}
-echo ">> generating gnome-shell.css."
-sassc $SASSC_OPT src/gnome-shell/gnome-shell-dark.{scss,css}
-echo ">> generating gnome-shell-dark.css."
+sassc $SASSC_OPT src/gnome-shell/shell-3-36/gnome-shell.{scss,css}
+echo ">> generating 3-36 gnome-shell.css."
+sassc $SASSC_OPT src/gnome-shell/shell-3-36/gnome-shell-dark.{scss,css}
+echo ">> generating 3-36 gnome-shell-dark.css."
+sassc $SASSC_OPT src/gnome-shell/shell-40-0/gnome-shell.{scss,css}
+echo ">> generating 40-0 gnome-shell.css."
+sassc $SASSC_OPT src/gnome-shell/shell-40-0/gnome-shell-dark.{scss,css}
+echo ">> generating 40-0 gnome-shell-dark.css."
