@@ -1065,7 +1065,6 @@ actionbar { // set bottom border radius
 /***************
  * Header bars *
  ***************/
-%titlebar,
 headerbar {
   transition: background-color $shorter_duration $deceleration_curve, color $shorter_duration $deceleration_curve;
   min-height: $large_size;
@@ -1207,9 +1206,9 @@ headerbar {
   }
 
   .linked:not(.vertical).path-bar,
-  .linked:not(.vertical):not(.path-bar).stack-switcher {
-
-    > button {
+  .linked:not(.vertical):not(.path-bar).stack-switcher,
+  &.windowhandle viewswitcher {
+    button:not(.suggested-action):not(.destructive-action) {
       padding-left: 8px; padding-right: 8px;
       label { padding-left: 8px; padding-right: 8px; }
 
@@ -1256,6 +1255,14 @@ headerbar {
         image { padding-left: 0; padding-right: 0; }
       }
     }
+  }
+
+  &.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+
+    &:checked { background-color: $semi_fill_color; }
   }
 
   // headerbar titlebutton separator
@@ -1752,11 +1759,6 @@ menuitem {
 /************
  * Popovers *
  ************/
-
-$popover_bg: if($variant == 'light', $grey_850, $lighter_bg_color);
-$popover_fg: rgba($white, 0.7);
-$popover_disabled_fg: rgba($white, 0.3);
-$popover_border: rgba($white, 0.12);
 
 %popover_flat_button {
   color: $popover_fg;

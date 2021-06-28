@@ -75,6 +75,8 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
         }
       }
     }
+
+    &.unified headerbar { background-color: transparent; }
   }
 
   // No border radius when window maximized

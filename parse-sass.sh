@@ -20,8 +20,10 @@ SASSC_OPT="-M -t expanded"
 
 for color in "${_COLOR_VARIANTS[@]}"; do
   for solid in "${_SOLID_VARIANTS[@]}"; do
-    sassc $SASSC_OPT src/gtk/gtk${color}${solid}.{scss,css}
-    echo ">> generating gtk${color}${solid}.css."
+    sassc $SASSC_OPT src/gtk/3.0/gtk${color}${solid}.{scss,css}
+    echo ">> generating 3.0 gtk${color}${solid}.css."
+    sassc $SASSC_OPT src/gtk/4.0/gtk${color}${solid}.{scss,css}
+    echo ">> generating 4.0 gtk${color}${solid}.css."
   done
 done
 
