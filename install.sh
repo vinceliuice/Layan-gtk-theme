@@ -16,6 +16,18 @@ THEME_NAME=Layan
 COLOR_VARIANTS=('' '-light' '-dark')
 SOLID_VARIANTS=('' '-solid')
 
+if [[ "$(command -v gnome-shell)" ]]; then
+  SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
+  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+    GS_VERSION="new"
+  else
+    GS_VERSION="old"
+  fi
+  else
+    echo "'gnome-shell' not found, using styles for last gnome-shell version available."
+    GS_VERSION="new"
+fi
+
 usage() {
   printf "%s\n" "Usage: $0 [OPTIONS...]"
   printf "\n%s\n" "OPTIONS:"
@@ -54,16 +66,21 @@ install() {
   echo "[X-GNOME-Metatheme]" >> ${THEME_DIR}/index.theme
   echo "GtkTheme=${name}${color}${solid}" >> ${THEME_DIR}/index.theme
   echo "MetacityTheme=${name}${color}${solid}" >> ${THEME_DIR}/index.theme
-  echo "IconTheme=Adwaita" >> ${THEME_DIR}/index.theme
+  echo "IconTheme=Tela${ELSE_DARK}" >> ${THEME_DIR}/index.theme
   echo "CursorTheme=Adwaita" >> ${THEME_DIR}/index.theme
   echo "ButtonLayout=menu:minimize,maximize,close" >> ${THEME_DIR}/index.theme
 
   mkdir -p                                                                           ${THEME_DIR}/gnome-shell
-  cp -ur ${SRC_DIR}/src/gnome-shell/{*.svg,extensions,noise-texture.png,pad-osd.css} ${THEME_DIR}/gnome-shell
+  cp -ur ${SRC_DIR}/src/gnome-shell/{*.svg,noise-texture.png,pad-osd.css}            ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/gnome-shell-theme.gresource.xml                  ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/assets${ELSE_DARK}                               ${THEME_DIR}/gnome-shell/assets
-  cp -ur ${SRC_DIR}/src/gnome-shell/common-assets/{*.svg,dash}                       ${THEME_DIR}/gnome-shell/assets
-  cp -ur ${SRC_DIR}/src/gnome-shell/gnome-shell${ELSE_DARK}.css                      ${THEME_DIR}/gnome-shell/gnome-shell.css
+  cp -ur ${SRC_DIR}/src/gnome-shell/common-assets/*.svg                              ${THEME_DIR}/gnome-shell/assets
+
+  if [[ "${GS_VERSION:-}" == 'new' ]]; then
+    cp -ur ${SRC_DIR}/src/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK}.css         ${THEME_DIR}/gnome-shell/gnome-shell.css
+  else
+    cp -ur ${SRC_DIR}/src/gnome-shell/shell-3-36/gnome-shell${ELSE_DARK}.css         ${THEME_DIR}/gnome-shell/gnome-shell.css
+  fi
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-2.0
   cp -ur ${SRC_DIR}/src/gtk-2.0/{apps.rc,hacks.rc,main.rc,panel.rc}                  ${THEME_DIR}/gtk-2.0
@@ -74,9 +91,15 @@ install() {
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-3.0/assets
-  cp -ur ${SRC_DIR}/src/gtk/gtk${color}${solid}.css                                  ${THEME_DIR}/gtk-3.0/gtk.css
+  cp -ur ${SRC_DIR}/src/gtk/3.0/gtk${color}${solid}.css                              ${THEME_DIR}/gtk-3.0/gtk.css
   [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk/gtk-dark${solid}.css                                     ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  cp -ur ${SRC_DIR}/src/gtk/3.0/gtk-dark${solid}.css                                 ${THEME_DIR}/gtk-3.0/gtk-dark.css
+
+  mkdir -p                                                                           ${THEME_DIR}/gtk-4.0
+  ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-4.0/assets
+  cp -ur ${SRC_DIR}/src/gtk/4.0/gtk${color}${solid}.css                              ${THEME_DIR}/gtk-4.0/gtk.css
+  [[ ${color} != '-dark' ]] && \
+  cp -ur ${SRC_DIR}/src/gtk/4.0/gtk-dark${solid}.css                                 ${THEME_DIR}/gtk-4.0/gtk-dark.css
 
   mkdir -p                                                                           ${THEME_DIR}/xfwm4
   cp -ur ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                              ${THEME_DIR}/xfwm4
@@ -161,15 +184,11 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-install_theme() {
-  for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-    for solid in "${solids[@]:-${SOLID_VARIANTS[@]}}"; do
-      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
-    done
+for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
+  for solid in "${solids[@]:-${SOLID_VARIANTS[@]}}"; do
+    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
   done
-}
-
-install_theme
+done
 
 echo
 echo Done.
