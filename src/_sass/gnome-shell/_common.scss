@@ -496,7 +496,10 @@ StScrollBar {
   icon-size: 64px;
 }
 
-/* Popovers/Menus */
+
+//
+// Popovers/Menus
+//
 
 .popup-menu {
   min-width: 15em;
@@ -576,6 +579,29 @@ StScrollBar {
   &.panel-menu {
     -boxpointer-gap: 4px;
     margin-bottom: 1.75em;
+  }
+
+  .search-entry {
+    color: $fg_color;
+    selection-background-color: $primary_color;
+    selected-color: $inverse_fg_color;
+    caret-color: $fg_color;
+    @include entry(normal);
+
+    &:focus {
+      @include entry(focus);
+      color: $fg_color;
+    }
+
+    .search-entry-icon { color: $hint_fg_color; }
+
+    &:hover, &:focus {
+      .search-entry-icon { color: $fg_color; }
+    }
+
+    StLabel.hint-text {
+      color: $hint_fg_color;
+    }
   }
 }
 
@@ -2038,7 +2064,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 .candidate-page-button-next { border-radius: 0px $buttons_radius $buttons_radius 0px;  }
 .candidate-page-button-icon { icon-size: 1em; }
 
-/* Auth Dialogs & Screen Shield */
+// Auth Dialogs & Screen Shield
 .framed-user-icon {
   background-size: contain;
   border: none;

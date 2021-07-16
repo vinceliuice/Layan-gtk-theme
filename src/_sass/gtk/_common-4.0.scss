@@ -1323,57 +1323,6 @@ headerbar {
   }
 }
 
-.titlebar {
-  border-radius: $windows_radius $windows_radius 0 0;
-}
-
-.background.tiled .titlebar,
-.background.tiled-top .titlebar,
-.background.tiled-right .titlebar,
-.background.tiled-bottom .titlebar,
-.background.tiled-left .titlebar,
-.background.maximized .titlebar,
-.background.solid-csd .titlebar {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-headerbar { // headerbar border rounding
-  window separator:first-child + &, // tackles the paned container case
-  window &:first-child { border-top-left-radius: $windows_radius; }
-  window &:last-child { border-top-right-radius: $windows_radius; }
-
-  window stack & { // tackles the stacked headerbars case
-    &:first-child, &:last-child {
-      border-top-left-radius: $windows_radius;
-      border-top-right-radius: $windows_radius;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-
-  window.tiled &,
-  window.tiled-top &,
-  window.tiled-right &,
-  window.tiled-bottom &,
-  window.tiled-left &,
-  window.maximized &,
-  window.fullscreen &,
-  window.solid-csd & {
-    &,
-    &:first-child,
-    &:last-child,
-    &:only-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-}
-
 %header_separator {
   min-width: 0;
   min-height: 0;
@@ -2090,9 +2039,9 @@ scrollbar {
       min-height: 4px;
     }
 
-    &.horizontal slider { margin: 2px 0; }
+    &.horizontal > trough > slider { margin: 2px 0; }
 
-    &.vertical slider { margin: 0 2px; }
+    &.vertical > trough > slider { margin: 0 2px; }
   }
 
   &.overlay-indicator {
@@ -2821,10 +2770,6 @@ actionbar > revealer > box {
 }
 
 scrolledwindow {
-//  viewport.frame { // avoid double borders when viewport inside scrolled window
-//    border-style: none;
-//  }
-
   // This is used when content is touch-dragged past boundaries.
   // draws a box on top of the content, the size changes programmatically.
   @at-root overshoot {
@@ -3880,7 +3825,6 @@ shortcuts-section {
   margin: 20px;
   border-spacing: 24px;
 }
-
 
 .context-menu { font: initial; } // Decouple the font of context menus from their entry/textview
 

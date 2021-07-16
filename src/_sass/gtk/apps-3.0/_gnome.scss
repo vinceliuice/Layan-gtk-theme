@@ -76,7 +76,7 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
       }
     }
 
-    &.unified headerbar { background-color: transparent; }
+    &.unified headerbar { background-color: if($titlebar == 'dark' and $variant == 'light', $titlebar_bg_color, transparent); }
   }
 
   // No border radius when window maximized
@@ -1728,6 +1728,51 @@ dialog.background.csd {
       viewport.frame {
         &.view { border-radius: $buttons_radius; }
       }
+    }
+  }
+}
+
+
+/******************
+ * Unified window *
+ ******************/
+
+window.background.csd.unified {
+  // Remove the sheen on headerbar...
+  headerbar {
+    box-shadow: none;
+
+    &.selection-mode {
+      box-shadow: none;
+    }
+  }
+
+  // ...and add it on the window itself
+  > decoration-overlay {
+    box-shadow: inset 0 1px $titlebar_highlight_color;
+  }
+
+  &,
+  > decoration,
+  > decoration-overlay {
+    border-radius: $windows_radius;
+  }
+
+  &.tiled,
+  &.tiled-top,
+  &.tiled-right,
+  &.tiled-bottom,
+  &.tiled-left,
+  &.maximized,
+  &.fullscreen {
+    > decoration-overlay {
+      box-shadow: none;
+    }
+
+    &,
+    > decoration,
+    > decoration-overlay {
+      border-radius: 0;
     }
   }
 }
