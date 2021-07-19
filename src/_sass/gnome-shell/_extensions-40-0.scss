@@ -12,7 +12,7 @@
     #dash {
       padding: 0;
       margin: 0;
-      background-color: $divider_color;
+      background-color: $panel_bg_color;
 
       .dash-background {
         background: none;
@@ -33,22 +33,25 @@
   }
 
   .app-well-app-running-dot { //running apps indicator
-    width: 32px; height: 2px;
+    width: 6px; height: 2px;
     background-color: $inverse_secondary_fg_color;
     margin-bottom: 0;
 
     StWidget.focused & {
-      background-color: $primary_color;
+      width: 18px;
+      background-color: $primary_color !important;
     }
   }
 
-  #dash .dash-background {
-    background-color: $divider_color;
-    padding: $dash_padding;
+  #dash {
+    .dash-background {
+      background-color: $panel_bg_color;
+      padding: $dash_padding;
+    }
   }
 
   &.opaque #dash .dash-background { // solid-mode
-    background-color: $panel_bg_color;
+    background-color: $solid_panel_bg_color;
   }
 
   &.transparent #dash .dash-background { // translucent-mode

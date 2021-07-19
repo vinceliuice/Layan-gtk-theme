@@ -57,6 +57,7 @@ stage {
   padding: 0 16px;
   border-top: 1px solid $border_color !important;
   border-right-width: 0;
+  box-shadow: none;
   @include font(button);
   @include button(flat-normal);
   &:hover { @include button(flat-hover); }
@@ -264,7 +265,9 @@ StScrollBar {
   color: $fg_color;
   background-color: $lighter_bg_color;
   border: none;
-  box-shadow: $shadow_2;
+  box-shadow: 3px 3px 6px -3px rgba(black, 0.35);
+  margin: 6px !important;
+
   .modal-dialog-content-box {
     padding: 24px;
   }
@@ -516,11 +519,11 @@ StScrollBar {
 
   .popup-menu-content {
     padding: 10px 0;
-    margin: 5px 8px 12px 12px;
+    margin: 4px 10px 18px 12px;
     background-color: transparent;
     background-color: rgba($menu_bg_color, 0.95);
     border-radius: $windows_radius;
-    box-shadow: $shadow_3;
+    box-shadow: 0 6px 10px rgba(black, 0.18);
   }
 
   .popup-menu-item {
@@ -992,12 +995,12 @@ StScrollBar {
 
 #calendarArea {
   padding: 0;
-  margin: ($container_padding * 3) 0;
+  margin: $container_padding 0;
 }
 
 .calendar {
   padding: 0;
-  margin: 0 8px;
+  margin: 0 0;
   border: none;
   box-shadow: none;
   background: none;
@@ -1351,7 +1354,7 @@ StScrollBar {
 
 .message {
   min-height: $menuitem_size * 2;
-  background-color: transparent;
+  background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   border: none;
   border-radius: $buttons_radius;
   color: $secondary_fg_color;
@@ -1359,6 +1362,8 @@ StScrollBar {
 
   &:hover,&:focus { background-color: $divider_color; }
   &:active { background-color: $track_color; }
+
+  .popup-menu & { box-shadow: none; }
 }
 
 .message-icon-bin {
@@ -1624,18 +1629,19 @@ StScrollBar {
   &:active .overview-icon,
   &:checked .overview-icon {
     background-color: $inverse_track_color;
-    box-shadow: $shadow_0;
+    box-shadow: none;
     transition-duration: $longer_duration;
   }
 }
 
 .app-well-app-running-dot { //running apps indicator
-  width: 32px; height: 2px;
+  width: 6px; height: 2px;
   background-color: $inverse_secondary_fg_color;
   margin-bottom: 0;
 
   StWidget.focused & {
-    background-color: $primary_color;
+    width: 18px !important;
+    background-color: $primary_color !important;
   }
 }
 
@@ -2033,9 +2039,9 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 
 .candidate-popup-content {
   background-color: $menu_bg_color;
-  border-radius: $buttons_radius;
-  box-shadow: $shadow_3;
-  margin: ($container_padding / 2) 8px;
+  border-radius: $container_padding + 3px;
+  box-shadow: 0 6px 10px rgba(black, 0.18);
+  margin: ($container_padding / 2) 12px 18px;
   padding: $container_padding;
   spacing: $container_padding;
 }
@@ -2043,7 +2049,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
 .candidate-box {
   padding: 0.3em 0.5em 0.3em 0.5em;
   margin-right: $container_padding / 2;
-  border-radius: $buttons_radius - $container_padding;
+  border-radius: 3px;
   &:hover { background-color: $divider_color; color: $fg_color; }
   &:active { background-color: $track_color; color: $fg_color; }
   &:selected { background-color: $primary_color; color: $inverse_fg_color; }

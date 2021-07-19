@@ -1,11 +1,11 @@
 /* Dash to Dock */
 
 #dashtodockContainer #dash {
-  background-color: rgba($grey_900, 0.5);
+  background-color: $panel_bg_color;
 }
 
 #dashtodockContainer:overview #dash {
-  background-color: rgba($grey_900, 0.25);
+  background-color: $inverse_divider_color;
 }
 
 #dashtodockContainer.extended:overview #dash {
