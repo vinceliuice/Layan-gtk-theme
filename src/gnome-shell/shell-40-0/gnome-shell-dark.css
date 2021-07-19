@@ -79,70 +79,6 @@ stage {
   box-shadow: 0 0 transparent;
 }
 
-.modal-dialog-linked-button {
-  min-height: 40px;
-  padding: 0 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-right-width: 0;
-  box-shadow: none;
-  font-size: 9.75pt;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.7);
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: 0 0 transparent;
-  text-shadow: none;
-  icon-shadow: none;
-}
-
-.modal-dialog-linked-button:hover {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.12);
-  border-color: transparent;
-  box-shadow: 0 0 transparent;
-  text-shadow: none;
-  icon-shadow: none;
-}
-
-.modal-dialog-linked-button:active {
-  color: #FFFFFF;
-  background-color: rgba(255, 255, 255, 0.3);
-  border-color: transparent;
-  box-shadow: 0 0 transparent;
-  text-shadow: none;
-  icon-shadow: none;
-}
-
-.modal-dialog-linked-button:insensitive {
-  color: rgba(255, 255, 255, 0.3);
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: 0 0 transparent;
-  text-shadow: none;
-  icon-shadow: none;
-}
-
-.modal-dialog-linked-button:focus {
-  color: #FFFFFF;
-  text-shadow: none;
-  icon-shadow: none;
-  box-shadow: 0 0 transparent;
-}
-
-.modal-dialog-linked-button:first-child {
-  border-radius: 0px 0px 0px 13px;
-}
-
-.modal-dialog-linked-button:last-child {
-  border-right-width: 0px;
-  border-radius: 0px 0px 13px 0px;
-}
-
-.modal-dialog-linked-button:first-child:last-child {
-  border-right-width: 0px;
-  border-radius: 0px 0px 13px 13px;
-}
-
 /* Entries */
 StEntry {
   min-height: 32px;
@@ -380,7 +316,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .modal-dialog {
   border-radius: 13px;
   color: #FFFFFF;
-  background-color: #44454b;
+  background-color: #25252d;
   border: none;
   box-shadow: 3px 3px 6px -3px rgba(0, 0, 0, 0.35);
   margin: 6px !important;
@@ -409,6 +345,70 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: normal;
   color: rgba(255, 255, 255, 0.5);
   padding-bottom: .4em;
+}
+
+.modal-dialog-linked-button {
+  min-height: 40px;
+  padding: 0 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-right-width: 0;
+  box-shadow: none !important;
+  font-size: 9.75pt;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.modal-dialog-linked-button:hover {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.modal-dialog-linked-button:active {
+  color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.modal-dialog-linked-button:insensitive {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0 0 transparent;
+  text-shadow: none;
+  icon-shadow: none;
+}
+
+.modal-dialog-linked-button:focus {
+  color: #FFFFFF;
+  text-shadow: none;
+  icon-shadow: none;
+  box-shadow: 0 0 transparent;
+}
+
+.modal-dialog-linked-button:first-child {
+  border-radius: 0px 0px 0px 13px;
+}
+
+.modal-dialog-linked-button:last-child {
+  border-right-width: 0px;
+  border-radius: 0px 0px 13px 0px;
+}
+
+.modal-dialog-linked-button:first-child:last-child {
+  border-right-width: 0px;
+  border-radius: 0px 0px 13px 13px;
 }
 
 .show-processes-dialog-subject,
@@ -2579,6 +2579,7 @@ StWidget.focused .app-well-app-running-dot {
   box-shadow: 0 0 transparent;
   text-shadow: none;
   icon-shadow: none;
+  box-shadow: none;
 }
 
 .login-dialog .modal-dialog-button:hover, .login-dialog .modal-dialog-button:focus {

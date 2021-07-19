@@ -52,32 +52,6 @@ stage {
   &:focus { @include button(flat-focus); }
 }
 
-.modal-dialog-linked-button {
-  min-height: 40px;
-  padding: 0 16px;
-  border-top: 1px solid $border_color !important;
-  border-right-width: 0;
-  box-shadow: none;
-  @include font(button);
-  @include button(flat-normal);
-  &:hover { @include button(flat-hover); }
-  &:active { @include button(flat-active); }
-  &:insensitive { @include button(flat-insensitive); }
-  &:focus { @include button(flat-focus); }
-
-  &:first-child {
-    border-radius: 0px 0px 0px $windows_radius;
-  }
-  &:last-child {
-    border-right-width: 0px;
-    border-radius: 0px 0px $windows_radius 0px;
-  }
-  &:first-child:last-child {
-    border-right-width: 0px;
-    border-radius: 0px 0px $windows_radius $windows_radius;
-  }
-}
-
 /* Entries */
 StEntry {
   min-height: $medium_size;
@@ -263,7 +237,7 @@ StScrollBar {
 .modal-dialog {
   border-radius: $windows_radius;
   color: $fg_color;
-  background-color: $lighter_bg_color;
+  background-color: $darker_bg_color;
   border: none;
   box-shadow: 3px 3px 6px -3px rgba(black, 0.35);
   margin: 6px !important;
@@ -283,7 +257,32 @@ StScrollBar {
     color: $hint_fg_color;
     padding-bottom: .4em;
   }
+}
 
+.modal-dialog-linked-button {
+  min-height: 40px;
+  padding: 0 16px;
+  border-top: 1px solid $border_color !important;
+  border-right-width: 0;
+  box-shadow: none !important;
+  @include font(button);
+  @include button(flat-normal);
+  &:hover { @include button(flat-hover); }
+  &:active { @include button(flat-active); }
+  &:insensitive { @include button(flat-insensitive); }
+  &:focus { @include button(flat-focus); }
+
+  &:first-child {
+    border-radius: 0px 0px 0px $windows_radius;
+  }
+  &:last-child {
+    border-right-width: 0px;
+    border-radius: 0px 0px $windows_radius 0px;
+  }
+  &:first-child:last-child {
+    border-right-width: 0px;
+    border-radius: 0px 0px $windows_radius $windows_radius;
+  }
 }
 
 .show-processes-dialog-subject,
@@ -2110,6 +2109,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
   .modal-dialog-button {
     padding: 0 16px;
     @include button(flat-normal, $tc: $inverse_fg_color);
+    box-shadow: none;
     &:hover,&:focus { @include button(flat-hover, $tc: $inverse_fg_color); }
     &:active { @include button(flat-active, $tc: $inverse_fg_color); }
     &:insensitive { @include button(flat-insensitive, $tc: $inverse_fg_color); }
