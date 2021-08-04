@@ -1209,8 +1209,8 @@ headerbar {
   .linked:not(.vertical):not(.path-bar).stack-switcher,
   &.windowhandle viewswitcher {
     button:not(.suggested-action):not(.destructive-action) {
-      padding-left: 8px; padding-right: 8px;
-      label { padding-left: 8px; padding-right: 8px; }
+      padding-left: $container_padding + 2px;
+      padding-right: $container_padding + 2px;
 
       border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
                                     $primary_color 0%,
@@ -1261,6 +1261,11 @@ headerbar {
     margin-top: 0;
     margin-bottom: 0;
     border-radius: 0;
+    padding: 0;
+    min-width: 120px;
+
+    image { margin-left: $container_padding * 2; }
+    label { margin-right: $container_padding * 2; }
 
     &:checked { background-color: $semi_fill_color; }
   }
@@ -1651,6 +1656,7 @@ menu,
   .csd & {
     border: none; // axes borders in a composited env
     background-color: if($solid == 'false', rgba($menu_bg_color, 0.95), $menu_bg_color);
+    box-shadow: none;
   }
 
   menuitem {
@@ -1833,7 +1839,6 @@ menuitem {
   }
 }
 
-popover,
 popover.background,
 popover.background.menu {
   transition: $shadow_transition;
