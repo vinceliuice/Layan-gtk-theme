@@ -1899,23 +1899,18 @@ menu > arrow,
   padding: 4px;
   background-color: #3c3c46;
   color: rgba(255, 255, 255, 0.7);
+  border-radius: 7px;
 }
 
 menu > arrow.top,
 .menu > arrow.top,
 .context-menu > arrow.top {
-  margin: -4px -3px 0 -3px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 7px 7px 0 0;
   -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
 }
 
 menu > arrow.bottom,
 .menu > arrow.bottom,
 .context-menu > arrow.bottom {
-  margin: 8px -3px -12px -3px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0 0 7px 7px;
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
