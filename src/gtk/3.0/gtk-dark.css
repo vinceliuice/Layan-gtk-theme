@@ -1445,12 +1445,16 @@ headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructi
   min-width: 120px;
 }
 
-headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) image {
-  margin-left: 8px;
+headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) > stack > box {
+  padding: 0 8px;
 }
 
-headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) label {
-  margin-right: 8px;
+headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) > stack > box.narrow {
+  font-size: 10px;
+}
+
+headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) > stack > box.narrow image {
+  margin-top: 2px;
 }
 
 headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action):checked {
