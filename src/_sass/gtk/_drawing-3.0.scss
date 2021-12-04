@@ -184,6 +184,9 @@
 
   @if $t == flat-checked {
     background-color: $track_color;
+    background-image: radial-gradient(circle farthest-corner at center,
+                                      transparent 10%,
+                                      transparent 0%);
     color: $fg_color;
   }
 
