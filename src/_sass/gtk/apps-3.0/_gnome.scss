@@ -1266,12 +1266,6 @@ window.background.csd {
     }
   }
 
-  > stack:not(.titlebar),
-  > hdyleaflet > stack.background,
-  > leaflet > stack.background {
-    border-radius: 0 0 $windows_radius $windows_radius;
-  }
-
   > box.horizontal > separator.sidebar,
   > hdyleaflet > separator.sidebar,
   > leaflet > separator.sidebar {
@@ -1282,6 +1276,8 @@ window.background.csd {
   > hdyleaflet > stack.background, // > 3.34.0
   > leaflet > stack.background, // > 3.38.0
   > box.horizontal > stack.background {
+    border-radius: 0 0 $windows_radius $windows_radius;
+
     > widget {
       > box.vertical > box.vertical { // Gnome 3.34 Wallpaper setting
         > scrolledwindow > viewport.frame {
@@ -1294,6 +1290,8 @@ window.background.csd {
         }
       }
     }
+
+    frame.view { border-radius: $buttons_radius; }
   }
 
   > hdyleaflet > box.vertical > scrolledwindow.view, // > 3.34.0
