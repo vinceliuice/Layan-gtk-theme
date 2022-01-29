@@ -180,10 +180,7 @@ assistant .sidebar label.highlight {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.nautilus-window .floating-bar, .osd .scale-popup, .app-notification, popover.background.touch-selection, popover.background.magnifier, popover.background.osd,
-popover.background.menu.touch-selection,
-popover.background.menu.magnifier,
-popover.background.menu.osd, .osd {
+.nautilus-window .floating-bar, .osd .scale-popup, .app-notification, popover.background.touch-selection, popover.background.magnifier, popover.background.osd, .osd {
   opacity: 0.9;
 }
 
@@ -239,10 +236,7 @@ spinbutton:disabled:not(.vertical), entry:disabled {
 #login_window entry, .raven .raven-background spinbutton:not(.vertical), .budgie-popover entry,
 .budgie-popover spinbutton:not(.vertical), window#whiskermenu-window entry, editortweak entry.search, layoutpane entry.search, entry.preferences-search, colorchooser .popover.osd spinbutton:not(.vertical), messagedialog entry, notebook > stack:not(:only-child) entry:not(.search),
 notebook > stack:not(:only-child) spinbutton:not(.vertical), popover.background .linked entry, popover.background entry,
-popover.background spinbutton:not(.vertical),
-popover.background.menu .linked entry,
-popover.background.menu entry,
-popover.background.menu spinbutton:not(.vertical), spinbutton.flat:not(.vertical), entry.flat {
+popover.background spinbutton:not(.vertical), spinbutton.flat:not(.vertical), entry.flat {
   border-radius: 0;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
@@ -254,10 +248,7 @@ popover.background.menu spinbutton:not(.vertical), spinbutton.flat:not(.vertical
 #login_window entry:focus, .raven .raven-background spinbutton:focus:not(.vertical), .budgie-popover entry:focus,
 .budgie-popover spinbutton:focus:not(.vertical), window#whiskermenu-window entry:focus, editortweak entry.search:focus, layoutpane entry.search:focus, entry.preferences-search:focus, colorchooser .popover.osd spinbutton:focus:not(.vertical), messagedialog entry:focus, notebook > stack:not(:only-child) entry:focus:not(.search),
 notebook > stack:not(:only-child) spinbutton:focus:not(.vertical), popover.background .linked entry:focus, popover.background entry:focus,
-popover.background spinbutton:focus:not(.vertical),
-popover.background.menu .linked entry:focus,
-popover.background.menu entry:focus,
-popover.background.menu spinbutton:focus:not(.vertical), spinbutton.flat:focus:not(.vertical), entry.flat:focus {
+popover.background spinbutton:focus:not(.vertical), spinbutton.flat:focus:not(.vertical), entry.flat:focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
 }
@@ -265,10 +256,7 @@ popover.background.menu spinbutton:focus:not(.vertical), spinbutton.flat:focus:n
 #login_window entry:disabled, .raven .raven-background spinbutton:disabled:not(.vertical), .budgie-popover entry:disabled,
 .budgie-popover spinbutton:disabled:not(.vertical), window#whiskermenu-window entry:disabled, editortweak entry.search:disabled, layoutpane entry.search:disabled, entry.preferences-search:disabled, colorchooser .popover.osd spinbutton:disabled:not(.vertical), messagedialog entry:disabled, notebook > stack:not(:only-child) entry:disabled:not(.search),
 notebook > stack:not(:only-child) spinbutton:disabled:not(.vertical), popover.background .linked entry:disabled, popover.background entry:disabled,
-popover.background spinbutton:disabled:not(.vertical),
-popover.background.menu .linked entry:disabled,
-popover.background.menu entry:disabled,
-popover.background.menu spinbutton:disabled:not(.vertical), spinbutton.flat:disabled:not(.vertical), entry.flat:disabled {
+popover.background spinbutton:disabled:not(.vertical), spinbutton.flat:disabled:not(.vertical), entry.flat:disabled {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
   background-color: transparent;
   color: rgba(0, 0, 0, 0.38);
@@ -1088,8 +1076,7 @@ combobox:drop(active) {
   border-radius: 7px;
 }
 
-#login_window #user_combobox button, .raven .raven-background button.combo, .budgie-popover button.combo, notebook > stack:not(:only-child) button.combo, popover.background button.combo,
-popover.background.menu button.combo {
+#login_window #user_combobox button, .raven .raven-background button.combo, .budgie-popover button.combo, notebook > stack:not(:only-child) button.combo, popover.background button.combo {
   border-radius: 0;
   background-image: none;
   font-weight: inherit;
@@ -1100,18 +1087,15 @@ popover.background.menu button.combo {
   color: rgba(0, 0, 0, 0.75);
 }
 
-#login_window #user_combobox button:hover, .raven .raven-background button.combo:hover, .budgie-popover button.combo:hover, notebook > stack:not(:only-child) button.combo:hover, popover.background button.combo:hover,
-popover.background.menu button.combo:hover {
+#login_window #user_combobox button:hover, .raven .raven-background button.combo:hover, .budgie-popover button.combo:hover, notebook > stack:not(:only-child) button.combo:hover, popover.background button.combo:hover {
   box-shadow: inset 0 -2px rgba(0, 0, 0, 0.38);
 }
 
-#login_window #user_combobox button:checked, .raven .raven-background button.combo:checked, .budgie-popover button.combo:checked, notebook > stack:not(:only-child) button.combo:checked, popover.background button.combo:checked,
-popover.background.menu button.combo:checked {
+#login_window #user_combobox button:checked, .raven .raven-background button.combo:checked, .budgie-popover button.combo:checked, notebook > stack:not(:only-child) button.combo:checked, popover.background button.combo:checked {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
 }
 
-#login_window #user_combobox button:disabled, .raven .raven-background button.combo:disabled, .budgie-popover button.combo:disabled, notebook > stack:not(:only-child) button.combo:disabled, popover.background button.combo:disabled,
-popover.background.menu button.combo:disabled {
+#login_window #user_combobox button:disabled, .raven .raven-background button.combo:disabled, .budgie-popover button.combo:disabled, notebook > stack:not(:only-child) button.combo:disabled, popover.background button.combo:disabled {
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.38);
 }
@@ -1973,56 +1957,27 @@ menuitem:disabled accelerator {
  ************/
 popover.background modelbutton.flat,
 popover.background menuitem.button.flat,
-popover.background spinbutton.vertical button,
-popover.background.menu modelbutton.flat,
-popover.background.menu menuitem.button.flat,
-popover.background.menu spinbutton.vertical button, popover.background row.button.flat.menuitem.activatable,
-popover.background row.activatable, popover.background .view,
-popover.background.menu row.button.flat.menuitem.activatable,
-popover.background.menu row.activatable,
-popover.background.menu .view, popover.background button.flat.combo,
-popover.background.menu button.flat.combo, popover.background button.flat,
-popover.background.menu button.flat {
+popover.background spinbutton.vertical button, popover.background row.button.flat.menuitem.activatable,
+popover.background row.activatable, popover.background .view, popover.background button.flat.combo, popover.background button.flat {
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
 }
 
 popover.background modelbutton.flat:hover,
 popover.background menuitem.button.flat:hover,
-popover.background spinbutton.vertical button:hover,
-popover.background.menu modelbutton.flat:hover,
-popover.background.menu menuitem.button.flat:hover,
-popover.background.menu spinbutton.vertical button:hover, popover.background row.button.flat.menuitem.activatable:hover,
-popover.background row.activatable:hover, popover.background .view:hover,
-popover.background.menu row.activatable:hover,
-popover.background.menu .view:hover, popover.background button.flat.combo:hover,
-popover.background.menu button.flat.combo:hover, popover.background button.flat:hover,
-popover.background.menu button.flat:hover {
+popover.background spinbutton.vertical button:hover, popover.background row.button.flat.menuitem.activatable:hover,
+popover.background row.activatable:hover, popover.background .view:hover, popover.background button.flat.combo:hover, popover.background button.flat:hover {
   box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
 }
 
 popover.background modelbutton.flat:checked,
 popover.background menuitem.button.flat:checked,
-popover.background spinbutton.vertical button:checked,
-popover.background.menu modelbutton.flat:checked,
-popover.background.menu menuitem.button.flat:checked,
-popover.background.menu spinbutton.vertical button:checked, popover.background row.button.flat.menuitem.activatable:checked,
-popover.background row.activatable:checked, popover.background .view:checked,
-popover.background.menu row.activatable:checked,
-popover.background.menu .view:checked, popover.background button.flat.combo:checked,
-popover.background.menu button.flat.combo:checked, popover.background button.flat:checked,
-popover.background.menu button.flat:checked, popover.background modelbutton.flat:active,
+popover.background spinbutton.vertical button:checked, popover.background row.button.flat.menuitem.activatable:checked,
+popover.background row.activatable:checked, popover.background .view:checked, popover.background button.flat.combo:checked, popover.background button.flat:checked, popover.background modelbutton.flat:active,
 popover.background menuitem.button.flat:active,
-popover.background spinbutton.vertical button:active,
-popover.background.menu modelbutton.flat:active,
-popover.background.menu menuitem.button.flat:active,
-popover.background.menu spinbutton.vertical button:active, popover.background row.button.flat.menuitem.activatable:active,
-popover.background row.activatable:active, popover.background .view:active,
-popover.background.menu row.activatable:active,
-popover.background.menu .view:active, popover.background button.flat.combo:active,
-popover.background.menu button.flat.combo:active, popover.background button.flat:active,
-popover.background.menu button.flat:active {
+popover.background spinbutton.vertical button:active, popover.background row.button.flat.menuitem.activatable:active,
+popover.background row.activatable:active, popover.background .view:active, popover.background button.flat.combo:active, popover.background button.flat:active {
   color: #FFFFFF;
   box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.12);
   background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.12) 10%, transparent 0%);
@@ -2030,63 +1985,41 @@ popover.background.menu button.flat:active {
 
 popover.background modelbutton.flat:disabled,
 popover.background menuitem.button.flat:disabled,
-popover.background spinbutton.vertical button:disabled,
-popover.background.menu modelbutton.flat:disabled,
-popover.background.menu menuitem.button.flat:disabled,
-popover.background.menu spinbutton.vertical button:disabled, popover.background row.button.flat.menuitem.activatable:disabled,
-popover.background row.activatable:disabled, popover.background .view:disabled,
-popover.background.menu row.activatable:disabled,
-popover.background.menu .view:disabled, popover.background button.flat.combo:disabled,
-popover.background.menu button.flat.combo:disabled, popover.background button.flat:disabled,
-popover.background.menu button.flat:disabled {
+popover.background spinbutton.vertical button:disabled, popover.background row.button.flat.menuitem.activatable:disabled,
+popover.background row.activatable:disabled, popover.background .view:disabled, popover.background button.flat.combo:disabled, popover.background button.flat:disabled {
   color: rgba(255, 255, 255, 0.3);
   background-color: transparent;
 }
 
-popover.background button.combo,
-popover.background.menu button.combo, popover.background button,
-popover.background.menu button {
+popover.background button.combo, popover.background button {
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
   box-shadow: none;
 }
 
-popover.background button.combo:hover,
-popover.background.menu button.combo:hover, popover.background button:hover,
-popover.background.menu button:hover {
+popover.background button.combo:hover, popover.background button:hover {
   transition: none;
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-popover.background button.combo:checked,
-popover.background.menu button.combo:checked, popover.background button:checked,
-popover.background.menu button:checked, popover.background button.combo:active,
-popover.background.menu button.combo:active, popover.background button:active,
-popover.background.menu button:active {
+popover.background button.combo:checked, popover.background button:checked, popover.background button.combo:active, popover.background button:active {
   background-color: #5657f5;
   color: #FFFFFF;
 }
 
-popover.background button.combo:disabled,
-popover.background.menu button.combo:disabled, popover.background button:disabled,
-popover.background.menu button:disabled {
+popover.background button.combo:disabled, popover.background button:disabled {
   color: rgba(255, 255, 255, 0.3);
   background-color: transparent;
 }
 
-popover.background button.combo:checked:disabled,
-popover.background.menu button.combo:checked:disabled, popover.background button:checked:disabled,
-popover.background.menu button:checked:disabled {
+popover.background button.combo:checked:disabled, popover.background button:checked:disabled {
   color: rgba(255, 255, 255, 0.3);
   background-color: rgba(86, 87, 245, 0.5);
 }
 
 popover.background .linked entry, popover.background entry,
-popover.background spinbutton:not(.vertical),
-popover.background.menu .linked entry,
-popover.background.menu entry,
-popover.background.menu spinbutton:not(.vertical) {
+popover.background spinbutton:not(.vertical) {
   border-radius: 0;
   caret-color: #FFFFFF;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
@@ -2097,73 +2030,39 @@ popover.background.menu spinbutton:not(.vertical) {
 }
 
 popover.background .linked entry:focus, popover.background entry:focus,
-popover.background spinbutton:focus:not(.vertical),
-popover.background.menu .linked entry:focus,
-popover.background.menu entry:focus,
-popover.background.menu spinbutton:focus:not(.vertical) {
+popover.background spinbutton:focus:not(.vertical) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
   box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
 }
 
 popover.background .linked entry:disabled, popover.background entry:disabled,
-popover.background spinbutton:disabled:not(.vertical),
-popover.background.menu .linked entry:disabled,
-popover.background.menu entry:disabled,
-popover.background.menu spinbutton:disabled:not(.vertical) {
+popover.background spinbutton:disabled:not(.vertical) {
   box-shadow: inset 0 -1px rgba(255, 255, 255, 0.12);
   background-color: transparent;
 }
 
 popover.background .linked entry, popover.background entry,
-popover.background spinbutton:not(.vertical),
-popover.background.menu .linked entry,
-popover.background.menu entry,
-popover.background.menu spinbutton:not(.vertical), popover.background .linked entry label, popover.background entry label,
-popover.background spinbutton:not(.vertical) label,
-popover.background.menu .linked entry label,
-popover.background.menu entry label,
-popover.background.menu spinbutton:not(.vertical) label, popover.background .linked entry image, popover.background entry image,
-popover.background spinbutton:not(.vertical) image,
-popover.background.menu .linked entry image,
-popover.background.menu entry image,
-popover.background.menu spinbutton:not(.vertical) image {
+popover.background spinbutton:not(.vertical), popover.background .linked entry label, popover.background entry label,
+popover.background spinbutton:not(.vertical) label, popover.background .linked entry image, popover.background entry image,
+popover.background spinbutton:not(.vertical) image {
   color: rgba(255, 255, 255, 0.8);
 }
 
 popover.background .linked entry:focus, popover.background entry:focus,
-popover.background spinbutton:focus:not(.vertical),
-popover.background.menu .linked entry:focus,
-popover.background.menu entry:focus,
-popover.background.menu spinbutton:focus:not(.vertical), popover.background .linked entry label:focus, popover.background entry label:focus,
-popover.background spinbutton:not(.vertical) label:focus,
-popover.background.menu .linked entry label:focus,
-popover.background.menu entry label:focus,
-popover.background.menu spinbutton:not(.vertical) label:focus, popover.background .linked entry image:focus, popover.background entry image:focus,
-popover.background spinbutton:not(.vertical) image:focus,
-popover.background.menu .linked entry image:focus,
-popover.background.menu entry image:focus,
-popover.background.menu spinbutton:not(.vertical) image:focus {
+popover.background spinbutton:focus:not(.vertical), popover.background .linked entry label:focus, popover.background entry label:focus,
+popover.background spinbutton:not(.vertical) label:focus, popover.background .linked entry image:focus, popover.background entry image:focus,
+popover.background spinbutton:not(.vertical) image:focus {
   color: #FFFFFF;
 }
 
 popover.background .linked entry:disabled, popover.background entry:disabled,
-popover.background spinbutton:disabled:not(.vertical),
-popover.background.menu .linked entry:disabled,
-popover.background.menu entry:disabled,
-popover.background.menu spinbutton:disabled:not(.vertical), popover.background .linked entry label:disabled, popover.background entry label:disabled,
-popover.background spinbutton:not(.vertical) label:disabled,
-popover.background.menu .linked entry label:disabled,
-popover.background.menu entry label:disabled,
-popover.background.menu spinbutton:not(.vertical) label:disabled, popover.background .linked entry image:disabled, popover.background entry image:disabled,
-popover.background spinbutton:not(.vertical) image:disabled,
-popover.background.menu .linked entry image:disabled,
-popover.background.menu entry image:disabled,
-popover.background.menu spinbutton:not(.vertical) image:disabled {
+popover.background spinbutton:disabled:not(.vertical), popover.background .linked entry label:disabled, popover.background entry label:disabled,
+popover.background spinbutton:not(.vertical) label:disabled, popover.background .linked entry image:disabled, popover.background entry image:disabled,
+popover.background spinbutton:not(.vertical) image:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-popover.background,
-popover.background.menu {
+popover.background, popover.background.menu {
   transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
   padding: 2px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
@@ -2171,329 +2070,274 @@ popover.background.menu {
   color: rgba(255, 255, 255, 0.8);
 }
 
-popover.background:backdrop,
-popover.background.menu:backdrop {
+popover.background:backdrop {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
   color: rgba(255, 255, 255, 0.75);
 }
 
-popover.background:disabled,
-popover.background.menu:disabled {
+popover.background:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-popover.background image:disabled, popover.background label:disabled,
-popover.background.menu image:disabled,
-popover.background.menu label:disabled {
+popover.background image:disabled, popover.background label:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-popover.background, .csd popover.background,
-popover.background.menu, .csd popover.background.menu {
+popover.background, .csd popover.background {
   border-radius: 8px;
 }
 
-popover.background > stack,
-popover.background.menu > stack {
+popover.background > stack {
   margin: -4px;
 }
 
-popover.background > toolbar,
-popover.background.menu > toolbar {
+popover.background > toolbar {
   margin: -2px;
 }
 
-popover.background > toolbar,
-popover.background.menu > toolbar {
+popover.background > toolbar {
   border-style: none;
   box-shadow: none;
   background-color: transparent;
 }
 
-popover.background list, popover.background row, popover.background .view, popover.background textview.view > text,
-popover.background.menu list,
-popover.background.menu row,
-popover.background.menu .view,
-popover.background.menu textview.view > text {
+popover.background list, popover.background row, popover.background .view, popover.background textview.view > text {
   color: rgba(255, 255, 255, 0.8);
   background-color: #373737;
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-popover.background treeview.view header button,
-popover.background.menu treeview.view header button {
+popover.background treeview.view header button {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-popover.background scrolledwindow,
-popover.background.menu scrolledwindow {
+popover.background scrolledwindow {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-popover.background scrollbar,
-popover.background.menu scrollbar {
+popover.background scrollbar {
   background-color: rgba(50, 50, 50, 0.65);
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-popover.background scrollbar slider,
-popover.background.menu scrollbar slider {
+popover.background scrollbar slider {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-popover.background scrollbar slider:hover,
-popover.background.menu scrollbar slider:hover {
+popover.background scrollbar slider:hover {
   background-color: rgba(255, 255, 255, 0.7);
 }
 
-popover.background scrollbar slider:active,
-popover.background.menu scrollbar slider:active {
+popover.background scrollbar slider:active {
   background-color: #FFFFFF;
 }
 
-popover.background scrollbar slider:disabled,
-popover.background.menu scrollbar slider:disabled {
+popover.background scrollbar slider:disabled {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider,
-popover.background.menu scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
+popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) slider {
   border: 1px solid rgba(50, 50, 50, 0.3);
 }
 
-popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) button,
-popover.background.menu scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
+popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) button {
   border: 1px solid rgba(50, 50, 50, 0.3);
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled,
-popover.background.menu scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
+popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) button:disabled {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
-popover.background scrollbar.overlay-indicator.dragging, popover.background scrollbar.overlay-indicator.hovering,
-popover.background.menu scrollbar.overlay-indicator.dragging,
-popover.background.menu scrollbar.overlay-indicator.hovering {
+popover.background scrollbar.overlay-indicator.dragging, popover.background scrollbar.overlay-indicator.hovering {
   background-color: rgba(50, 50, 50, 0.9);
 }
 
-popover.background button.radio,
-popover.background.menu button.radio {
+popover.background button.radio {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-popover.background button.radio:hover,
-popover.background.menu button.radio:hover {
+popover.background button.radio:hover {
   color: #FFFFFF;
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.linked > popover.background button, .linked > popover.background.menu button {
+.linked > popover.background button {
   border-radius: 7px;
 }
 
-.linked > popover.background button:first-child, .linked > popover.background.menu button:first-child {
+.linked > popover.background button:first-child {
   border-radius: 7px;
 }
 
-.linked > popover.background button:last-child, .linked > popover.background.menu button:last-child {
+.linked > popover.background button:last-child {
   border-radius: 7px;
 }
 
-.linked > popover.background button:only-child, .linked > popover.background.menu button:only-child {
+.linked > popover.background button:only-child {
   border-radius: 7px;
 }
 
-popover.background.menu button, popover.background button.model,
-popover.background.menu.menu button,
-popover.background.menu button.model {
+popover.background.menu button, popover.background button.model {
   border-radius: 7px;
 }
 
-popover.background button.suggested-action,
-popover.background.menu button.suggested-action {
+popover.background button.suggested-action {
   background-color: #7C4DFF;
   color: #FFFFFF;
 }
 
-popover.background button.suggested-action:disabled,
-popover.background.menu button.suggested-action:disabled {
+popover.background button.suggested-action:disabled {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(124, 77, 255, 0.5);
 }
 
-popover.background button.suggested-action:hover,
-popover.background.menu button.suggested-action:hover {
+popover.background button.suggested-action:hover {
   color: #FFFFFF;
   background-color: #8f67ff;
 }
 
-popover.background button.suggested-action:checked,
-popover.background.menu button.suggested-action:checked {
+popover.background button.suggested-action:checked {
   background-color: #a382ff;
 }
 
-popover.background button.suggested-action.flat,
-popover.background.menu button.suggested-action.flat {
+popover.background button.suggested-action.flat {
   background-color: transparent;
   color: #7C4DFF;
 }
 
-popover.background button.suggested-action.flat:hover,
-popover.background.menu button.suggested-action.flat:hover {
+popover.background button.suggested-action.flat:hover {
   color: #7C4DFF;
   background-color: rgba(124, 77, 255, 0.15);
 }
 
-popover.background button.suggested-action.flat:disabled,
-popover.background.menu button.suggested-action.flat:disabled {
+popover.background button.suggested-action.flat:disabled {
   background-color: transparent;
   color: rgba(124, 77, 255, 0.5);
 }
 
-popover.background button.suggested-action.flat:checked,
-popover.background.menu button.suggested-action.flat:checked {
+popover.background button.suggested-action.flat:checked {
   background-color: rgba(124, 77, 255, 0.3);
 }
 
-popover.background button.destructive-action,
-popover.background.menu button.destructive-action {
+popover.background button.destructive-action {
   background-color: #FF5252;
   color: #FFFFFF;
 }
 
-popover.background button.destructive-action:disabled,
-popover.background.menu button.destructive-action:disabled {
+popover.background button.destructive-action:disabled {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(255, 82, 82, 0.5);
 }
 
-popover.background button.destructive-action:hover,
-popover.background.menu button.destructive-action:hover {
+popover.background button.destructive-action:hover {
   color: #FFFFFF;
   background-color: #ff6c6c;
 }
 
-popover.background button.destructive-action:checked,
-popover.background.menu button.destructive-action:checked {
+popover.background button.destructive-action:checked {
   background-color: #ff8686;
 }
 
-popover.background button.destructive-action.flat,
-popover.background.menu button.destructive-action.flat {
+popover.background button.destructive-action.flat {
   background-color: transparent;
   color: #FF5252;
 }
 
-popover.background button.destructive-action.flat:hover,
-popover.background.menu button.destructive-action.flat:hover {
+popover.background button.destructive-action.flat:hover {
   color: #FF5252;
   background-color: rgba(255, 82, 82, 0.15);
 }
 
-popover.background button.destructive-action.flat:disabled,
-popover.background.menu button.destructive-action.flat:disabled {
+popover.background button.destructive-action.flat:disabled {
   background-color: transparent;
   color: rgba(255, 82, 82, 0.5);
 }
 
-popover.background button.destructive-action.flat:checked,
-popover.background.menu button.destructive-action.flat:checked {
+popover.background button.destructive-action.flat:checked {
   background-color: rgba(255, 82, 82, 0.3);
 }
 
-popover.background check, popover.background radio,
-popover.background.menu check,
-popover.background.menu radio {
+popover.background check, popover.background radio {
   color: rgba(255, 255, 255, 0.8);
   transition: none;
   animation: none;
 }
 
-popover.background check:hover, popover.background radio:hover,
-popover.background.menu check:hover,
-popover.background.menu radio:hover {
+popover.background check:hover, popover.background radio:hover {
   color: #FFFFFF;
 }
 
-popover.background check:disabled, popover.background radio:disabled,
-popover.background.menu check:disabled,
-popover.background.menu radio:disabled {
+popover.background check:disabled, popover.background radio:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-popover.background check:checked, popover.background check:indeterminate, popover.background radio:checked, popover.background radio:indeterminate,
-popover.background.menu check:checked,
-popover.background.menu check:indeterminate,
-popover.background.menu radio:checked,
-popover.background.menu radio:indeterminate {
+popover.background check:checked, popover.background check:indeterminate, popover.background radio:checked, popover.background radio:indeterminate {
   color: #7C4DFF;
 }
 
-popover.background check:checked:disabled, popover.background check:indeterminate:disabled, popover.background radio:checked:disabled, popover.background radio:indeterminate:disabled,
-popover.background.menu check:checked:disabled,
-popover.background.menu check:indeterminate:disabled,
-popover.background.menu radio:checked:disabled,
-popover.background.menu radio:indeterminate:disabled {
+popover.background check:checked:disabled, popover.background check:indeterminate:disabled, popover.background radio:checked:disabled, popover.background radio:indeterminate:disabled {
   color: rgba(124, 77, 255, 0.5);
 }
 
 popover.background checkbutton.text-button,
-popover.background radiobutton.text-button,
-popover.background.menu checkbutton.text-button,
-popover.background.menu radiobutton.text-button {
+popover.background radiobutton.text-button {
   outline-style: none;
 }
 
-popover.background separator,
-popover.background.menu separator {
+popover.background separator {
   margin: 4px 0;
 }
 
-popover.background list separator,
-popover.background.menu list separator {
+popover.background list separator {
   margin: 0;
 }
 
-popover.background separator, popover.background separator, .csd popover.background separator,
-popover.background.menu separator,
-popover.background.menu separator, .csd popover.background.menu separator {
+popover.background separator, popover.background separator, .csd popover.background separator {
   border: none;
   background-color: rgba(255, 255, 255, 0.12);
 }
 
-popover.background label.separator,
-popover.background.menu label.separator {
+popover.background label.separator {
   color: rgba(255, 255, 255, 0.8);
 }
 
-popover.background calendar,
-popover.background.menu calendar {
+popover.background calendar {
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #FFFFFF;
 }
 
-popover.background calendar:disabled,
-popover.background.menu calendar:disabled {
+popover.background calendar:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 
-popover.background calendar.header,
-popover.background.menu calendar.header {
+popover.background calendar.header {
   border-style: none none solid;
   border-color: rgba(255, 255, 255, 0.12);
   border-radius: 0;
 }
 
-popover.background calendar.highlight,
-popover.background.menu calendar.highlight {
+popover.background calendar.highlight {
   color: rgba(255, 255, 255, 0.7);
 }
 
-popover.background calendar:indeterminate,
-popover.background.menu calendar:indeterminate {
+popover.background calendar:indeterminate {
   color: rgba(255, 255, 255, 0.3);
+}
+
+popover.background.combo {
+  padding: 0;
+  margin: 0;
+}
+
+popover.background.combo list {
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+
+popover.background.combo list > row.activatable {
+  padding: 4px 8px;
 }
 
 /*************
@@ -5777,17 +5621,17 @@ window.background.csd > box > stack > scrolledwindow > viewport > box > list, wi
   border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child {
+window.background.csd stack stack stack frame > list row.activatable:first-child, window.background.csd > stack > list row.activatable:first-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:first-child, preferencesgroup list row.activatable:first-child, .geary-accounts-editor-pane list row.activatable:first-child, window.background.csd.unified > deck > deck > deck list row.activatable:first-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:first-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:first-child, leaflet stack.background scrolledwindow > viewport list row.activatable:first-child, leaflet overlay scrolledwindow > viewport list row.activatable:first-child, popover.background.combo list > row.activatable:first-child, .tweak-group-startup row.activatable:first-child, list.tweak-group list row.activatable:first-child {
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child {
+window.background.csd stack stack stack frame > list row.activatable:last-child, window.background.csd > stack > list row.activatable:last-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:last-child, preferencesgroup list row.activatable:last-child, .geary-accounts-editor-pane list row.activatable:last-child, window.background.csd.unified > deck > deck > deck list row.activatable:last-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:last-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:last-child, leaflet stack.background scrolledwindow > viewport list row.activatable:last-child, leaflet overlay scrolledwindow > viewport list row.activatable:last-child, popover.background.combo list > row.activatable:last-child, .tweak-group-startup row.activatable:last-child, list.tweak-group list row.activatable:last-child {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
 }
 
-window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child {
+window.background.csd stack stack stack frame > list row.activatable:only-child, window.background.csd > stack > list row.activatable:only-child, window.background.csd.unified > deck > deck > box > stack > stack > scrolledwindow > viewport > clamp > list > row.activatable:only-child, preferencesgroup list row.activatable:only-child, .geary-accounts-editor-pane list row.activatable:only-child, window.background.csd.unified > deck > deck > deck list row.activatable:only-child, hdyleaflet stack.background scrolledwindow > viewport list row.activatable:only-child, hdyleaflet overlay scrolledwindow > viewport list row.activatable:only-child, leaflet stack.background scrolledwindow > viewport list row.activatable:only-child, leaflet overlay scrolledwindow > viewport list row.activatable:only-child, popover.background.combo list > row.activatable:only-child, .tweak-group-startup row.activatable:only-child, list.tweak-group list row.activatable:only-child {
   border-radius: 7px;
 }
 
