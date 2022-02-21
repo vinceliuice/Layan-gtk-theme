@@ -3678,12 +3678,9 @@ calendar:indeterminate {
 /***********
  * Dialogs *
  ***********/
-messagedialog {
-  color: rgba(255, 255, 255, 0.8);
-}
-
 messagedialog.background {
   background-color: rgba(68, 69, 75, 0.95);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 messagedialog .titlebar {
@@ -3711,6 +3708,10 @@ messagedialog .dialog-action-area button {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0;
   color: rgba(255, 255, 255, 0.8);
+}
+
+messagedialog .dialog-action-area button:hover, messagedialog .dialog-action-area button:active {
+  color: white;
 }
 
 messagedialog .dialog-action-area button:first-child {

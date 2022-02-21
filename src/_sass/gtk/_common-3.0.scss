@@ -3338,10 +3338,9 @@ calendar {
  * Dialogs *
  ***********/
 messagedialog { // Message Dialog styling
-  color: $popover_fg;
-
   &.background {
     background-color: rgba($popover_bg, 0.95);
+    color: $popover_fg;
   }
 
   .titlebar {
@@ -3368,6 +3367,8 @@ messagedialog { // Message Dialog styling
     border-top: 1px solid $border_color;
     border-radius: 0;
     color: $popover_fg;
+
+    &:hover, &:active { color: white; }
 
     &:first-child {
       border-bottom-left-radius: 0;
