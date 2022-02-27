@@ -38,11 +38,10 @@
       color: $titlebar_secondary_fg_color;
     }
 
-    > toolitem > box.raised > button,
-    > toolitem > box.linked.raised > button {
+    > toolitem > box > button {
       min-height: $medium_size;
       min-width: $medium_size;
-      margin: 4px 2px;
+      margin: $container_padding 2px;
       padding: 0 0;
       border-image: none;
       color: $titlebar_secondary_fg_color;
@@ -82,10 +81,9 @@
     }
 
     .linked.path-bar > button {
-      // @extend %header_pathbar_button;
       min-height: 0;
-      margin: 4px 0;
-      padding: 0 10px;
+      margin: $container_padding 0;
+      padding: 0 $container_padding * 2;
       color: $titlebar_secondary_fg_color;
 
       &:hover, &:active, &:checked { color: $titlebar_fg_color; }
@@ -93,7 +91,7 @@
       &:disabled { color: $titlebar_disabled_secondary_fg_color; }
 
       &:first-child, &:last-child {
-        padding: 0 6px;
+        padding: 0 $container_padding;
       }
 
       image, label {

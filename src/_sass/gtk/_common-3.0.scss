@@ -1307,7 +1307,7 @@ headerbar {
 
   &.default-decoration {
     min-height: $small_size;
-    padding: $container_padding 12px;
+    padding: $container_padding $container_padding * 2;
     box-shadow: inset 0 1px $titlebar_highlight_color;
 
     .tiled &,
@@ -1859,7 +1859,7 @@ popover.background {
   &, &.menu {
     transition: $shadow_transition;
     padding: 2px;
-    box-shadow: $shadow_2; // TODO: this should really have a highlight
+    box-shadow: $shadow_3; // TODO: this should really have a highlight
     background-color: if($solid == 'false', rgba($popover_bg, 0.95), $popover_bg);
     color: $popover_fg;
   }
@@ -3985,7 +3985,7 @@ decoration {
 
   .csd.popup & { // Menu shadow
     border-radius: $menu_radius;
-    box-shadow: $shadow_2;
+    box-shadow: $shadow_3;
   }
 
   tooltip.csd & {
