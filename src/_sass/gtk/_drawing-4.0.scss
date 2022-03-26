@@ -133,6 +133,7 @@
   @if $t == flat-active {
     box-shadow: inset 0 0 0 9999px $fill_color;
     color: $fg_color;
+    background-image: none;
   }
 
   @if $t == flat-disabled {
@@ -144,11 +145,13 @@
   @if $t == flat-checked {
     background-color: $track_color;
     color: $fg_color;
+    background-image: none;
   }
 
   @if $t == flat-checked-disabled {
     background-color: $divider_color;
     color: $disabled_fg_color;
+    background-image: none;
   }
 }
 

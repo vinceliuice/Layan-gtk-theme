@@ -601,6 +601,7 @@ toolbar button:active, .toolbar button:active,
 button.flat:active {
   box-shadow: inset 0 0 0 9999px alpha(currentColor, 0.3);
   color: rgba(0, 0, 0, 0.75);
+  background-image: none;
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:disabled, window.dialog.message .linked:not(.vertical).dialog-action-area > button:disabled, check:disabled,
@@ -621,6 +622,7 @@ toolbar button:checked, .toolbar button:checked,
 button.flat:checked {
   background-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.75);
+  background-image: none;
 }
 
 infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), modelbutton.flat:checked:disabled, popover.menu box.circular-buttons button.circular.image-button.model:checked:disabled, popover.menu box.inline-buttons button.image-button.model:checked:disabled,
@@ -630,6 +632,7 @@ toolbar button:checked:disabled, .toolbar button:checked:disabled,
 button.flat:checked:disabled {
   background-color: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.38);
+  background-image: none;
 }
 
 

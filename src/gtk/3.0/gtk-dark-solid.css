@@ -874,7 +874,7 @@ modelbutton.flat,
 .menuitem.button.flat {
   min-height: 28px;
   padding: 0 8px;
-  border-radius: 7px;
+  border-radius: 4px;
   color: inherit;
 }
 
@@ -2078,7 +2078,7 @@ popover.background image:disabled, popover.background label:disabled {
 }
 
 popover.background, .csd popover.background {
-  border-radius: 8px;
+  border-radius: 9px;
 }
 
 popover.background > stack {
@@ -2157,23 +2157,23 @@ popover.background button.radio:hover {
 }
 
 .linked > popover.background button {
-  border-radius: 7px;
+  border-radius: 4px;
 }
 
 .linked > popover.background button:first-child {
-  border-radius: 7px;
+  border-radius: 4px;
 }
 
 .linked > popover.background button:last-child {
-  border-radius: 7px;
+  border-radius: 4px;
 }
 
 .linked > popover.background button:only-child {
-  border-radius: 7px;
+  border-radius: 4px;
 }
 
 popover.background.menu button, popover.background button.model {
-  border-radius: 7px;
+  border-radius: 4px;
 }
 
 popover.background button.suggested-action {

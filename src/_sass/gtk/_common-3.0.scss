@@ -712,7 +712,7 @@ modelbutton.flat,
 .menuitem.button.flat {
   min-height: $menuitem_size;
   padding: 0 8px;
-  border-radius: $buttons_radius;
+  border-radius: $menu_radius / 2;
   color: inherit;
 
   @extend %simple_flat_button;
@@ -1870,7 +1870,7 @@ popover.background {
   image, label { &:disabled { color: $popover_disabled_fg; }}
 
   &, .csd & {
-    border-radius: $buttons_radius + 1px;
+    border-radius: $menu_radius + 1px;
   }
 
   > stack { margin: -4px; } // remove extra padding from menu style popovers
@@ -1946,18 +1946,18 @@ popover.background {
     }
 
     .linked > & {
-      border-radius: $buttons_radius;
+      border-radius: $menu_radius / 2;
 
       &:first-child {
-        border-radius: $buttons_radius;
+        border-radius: $menu_radius / 2;
       }
 
       &:last-child {
-        border-radius: $buttons_radius;
+        border-radius: $menu_radius / 2;
       }
 
       &:only-child {
-        border-radius: $buttons_radius;
+        border-radius: $menu_radius / 2;
       }
     }
   }
@@ -1966,7 +1966,7 @@ popover.background {
   menuitem.button.flat,
   spinbutton.vertical button { @extend %popover_flat_button; }
 
-  &.menu button, button.model { border-radius: $buttons_radius; }
+  &.menu button, button.model { border-radius: $menu_radius / 2; }
 
     // Suggested and Destructive Action buttons
   @each $b_type, $b_color, $b_image in (suggested-action, $suggested_color, $suggested_image),
