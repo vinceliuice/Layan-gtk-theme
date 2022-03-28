@@ -189,7 +189,7 @@ if [[ "${#colors[@]}" -eq 0 ]] ; then
 fi
 
 if [[ "${#solids[@]}" -eq 0 ]] ; then
-  colors=("${SOLID_VARIANTS[@]}")
+  solids=("${SOLID_VARIANTS[@]}")
 fi
 
 for color in "${colors[@]}"; do
