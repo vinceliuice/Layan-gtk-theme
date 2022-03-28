@@ -154,18 +154,18 @@ while [[ $# -gt 0 ]]; do
       for solid in "${@}"; do
         case "${solid}" in
           standard)
-            colors+=("${SOLID_VARIANTS[0]}")
+            solids+=("${SOLID_VARIANTS[0]}")
             shift
             ;;
           solid)
-            colors+=("${SOLID_VARIANTS[1]}")
+            solids+=("${SOLID_VARIANTS[1]}")
             shift
             ;;
           -*|--*)
             break
             ;;
           *)
-            echo "ERROR: Unrecognized color variant '$1'."
+            echo "ERROR: Unrecognized solid variant '$1'."
             echo "Try '$0 --help' for more information."
             exit 1
             ;;
@@ -184,8 +184,16 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-for color in "${colors[@]:-${COLOR_VARIANTS[@]}}"; do
-  for solid in "${solids[@]:-${SOLID_VARIANTS[@]}}"; do
+if [[ "${#colors[@]}" -eq 0 ]] ; then
+  colors=("${COLOR_VARIANTS[@]}")
+fi
+
+if [[ "${#solids[@]}" -eq 0 ]] ; then
+  colors=("${SOLID_VARIANTS[@]}")
+fi
+
+for color in "${colors[@]}"; do
+  for solid in "${solids[@]}"; do
     install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
   done
 done
