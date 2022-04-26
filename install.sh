@@ -17,15 +17,18 @@ COLOR_VARIANTS=('' '-light' '-dark')
 SOLID_VARIANTS=('' '-solid')
 
 if [[ "$(command -v gnome-shell)" ]]; then
+  gnome-shell --version
   SHELL_VERSION="$(gnome-shell --version | cut -d ' ' -f 3 | cut -d . -f -1)"
-  if [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
-    GS_VERSION="new"
+  if [[ "${SHELL_VERSION:-}" -ge "42" ]]; then
+    GS_VERSION="42-0"
+  elif [[ "${SHELL_VERSION:-}" -ge "40" ]]; then
+    GS_VERSION="40-0"
   else
-    GS_VERSION="old"
+    GS_VERSION="3-36"
   fi
   else
     echo "'gnome-shell' not found, using styles for last gnome-shell version available."
-    GS_VERSION="new"
+    GS_VERSION="42-0"
 fi
 
 usage() {
@@ -75,12 +78,7 @@ install() {
   cp -ur ${SRC_DIR}/src/gnome-shell/gnome-shell-theme.gresource.xml                  ${THEME_DIR}/gnome-shell
   cp -ur ${SRC_DIR}/src/gnome-shell/assets${ELSE_DARK}                               ${THEME_DIR}/gnome-shell/assets
   cp -ur ${SRC_DIR}/src/gnome-shell/common-assets/*.svg                              ${THEME_DIR}/gnome-shell/assets
-
-  if [[ "${GS_VERSION:-}" == 'new' ]]; then
-    cp -ur ${SRC_DIR}/src/gnome-shell/shell-40-0/gnome-shell${ELSE_DARK}.css         ${THEME_DIR}/gnome-shell/gnome-shell.css
-  else
-    cp -ur ${SRC_DIR}/src/gnome-shell/shell-3-36/gnome-shell${ELSE_DARK}.css         ${THEME_DIR}/gnome-shell/gnome-shell.css
-  fi
+  cp -ur ${SRC_DIR}/src/gnome-shell/shell-${GS_VERSION}/gnome-shell${ELSE_DARK}.css  ${THEME_DIR}/gnome-shell/gnome-shell.css
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-2.0
   cp -ur ${SRC_DIR}/src/gtk-2.0/{apps.rc,hacks.rc,main.rc,panel.rc}                  ${THEME_DIR}/gtk-2.0

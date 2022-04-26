@@ -35,3 +35,7 @@ sassc $SASSC_OPT src/gnome-shell/shell-40-0/gnome-shell.{scss,css}
 echo ">> generating 40-0 gnome-shell.css."
 sassc $SASSC_OPT src/gnome-shell/shell-40-0/gnome-shell-dark.{scss,css}
 echo ">> generating 40-0 gnome-shell-dark.css."
+sassc $SASSC_OPT src/gnome-shell/shell-42-0/gnome-shell.{scss,css}
+echo ">> generating 42-0 gnome-shell.css."
+sassc $SASSC_OPT src/gnome-shell/shell-42-0/gnome-shell-dark.{scss,css}
+echo ">> generating 42-0 gnome-shell-dark.css."

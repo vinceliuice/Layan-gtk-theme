@@ -446,3 +446,59 @@
   padding: 6px;
   border-radius: 0;
 }
+
+//
+// Popup menu
+//
+
+.popup-menu {
+  .popup-menu-item {
+    padding: $container_padding; 
+
+    &:ltr { padding-right:1.75em; padding-left: 0; }
+    &:rtl { padding-right: 0; padding-left:1.75em; }
+  }
+}
+
+// separator
+.popup-separator-menu-item {
+  margin: 0;
+  padding: 0 0;
+  background: none;
+  border: none;
+
+  .popup-separator-menu-item-separator {
+    height: 1px; //not really the whole box
+    margin: 0 42px;
+    background-color: $border_color;
+    padding: 0 0;
+
+    .popup-sub-menu & { //submenu separators
+      padding: 0 0;
+      margin: 0 54px 0 24px;
+    }
+  }
+}
+
+// system status popover menu
+.aggregate-menu {
+  .popup-sub-menu .popup-menu-item :first-child {
+    &:ltr { /* 8px spacing + 2*4px padding */
+            padding-left: 10px; margin-left: em(16px); }
+    &:rtl { /* 8px spacing + 2*4px padding */
+            padding-right: 10px; margin-right: em(16px); }
+  }
+}
+
+//
+// OSD window
+//
+
+.osd-window {
+  spacing: 1em;
+  margin: 32px;
+  min-width: 64px;
+  min-height: 64px;
+
+  StIcon { icon-size: 64px; }
+}

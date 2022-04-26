@@ -505,6 +505,7 @@ StScrollBar {
   min-width: 15em;
   color: $secondary_fg_color;
   background: none;
+  border: none !important;
 
   // .popup-menu-arrow { } //defined globally in the TOP BAR
 
@@ -512,6 +513,7 @@ StScrollBar {
     background-color: $alt_lighter_bg_color;
     box-shadow: none;
     border-color: rgba(0, 0, 0, 0.08); //border: none;
+    border-radius: 0 !important;
   }
 
   .popup-menu-content {
@@ -521,58 +523,59 @@ StScrollBar {
     background-color: rgba($menu_bg_color, 0.95);
     border-radius: $windows_radius;
     box-shadow: 0 5px 10px rgba(black, 0.18);
+    border: none !important;
   }
 
   .popup-menu-item {
     // min-height: $menuitem_size - 4px * 2;
     spacing: 8px;
     transition-duration: $shorter_duration;
-
-    &:ltr { padding-right:1.75em; padding-left: 0; padding-top: 6px; padding-bottom: 6px; }
-    &:rtl { padding-right: 0; padding-left:1.75em; padding-top: 6px; padding-bottom: 6px; }
+    border-radius: 0 !important;
 
     &:checked {
-      background-color: $primary_color;
-      color: $inverse_fg_color;
+      background-color: $primary_color !important;
+      color: $inverse_fg_color !important;
       box-shadow: none;
       border: none;
       font-weight: normal;
+      border-radius: 0 !important;
 
-      &.selected {
-        background-color: mix($inverse_fg_color, $primary_color, percentage($lower_opacity / 2));
-        color: $inverse_fg_color;
-      }
-
-      &:active {
-        background-color: mix($inverse_fg_color, $primary_color, percentage($lower_opacity));
+      &:hover, &:focus, &.selected {
+        background-color: mix($inverse_fg_color, $primary_color, percentage($lower_opacity / 2)) !important;
         color: $inverse_fg_color !important;
       }
 
-      &:insensitive { color: $inverse_disabled_fg_color; }
+      &:active {
+        background-color: mix($inverse_fg_color, $primary_color, percentage($lower_opacity)) !important;
+        color: $inverse_fg_color !important;
+      }
+
+      &:insensitive { color: $inverse_disabled_fg_color !important; }
     }
 
-    &.selected {
-      background-color: $divider_color;
-      color: $fg_color;
+    &:hover, &:focus, &.selected {
+      background-color: $divider_color !important;
+      color: $fg_color !important;
       transition-duration: 0ms;
       box-shadow: none;
       border: none;
+      border-radius: 0 !important;
     }
 
     &:active {
-      background-color: $track_color;
-      color: $fg_color;
+      background-color: $track_color !important;
+      color: $fg_color !important;
       transition-duration: $longer_duration;
     }
 
-    &.selected:active { color: $fg_color; }
-    &:insensitive { color: $disabled_fg_color; }
+    &.selected:active { color: $fg_color !important; }
+    &:insensitive { color: $disabled_fg_color !important; }
   }
 
   .popup-inactive-menu-item { //all icons and other graphical elements
-    color: $disabled_fg_color;
+    color: $disabled_fg_color !important;
 
-    &:insensitive { color: $disabled_secondary_fg_color; }
+    &:insensitive { color: $disabled_secondary_fg_color !important; }
   }
 
   //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
@@ -621,25 +624,6 @@ StScrollBar {
   -arrow-box-shadow: none; //dreaming. bug #689995
 }
 
-.popup-separator-menu-item {
-  margin: 0;
-  padding: 0 0;
-  background: none;
-  border: none;
-
-  .popup-separator-menu-item-separator {
-    height: 1px; //not really the whole box
-    margin: 0 42px;
-    background-color: $border_color;
-    padding: 0 0;
-
-    .popup-sub-menu & { //submenu separators
-      padding: 0 0;
-      margin: 0 54px 0 24px;
-    }
-  }
-}
-
 #appMenu {
   spinner-image: url("process-working.svg");
   spacing: 4px;
@@ -659,13 +643,6 @@ StScrollBar {
     margin: 0 0;
     -st-icon-style: symbolic;
   }
-
-  .popup-sub-menu .popup-menu-item :first-child {
-    &:ltr { /* 8px spacing + 2*4px padding */
-            padding-left: 10px; margin-left: em(16px); }
-    &:rtl { /* 8px spacing + 2*4px padding */
-            padding-right: 10px; margin-right: em(16px); }
-  }
 }
 
 // Background menu
@@ -675,12 +652,9 @@ StScrollBar {
 .osd-window {
   text-align: center;
   font-weight: bold;
-  spacing: 1em;
-  margin: 32px;
-  min-width: 64px;
-  min-height: 64px;
 
   .osd-monitor-label { @include font(display-2); }
+
   .level {
     height: 4px;
     border-radius: 2px;
@@ -1181,9 +1155,10 @@ StScrollBar {
 }
 
 .calendar-week-number {
-  height: 1.8em;
-  width: 2em;
-  margin: $container_padding 0;
+  height: 1.8em !important;
+  width: 2.1em !important;
+  margin: $container_padding 0 !important;
+  padding: $container_padding !important;
   border-radius: 100px;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $hint_fg_color;
@@ -1351,16 +1326,19 @@ StScrollBar {
 
 .message {
   min-height: $menuitem_size * 2;
-  background-color: transparent;
   border: none;
   border-radius: $buttons_radius;
   color: $secondary_fg_color;
   text-shadow: none;
+  background-color: $base_color;
 
-  .popup-menu & { box-shadow: none !important; }
+  .popup-menu & {
+    box-shadow: none !important;
+    background-color: $row_fill_color !important;
 
-  &:hover,&:focus { background-color: $divider_color; }
-  &:active { background-color: $track_color; }
+    &:hover, &:focus { background-color: $divider_color !important; }
+    &:active { background-color: $track_color !important; }
+  }
 }
 
 .message-icon-bin {
@@ -2043,6 +2021,7 @@ $keyboard_active_bg_color: if($variant == 'light', darken($keyboard_bg_color, 20
   margin: ($container_padding / 2) 15px 17px 8px;
   padding: $container_padding;
   spacing: $container_padding;
+  border: none;
 }
 
 .candidate-box {

@@ -208,6 +208,59 @@ $nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color,
     }
   }
 
+    // >= 42.0
+    .windowhandle .linked.nautilus-path-bar {
+      border-radius: $circular_radius;
+      margin: $container_padding;
+      background-image: $theme_image;
+      background-size: auto auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+      box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
+
+      .dim-label { color: $inverse_secondary_fg_color; }
+
+      button:not(.suggested-action):not(.destructive-action) {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $inverse_secondary_fg_color;
+
+        &:hover {
+          background-color: $inverse_divider_color;
+          box-shadow: none;
+        }
+
+        &:active, &:checked {
+          background-color: $inverse_track_color;
+          box-shadow: none;
+          background-image: none;
+        }
+
+        &:hover, &:active, &:checked {
+          color: $inverse_fg_color;
+        }
+
+        &.current-dir {
+          color: $inverse_fg_color;
+
+          &:hover, &:active {
+            background: none;
+            box-shadow: none;
+          }
+        }
+      }
+
+      button.toggle.popup {
+        border-radius: $circular_radius;
+
+        &:checked {
+          background-color: $inverse_track_color;
+          box-shadow: none;
+          background-image: none;
+        }
+      }
+    }
+
   paned > separator { // Ensure paned separator rendering. See issue #84 for details.
     min-width: 20px;
     color: transparent;

@@ -227,40 +227,42 @@ $window_close_button_padding: 3px;
 
 .popup-menu {
   .popup-menu-item {
-    padding: $container_padding; 
+    padding: $container_padding !important;
 
-    &:ltr { padding-right:1.75em; padding-left: 0; }
-    &:rtl { padding-right: 0; padding-left:1.75em; }
+    &:ltr { padding-right: $container_padding * 3 !important; padding-left: 0 !important; }
+    &:rtl { padding-right: 0 !important; padding-left: $container_padding * 3 !important; }
   }
 }
 
 // separator
 .popup-separator-menu-item {
-  margin: 0;
-  padding: 0 0;
-  background: none;
-  border: none;
+  padding: 0;
 
   .popup-separator-menu-item-separator {
     height: 1px; //not really the whole box
-    margin: 0 42px;
     background-color: $border_color;
-    padding: 0 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: $container_padding 32px;
 
     .popup-sub-menu & { //submenu separators
-      padding: 0 0;
-      margin: 0 54px 0 24px;
+      padding: 0;
+      margin: 0 0 0 0;
+      height: 1px;
     }
   }
 }
 
 // system status popover menu
 .aggregate-menu {
-  .popup-sub-menu .popup-menu-item :first-child {
-    &:ltr { /* 8px spacing + 2*4px padding */
-            padding-left: 10px; margin-left: em(16px); }
-    &:rtl { /* 8px spacing + 2*4px padding */
-            padding-right: 10px; margin-right: em(16px); }
+  .popup-menu-item > :first-child {
+    &:ltr { padding-left: $container_padding * 2 !important; }
+    &:rtl { padding-right: $container_padding * 2 !important; }
+  }
+  
+  .popup-sub-menu .popup-menu-item > :first-child {
+    &:ltr { padding-left: $container_padding * 3 !important; margin-left: $container_padding !important; }
+    &:rtl { padding-right: $container_padding * 3 !important; margin-right: $container_padding !important; }
   }
 }
 
@@ -269,10 +271,15 @@ $window_close_button_padding: 3px;
 //
 
 .osd-window {
-  spacing: 1em;
-  margin: 32px;
-  min-width: 64px;
-  min-height: 64px;
+  spacing: $container_padding * 2; // 12px
+  padding: $container_padding * 2 $container_padding * 3;
+  & > * { spacing: 8px; }
+  margin-bottom: 4em;
 
-  StIcon { icon-size: 64px; }
+  StIcon { icon-size: 32px; } // 32px
+
+  StLabel {
+    &:ltr { margin-right: $container_padding; }
+    &:rtl { margin-left: $container_padding; }
+  }
 }

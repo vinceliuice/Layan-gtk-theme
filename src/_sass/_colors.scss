@@ -84,9 +84,9 @@ $popover_fg: rgba($white, 0.8);
 $popover_disabled_fg: rgba($white, 0.3);
 $popover_border: rgba($white, 0.12);
 
-$fill_color:      gtkalpha(currentColor, $lower_opacity);
-$semi_fill_color: gtkalpha(currentColor, $lower_opacity / 2);
-$row_fill_color:  gtkalpha(currentColor, 0.05);
+$fill_color:      rgba($fg_color, $lower_opacity);
+$semi_fill_color: rgba($fg_color, $lower_opacity / 2);
+$row_fill_color:  rgba($fg_color, 0.05);
 
 // Misc colors
 $primary_color:         #5657f5;

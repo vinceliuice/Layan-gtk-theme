@@ -3122,59 +3122,75 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .popup-menu .popup-menu-item {
-  padding: 4px;
+  padding: 4px !important;
 }
 
 .popup-menu .popup-menu-item:ltr {
-  padding-right: 1.75em;
-  padding-left: 0;
+  padding-right: 12px !important;
+  padding-left: 0 !important;
 }
 
 .popup-menu .popup-menu-item:rtl {
-  padding-right: 0;
-  padding-left: 1.75em;
+  padding-right: 0 !important;
+  padding-left: 12px !important;
 }
 
 .popup-separator-menu-item {
-  margin: 0;
-  padding: 0 0;
-  background: none;
-  border: none;
+  padding: 0;
 }
 
 .popup-separator-menu-item .popup-separator-menu-item-separator {
   height: 1px;
-  margin: 0 42px;
   background-color: rgba(255, 255, 255, 0.08);
-  padding: 0 0;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin: 4px 32px;
 }
 
 .popup-sub-menu .popup-separator-menu-item .popup-separator-menu-item-separator {
-  padding: 0 0;
-  margin: 0 54px 0 24px;
+  padding: 0;
+  margin: 0 0 0 0;
+  height: 1px;
 }
 
-.aggregate-menu .popup-sub-menu .popup-menu-item :first-child:ltr {
-  /* 8px spacing + 2*4px padding */
-  padding-left: 10px;
-  margin-left: 1.2307692308em;
+.aggregate-menu .popup-menu-item > :first-child:ltr {
+  padding-left: 8px !important;
 }
 
-.aggregate-menu .popup-sub-menu .popup-menu-item :first-child:rtl {
-  /* 8px spacing + 2*4px padding */
-  padding-right: 10px;
-  margin-right: 1.2307692308em;
+.aggregate-menu .popup-menu-item > :first-child:rtl {
+  padding-right: 8px !important;
+}
+
+.aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:ltr {
+  padding-left: 12px !important;
+  margin-left: 4px !important;
+}
+
+.aggregate-menu .popup-sub-menu .popup-menu-item > :first-child:rtl {
+  padding-right: 12px !important;
+  margin-right: 4px !important;
 }
 
 .osd-window {
-  spacing: 1em;
-  margin: 32px;
-  min-width: 64px;
-  min-height: 64px;
+  spacing: 8px;
+  padding: 8px 12px;
+  margin-bottom: 4em;
+}
+
+.osd-window > * {
+  spacing: 8px;
 }
 
 .osd-window StIcon {
-  icon-size: 64px;
+  icon-size: 32px;
+}
+
+.osd-window StLabel:ltr {
+  margin-right: 4px;
+}
+
+.osd-window StLabel:rtl {
+  margin-left: 4px;
 }
 
 /* Dash to Dock */
