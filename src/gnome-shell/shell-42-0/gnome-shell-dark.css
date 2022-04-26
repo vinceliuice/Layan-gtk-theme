@@ -681,7 +681,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0 !important;
 }
 
-.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item:checked.selected {
   background-color: #6f70f7 !important;
   color: #FFFFFF !important;
 }
@@ -1352,11 +1352,11 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .calendar-week-number {
-  height: 1.8em !important;
-  width: 2.1em !important;
+  height: 24px !important;
+  width: 24px !important;
   margin: 4px 0 !important;
-  padding: 4px !important;
-  border-radius: 100px;
+  padding: 0 !important;
+  border-radius: 9999px;
   background-color: rgba(255, 255, 255, 0.03);
   color: rgba(255, 255, 255, 0.5);
   font-size: inherit;

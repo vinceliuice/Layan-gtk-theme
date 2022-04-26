@@ -1155,11 +1155,11 @@ StScrollBar {
 }
 
 .calendar-week-number {
-  height: 1.8em !important;
-  width: 2.1em !important;
+  height: 24px !important;
+  width: 24px !important;
   margin: $container_padding 0 !important;
-  padding: $container_padding !important;
-  border-radius: 100px;
+  padding: 0 !important;
+  border-radius: $circular_radius;
   background-color: if($variant == 'light', rgba(black, 0.04), rgba(white, 0.03));
   color: $hint_fg_color;
   font-size: inherit;
