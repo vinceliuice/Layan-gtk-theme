@@ -4,8 +4,8 @@ set -ueo pipefail
 INKSCAPE="/usr/bin/inkscape"
 OPTIPNG="/usr/bin/optipng"
 
-SRC_FILE="assets-dark.svg"
-ASSETS_DIR="assets-dark"
+SRC_FILE="assets-Dark.svg"
+ASSETS_DIR="assets-Dark"
 
 i=${1}
 

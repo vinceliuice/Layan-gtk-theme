@@ -6,8 +6,8 @@ OPTIPNG="/usr/bin/optipng"
 ASSETS_DIR="assets"
 SRC_FILE="assets.svg"
 
-LIGHT_ASSETS_DIR="assets-light"
-LIGHT_SRC_FILE="assets-light.svg"
+LIGHT_ASSETS_DIR="assets-Light"
+LIGHT_SRC_FILE="assets-Light.svg"
 
 INDEX="assets.txt"
 

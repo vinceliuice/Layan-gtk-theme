@@ -13,8 +13,8 @@ fi
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
 THEME_NAME=Layan
-COLOR_VARIANTS=('' '-light' '-dark')
-SOLID_VARIANTS=('' '-solid')
+COLOR_VARIANTS=('' '-Light' '-Dark')
+SOLID_VARIANTS=('' '-Solid')
 
 if [[ "$(command -v gnome-shell)" ]]; then
   gnome-shell --version
@@ -47,8 +47,8 @@ install() {
   local color=${3}
   local solid=${4}
 
-  [[ ${color} == '-dark' ]] && local ELSE_DARK=${color}
-  [[ ${color} == '-light' ]] && local ELSE_LIGHT=${color}
+  [[ ${color} == '-Dark' ]] && local ELSE_DARK=${color}
+  [[ ${color} == '-Light' ]] && local ELSE_LIGHT=${color}
 
   local THEME_DIR=${dest}/${name}${color}${solid}
 
@@ -90,14 +90,14 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-3.0/assets
   cp -ur ${SRC_DIR}/src/gtk/3.0/gtk${color}${solid}.css                              ${THEME_DIR}/gtk-3.0/gtk.css
-  [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk/3.0/gtk-dark${solid}.css                                 ${THEME_DIR}/gtk-3.0/gtk-dark.css
+  [[ ${color} != '-Dark' ]] && \
+  cp -ur ${SRC_DIR}/src/gtk/3.0/gtk-Dark${solid}.css                                 ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-4.0
   ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-4.0/assets
   cp -ur ${SRC_DIR}/src/gtk/4.0/gtk${color}${solid}.css                              ${THEME_DIR}/gtk-4.0/gtk.css
-  [[ ${color} != '-dark' ]] && \
-  cp -ur ${SRC_DIR}/src/gtk/4.0/gtk-dark${solid}.css                                 ${THEME_DIR}/gtk-4.0/gtk-dark.css
+  [[ ${color} != '-Dark' ]] && \
+  cp -ur ${SRC_DIR}/src/gtk/4.0/gtk-Dark${solid}.css                                 ${THEME_DIR}/gtk-4.0/gtk-dark.css
 
   mkdir -p                                                                           ${THEME_DIR}/xfwm4
   cp -ur ${SRC_DIR}/src/xfwm4/assets${ELSE_LIGHT}/*.png                              ${THEME_DIR}/xfwm4

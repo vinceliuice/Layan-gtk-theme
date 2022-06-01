@@ -227,7 +227,7 @@ $window_close_button_padding: 3px;
 
 .popup-menu {
   .popup-menu-item {
-    padding: $container_padding !important;
+    padding: $container_padding * 1.5 !important;
 
     &:ltr { padding-right: $container_padding * 3 !important; padding-left: 0 !important; }
     &:rtl { padding-right: 0 !important; padding-left: $container_padding * 3 !important; }
@@ -236,18 +236,19 @@ $window_close_button_padding: 3px;
 
 // separator
 .popup-separator-menu-item {
-  padding: 0;
+  padding: 0 !important;
+  margin: 0 !important;
 
   .popup-separator-menu-item-separator {
-    height: 1px; //not really the whole box
+    height: 1px !important; //not really the whole box
     background-color: $border_color;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-    margin: $container_padding 32px;
+    margin: 0 32px !important;
 
     .popup-sub-menu & { //submenu separators
-      padding: 0;
-      margin: 0 0 0 0;
+      padding: 0 !important;
+      margin: 0 32px 0 8px !important;
       height: 1px;
     }
   }
@@ -259,7 +260,7 @@ $window_close_button_padding: 3px;
     &:ltr { padding-left: $container_padding * 2 !important; }
     &:rtl { padding-right: $container_padding * 2 !important; }
   }
-  
+
   .popup-sub-menu .popup-menu-item > :first-child {
     &:ltr { padding-left: $container_padding * 3 !important; margin-left: $container_padding !important; }
     &:rtl { padding-right: $container_padding * 3 !important; margin-right: $container_padding !important; }
