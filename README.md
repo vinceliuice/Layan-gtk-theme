@@ -7,10 +7,10 @@ This theme is based on materia gtk theme of nana-4. Thanks nana-4 sincerely for 
 #### materia gtk theme: https://github.com/nana-4/materia-theme
 
 ## Previews
-![1](https://cn.opendesktop.org/img/5/d/3/a/7a86d212835c855e62ca9725c0031e6202ae.jpg)
-![2](https://cn.opendesktop.org/img/a/1/c/3/29262c8cf691666cca24a0636d22506daaca.jpg)
-![3](https://cn.opendesktop.org/img/7/a/8/7/26cacc08dc680e481f806e2626da080ab9fd.png)
-![4](https://cn.opendesktop.org/img/e/a/a/1/039563371d380c59ba9ad7d0a2b3cd6ebb00.jpg)
+![1](https://images.pling.com/img/00/00/32/24/44/1309214/7a86d212835c855e62ca9725c0031e6202ae.jpg)
+![2](https://images.pling.com/img/00/00/32/24/44/1309214/29262c8cf691666cca24a0636d22506daaca.jpg)
+![3](https://images.pling.com/img/00/00/32/24/44/1309214/26cacc08dc680e481f806e2626da080ab9fd.png)
+![4](https://images.pling.com/img/00/00/32/24/44/1309214/039563371d380c59ba9ad7d0a2b3cd6ebb00.jpg)
 
 ## Info
 
