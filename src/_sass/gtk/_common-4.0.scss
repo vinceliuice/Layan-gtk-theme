@@ -1372,33 +1372,30 @@ window.devel {
 pathbar > button {
   padding-left: ($medium_size - 24px) / 2;
   padding-right: ($medium_size - 24px) / 2;
+  @extend %flat_button;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                $primary_color 0%,
+                                transparent 0%)
+                                0 0 0 / 0 0 0px;
+  border-radius: $buttons_radius;
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 4px; padding-left: 8px; }
-    &:last-child { margin-right: 4px; padding-right: 8px; }
+  &:checked {
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $primary_color 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+
+    &, &:disabled { background-color: transparent; }
+  }
+
+  label, image {
+    margin-left: $container_padding / 2;
+    margin-right: $container_padding / 2;
   }
 
   &.slider-button {
     padding-left: (24px - 16px) / 2;
     padding-right: (24px - 16px) / 2;
-  }
-
-  & {
-    @extend %flat_button;
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $primary_color 0%,
-                                  transparent 0%)
-                                  0 0 0 / 0 0 0px;
-    border-radius: $buttons_radius;
-
-    &:checked {
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $primary_color 100%,
-                                    transparent 0%)
-                                    0 0 2 / 0 0 2px;
-
-      &, &:disabled { background-color: transparent; }
-    }
   }
 }
 
@@ -1586,19 +1583,29 @@ popover.menu {
     min-width: 40px;
     padding: 4px 8px;
     border-radius: $menu_radius - 3px;
+    box-shadow: none;
+    animation: none;
+    transition: none;
 
-    &:selected {
+    &:hover {
       color: if($variant == 'light', $alt_primary_color, $menu_fg_color);
       background-color: if($titlebar == 'light', rgba($alt_primary_color, 0.1), rgba($menu_fg_color, 0.08));
+      background-image: none;
+      box-shadow: none;
     }
 
-    &:selected:active {
+    &:hover:active {
       color: if($variant == 'light', $alt_primary_color, $menu_fg_color);
       background-color: if($titlebar == 'light', rgba($alt_primary_color, 0.12), rgba($menu_fg_color, 0.1));
+      background-image: none;
+      box-shadow: none;
     }
 
-    &:focus {
+    &:focus:not(:hover) {
       transition: none;
+      background: none;
+      box-shadow: none;
+      animation: none;
     }
   }
 

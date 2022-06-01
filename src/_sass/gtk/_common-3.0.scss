@@ -1483,33 +1483,30 @@ headerbar { // headerbar border rounding
 .path-bar button {
   padding-left: ($medium_size - 24px) / 2;
   padding-right: ($medium_size - 24px) / 2;
+  @extend %flat_button;
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                $primary_color 0%,
+                                transparent 0%)
+                                0 0 0 / 0 0 0px;
+  border-radius: $buttons_radius;
 
-  label:not(:only-child) {
-    &:first-child { margin-left: 4px; padding-left: 8px; }
-    &:last-child { margin-right: 4px; padding-right: 8px; }
+  &:checked {
+    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                  $primary_color 100%,
+                                  transparent 0%)
+                                  0 0 2 / 0 0 2px;
+
+    &, &:disabled { background-color: transparent; }
+  }
+
+  label, image {
+    margin-left: $container_padding / 2;
+    margin-right: $container_padding / 2;
   }
 
   &.slider-button {
     padding-left: (24px - 16px) / 2;
     padding-right: (24px - 16px) / 2;
-  }
-
-  :not(headerbar) & {
-    @extend %flat_button;
-    border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                  $primary_color 0%,
-                                  transparent 0%)
-                                  0 0 0 / 0 0 0px;
-    border-radius: $buttons_radius;
-
-    &:checked {
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $primary_color 100%,
-                                    transparent 0%)
-                                    0 0 2 / 0 0 2px;
-
-      &, &:disabled { background-color: transparent; }
-    }
   }
 }
 
