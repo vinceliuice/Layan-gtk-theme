@@ -31,10 +31,9 @@
   -gtk-outline-radius: $buttons_radius;
 
   -gtk-secondary-caret-color: $primary_color;
-}
 
-notebook:focus tab,
-*:focus { outline-color: $fill_color; }
+  &:focus { outline-color: gtkalpha(currentColor, 0.10); }
+}
 
 
 /***************
@@ -714,6 +713,7 @@ modelbutton.flat,
   padding: 0 8px;
   border-radius: $menu_radius / 2;
   color: inherit;
+  -gtk-outline-radius: $menu_radius / 2 - 2px;
 
   @extend %simple_flat_button;
 
@@ -1945,6 +1945,7 @@ popover.background {
 
     .linked > & {
       border-radius: $menu_radius / 2;
+      -gtk-outline-radius: $menu_radius / 2 - 2px;
 
       &:first-child {
         border-radius: $menu_radius / 2;
@@ -1964,7 +1965,10 @@ popover.background {
   menuitem.button.flat,
   spinbutton.vertical button { @extend %popover_flat_button; }
 
-  &.menu button, button.model { border-radius: $menu_radius / 2; }
+  &.menu button, button.model {
+    border-radius: $menu_radius / 2;
+    -gtk-outline-radius: $menu_radius / 2 - 2px;
+  }
 
     // Suggested and Destructive Action buttons
   @each $b_type, $b_color, $b_image in (suggested-action, $suggested_color, $suggested_image),

@@ -37,9 +37,8 @@
   -gtk-secondary-caret-color: #5657f5;
 }
 
-notebook:focus tab,
 *:focus {
-  outline-color: rgba(0, 0, 0, 0.3);
+  outline-color: alpha(currentColor, 0.1);
 }
 
 /***************
@@ -882,6 +881,7 @@ modelbutton.flat,
   padding: 0 8px;
   border-radius: 4px;
   color: inherit;
+  -gtk-outline-radius: 2px;
 }
 
 modelbutton.flat arrow {
@@ -2128,6 +2128,7 @@ popover.background button.radio:hover {
 
 .linked > popover.background button {
   border-radius: 4px;
+  -gtk-outline-radius: 2px;
 }
 
 .linked > popover.background button:first-child {
@@ -2144,6 +2145,7 @@ popover.background button.radio:hover {
 
 popover.background.menu button, popover.background button.model {
   border-radius: 4px;
+  -gtk-outline-radius: 2px;
 }
 
 popover.background button.suggested-action {

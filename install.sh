@@ -190,11 +190,39 @@ if [[ "${#solids[@]}" -eq 0 ]] ; then
   solids=("${SOLID_VARIANTS[@]}")
 fi
 
-for color in "${colors[@]}"; do
-  for solid in "${solids[@]}"; do
-    install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+clean() {
+  local dest=${1}
+  local name=${2}
+  local color=${3}
+  local solid=${4}
+
+  local THEME_DIR=${dest}/${name}${color}${solid}
+
+  if [[  ${color} == '' && ${solid} == '' ]]; then
+    this=empty
+  elif [[ -d ${THEME_DIR} ]]; then
+    rm -rf ${THEME_DIR}
+    echo -e "Find: ${THEME_DIR} ! removing it ..."
+  fi
+}
+
+clean_theme() {
+  for color in '' '-light' '-dark'; do
+    for solid in '' '-solid'; do
+      clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+    done
   done
-done
+}
+
+install_theme() {
+  for color in "${colors[@]}"; do
+    for solid in "${solids[@]}"; do
+      install "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+    done
+  done
+}
+
+clean_theme && install_theme
 
 echo
 echo Done.
