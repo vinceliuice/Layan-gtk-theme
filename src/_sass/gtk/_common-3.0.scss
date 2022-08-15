@@ -1867,6 +1867,8 @@ popover.background {
 
   image, label { &:disabled { color: $popover_disabled_fg; }}
 
+  .dim-label { color: $popover_disabled_fg; }
+
   &, .csd & {
     border-radius: $menu_radius + 1px;
   }
@@ -3146,7 +3148,7 @@ actionbar > revealer > box {
 
   button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
 
-  .linked > button { border-radius: $buttons_radius; }
+  .linked > button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { border-radius: $buttons_radius; }
 }
 
 scrolledwindow {

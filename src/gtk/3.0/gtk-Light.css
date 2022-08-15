@@ -2047,6 +2047,10 @@ popover.background image:disabled, popover.background label:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
+popover.background .dim-label, popover.background .budgie-notification .notification-body, popover.background .budgie-switcher .notification-body, .budgie-notification popover.background .notification-body, .budgie-switcher popover.background .notification-body, popover.background label.separator, popover.background headerbar .subtitle, headerbar popover.background .subtitle {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 popover.background, .csd popover.background {
   border-radius: 9px;
 }
@@ -3453,7 +3457,7 @@ actionbar > revealer > box {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-actionbar > revealer > box .linked > button {
+actionbar > revealer > box .linked > button:not(.suggested-action):not(.destructive-action):not(.server-list-button) {
   border-radius: 7px;
 }
 
