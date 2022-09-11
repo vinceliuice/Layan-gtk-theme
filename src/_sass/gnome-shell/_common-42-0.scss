@@ -227,7 +227,7 @@ $window_close_button_padding: 3px;
 
 .popup-menu {
   .popup-menu-item {
-    padding: $container_padding * 1.5 !important;
+    padding: $container_padding;
 
     &:ltr { padding-right: $container_padding * 3 !important; padding-left: 0 !important; }
     &:rtl { padding-right: 0 !important; padding-left: $container_padding * 3 !important; }
@@ -236,19 +236,16 @@ $window_close_button_padding: 3px;
 
 // separator
 .popup-separator-menu-item {
-  padding: 0 !important;
-  margin: 0 !important;
+  padding: 0;
+  margin: 0;
 
   .popup-separator-menu-item-separator {
-    height: 1px !important; //not really the whole box
+    height: 1px; //not really the whole box
     background-color: $border_color;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin: 0 32px !important;
+    margin: 0 32px;
 
     .popup-sub-menu & { //submenu separators
-      padding: 0 !important;
-      margin: 0 32px 0 8px !important;
+      margin: 0 32px 0 8px;
       height: 1px;
     }
   }
