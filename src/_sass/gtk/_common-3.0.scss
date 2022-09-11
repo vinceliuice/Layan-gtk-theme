@@ -4206,6 +4206,7 @@ stackswitcher {
     }
 
     &:checked {
+      color: $fg_color;
       background-color: transparent;
       box-shadow: none;
       background-image: none;

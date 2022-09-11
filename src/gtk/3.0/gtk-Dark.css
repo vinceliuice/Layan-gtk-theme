@@ -4449,6 +4449,7 @@ stackswitcher > button:active {
 }
 
 stackswitcher > button:checked {
+  color: #FFFFFF;
   background-color: transparent;
   box-shadow: none;
   background-image: none;
