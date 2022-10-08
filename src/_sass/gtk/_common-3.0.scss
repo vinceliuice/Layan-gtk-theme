@@ -498,10 +498,6 @@ button {
     }
   }
 
-  &:drop(active) {
-    // box-shadow: inset 0 0 0 2px $accent_color;
-  }
-
   row:selected & {
     &, &.flat {
       @extend %button_selected_flat;
@@ -652,9 +648,9 @@ button {
 
 // all the following is for the +|- buttons on inline toolbars, that way
 // should really be deprecated...
-.inline-toolbar toolbutton > button { // redefining the button look is
-                                      // needed since those are flat...
-}
+// .inline-toolbar toolbutton > button { // redefining the button look is
+//                                       // needed since those are flat...
+// }
 
 // More inline toolbar buttons
 // toolbar.inline-toolbar toolbutton {
@@ -735,9 +731,9 @@ button.color {
   min-width: $small_size;
   padding: $container_padding;
 
-  colorswatch:only-child {
-    // &, overlay { border-radius: 0; }
-  }
+  // colorswatch:only-child {
+  //   // &, overlay { border-radius: 0; }
+  // }
 }
 
 
@@ -820,10 +816,10 @@ spinbutton {
   }
 
   // OSD horizontal
-  .osd &:not(.vertical) {
-    button {
-    }
-  }
+  // .osd &:not(.vertical) {
+  //   button {
+  //   }
+  // }
 
   // Vertical
   &.vertical {
@@ -859,7 +855,7 @@ spinbutton {
   }
 
   // OSD vertical
-  .osd &.vertical button:first-child { }
+  // .osd &.vertical button:first-child { }
 
   // Misc
   treeview &:not(.vertical) {
@@ -1387,16 +1383,16 @@ headerbar {
     border-right-color: $titlebar_bg_color;
   }
 
-  box & { // Remove unneeded side shadows with dirty hacks
-    &:not(:only-child):last-child {
-      &:dir(ltr) {
-        // box-shadow: if($variant == 'light', if($titlebar == 'dark', $header_shadow_dark_ltr, $shadow_6), $header_shadow_light_ltr);
-      }
-      &:dir(rtl) {
-        // box-shadow: if($variant == 'light', if($titlebar == 'dark', $header_shadow_dark_rtl, $shadow_6), $header_shadow_light_rtl);
-      }
-    }
-  }
+  // box & { // Remove unneeded side shadows with dirty hacks
+  //   &:not(:only-child):last-child {
+  //     &:dir(ltr) {
+  //       box-shadow: if($variant == 'light', if($titlebar == 'dark', $header_shadow_dark_ltr, $shadow_6), $header_shadow_light_ltr);
+  //     }
+  //     &:dir(rtl) {
+  //       box-shadow: if($variant == 'light', if($titlebar == 'dark', $header_shadow_dark_rtl, $shadow_6), $header_shadow_light_rtl);
+  //     }
+  //   }
+  // }
 }
 
 .titlebar,
@@ -3050,15 +3046,15 @@ progressbar {
     background-repeat: no-repeat;
   }
 
-  &.osd { // progressbar.osd used for epiphany page loading progress
-    // min-width: $bar_size;
-    // min-height: $bar_size;
-    // background-color: transparent;
+  // &.osd { // progressbar.osd used for epiphany page loading progress
+  //   min-width: $bar_size;
+  //   min-height: $bar_size;
+  //   background-color: transparent;
 
-    // trough { background-color: transparent; }
+  //   trough { background-color: transparent; }
 
-    // progress { background-color: $primary_color; }
-  }
+  //   progress { background-color: $primary_color; }
+  // }
 
   trough.empty progress { all: unset; } // makes the progress indicator disappear, when the fraction is 0
 }
@@ -3635,10 +3631,10 @@ placessidebar {
     &:drop(active):not(:disabled) {
       box-shadow: inset 0 0 0 2px $accent_color;
 
-      &:selected {
-        // background-color: $accent_color;
-        // color: $inverse_fg_color;
-      }
+      // &:selected {
+      //   background-color: $accent_color;
+      //   color: $inverse_fg_color;
+      // }
     }
   }
 }
@@ -3785,11 +3781,11 @@ tooltip {
   border-radius: $buttons_radius;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
 
-  &:not(.csd):not(.unity-csd) {
-    // border: 1px solid $border_color;
-    // border-radius: $material_radius + 1px;
-    // background-clip: $extra_background_clip;
-  }
+  // &:not(.csd):not(.unity-csd) {
+  //   border: 1px solid $border_color;
+  //   border-radius: $material_radius + 1px;
+  //   background-clip: $extra_background_clip;
+  // }
 
   // FIXME: we need a border or tooltips vanish on black background.
   decoration { background-color: transparent; }
@@ -3905,9 +3901,6 @@ colorswatch {
     overlay { box-shadow: none; }
   }
 
-  row:selected & {
-  }
-
   &#editor-color-sample {
     border-radius: $material_radius + 0.5px;
 
@@ -3944,12 +3937,6 @@ colorchooser .popover.osd {
 
 .scale-popup {
   .osd & { @extend %osd; }
-
-  .osd & button.flat { // FIXME: quick hack, redo properly
-  }
-
-  button { // +/- buttons on GtkVolumeButton popup
-  }
 }
 
 

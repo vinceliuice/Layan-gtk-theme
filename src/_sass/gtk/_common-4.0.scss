@@ -485,10 +485,6 @@ button {
         border-radius: $buttons_radius;
       }
     }
-
-    &:drop(active) {
-      // box-shadow: inset 0 0 0 2px $accent_color;
-    }
   }
 
   @at-root %button_selected, row:selected & {
@@ -811,9 +807,6 @@ spinbutton {
       &.down { border-radius: 0 0 $buttons_radius $buttons_radius; }
     }
   }
-
-  // OSD vertical
-  .osd &.vertical button:first-child { }
 
   // Misc
   treeview &:not(.vertical) {
@@ -2981,11 +2974,6 @@ calendar {
     > label {
       border-radius: 3px;
     }
-    > label.day-name {
-    }
-
-    > label.week-number {
-    }
 
     > label.today {
       background-color: rgba($fg_color, 0.15);
@@ -3351,11 +3339,6 @@ placessidebar {
 
     &:drop(active):not(:disabled) {
       box-shadow: inset 0 0 0 2px $accent_color;
-
-      &:selected {
-        // background-color: $accent_color;
-        // color: $inverse_fg_color;
-      }
     }
   }
 }
@@ -3475,8 +3458,6 @@ infobar {
       @extend %button_selected_flat;
     }
 
-    selection {}
-
     *:link { @extend %link_selected; }
   }
 }
@@ -3500,12 +3481,6 @@ tooltip {
   // padding: 4px; /* not working */
   border-radius: $menu_radius;
   box-shadow: none; // otherwise it gets inherited by windowframe.csd
-
-  &:not(.csd):not(.unity-csd) {
-    // border: 1px solid $border_color;
-    // border-radius: $material_radius + 1px;
-    // background-clip: $extra_background_clip;
-  }
 
   label {
     // tooltip label already seems to have 6px margins
@@ -3614,9 +3589,6 @@ colorswatch {
     overlay { box-shadow: none; }
   }
 
-  row:selected & {
-  }
-
   &#editor-color-sample {
     border-radius: $material_radius + 0.5px;
 
@@ -3646,19 +3618,11 @@ colorchooser .popover.osd {
 .content-view {
   background-color: $bg_color;
 
-  // &:hover { -gtk-icon-effect: highlight; }
-
   > rubberband { @extend rubberband; }
 }
 
 .scale-popup {
   .osd & { @extend %osd; }
-
-  .osd & button.flat { // FIXME: quick hack, redo properly
-  }
-
-  button { // +/- buttons on GtkVolumeButton popup
-  }
 }
 
 

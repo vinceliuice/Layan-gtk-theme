@@ -30,11 +30,11 @@ $cakeisalie: "This stylesheet is generated, DO NOT EDIT";
   transition-duration: $longer_duration;
 }
 
-stage {
-  // font-family: $font-family;
-  @include font(body-1);
-  color: $fg_color;
-}
+// stage {
+//   font-family: $font-family;
+//   @include font(body-1);
+//   color: $fg_color;
+// }
 
 /* WIDGETS */
 
