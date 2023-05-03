@@ -52,7 +52,7 @@
 }
 
 .page-navigation-arrow {
-  margin: $container_padding;
+  margin: $base_padding;
   width: 24px;
   height: 24px;
   color: $inverse_secondary_fg_color;
@@ -68,7 +68,7 @@ $dash_bottom_margin: 24px;
 $dash_border_radius: $dash_padding + $icon_radius;
 
 #dash {
-  margin-top: $container_padding * 2;
+  margin-top: $base_padding * 2;
   padding: 0 $dash_padding;
 
   .placeholder {
@@ -86,7 +86,7 @@ $dash_border_radius: $dash_padding + $icon_radius;
 .dash-background {
   background-color: $dash_background_color;
   margin-bottom: $dash_bottom_margin;
-  padding: $dash_padding;
+  padding: $dash_padding $dash_padding - $dash_spacing;
   border-radius: $dash_border_radius;
 }
 
@@ -99,6 +99,17 @@ $dash_border_radius: $dash_padding + $icon_radius;
   width: 1px;
   margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
   background-color: rgba(white, 0.25);
+}
+
+// OSD Tooltip
+.dash-label {
+  color: $inverse_secondary_fg_color;
+  background-color: rgba(black, 0.75);
+  border-radius: $circular_radius;
+  padding: $base_padding $base_padding * 2;
+  text-align: center;
+  border: none;
+  -y-offset: 10px; // distance from the dash edge
 }
 
 // Workspace animation
@@ -116,7 +127,7 @@ $dash_border_radius: $dash_padding + $icon_radius;
 
 // Overview
 .controls-manager, .secondary-monitor-workspaces {
-  spacing: $container_padding * 2;
+  spacing: $base_padding * 2;
 }
 
 #overviewGroup {
@@ -135,14 +146,14 @@ $dash_border_radius: $dash_padding + $icon_radius;
 }
 
 .search-entry {
-  margin-top: $container_padding * 4;
-  margin-bottom: $container_padding;
+  margin-top: $base_padding * 4;
+  margin-bottom: $base_padding;
 }
 
 // Window picker
 .window-picker {
   // Space between window thumbnails
-  spacing: $container_padding;
+  spacing: $base_padding;
 }
 
 // Window titles
@@ -150,7 +161,9 @@ $dash_border_radius: $dash_padding + $icon_radius;
   color: $inverse_secondary_fg_color;
   background-color: rgba(black, 0.75);
   border-radius: $circular_radius;
-  padding: $container_padding $container_padding * 2;
+  padding: $base_padding $base_padding * 2;
+  text-align: center;
+  border: none;
 }
 
 $window_close_button_size: 30px;
@@ -194,8 +207,8 @@ $window_close_button_padding: 3px;
 // thumbnails in overview
 .workspace-thumbnails {
   visible-width: 32px; //amount visible before hover
-  spacing: $container_padding;
-  padding: $container_padding;
+  spacing: $base_padding;
+  padding: $base_padding;
 
   .workspace-thumbnail {
     color: $inverse_secondary_fg_color;
@@ -227,26 +240,37 @@ $window_close_button_padding: 3px;
 
 .popup-menu {
   .popup-menu-item {
-    padding: $container_padding;
+    padding: $base_padding;
 
-    &:ltr { padding-right: $container_padding * 3 !important; padding-left: 0 !important; }
-    &:rtl { padding-right: 0 !important; padding-left: $container_padding * 3 !important; }
+    &:ltr { padding-right: $base_padding * 3 !important; padding-left: $base_padding * 3 !important; }
+    &:rtl { padding-left: $base_padding * 3 !important; padding-right: $base_padding * 3 !important; }
   }
 }
 
 // separator
 .popup-separator-menu-item {
-  padding: 0;
-  margin: 0;
+  border: none !important;
+  padding: $base_padding 0 !important;
 
   .popup-separator-menu-item-separator {
     height: 1px; //not really the whole box
     background-color: $border_color;
-    margin: 0 32px;
+  }
 
-    .popup-sub-menu & { //submenu separators
-      margin: 0 32px 0 8px;
-      height: 1px;
+  .popup-menu-ornament {
+    width: 0 !important;
+  }
+
+  // separators in submenus
+  .popup-sub-menu & {
+    background-color: transparent;
+
+    // account for ornament
+    &:ltr { margin-right: 2.5em; }
+    &:rtl { margin-left: 2.5em; }
+
+    .popup-separator-menu-item-separator {
+      background-color: $border_color;
     }
   }
 }
@@ -254,13 +278,13 @@ $window_close_button_padding: 3px;
 // system status popover menu
 .aggregate-menu {
   .popup-menu-item > :first-child {
-    &:ltr { padding-left: $container_padding * 2 !important; }
-    &:rtl { padding-right: $container_padding * 2 !important; }
+    &:ltr { padding-left: 0 !important; margin-left: 0 !important; }
+    &:rtl { padding-right: 0 !important; margin-right: 0 !important; }
   }
 
   .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { padding-left: $container_padding * 3 !important; margin-left: $container_padding !important; }
-    &:rtl { padding-right: $container_padding * 3 !important; margin-right: $container_padding !important; }
+    &:ltr { padding-left: $base_padding * 2 !important; margin-left: $base_padding / 2 !important; }
+    &:rtl { padding-right: $base_padding * 2 !important; margin-right: $base_padding / 2 !important; }
   }
 }
 
@@ -269,15 +293,15 @@ $window_close_button_padding: 3px;
 //
 
 .osd-window {
-  spacing: $container_padding * 2; // 12px
-  padding: $container_padding * 2 $container_padding * 3;
+  spacing: $base_padding * 2; // 12px
+  padding: $base_padding * 2 $base_padding * 3;
   & > * { spacing: 8px; }
   margin-bottom: 4em;
 
   StIcon { icon-size: 32px; } // 32px
 
   StLabel {
-    &:ltr { margin-right: $container_padding; }
-    &:rtl { margin-left: $container_padding; }
+    &:ltr { margin-right: $base_padding; }
+    &:rtl { margin-left: $base_padding; }
   }
 }

@@ -1067,411 +1067,6 @@ searchbar > revealer > box {
   padding: $container_padding;
 }
 
-actionbar { // set bottom border radius
-  border-radius: 0 0 $windows_radius $windows_radius;
-}
-
-
-/***************
- * Header bars *
- ***************/
-headerbar {
-  transition: background-color $shorter_duration $deceleration_curve, color $shorter_duration $deceleration_curve;
-  min-height: $large_size;
-  padding: 0 $container_padding;
-  box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
-  background-color: $titlebar_bg_color;
-  color: $titlebar_fg_color;
-
-  &:disabled :not(button) > label { color: $titlebar_disabled_fg_color; }
-
-  &:backdrop {
-    color: $titlebar_secondary_fg_color;
-
-    &:disabled :not(button) > label { color: $titlebar_disabled_secondary_fg_color; }
-  }
-
-  .title {
-    padding: 0 12px;
-    font-weight: bold;
-  }
-
-  .subtitle {
-    padding: 0 12px;
-    font-size: smaller;
-
-    @extend .dim-label;
-  }
-
-  entry {
-    background-color: if($variant == 'light', $base_color, lighten($base_color, 5%));
-    &:focus { background-color: if($variant == 'light', lighten($base_color, 3%), lighten($base_color, 8%)); }
-  }
-
-  // Reset headerbar linked rules
-  .linked:not(.vertical) > entry:not(.flat) { border-radius: $buttons_radius; }
-  .linked:not(.vertical) > button {
-    border-radius: $buttons_radius;
-    -gtk-outline-radius: $buttons_radius;
-  }
-
-  %header_button,
-  button:not(.suggested-action):not(.destructive-action) {
-    @extend %flat_button;
-    border-image: none;
-    color: $titlebar_secondary_fg_color;
-    @extend %circular_button;
-
-    &:hover, &:active { color: $titlebar_fg_color; }
-
-    &:disabled { color: $titlebar_disabled_secondary_fg_color; }
-
-    &:checked {
-      border-image: none;
-      background-color: $primary_color;
-      color: $inverse_fg_color;
-      background-image: $theme_image;
-      background-size: auto auto;
-      background-position: center center;
-      background-repeat: no-repeat;
-      box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
-
-      &:disabled {
-        color: $inverse_disabled_fg_color;
-        background-color: rgba($primary_color, 0.5);
-      }
-    }
-
-    &:backdrop {
-      color: $titlebar_hint_fg_color;
-      &:hover, &:active { color: $titlebar_secondary_fg_color; }
-      &:disabled { color: $titlebar_disabled_secondary_fg_color; }
-      &:checked {
-        background-image: none;
-        color: $inverse_secondary_fg_color;
-        &:disabled { color: $inverse_disabled_secondary_fg_color; }
-      }
-    }
-  }
-
-  button.suggested-action, button.destructive-action {
-    @extend %circular_button;
-
-    &:disabled {
-      background-color: $titlebar_divider_color;
-      color: $titlebar_disabled_fg_color;
-    }
-  }
-
-  &.selection-mode {
-    // FIXME: 0.00001s is workaround for transition bug of gtk+ 3.22
-    // see https://bugzilla.gnome.org/show_bug.cgi?id=774064
-    transition: background-color 0.00001s $longer_duration, color $longer_duration $deceleration_curve;
-    animation: header_ripple_effect $longer_duration $deceleration_curve;
-    box-shadow: inset 0 1px $alt_highlight_color, inset 0 -1px $border_color;
-    background-color: $primary_color;
-    color: $inverse_fg_color;
-
-    &:backdrop {
-      color: $inverse_secondary_fg_color;
-    }
-
-    .subtitle:link { @extend %link_selected; }
-
-    button:not(.suggested-action):not(.destructive-action) {
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    currentColor 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0;
-      color: $inverse_fg_color;
-      &:disabled { color: $inverse_disabled_fg_color; }
-      &:hover { color: $inverse_fg_color; }
-      &:checked {
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      currentColor 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-        color: $inverse_fg_color;
-        &:disabled { color: $inverse_disabled_fg_color; }
-      }
-
-      &:backdrop {
-        color: $inverse_secondary_fg_color;
-        &:disabled { color: $inverse_disabled_secondary_fg_color; }
-        &:checked {
-          color: $inverse_secondary_fg_color;
-          &:disabled { color: $inverse_disabled_secondary_fg_color; }
-        }
-      }
-    }
-
-    .selection-menu {
-      padding-left: 16px;
-      padding-right: 16px;
-
-      arrow { -GtkArrow-arrow-scaling: 1; }
-
-      .arrow { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
-    }
-  }
-
-  .linked:not(.vertical).path-bar,
-  .linked:not(.vertical):not(.path-bar).stack-switcher,
-  &.windowhandle viewswitcher {
-    button:not(.suggested-action):not(.destructive-action) {
-      padding-left: $container_padding + 2px;
-      padding-right: $container_padding + 2px;
-
-      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                    $primary_color 0%,
-                                    transparent 0%)
-                                    0 0 0 / 0 0 0;
-
-      &:active {
-        color: $titlebar_fg_color;
-        background-color: transparent;
-        box-shadow: inset 0 0 0 9999px $semi_fill_color;
-        background-image: radial-gradient(circle farthest-corner at center,
-                                          $semi_fill_color 10%,
-                                          transparent 0%);
-        background-size: 0% 0%;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $primary_color 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-
-      &:checked {
-        color: $titlebar_fg_color;
-        background-color: transparent;
-        box-shadow: none;
-        background-image: none;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $primary_color 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-
-      &:checked:backdrop, &:active:backdrop {
-        color: $titlebar_secondary_fg_color;
-        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
-                                      $titlebar_disabled_fg_color 100%,
-                                      transparent 0%)
-                                      0 0 2 / 0 0 2px;
-      }
-
-      &.text-button.image-button {
-        label { padding-left: 0; padding-right: 0; }
-        image { padding-left: 0; padding-right: 0; }
-      }
-    }
-  }
-
-  &.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) {
-    margin-top: 0;
-    margin-bottom: 0;
-    border-radius: 0;
-    padding: 0;
-    min-width: 120px;
-
-    > stack > box {
-      padding: 0 $container_padding * 2;
-
-      &.narrow {
-        font-size: 10px;
-
-        image { margin-top: $container_padding / 2; }
-      }
-    }
-
-    &:checked { background-color: $semi_fill_color; }
-  }
-
-  // headerbar titlebutton separator
-  separator.titlebutton { @extend %header_separator; }
-
-  // squared corners when the window is maximized, tiled, or fullscreen
-  .tiled &,
-  .tiled-top &,
-  .tiled-right &,
-  .tiled-bottom &,
-  .tiled-left &,
-  .maximized &,
-  .fullscreen & {
-    border-radius: 0;
-  }
-
-  &.default-decoration {
-    min-height: $small_size;
-    padding: $container_padding $container_padding * 2;
-    box-shadow: inset 0 1px $titlebar_highlight_color;
-
-    .tiled &,
-    .maximized &,
-    .fullscreen & { box-shadow: none; }
-
-    button.titlebutton {
-      @extend %circular_button;
-      min-height: 16px;
-      min-width: 16px;
-      margin: 0 2px;
-      padding: 0;
-    }
-
-    // workaround for non-animatable buttons
-    .background:not(.csd) & button.titlebutton:active { background-size: 1000% 1000%; }
-  }
-
-  .solid-csd & {
-    &:dir(rtl), &:dir(ltr) { // specificity bump
-      border-radius: 0;
-      box-shadow: inset 0 1px $titlebar_highlight_color;
-    }
-  }
-}
-
-$header_shadow_light_ltr: $header_shadow_light, -5px 0 0 -1px $titlebar_bg_color, inset 0 1px $titlebar_highlight_color;
-$header_shadow_dark_ltr: $header_shadow_dark, -5px 0 0 -1px $titlebar_bg_color, inset 0 1px $titlebar_highlight_color;
-$header_shadow_light_rtl: $header_shadow_light, 5px 0 0 -1px $titlebar_bg_color, inset 0 1px $titlebar_highlight_color;
-$header_shadow_dark_rtl: $header_shadow_dark, 5px 0 0 -1px $titlebar_bg_color, inset 0 1px $titlebar_highlight_color;
-
-headerbar {
-  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
-  entry,
-  spinbutton,
-  // separator,
-  button {
-    margin-top: $container_padding;
-    margin-bottom: $container_padding;
-  }
-
-  switch {
-    margin-top: ($large_size - 22px) / 2;
-    margin-bottom: ($large_size - 22px) / 2;
-  }
-
-  // reset button margins of the spinbutton
-  spinbutton button {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  // FIXME: This is a hacky workaround.
-  .entry-tag {
-    margin-top: $container_padding - 1px;
-    margin-bottom: $container_padding - 1px;
-  }
-
-  .csd &,
-  &.titlebar,
-  .titlebar &,
-  .solid-csd &,
-  box &:only-child {
-    // draw hilight and shadows
-    box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
-  }
-
-  &.titlebar.default-decoration,
-  .csd &.titlebar.default-decoration {
-    box-shadow: inset 0 1px $titlebar_highlight_color;
-  }
-
-  // override unwanted side-borders
-  box &:not(:only-child):first-child,
-  box &:not(:only-child):last-child {
-    border-left-color: $titlebar_bg_color;
-    border-right-color: $titlebar_bg_color;
-  }
-
-  // box & { // Remove unneeded side shadows with dirty hacks
-  //   &:not(:only-child):last-child {
-  //     &:dir(ltr) {
-  //       box-shadow: if($variant == 'light', if($titlebar == 'dark', $header_shadow_dark_ltr, $shadow_6), $header_shadow_light_ltr);
-  //     }
-  //     &:dir(rtl) {
-  //       box-shadow: if($variant == 'light', if($titlebar == 'dark', $header_shadow_dark_rtl, $shadow_6), $header_shadow_light_rtl);
-  //     }
-  //   }
-  // }
-}
-
-.titlebar,
-.titlebar .background {
-  border-top-left-radius: $windows_radius;
-  border-top-right-radius: $windows_radius;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-.background.tiled .titlebar,
-.background.tiled-top .titlebar,
-.background.tiled-right .titlebar,
-.background.tiled-bottom .titlebar,
-.background.tiled-left .titlebar,
-.background.maximized .titlebar,
-.background.solid-csd .titlebar {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-headerbar { // headerbar border rounding
-  window separator:first-child + &, // tackles the paned container case
-  window &:first-child { border-top-left-radius: $windows_radius; }
-  window &:last-child { border-top-right-radius: $windows_radius; }
-
-  window stack & { // tackles the stacked headerbars case
-    &:first-child, &:last-child {
-      border-top-left-radius: $windows_radius;
-      border-top-right-radius: $windows_radius;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-
-  window.tiled &,
-  window.tiled-top &,
-  window.tiled-right &,
-  window.tiled-bottom &,
-  window.tiled-left &,
-  window.maximized &,
-  window.fullscreen &,
-  window.solid-csd & {
-    &,
-    &:first-child,
-    &:last-child,
-    &:only-child {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-  }
-}
-
-%header_separator {
-  min-width: 0;
-  min-height: 0;
-  background-color: transparent;
-  border: none;
-}
-
-.titlebar:not(headerbar) {
-  window.csd > & {
-    // in csd we assume every titlebar is a headerbar so reset anything, this is needed for split toolbars cases
-    padding: 0;
-    background-color: transparent;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-  }
-
-  > separator { background-color: $titlebar_bg_color; } // separator between titlebars
-
-  // @extend %titlebar;
-}
-
 /************
  * Pathbars *
  ************/
@@ -2807,6 +2402,370 @@ treeview.view radio:checked {
   border-image: none;
 }
 
+/***************
+ * Header bars *
+ ***************/
+ headerbar {
+  transition: background-color $shorter_duration $deceleration_curve, color $shorter_duration $deceleration_curve;
+  min-height: $large_size;
+  padding: 0 $container_padding;
+  box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
+  background-color: $titlebar_bg_color;
+  color: $titlebar_fg_color;
+
+  &:disabled :not(button) > label { color: $titlebar_disabled_fg_color; }
+
+  &:backdrop {
+    color: $titlebar_secondary_fg_color;
+
+    &:disabled :not(button) > label { color: $titlebar_disabled_secondary_fg_color; }
+  }
+
+  .title {
+    padding: 0 12px;
+    font-weight: bold;
+  }
+
+  .subtitle {
+    padding: 0 12px;
+    font-size: smaller;
+
+    @extend .dim-label;
+  }
+
+  entry {
+    background-color: if($variant == 'light', $base_color, lighten($base_color, 5%));
+    &:focus { background-color: if($variant == 'light', lighten($base_color, 3%), lighten($base_color, 8%)); }
+  }
+
+  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
+  entry,
+  spinbutton,
+  // separator,
+  button {
+    margin-top: $container_padding;
+    margin-bottom: $container_padding;
+  }
+
+  switch {
+    margin-top: ($large_size - $switch_height - 8px) / 2;
+    margin-bottom: ($large_size - $switch_height - 8px) / 2;
+  }
+
+  // reset button margins of the spinbutton
+  spinbutton button {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  // FIXME: This is a hacky workaround.
+  .entry-tag {
+    margin-top: $container_padding;
+    margin-bottom: $container_padding;
+  }
+
+  // Reset headerbar linked rules
+  .linked:not(.vertical) > entry:not(.flat) { border-radius: $buttons_radius; }
+  .linked:not(.vertical) > button {
+    border-radius: $buttons_radius;
+    -gtk-outline-radius: $buttons_radius;
+  }
+
+  %header_button,
+  button:not(.suggested-action):not(.destructive-action) {
+    @extend %flat_button;
+    border-image: none;
+    color: $titlebar_secondary_fg_color;
+    @extend %circular_button;
+
+    &:hover, &:active { color: $titlebar_fg_color; }
+
+    &:disabled { color: $titlebar_disabled_secondary_fg_color; }
+
+    &:checked {
+      border-image: none;
+      background-color: $primary_color;
+      color: $inverse_fg_color;
+      background-image: $theme_image;
+      background-size: auto auto;
+      background-position: center center;
+      background-repeat: no-repeat;
+      box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
+
+      &:disabled {
+        color: $inverse_disabled_fg_color;
+        background-color: rgba($primary_color, 0.5);
+      }
+    }
+
+    &:backdrop {
+      color: $titlebar_hint_fg_color;
+      &:hover, &:active { color: $titlebar_secondary_fg_color; }
+      &:disabled { color: $titlebar_disabled_secondary_fg_color; }
+      &:checked {
+        background-image: none;
+        color: $inverse_secondary_fg_color;
+        &:disabled { color: $inverse_disabled_secondary_fg_color; }
+      }
+    }
+  }
+
+  button.suggested-action, button.destructive-action {
+    @extend %circular_button;
+
+    &:disabled {
+      background-color: $titlebar_divider_color;
+      color: $titlebar_disabled_fg_color;
+    }
+  }
+
+  &.selection-mode {
+    // FIXME: 0.00001s is workaround for transition bug of gtk+ 3.22
+    // see https://bugzilla.gnome.org/show_bug.cgi?id=774064
+    transition: background-color 0.00001s $longer_duration, color $longer_duration $deceleration_curve;
+    animation: header_ripple_effect $longer_duration $deceleration_curve;
+    box-shadow: inset 0 1px $alt_highlight_color, inset 0 -1px $border_color;
+    background-color: $primary_color;
+    color: $inverse_fg_color;
+
+    &:backdrop {
+      color: $inverse_secondary_fg_color;
+    }
+
+    .subtitle:link { @extend %link_selected; }
+
+    button:not(.suggested-action):not(.destructive-action) {
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    currentColor 0%,
+                                    transparent 0%)
+                                    0 0 0 / 0 0 0;
+      color: $inverse_fg_color;
+      &:disabled { color: $inverse_disabled_fg_color; }
+      &:hover { color: $inverse_fg_color; }
+      &:checked {
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      currentColor 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+        color: $inverse_fg_color;
+        &:disabled { color: $inverse_disabled_fg_color; }
+      }
+
+      &:backdrop {
+        color: $inverse_secondary_fg_color;
+        &:disabled { color: $inverse_disabled_secondary_fg_color; }
+        &:checked {
+          color: $inverse_secondary_fg_color;
+          &:disabled { color: $inverse_disabled_secondary_fg_color; }
+        }
+      }
+    }
+
+    .selection-menu {
+      padding-left: 16px;
+      padding-right: 16px;
+
+      arrow { -GtkArrow-arrow-scaling: 1; }
+
+      .arrow { -gtk-icon-source: -gtk-icontheme('pan-down-symbolic'); }
+    }
+  }
+
+  .linked:not(.vertical).path-bar,
+  .linked:not(.vertical):not(.path-bar).stack-switcher,
+  &.windowhandle viewswitcher {
+    button:not(.suggested-action):not(.destructive-action) {
+      padding-left: $container_padding + 2px;
+      padding-right: $container_padding + 2px;
+
+      border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                    $primary_color 0%,
+                                    transparent 0%)
+                                    0 0 0 / 0 0 0;
+
+      &:active {
+        color: $titlebar_fg_color;
+        background-color: transparent;
+        box-shadow: inset 0 0 0 9999px $semi_fill_color;
+        background-image: radial-gradient(circle farthest-corner at center,
+                                          $semi_fill_color 10%,
+                                          transparent 0%);
+        background-size: 0% 0%;
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $primary_color 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+      }
+
+      &:checked {
+        color: $titlebar_fg_color;
+        background-color: transparent;
+        box-shadow: none;
+        background-image: none;
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $primary_color 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+      }
+
+      &:checked:backdrop, &:active:backdrop {
+        color: $titlebar_secondary_fg_color;
+        border-image: radial-gradient(circle closest-corner at center calc(100% - 1px),
+                                      $titlebar_disabled_fg_color 100%,
+                                      transparent 0%)
+                                      0 0 2 / 0 0 2px;
+      }
+
+      &.text-button.image-button {
+        label { padding-left: 0; padding-right: 0; }
+        image { padding-left: 0; padding-right: 0; }
+      }
+    }
+  }
+
+  &.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action) {
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 0;
+    min-width: 120px;
+
+    > stack > box {
+      padding: 0 $container_padding * 2;
+
+      &.narrow {
+        font-size: 10px;
+
+        image { margin-top: $container_padding / 2; }
+      }
+    }
+
+    &:checked { background-color: $semi_fill_color; }
+  }
+
+  // headerbar titlebutton separator
+  separator.titlebutton { @extend %header_separator; }
+
+  &.default-decoration {
+    min-height: $small_size;
+    padding: $container_padding $container_padding * 2;
+    box-shadow: inset 0 1px $titlebar_highlight_color;
+
+    .tiled &,
+    .maximized &,
+    .fullscreen & { box-shadow: none; }
+
+    button.titlebutton {
+      @extend %circular_button;
+      min-height: 16px;
+      min-width: 16px;
+      margin: 0 2px;
+      padding: 0;
+    }
+
+    // workaround for non-animatable buttons
+    .background:not(.csd) & button.titlebutton:active { background-size: 1000% 1000%; }
+  }
+
+  .solid-csd & {
+    &:dir(rtl), &:dir(ltr) { // specificity bump
+      border-radius: 0;
+      box-shadow: inset 0 1px $titlebar_highlight_color;
+    }
+  }
+
+  .csd &,
+  &.titlebar,
+  .titlebar &,
+  .solid-csd &,
+  box &:only-child {
+    // draw hilight and shadows
+    box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
+  }
+
+  &.titlebar.default-decoration,
+  .csd &.titlebar.default-decoration {
+    box-shadow: inset 0 1px $titlebar_highlight_color;
+  }
+
+  // override unwanted side-borders
+  box &:not(:only-child):first-child,
+  box &:not(:only-child):last-child {
+    border-left-color: $titlebar_bg_color;
+    border-right-color: $titlebar_bg_color;
+  }
+
+  window separator:first-child + &, // tackles the paned container case
+  window &:first-child { border-top-left-radius: $windows_radius; }
+  window &:last-child { border-top-right-radius: $windows_radius; }
+
+  window stack & { // tackles the stacked headerbars case
+    &:first-child, &:last-child {
+      border-top-left-radius: $windows_radius;
+      border-top-right-radius: $windows_radius;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  window.tiled &,
+  window.tiled-top &,
+  window.tiled-right &,
+  window.tiled-bottom &,
+  window.tiled-left &,
+  window.maximized &,
+  window.fullscreen &,
+  window.solid-csd & {
+    &,
+    &:first-child,
+    &:last-child,
+    &:only-child {
+      border-radius: 0;
+    }
+  }
+}
+
+.titlebar,
+.titlebar .background {
+  border-top-left-radius: $windows_radius;
+  border-top-right-radius: $windows_radius;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.background.tiled .titlebar,
+.background.tiled-top .titlebar,
+.background.tiled-right .titlebar,
+.background.tiled-bottom .titlebar,
+.background.tiled-left .titlebar,
+.background.maximized .titlebar,
+.background.solid-csd .titlebar {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+%header_separator {
+  min-width: 0;
+  min-height: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.titlebar:not(headerbar) {
+  window.csd > & {
+    // in csd we assume every titlebar is a headerbar so reset anything, this is needed for split toolbars cases
+    padding: 0;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  > separator { background-color: $titlebar_bg_color; } // separator between titlebars
+}
+
 /************
  * GtkScale *
  ************/
@@ -3141,6 +3100,7 @@ frame.flat > border { border-style: none; } // for backward compatibility
 actionbar > revealer > box {
   padding: $container_padding;
   border-top: 1px solid $border_color;
+  border-radius: 0 0 $windows_radius $windows_radius;
 
   button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
 
@@ -3946,19 +3906,17 @@ colorchooser .popover.osd {
 decoration {
   transition: $shadow_transition;
   border-radius: $windows_radius;
-  box-shadow: $shadow_4, 0 16px 16px transparent;
-
-  // FIXME rationalize shadows
+  box-shadow: $shadow_4, 0 0 32px transparent;
 
   // this is used for the resize cursor area
-  margin: 8px;
+  margin: 10px;
 
   &:backdrop {
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows.
     // The biggest shadow should be in the same order then in the active state
     // or the jumping will happen during the transition.
-    box-shadow: $shadow_2, 0 16px 16px transparent;
+    box-shadow: $shadow_2, 0 0 32px transparent;
   }
 
   .maximized &,
@@ -3969,10 +3927,13 @@ decoration {
   .tiled-bottom &,
   .tiled-left & { border-radius: 0; }
 
+  .maximized &,
+  .fullscreen & { box-shadow: none; }
+
   .popup & { box-shadow: none; }
 
   // server-side decorations as used by mutter
-  .ssd & { box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16); } // just doing borders, wm draws actual shadows
+  .ssd & { box-shadow: none; } // just doing borders, wm draws actual shadows
 
   .csd.popup & { // Menu shadow
     border-radius: $menu_radius;
@@ -4008,59 +3969,57 @@ decoration {
 
 headerbar,
 .titlebar {
-  padding: 0 14px;
+  > box.right,
+  > box.left {
+    padding: 0 $container_padding * 2;
+  }
 
-  &, .csd &,
-  &.default-decoration,
-  .csd &.default-decoration {  // needed under wayland, since all gtk3 windows are csd windows
+  button.titlebutton {
+    @extend %circular_button;
 
-    button.titlebutton {
-      @extend %circular_button;
+    @at-root %windows_button,
+    &.close, &.maximize, &.minimize { // -gtk-icon-source:
+      min-width: 12px;
+      min-height: 12px;
+      padding: 0;
+      margin: 0 2px;
+      color: transparent;
+      background-color: $titlebar_track_color;
 
-      @at-root %windows_button,
-      &.close, &.maximize, &.minimize { // -gtk-icon-source:
-        min-width: 12px;
-        min-height: 12px;
-        padding: 0;
-        margin: 0 2px;
-        color: transparent;
-        background-color: $titlebar_track_color;
-
-        &, &:backdrop {
-          &:hover {
-            color: $titlebar_secondary_fg_color;
-          }
-
-          &:active, &:checked {
-            color: $titlebar_fg_color;
-          }
+      &, &:backdrop {
+        &:hover {
+          color: $titlebar_secondary_fg_color;
         }
 
-        &:backdrop {
-          color: transparent;
-          background-color: $titlebar_divider_color;
+        &:active, &:checked {
+          color: $titlebar_fg_color;
         }
       }
 
-      @at-root %windows_close_button,
-      &.close { // Window Close button
-        transition: background-size 0, background-image 0, $shadow_transition;
+      &:backdrop {
+        color: transparent;
+        background-color: $titlebar_divider_color;
+      }
+    }
 
-        &:hover {
-          padding: 2px;
-          margin: -2px 0;
-          background-color: $red_400;
-          color: $inverse_secondary_fg_color;
-          box-shadow: $shadow_2;
-       }
+    @at-root %windows_close_button,
+    &.close { // Window Close button
+      transition: background-size 0, background-image 0, $shadow_transition;
 
-        &:active, &:checked {
-          padding: 2px;
-          margin: -2px 0;
-          background-color: $accent_color;
-          color: $inverse_fg_color;
-          box-shadow: $shadow_1;
-        }
+      &:hover {
+        padding: 2px;
+        margin: -2px 0;
+        background-color: $red_400;
+        color: $inverse_secondary_fg_color;
+        box-shadow: $shadow_2;
+     }
+
+      &:active, &:checked {
+        padding: 2px;
+        margin: -2px 0;
+        background-color: $accent_color;
+        color: $inverse_fg_color;
+        box-shadow: $shadow_1;
       }
     }
   }

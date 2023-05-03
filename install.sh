@@ -32,13 +32,23 @@ if [[ "$(command -v gnome-shell)" ]]; then
 fi
 
 usage() {
-  printf "%s\n" "Usage: $0 [OPTIONS...]"
-  printf "\n%s\n" "OPTIONS:"
-  printf "  %-25s%s\n" "-d, --dest DIR" "Specify theme destination directory (Default: ${DEST_DIR})"
-  printf "  %-25s%s\n" "-n, --name NAME" "Specify theme name (Default: ${THEME_NAME})"
-  printf "  %-25s%s\n" "-c, --color VARIANTS" "Specify theme color variant(s) [standard|light|dark] (Default: All variants)"
-  printf "  %-25s%s\n" "-s, --solid VARIANTS" "Specify theme solid variant(s) [standard|solid] (Default: All variants)"
-  printf "  %-25s%s\n" "-h, --help" "Show this help"
+cat << EOF
+Usage: $0 [OPTION]...
+
+OPTIONS:
+  -d, --dest DIR          Specify destination directory (Default: $DEST_DIR)
+
+  -n, --name NAME         Specify theme name (Default: $THEME_NAME)
+
+  -c, --color VARIANTS    Specify theme color variant(s) [standard|light|dark] (Default: All variants)
+
+  -l, --libadwaita        Install link to gtk4 config for theming libadwaita
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
+
+  -h, --help              Show help
+EOF
 }
 
 install() {
@@ -120,20 +130,31 @@ while [[ $# -gt 0 ]]; do
       name="${2}"
       shift 2
       ;;
+    -l|--libadwaita)
+      libadwaita='true'
+      shift
+      ;;
+    -r|-u|--remove|--uninstall)
+      remove='true'
+      shift
+      ;;
     -c|--color)
       shift
       for color in "${@}"; do
         case "${color}" in
           standard)
             colors+=("${COLOR_VARIANTS[0]}")
+            lcolors+=("${COLOR_VARIANTS[0]}")
             shift
             ;;
           light)
             colors+=("${COLOR_VARIANTS[1]}")
+            lcolors+=("${COLOR_VARIANTS[1]}")
             shift
             ;;
           dark)
             colors+=("${COLOR_VARIANTS[2]}")
+            lcolors+=("${COLOR_VARIANTS[2]}")
             shift
             ;;
           -*|--*)
@@ -190,6 +211,26 @@ if [[ "${#solids[@]}" -eq 0 ]] ; then
   solids=("${SOLID_VARIANTS[@]}")
 fi
 
+uninstall_link() {
+  rm -rf "${HOME}/.config/gtk-4.0"/{assets,gtk.css,gtk-dark.css}
+}
+
+link_libadwaita() {
+  local dest=${1}
+  local name=${2}
+  local lcolor=${3}
+  local solid=${4}
+
+  local THEME_DIR="${1}/${2}${3}${4}"
+
+  echo -e "\nLink '$THEME_DIR/gtk-4.0' to '${HOME}/.config/gtk-4.0' for libadwaita..."
+
+  mkdir -p                                                                      "${HOME}/.config/gtk-4.0"
+  ln -sf "${THEME_DIR}/gtk-4.0/assets"                                          "${HOME}/.config/gtk-4.0/assets"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk.css"                                         "${HOME}/.config/gtk-4.0/gtk.css"
+  ln -sf "${THEME_DIR}/gtk-4.0/gtk-dark.css"                                    "${HOME}/.config/gtk-4.0/gtk-dark.css"
+}
+
 clean() {
   local dest=${1}
   local name=${2}
@@ -206,10 +247,37 @@ clean() {
   fi
 }
 
+link_theme() {
+  for lcolor in "${lcolors[@]-${COLOR_VARIANTS[1]}}"; do
+    for solid in "${solids[0]}"; do
+      link_libadwaita "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${lcolor}" "${solid}"
+    done
+  done
+}
+
 clean_theme() {
   for color in '' '-light' '-dark'; do
     for solid in '' '-solid'; do
       clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+    done
+  done
+}
+
+uninstall() {
+  local dest=${1}
+  local name=${2}
+  local color=${3}
+  local solid=${4}
+
+  local THEME_DIR=${dest}/${name}${color}${solid}
+
+  [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
+}
+
+uninstall_theme() {
+  for color in "${colors[@]}"; do
+    for solid in "${solids[@]}"; do
+      uninstall "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
     done
   done
 }
@@ -222,7 +290,22 @@ install_theme() {
   done
 }
 
-clean_theme && install_theme
+clean_theme
+
+if [[ "${remove:-}" != 'true' ]]; then
+  install_theme
+
+  if [[ "$libadwaita" == 'true' ]]; then
+    uninstall_link && link_theme
+  fi
+else
+  if [[ "$libadwaita" == 'true' ]]; then
+    echo -e "\nUninstall ${HOME}/.config/gtk-4.0 links ..."
+    uninstall_link
+  else
+    echo && uninstall_theme && uninstall_link
+  fi
+fi
 
 echo
 echo Done.

@@ -6,10 +6,6 @@
     background-color: $bg_color;
 
     &.frame { border-width: 0; }
-
-    .places-treeview {
-      &:not(:hover):not(:selected) { background-color: transparent; }
-    }
   }
 
   // Rename entry
@@ -357,6 +353,8 @@ window.background.chromium {
   color: $chrome_fg_color;
 
   headerbar.titlebar {
+    padding: 0 $container_padding * 3;
+
     // button.toggle { // account-button (> 64.0.3282?)
     // }
 
@@ -367,6 +365,15 @@ window.background.chromium {
         min-height: 12px;
         padding: 0;
         margin: 0 2px;
+        color: transparent;
+
+        &:hover {
+          color: $titlebar_secondary_fg_color;
+        }
+
+        &:active, &:checked {
+          color: $titlebar_fg_color;
+        }
       }
 
       &.close { // Window Close button
@@ -374,12 +381,14 @@ window.background.chromium {
           padding: 0;
           margin: 0 2px;
           box-shadow: none;
-       }
+          color: $inverse_secondary_fg_color;
+        }
 
         &:active, &:checked {
           padding: 0;
           margin: 0 2px;
           box-shadow: none;
+          color: $inverse_fg_color;
         }
       }
     }

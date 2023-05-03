@@ -37,28 +37,30 @@ Search for the engines in your distributions repository or install the engines f
 
 ## Install Or Uninstall
 
-Open the terminal at current directory.
+Run the following commands in the terminal:
 
-Run
+```sh
+./install.sh
+```
 
-    ./install.sh
-
-### On Snapcraft
-
-<a href="https://snapcraft.io/layan-themes">
-<img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
-</a>
-
-You can install the theme from the Snap Store оr by running:
+Usage:  `./install.sh`  **[OPTIONS...]**
 
 ```
-sudo snap install layan-themes
+  -d, --dest DIR          Specify destination directory (Default: $HOME/.themes)
+  -n, --name NAME         Specify theme name (Default: Layan)
+  -c, --color VARIANT     Specify color variant(s) [standard|light|dark] (Default: All variants)
+
+  -l, --libadwaita        Link installed gtk-4.0 theme to config folder for all libadwaita app use this theme
+
+  -r, --remove,
+  -u, --uninstall         Uninstall/Remove installed themes
+
+  -h, --help              Show help
 ```
-To connect the theme to an app run:
+
+For example: install all themes
+
+```sh
+./install.sh -t all -s all
 ```
-sudo snap connect [other snap]:gtk-3-themes layan-themes:gtk-3-themes
-```
-To connect the theme to all apps which have available plugs to gtk-common-themes you can run:
-``` 
-for i in $(snap connections | grep gtk-common-themes:gtk-3-themes | awk '{print $2}'); do sudo snap connect $i layan-themes:gtk-3-themes; done
-```
+

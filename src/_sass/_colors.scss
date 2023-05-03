@@ -84,8 +84,8 @@ $popover_fg: rgba($white, 0.8);
 $popover_disabled_fg: rgba($white, 0.3);
 $popover_border: rgba($white, 0.12);
 
-$fill_color:      rgba($fg_color, $lower_opacity);
-$semi_fill_color: rgba($fg_color, $lower_opacity / 2);
+$fill_color:      rgba($fg_color, 0.15);
+$semi_fill_color: rgba($fg_color, 0.1);
 $row_fill_color:  rgba($fg_color, 0.05);
 
 // Misc colors
@@ -99,7 +99,7 @@ $disabled_accent_color: rgba($accent_color, 0.5);
 $theme_color_top:    #716ffb;
 $theme_color_middle: #6C6AF2;
 $theme_color_bottom: #4648FB;
-$theme_image: linear-gradient(to bottom, $theme_color_middle, $theme_color_bottom);
+$theme_image:        linear-gradient(to bottom, $theme_color_middle, $theme_color_bottom);
 $header_theme_image: linear-gradient(to bottom, $theme_color_top, $theme_color_middle);
 
 $link_color:         $primary_color;

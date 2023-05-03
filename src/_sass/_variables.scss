@@ -14,9 +14,10 @@ $disabled_opacity: 0.5;
 // sizes
 $small_size: if($compact == 'false', 24px, 20px);
 $medium_size: if($compact == 'false', 36px, 32px);
-$large_size: if($compact == 'false', 42px, 38px);
+$large_size: if($compact == 'false', 44px, 40px);
 
 $container_padding: if($compact == 'false', 6px, 4px);
+$base_padding: if($compact == 'false', 6px, 6px);
 
 $bar_size: 4px;
 $menuitem_size: 28px;
@@ -33,7 +34,7 @@ $subheading-size: if($compact == 'false', 16px, 15px);
 $buttons_radius: 7px;
 $menu_radius: 8px;
 $icon_radius: 20px;
-$windows_radius: 13px;
+$windows_radius: $buttons_radius + $container_padding;
 $material_radius: 5px;
 $circular_radius: 9999px;
 $panel-corner-radius: 0; // For gnome-shell
@@ -79,8 +80,8 @@ $shadow_0: 0 0 transparent;
 $shadow_1: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.10);
 $shadow_2: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
 $shadow_3: 0 6px 10px rgba(0, 0, 0, 0.12), 0 4px 3px rgba(0, 0, 0, 0.16);
-$shadow_4: 0 14px 14px rgba(0, 0, 0, 0.25), 0 10px 5px rgba(0, 0, 0, 0.22);
+$shadow_4: 0 10px 16px rgba(0, 0, 0, 0.25), 0 6px 10px rgba(0, 0, 0, 0.16);
 $shadow_5: 0 19px 19px rgba(0, 0, 0, 0.30), 0 15px 6px rgba(0, 0, 0, 0.22);
-$shadow_6: 0 3px 3px -3px rgba(0, 0, 0, 0.12), 0 5px 5px -5px rgba(0, 0, 0, 0.06);
+$shadow_6: 0 6px 8px rgba(0, 0, 0, 0.12), 0 10px 16px rgba(0, 0, 0, 0.1);
 $header_shadow_dark: 0 1px 1px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
 $header_shadow_light: 0 1px 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.08);

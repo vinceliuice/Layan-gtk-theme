@@ -1,0 +1,261 @@
+/************
+ * Nautilus *
+ ************/
+
+$nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color, $titlebar_bg_color);
+$header-icon: if($titlebar == 'dark' and $variant == 'light',
+              -gtk-scaled(url('assets/header-icon-alt.png'), url('assets/header-icon-alt@2.png')),
+              -gtk-scaled(url('assets/header-icon.png'), url('assets/header-icon@2.png')));
+
+.nautilus-window.background.csd {
+  background-image: $theme_image;
+  background-size: 48px auto;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-color: if($solid == 'false', rgba($nautilus_bg_color, 0.97), $nautilus_bg_color);
+
+  headerbar {
+    background-color: transparent;
+    background-image: $header-icon;
+    background-size: 48px auto;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    padding-left: 54px;
+    box-shadow: inset 0 1px $titlebar_highlight_color;
+    border: none;
+
+    > revealer > button { @extend %circular_button; } // Make operations button circular
+  }
+
+  .nautilus-grid-view {
+    &, gridview.view {
+      background-color: transparent;
+    }
+  }
+
+  .nautilus-list-view {
+    margin: 0 $container_padding $container_padding 0;
+
+    &, .view { background-color: transparent; }
+  }
+
+  placesview {
+    label {
+      color: $secondary_fg_color;
+
+      &:disabled {
+        color: $disabled_secondary_fg_color;
+      }
+    }
+
+    list, actionbar, actionbar > revealer > box {
+      background-color: transparent;
+    }
+  }
+
+  flap.unfolded > placessidebar {
+    background: none;
+    margin-right: 6px;
+
+    list.navigation-sidebar {
+      background: none;
+
+      > row {
+        padding-left: 6px;
+  
+        &, &:hover, &:selected, &:active, &:selected:hover, &:selected:active, &:focus {
+          transition: none;
+          animation: none;
+          background: none;
+          box-shadow: none;
+        }
+  
+        &:selected button.sidebar-button  { @extend %selected_sidebar_button; }
+  
+        image.sidebar-icon {
+          color: $inverse_secondary_fg_color;
+          margin-right: 6px;
+        }
+  
+        label.sidebar-label {
+          padding-left: 18px;
+          color: $secondary_fg_color;
+          border-radius: 0 $buttons_radius $buttons_radius 0;
+        }
+  
+        &:hover {
+          label.sidebar-label {
+            background-color: rgba($divider_color, 0.03);
+          }
+        }
+  
+        &:backdrop { opacity: 0.85; }
+  
+        &:selected {
+          // font-weight: bold;
+  
+          label.sidebar-label {
+            color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
+            background-color: rgba($divider_color, 0.06);
+          }
+  
+          image.sidebar-icon { color: $inverse_fg_color; }
+        }
+      }
+    }
+
+    separator { background-color: transparent; }
+  }
+
+  #NautilusPathBar {
+    border-radius: $circular_radius;
+    margin: $container_padding 0;
+    padding: 0;
+    background-image: $theme_image;
+    background-size: auto auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
+
+    .dim-label { color: $inverse_secondary_fg_color; }
+
+    button:not(.suggested-action):not(.destructive-action) {
+      margin: 0;
+      color: $inverse_secondary_fg_color;
+
+      &:hover {
+        background-color: $inverse_divider_color;
+        box-shadow: none;
+      }
+
+      &:active, &:checked {
+        background-color: $inverse_track_color;
+        box-shadow: none;
+        background-image: none;
+      }
+
+      &:hover, &:active, &:checked {
+        color: $inverse_fg_color;
+      }
+
+      &.current-dir {
+        color: $inverse_fg_color;
+
+        &:hover, &:active {
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+
+    > menubutton {
+      margin: 0;
+
+      > button {
+        border-radius: $circular_radius;
+        margin: 0;
+  
+        &:checked {
+          background-color: $inverse_track_color;
+          box-shadow: none;
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  #NautilusViewCell {
+    clamp box {
+      margin: 0;
+      border-spacing: 0;
+    }
+  }
+
+  #NautilusQueryEditor { // search entry
+    border-radius: $circular_radius;
+    color: $titlebar_secondary_fg_color;
+    padding: 0 ($medium_size - $menuitem_size) / 2 0 ($container_padding + 2px);
+
+    &:focus-within { color: $titlebar_fg_color; }
+
+    &:disabled { color: $titlebar_disabled_secondary_fg_color; }
+
+    > menubutton > button.image-button {
+      min-width: $menuitem_size;
+      min-height: $menuitem_size;
+      margin: ($medium_size - $menuitem_size) / 2 0;
+      padding: 0;
+      @extend %flat_button;
+    }
+
+    > text { margin: 0; }
+  }
+
+  #NautilusQueryEditorTag {
+    border-radius: $circular_radius;
+
+    > button {
+     margin: $container_padding / 2;
+     padding: 0;
+     min-height: $small_size - 2px;
+     min-width: $small_size - 2px;
+    }
+  }
+
+  label.search-information {
+    margin: 2px;
+    border-radius: 3px;
+  }
+
+  flap > separator  { // Ensure paned separator rendering. See issue #84 for details.
+    min-width: 20px;
+    color: transparent;
+    background-image: url("assets/scalable/side-paned.svg");
+    background-size: 20px 750px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+  }
+
+  // Floating status bar
+  .floating-bar {
+    min-height: 32px;
+    padding: 0;
+    margin: 0;
+    border-style: solid solid none;
+    border-width: 1px;
+    border-color: $border_color;
+    border-radius: $windows_radius $windows_radius 0 0;
+    color: $fg_color;
+    background-color: $base_color;
+    background-clip: $extra_background_clip;
+    transition: $longer_transition, border-width 0;
+
+    &.bottom.left { // axes left border and border radius
+      margin-right: 7px;
+      border-left-style: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: $windows_radius;
+    }
+
+    &.bottom.right { // axes right border and border radius
+      margin-left: 7px;
+      border-right-style: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: $windows_radius;
+    }
+
+    button {
+      margin: (32px - $small_size) / 2;
+
+      @extend %small_button;
+    }
+  }
+
+  // Reset maximized nautilus-window floating-bar border-radius
+  &.maximized .floating-bar {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

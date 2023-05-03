@@ -453,7 +453,7 @@
 
 .popup-menu {
   .popup-menu-item {
-    padding: $container_padding; 
+    padding: $base_padding; 
 
     &:ltr { padding-right:1.75em; padding-left: 0; }
     &:rtl { padding-right: 0; padding-left:1.75em; }

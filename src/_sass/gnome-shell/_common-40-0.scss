@@ -52,7 +52,7 @@
 }
 
 .page-navigation-arrow {
-  margin: $container_padding;
+  margin: $base_padding;
   width: 24px;
   height: 24px;
   color: $inverse_secondary_fg_color;
@@ -68,7 +68,7 @@ $dash_bottom_margin: 24px;
 $dash_border_radius: $dash_padding + $icon_radius;
 
 #dash {
-  margin-top: $container_padding * 2;
+  margin-top: $base_padding * 2;
   padding: 0 $dash_padding;
 
   .placeholder {
@@ -116,7 +116,7 @@ $dash_border_radius: $dash_padding + $icon_radius;
 
 // Overview
 .controls-manager, .secondary-monitor-workspaces {
-  spacing: $container_padding * 2;
+  spacing: $base_padding * 2;
 }
 
 #overviewGroup {
@@ -135,14 +135,14 @@ $dash_border_radius: $dash_padding + $icon_radius;
 }
 
 .search-entry {
-  margin-top: $container_padding * 4;
-  margin-bottom: $container_padding;
+  margin-top: $base_padding * 4;
+  margin-bottom: $base_padding;
 }
 
 // Window picker
 .window-picker {
   // Space between window thumbnails
-  spacing: $container_padding;
+  spacing: $base_padding;
 }
 
 // Window titles
@@ -150,7 +150,7 @@ $dash_border_radius: $dash_padding + $icon_radius;
   color: $inverse_secondary_fg_color;
   background-color: rgba(black, 0.75);
   border-radius: $circular_radius;
-  padding: $container_padding $container_padding * 2;
+  padding: $base_padding $base_padding * 2;
 }
 
 $window_close_button_size: 30px;
@@ -194,8 +194,8 @@ $window_close_button_padding: 3px;
 // thumbnails in overview
 .workspace-thumbnails {
   visible-width: 32px; //amount visible before hover
-  spacing: $container_padding;
-  padding: $container_padding;
+  spacing: $base_padding;
+  padding: $base_padding;
 
   .workspace-thumbnail {
     color: $inverse_secondary_fg_color;
@@ -227,7 +227,7 @@ $window_close_button_padding: 3px;
 
 .popup-menu {
   .popup-menu-item {
-    padding: $container_padding; 
+    padding: $base_padding; 
 
     &:ltr { padding-right:1.75em; padding-left: 0; }
     &:rtl { padding-right: 0; padding-left:1.75em; }

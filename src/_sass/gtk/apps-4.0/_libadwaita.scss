@@ -1,0 +1,868 @@
+avatar {
+  border-radius: $circular_radius;
+  font-weight: bold;
+
+  // The list of colors to generate avatars.
+  // Each avatar color is represented by a font color, a gradient start color and a gradient stop color.
+  // There are 8 different colors for avtars in the list if you change the number of them you
+  // need to update the NUMBER_OF_COLORS in src/adw-avatar.c.
+  // The 2D list has this form: ((font-color, gradient-top-color, gradient-bottom-color)).
+  $avatarcolorlist: (
+   (#cfe1f5, #83b6ec, #337fdc), // blue
+   (#caeaf2, #7ad9f1, #0f9ac8), // cyan
+   (#cef8d8, #8de6b1, #29ae74), // green
+   (#e6f9d7, #b5e98a, #6ab85b), // lime
+   (#f9f4e1, #f8e359, #d29d09), // yellow
+   (#ffead1, #ffcb62, #d68400), // gold
+   (#ffe5c5, #ffa95a, #ed5b00), // orange
+   (#f8d2ce, #f78773, #e62d42), // raspberry
+   (#fac7de, #e973ab, #e33b6a), // magenta
+   (#e7c2e8, #cb78d4, #9945b5), // purple
+   (#d5d2f5, #9e91e8, #7a59ca), // violet
+   (#f2eade, #e3cf9c, #b08952), // beige
+   (#e5d6ca, #be916d, #785336), // brown
+   (#d8d7d3, #c0bfbc, #6e6d71), // gray
+  );
+
+  @for $i from 1 through length($avatarcolorlist) {
+    &.color#{$i} {
+      $avatarcolor: nth($avatarcolorlist, $i);
+      background-image: linear-gradient(nth($avatarcolor, 2), nth($avatarcolor, 3));
+      color: nth($avatarcolor, 1);
+    }
+  }
+
+  &.contrasted { color: white; }
+
+  &.image { background: none; }
+}
+
+$opaque_button_default_bg: mix($base_color, $fg_color, 85%);
+
+button {
+  @at-root %opaque-button {
+    box-shadow: none;
+
+    .osd &:focus:focus-visible {
+      outline: none;
+    }
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, .1));
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-image: image(transparentize(black, .8));
+    }
+
+    &:checked {
+      background-image: image(transparentize(black, .85));
+
+      &:hover {
+        background-image: image(transparentize(black, .95));
+      }
+
+      &.keyboard-activating,
+      &:active {
+        background-image: image(transparentize(black, .7));
+      }
+    }
+  }
+
+  &.opaque {
+    @extend %opaque-button;
+
+    background-color: $opaque_button_default_bg;
+    color: $fg_color;
+  }
+
+  &.destructive-action {
+    @extend %opaque-button;
+
+    color: on($destructive_color);
+
+    &, &:checked {
+      background-color: $destructive_color;
+    }
+  }
+
+  &.suggested-action {
+    @extend %opaque-button;
+
+    color: on($suggested_color);
+
+    &, &:checked {
+      background-color: $suggested_color;
+    }
+  }
+
+  // hide separators
+  &.font {
+    separator { background-color: transparent; }
+    > box { border-spacing: $base_padding; }
+    > box > box > label { font-weight: bold; }
+  }
+
+  @at-root %pill-button,
+  &.pill {
+    padding: 10px 32px;
+    border-radius: $circular_radius;
+  }
+
+  &.card {
+    background-clip: padding-box;
+    font-weight: inherit;
+    box-shadow: none;
+    transition: $shorter_transition;
+
+    &:hover {
+      @include button(hover);
+    }
+
+    &.keyboard-activating,
+    &:active {
+      @include button(active);
+    }
+
+    &:checked {
+      @include button(active);
+    }
+
+    &:drop(active) {
+      color: $warning_color;
+      box-shadow: inset 0 0 0 1px $warning_color;
+    }
+  }
+}
+
+menubutton {
+  &.osd {
+    background: none;
+    color: inherit;
+  }
+
+  &.circular > button { @extend %circular_button; }
+  &.flat > button { @extend %flat_button; }
+  &.pill > button { @extend %pill-button; }
+
+  &.suggested-action {
+    background-color: $suggested_color;
+    color: on($suggested_color);
+  }
+
+  &.destructive-action {
+    background-color: $destructive_color;
+    color: on($destructive_color);
+  }
+
+  &.opaque {
+    background-color: $opaque_button_default_bg;
+    color: $fg_color;
+  }
+
+  &.suggested-action,
+  &.destructive-action,
+  &.opaque {
+    border-radius: $buttons_radius;
+
+    &.circular, &.pill {
+      border-radius: $circular_radius;
+    }
+
+    > button {
+      @extend %opaque-button;
+
+      &, &:checked {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+
+  arrow {
+    min-height: 16px;
+    min-width: 16px;
+    &.none {
+      -gtk-icon-source: -gtk-icontheme('open-menu-symbolic');
+    }
+    &.down {
+      -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+    }
+    &.up {
+      -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+    }
+    &.left {
+      -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
+    }
+    &.right {
+      -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+    }
+  }
+}
+
+splitbutton {
+  border-radius: $buttons_radius;
+
+  &:disabled {
+    filter: none;
+    opacity: 1;
+  }
+
+  &, & > separator {
+    transition: $shorter_transition;
+    transition-property: background;
+  }
+
+  > separator {
+    margin-top: $base_padding;
+    margin-bottom: $base_padding;
+    background: none;
+  }
+
+  // Since the inner button doesn't have any style classes on it,
+  // we have to add them manually
+  &.image-button > button {
+    min-height: 24px;
+    min-width: 24px;
+    padding: ($medium-size - 24px) / 2;
+  }
+
+  &.text-button.image-button > button,
+  &.image-text-button > button {
+    padding-left: $base_padding * 1.5;
+    padding-right: $base_padding * 1.5;
+
+    > box {
+      border-spacing: $base_padding;
+    }
+  }
+
+  // Reimplementing linked so we don't blow up css
+  > button:dir(ltr),
+  > menubutton > button:dir(rtl) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0;
+  }
+
+  > button:dir(rtl),
+  > menubutton > button:dir(ltr) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: 0;
+  }
+
+  @at-root %flat_split_button,
+  &.flat {
+    > separator {
+      background: $border_color;
+    }
+
+    &:hover,
+    &:active,
+    &:checked {
+      background: gtkalpha(currentColor, 0.1);
+      color: $fg_color;
+
+      > separator {
+        background: none;
+      }
+    }
+
+    &:focus-within:focus-visible > separator {
+      background: none;
+    }
+
+    > button,
+    > menubutton > button {
+      @extend %flat_button;
+
+      border-radius: $buttons_radius;
+    }
+  }
+
+  &.suggested-action {
+    background-color: $suggested_color;
+    color: on($suggested_color);
+  }
+
+  &.destructive-action {
+    background-color: $destructive_color;
+    color: on($destructive_color);
+  }
+
+  &.opaque {
+    background-color: $opaque_button_default_bg;
+    color: $fg_color;
+  }
+
+  &.suggested-action,
+  &.destructive-action,
+  &.opaque {
+    > button, > menubutton > button {
+      @extend %opaque-button;
+
+      &, &:checked {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+
+    > menubutton > button {
+      &:dir(ltr) { box-shadow: inset 1px 0 $border_color; }
+      &:dir(rtl) { box-shadow: inset -1px 0 $border_color; }
+    }
+  }
+
+  > menubutton > button > arrow.none {
+    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+  }
+}
+
+buttoncontent {
+  border-spacing: $base_padding;
+
+  > label {
+    font-weight: bold;
+
+    &:dir(ltr) { padding-right: 2px; }
+    &:dir(rtl) { padding-left: 2px; }
+  }
+
+  .arrow-button > box > &,
+  splitbutton > button > & {
+    > label {
+      &:dir(ltr) { padding-right: 0; }
+      &:dir(rtl) { padding-left: 0; }
+    }
+  }
+}
+
+//
+// Toasts
+//
+
+toast {
+  background-color: $base_color;
+  margin: $base_padding * 2;
+  margin-bottom: 24px;
+  border-radius: $circular_radius;
+  border-spacing: $base_padding;
+  padding: $base_padding;
+  box-shadow: $shadow_6, inset 0 1px $highlight_color;
+  color: $secondary_fg_color;
+  font-weight: normal;
+
+  &:dir(ltr) { padding-left: $base_padding * 2; }
+  &:dir(rtl) { padding-right: $base_padding * 2; }
+
+  > widget {
+    margin: 0 $base_padding;
+  }
+}
+
+//
+// AdwStatusPage
+//
+
+statuspage {
+  > scrolledwindow > viewport > box {
+    margin: $base_padding * 6 $base_padding * 2;
+    border-spacing: 36px;
+
+    > clamp > box {
+      border-spacing: $base_padding * 2;
+
+      > .icon {
+        -gtk-icon-size: 128px;
+
+        color: gtkalpha(currentColor, 0.45);
+
+        &:disabled {
+          opacity: 0.45;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: $base_padding * 4;
+        }
+      }
+    }
+  }
+
+  &.compact > scrolledwindow > viewport > box {
+    margin: $base_padding * 4 $base_padding * 2;
+    border-spacing: $base_padding * 4;
+
+    > clamp > box {
+      > .icon {
+        -gtk-icon-size: 96px;
+
+        &:not(:last-child) {
+          margin-bottom: $base_padding * 2;
+        }
+      }
+
+      > .title {
+        font-size: 18pt;
+      }
+    }
+  }
+}
+
+// Cards
+.card {
+  @at-root %card, & {
+    border-radius: $buttons_radius;
+    box-shadow: none;
+    border: 1px solid $border_color;
+    background-clip: padding-box;
+    background-color: $base_color;
+    color: $secondary_fg_color;
+
+    // .osd &, &.osd {
+    // }
+  }
+}
+
+// preferences
+preferencespage > scrolledwindow > viewport > clamp > box {
+  margin: $base_padding * 4 $base_padding * 2;
+  border-spacing: $base_padding * 4;
+}
+
+preferencesgroup > box {
+  &, .labels {
+    border-spacing: $base_padding;
+  }
+
+  > box.header:not(.single-line) {
+    margin-bottom: $base_padding;
+  }
+
+  > box.single-line {
+    min-height: $medium_size;
+  }
+
+  button.background-preview-button.toggle {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    outline-color: transparent;
+    outline-width: 3px;
+    outline-offset: $base_padding / 2;
+    outline-style: solid;
+
+    &, > background-preview {
+      border-radius: 6px;
+    }
+
+    &:hover {
+      outline-color: $fill_color;
+    }
+
+    &:active {
+      outline-color: $track_color;
+    }
+
+    &:checked {
+      outline-color: $primary_color;
+    }
+  }
+}
+
+//
+// viewswitcher
+//
+
+viewswitcher {
+  margin: 0;
+
+  &.wide {
+    border-spacing: 0;
+    border-radius: $circular_radius;
+    background-color: rgba($titlebar_fg_color, 0.05);
+    margin-top: $base_padding;
+    margin-bottom: $base_padding;
+
+    button.toggle {
+      &:checked {
+        indicatorbin.needs-attention > indicator {
+          > label { color: $primary_color; }
+
+          background-color: $inverse_fg_color;
+        }
+      }
+    }
+  }
+
+  &.narrow button.toggle {
+    border-radius: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      color: $titlebar_fg_color;
+      box-shadow: inset 0 -2px transparent;
+      background-color: rgba($titlebar_fg_color, 0.04);
+    }
+
+    &:active {
+      color: $titlebar_fg_color;
+      box-shadow: inset 0 -2px $primary_color;
+      background-color: rgba($titlebar_fg_color, 0.1);
+    }
+
+    &:checked {
+      border-radius: 0;
+      color: $titlebar_fg_color;
+      background-color: rgba($titlebar_fg_color, 0.06);
+      box-shadow: inset 0 -2px $primary_color;
+      background-image: none;
+    }
+
+    &:checked:backdrop, &:active:backdrop {
+      color: $titlebar_secondary_fg_color;
+      box-shadow: inset 0 -2px $titlebar_disabled_fg_color;
+    }
+  }
+
+  button.toggle {
+    font-weight: bold;
+    padding: 0;
+    min-height: 0;
+    margin: 0;
+
+    > stack > box {
+      &.narrow {
+        font-size: 0.75rem;
+        padding-top: $base_padding + 1px;
+        padding-bottom: $base_padding - 1px;
+        border-spacing: $base_padding - 2px;
+
+        > stack > label {
+          padding-left: $base_padding + 2px;
+          padding-right: $base_padding + 2px;
+        }
+      }
+
+      &.wide {
+        padding: 0 $base_padding * 2;
+        border-spacing: $base_padding;
+      }
+    }
+  }
+}
+
+// AdwViewSwitcherBar
+viewswitcherbar actionbar > revealer > box {
+  padding: 0;
+
+  viewswitcher.narrow button.toggle:not(.suggested-action):not(.destructive-action) {
+    transition: none;
+
+    &:hover {
+      color: $fg_color;
+      background-color: rgba($fg_color, 0.04);
+      box-shadow: inset 0 2px transparent;
+    }
+
+    &:active {
+      color: $fg_color;
+      background-color: rgba($fg_color, 0.1);
+      box-shadow: inset 0 2px $primary_color;
+    }
+
+    &:checked {
+      border-radius: 0;
+      color: $fg_color;
+
+      &, &:hover {
+        background-color: rgba($fg_color, 0.06);
+        box-shadow: inset 0 2px $primary_color;
+        background-image: none;
+      }
+    }
+
+    &:checked:backdrop, &:active:backdrop {
+      color: $secondary_fg_color;
+      box-shadow: inset 0 2px $disabled_fg_color;
+    }
+  }
+}
+
+// AdwViewSwitcherTitle
+viewswitchertitle viewswitcher {
+  margin-left: $base_padding * 2;
+  margin-right: $base_padding * 2;
+}
+
+// AdwIndicatorBin
+indicatorbin {
+  > indicator, > mask {
+    min-width: $base_padding;
+    min-height: $base_padding;
+    border-radius: $circular_radius;
+  }
+
+  > indicator {
+    margin: 1px;
+    padding: 0;
+    background: gtkalpha(currentColor, .4);
+
+    > label {
+      font-size: 0.6rem;
+      font-weight: bold;
+      padding: 2px 5px;
+      color: white;
+    }
+  }
+
+  > mask {
+    padding: 1px;
+    background: black;
+  }
+
+  &.needs-attention > indicator {
+    background-color: $primary_color;
+
+    > label { color: $inverse_fg_color; }
+  }
+}
+
+//
+// tab-view
+//
+
+tabbar {
+  .box {
+    background-color: $titlebar_bg_color;
+    color: $titlebar_fg_color;
+    box-shadow: inset 0 -1px $border_color;
+    padding: 1px;
+    padding-top: 0;
+
+    &:backdrop {
+      background-color: $alt_titlebar_bg_color;
+      transition: background-color 200ms ease-out;
+
+      > scrolledwindow,
+      > .start-action,
+      > .end-action {
+        filter: opacity(0.5);
+        transition: filter 200ms ease-out;
+      }
+    }
+  }
+
+  tabbox {
+    padding-bottom: 0;
+    padding-top: 0;
+    min-height: 34px;
+
+    > tabboxchild {
+      border-radius: $buttons_radius;
+    }
+
+    > separator {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      transition: opacity 150ms ease-in-out;
+
+      &.hidden {
+        opacity: 0;
+      }
+    }
+
+    > revealer > indicator {
+      min-width: 2px;
+      border-radius: 2px;
+      margin: 3px 6px;
+      background: $primary_color;
+    }
+  }
+
+  tab {
+    transition: background 150ms ease-in-out;
+
+    &:selected {
+      background-color: rgba($fg_color, 0.06);
+
+      &:hover { background-color: rgba($fg_color, 0.08); }
+      &:active { background-color: rgba($fg_color, 0.12); }
+    }
+
+    &:hover { background-color: rgba($fg_color, 0.04); }
+    &:active { background-color: rgba($fg_color, 0.1); }
+  }
+
+  tabbox.single-tab tab {
+    &, &:hover, &:active {
+      background: none;
+    }
+  }
+
+  .start-action,
+  .end-action {
+    padding: 6px 5px;
+  }
+
+  .start-action:dir(ltr),
+  .end-action:dir(rtl) {
+    padding-right: 0;
+  }
+
+  .start-action:dir(rtl),
+  .end-action:dir(ltr) {
+    padding-left: 0;
+  }
+
+  &.inline {
+    @extend %tabbar-inline;
+  }
+}
+
+%tabbar-inline .box {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  padding-bottom: 0;
+
+  &:backdrop {
+    background-color: transparent;
+    transition: none;
+
+    > scrolledwindow,
+    > .start-action,
+    > .end-action {
+      filter: none;
+      transition: none;
+    }
+  }
+}
+
+%tabbar-shrunk {
+  tabbox,
+  .start-action,
+  .end-action {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+dnd tab {
+  background-color: $titlebar_bg_color;
+  background-image: image(rgba($fg_color, 0.12));
+  color: $titlebar_fg_color;
+
+  box-shadow: 0 0 0 1px transparentize(black, 0.97),
+              0 1px 3px 1px transparentize(black, .93),
+              0 2px 6px 2px transparentize(black, .97);
+
+  margin: 25px;
+}
+
+tabbar,
+dnd {
+  tab {
+    min-height: 26px;
+    padding: 4px;
+    border-radius: $buttons_radius;
+
+    button.image-button {
+      padding: 0;
+      margin: 0;
+      min-width: 24px;
+      min-height: 24px;
+      border-radius: 99px;
+    }
+
+    indicator {
+      min-height: 2px;
+      border-radius: 2px;
+      background: gtkalpha($primary_color, 0.5);
+      transform: translateY(4px);
+    }
+  }
+}
+
+tabthumbnail {
+  border-radius: $buttons_radius + 4px;
+
+  > box {
+    margin: 6px;
+  }
+
+  &:drop(active) {
+    box-shadow: inset 0 0 0 2px gtkalpha($warning_color, .4);
+    background-color: gtkalpha($warning_color, .1);
+  }
+
+  transition: box-shadow 200ms ease-out, background-color ease-out;
+
+  .needs-attention {
+    &:dir(ltr) { transform: translate(8px, -8px); }
+    &:dir(rtl) { transform: translate(-8px, -8px); }
+
+    > widget {
+      background: $primary_color;
+      min-width: 12px;
+      min-height: 12px;
+      border-radius: 8px;
+      margin: 3px;
+      box-shadow: 0 1px 2px gtkalpha($primary_color, .4);
+    }
+  }
+
+  .card {
+    picture {
+      outline: none;
+      border-radius: $buttons_radius;
+    }
+
+    background: none;
+    color: inherit;
+  }
+
+  &.pinned .card {
+    background-color: rgba($primary_color, 0.12);
+    color: $fg_color;
+  }
+
+  .icon-title-box {
+    border-spacing: 6px;
+  }
+
+  .tab-unpin-icon {
+    margin: 6px;
+    min-width: 24px;
+    min-height: 24px;
+  }
+
+  button.circular {
+    margin: 6px;
+    background-color: gtkalpha($primary_color, 0.15);
+    min-width: 24px;
+    min-height: 24px;
+
+    &:hover {
+      background-color: gtkalpha($primary_color, 0.2);
+    }
+
+    &:active {
+      background-color: gtkalpha($primary_color, 0.25);
+    }
+  }
+}
+
+taboverview > .overview  .new-tab-button {
+  margin: 18px;
+}
+
+tabview:drop(active),
+tabbox:drop(active),
+tabgrid:drop(active) {
+  box-shadow: none;
+}
