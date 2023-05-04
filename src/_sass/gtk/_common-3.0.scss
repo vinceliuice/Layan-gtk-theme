@@ -3332,11 +3332,22 @@ messagedialog { // Message Dialog styling
   .dialog-action-area button {
     @extend %simple_flat_button;
     padding: 4px 12px;
-    border-top: 1px solid $border_color;
+    border-top: 1px solid rgba($popover_fg, 0.1);
     border-radius: 0;
     color: $popover_fg;
 
     &:hover, &:active { color: white; }
+
+    &:hover {
+      box-shadow: inset 0 0 0 9999px rgba($popover_fg, 0.06);
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 9999px rgba($popover_fg, 0.06);
+      background-image: radial-gradient(circle farthest-corner at center,
+                                        rgba($popover_fg, 0.06) 10%,
+                                        transparent 0%);
+    }
 
     &:first-child {
       border-bottom-left-radius: 0;
@@ -3378,7 +3389,7 @@ messagedialog { // Message Dialog styling
     .dialog-action-area button {
       @extend %simple_flat_button;
       padding: 8px 16px;
-      border-top: 1px solid $border_color;
+      border-top: 1px solid rgba($popover_fg, 0.1);
       border-radius: 0;
       color: $popover_fg;
 

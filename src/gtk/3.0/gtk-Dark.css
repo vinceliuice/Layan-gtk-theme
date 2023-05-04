@@ -3670,13 +3670,22 @@ messagedialog list, messagedialog row, messagedialog .view, messagedialog textvi
 
 messagedialog .dialog-action-area button {
   padding: 4px 12px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   color: rgba(255, 255, 255, 0.8);
 }
 
 messagedialog .dialog-action-area button:hover, messagedialog .dialog-action-area button:active {
   color: white;
+}
+
+messagedialog .dialog-action-area button:hover {
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.06);
+}
+
+messagedialog .dialog-action-area button:active {
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.06);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.06) 10%, transparent 0%);
 }
 
 messagedialog .dialog-action-area button:first-child {
@@ -3730,7 +3739,7 @@ messagedialog.csd.background {
 
 messagedialog.csd .dialog-action-area button {
   padding: 8px 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   color: rgba(255, 255, 255, 0.8);
 }
