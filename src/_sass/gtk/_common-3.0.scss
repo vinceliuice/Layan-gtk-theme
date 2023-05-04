@@ -1952,6 +1952,14 @@ notebook {
 
     button.combo { @extend %combo_flat; }
   }
+
+  > header {
+    button {
+      min-height: $small_size;
+      min-width: $small_size;
+      padding: $container_padding;
+    }
+  }
 }
 
 
@@ -3904,7 +3912,7 @@ colorchooser .popover.osd {
  * Window Decorations *
  **********************/
 decoration {
-  transition: $shadow_transition;
+  transition: none;
   border-radius: $windows_radius;
   box-shadow: $shadow_4, 0 0 32px transparent;
 
@@ -3912,6 +3920,7 @@ decoration {
   margin: 10px;
 
   &:backdrop {
+    transition: $shadow_transition;
     // the transparent shadow here is to enforce that the shadow extents don't
     // change when we go to backdrop, to prevent jumping windows.
     // The biggest shadow should be in the same order then in the active state
