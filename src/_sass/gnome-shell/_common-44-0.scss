@@ -58,6 +58,10 @@
   border-radius: 99px;
   color: $inverse_secondary_fg_color;
   icon-size: 24px;
+
+  &:insensitive { @include button(flat-insensitive, $tc:$inverse_fg_color); }
+  &:hover { @include button(flat-hover, $tc:$inverse_fg_color); }
+  &:active { @include button(flat-active, $tc:$inverse_fg_color); }
 }
 
 // Dash
@@ -246,6 +250,10 @@ $window_close_button_padding: 3px;
     &:ltr { padding-right: $base_padding * 3 !important; padding-left: $base_padding * 3 !important; }
     &:rtl { padding-left: $base_padding * 3 !important; padding-right: $base_padding * 3 !important; }
   }
+
+  .popup-sub-menu .popup-menu-item {
+    background-color: transparent;
+  }
 }
 
 // separator
@@ -326,13 +334,17 @@ $window_close_button_padding: 3px;
   spacing-columns: $base_padding * 2;
 }
 
-.quick-toggle {
+.quick-toggle, .quick-menu-toggle {
   border-radius: $circular_radius;
   min-width: 12em;
   max-width: 12em;
   min-height: 42px;
   border: none;
+}
+
+.quick-toggle {
   background-color: $divider_color !important;
+  color: $fg_color;
 
   &:hover {
     background-color: $semi_fill_color !important;
@@ -347,12 +359,12 @@ $window_close_button_padding: 3px;
     color: $inverse_fg_color;
 
     &:hover {
-      background-color: mix($button_fg_color, $primary_color, 6%) !important;
+      background-color: mix($inverse_fg_color, $primary_color, 6%) !important;
       color: $inverse_fg_color;
     }
 
     &:active {
-      background-color: mix($button_fg_color, $primary_color, 15%) !important;
+      background-color: mix($inverse_fg_color, $primary_color, 15%) !important;
       color: $inverse_fg_color;
     }
   }
@@ -374,22 +386,63 @@ $window_close_button_padding: 3px;
   &:ltr > StBoxLayout { padding-right: 0; }
   &:rtl > StBoxLayout { padding-left: 0; }
 
+  .quick-toggle {
+    min-width: auto;
+    max-width: auto;
+
+    &:ltr { border-radius: 99px 0 0 99px; }
+    &:ltr > StBoxLayout { padding-right: $base_padding * 1.5; }
+    &:rtl { border-radius: 0 99px 99px 0; }
+    &:rtr > StBoxLayout { padding-left: $base_padding * 1.5; }
+
+    &:ltr:last-child { border-radius: 99px; }
+    &:rtl:last-child { border-radius: 99px; }
+  }
+
   .quick-toggle-arrow {
     background-color: $divider_color !important;
     padding: $base_padding $base_padding * 1.75;
+    border-width: 0;
+    color: $fg_color;
 
-    &:active {
+    background-color: $divider_color !important;
+
+    &:hover {
       background-color: $semi_fill_color !important;
     }
+  
+    &:active {
+      background-color: $track_color !important;
+    }
+  
+    &:checked {
+      background-color: $primary_color !important;
+      color: $inverse_fg_color;
+  
+      &:hover {
+        background-color: mix($inverse_fg_color, $primary_color, 6%) !important;
+        color: $inverse_fg_color;
+      }
+  
+      &:active {
+        background-color: mix($inverse_fg_color, $primary_color, 15%) !important;
+        color: $inverse_fg_color;
+      }
+    }
 
-    &:ltr { border-radius: 0 $circular_radius $circular_radius 0; }
-    &:rtl { border-radius: $circular_radius 0 0 $circular_radius; }
+    &:ltr {
+      border-radius: 0 $circular_radius $circular_radius 0;
+      border-left-width: 0;
+    }
+
+    &:rtl {
+      border-radius: $circular_radius 0 0 $circular_radius;
+      border-right-width: 0;
+    }
   }
 }
 
 .quick-slider {
-  padding: 0 $base_padding;
-
   & > StBoxLayout { spacing: $base_padding; }
 
   .slider-bin {
@@ -406,6 +459,7 @@ $window_close_button_padding: 3px;
   .icon-button {
     background-color: transparent;
     color: $button_fg_color !important;
+    padding: $base_padding * 1.5;
 
     &:hover {
       background-color: $divider_color;
@@ -461,6 +515,14 @@ $window_close_button_padding: 3px;
         color: $inverse_fg_color;
       }
     }
+
+    & .title {
+      @extend %title_3;
+    }
+
+    & .subtitle {
+      @extend %caption_heading;
+    }
   }
 }
 
@@ -493,4 +555,252 @@ $window_close_button_padding: 3px;
 
 .nm-network-item {
   .wireless-secure-icon { icon-size: 0.5 * 16px; }
+}
+
+.bt-device-item {
+  .popup-menu-icon { -st-icon-style: symbolic; }
+}
+
+.bt-menu-placeholder.popup-menu-item {
+  @extend %title_4;
+  text-align: center;
+
+  padding: 2em 4em;
+}
+
+.device-subtitle { color: transparentize($fg_color, 0.5); }
+
+// background apps
+
+.background-apps-quick-toggle {
+  min-height: 40px;
+  background-color: transparent;
+
+  & StIcon { icon-size: 16px !important; }
+}
+
+.background-app-item {
+  & .title { @extend %heading; }
+  & .subtitle { @extend %caption; }
+  & .popup-menu-icon {
+    icon-size: 32px !important;
+    -st-icon-style: regular !important;
+  }
+  & .close-button {
+    @extend .icon-button;
+    padding: $base_padding;
+  }
+
+  &.popup-inactive-menu-item { color: $fg_color; }
+}
+
+//
+// Screenshot UI
+//
+
+.icon-label-button-container {
+  spacing: $base_padding;
+  @extend %caption;
+
+  StIcon { icon-size: 32px;}
+}
+
+$screenshot_ui_panel_padding: $base_padding * 3;
+$screenshot_ui_shot_cast_margin: 21px;
+$screenshot_ui_panel_border_radius: $windows_radius + $screenshot_ui_shot_cast_margin;
+$screenshot_ui_shot_cast_spacing: 3px;
+
+$screenshot_ui_button_red: $error_color;
+
+.screenshot-ui-panel {
+  @extend %osd_panel;
+  border-radius: $screenshot_ui_panel_border_radius;
+  padding: $screenshot_ui_panel_padding;
+  // Reduce the bottom padding a little to accommodate the large capture button.
+  padding-bottom: $screenshot_ui_panel_padding - 6px;
+  margin-bottom: 4em;
+  spacing: $base_padding * 2;
+}
+
+.screenshot-ui-close-button {
+  @extend .window-close; // copy window close button
+  padding: $base_padding !important; // but with more padding
+  margin-top: 12px;
+  box-shadow: 0 2px 4px 0 rgba(black, 0.15);
+  &.left { margin-left: 12px; }
+  &.right { margin-right: 12px; }
+}
+
+.screenshot-ui-type-button {
+  @extend %osd_button;
+  min-width: 48px;
+  padding: $base_padding * 2 $base_padding * 3 !important;
+  border-radius: $screenshot_ui_panel_border_radius - $screenshot_ui_panel_padding;
+}
+
+.screenshot-ui-capture-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  border: 4px $inverse_fg_color;
+  padding: 4px;
+
+  .screenshot-ui-capture-button-circle {
+    background-color: $inverse_secondary_fg_color;
+    transition-duration: 200ms;
+    border-radius: 99px;
+
+    &:hover, &:focus { background-color: $inverse_fg_color; }
+    &:active { background-color: $inverse_disabled_secondary_fg_color; }
+  }
+
+  &:hover, &:focus {
+    .screenshot-ui-capture-button-circle {
+      background-color: $inverse_fg_color;
+    }
+  }
+
+  &:active {
+    .screenshot-ui-capture-button-circle {
+      background-color: $inverse_disabled_secondary_fg_color;
+    }
+  }
+
+  &:cast {
+    .screenshot-ui-capture-button-circle {
+      background-color: $screenshot_ui_button_red;
+    }
+    &:hover, &:focus {
+      .screenshot-ui-capture-button-circle {
+        background-color: lighten($screenshot_ui_button_red, 5%);
+      }
+    }
+    &:active {
+      .screenshot-ui-capture-button-circle {
+        background-color: darken($screenshot_ui_button_red, 7%);
+      }
+    }
+  }
+}
+
+.screenshot-ui-shot-cast-container {
+  background-color: lighten($gdm_bg_color, 5%);
+  border-radius: $windows_radius;
+  padding: $screenshot_ui_shot_cast_spacing;
+  spacing: $screenshot_ui_shot_cast_spacing;
+
+  &:ltr { margin-left: $screenshot_ui_shot_cast_margin - $screenshot_ui_panel_padding; }
+  &:rtl { margin-right: $screenshot_ui_shot_cast_margin - $screenshot_ui_panel_padding; }
+}
+
+.screenshot-ui-shot-cast-button {
+  padding: $base_padding $base_padding * 2;
+  background-color: transparent;
+
+  &:hover, &:focus { background-color: lighten($gdm_bg_color, 10%); }
+  &:active { background-color: lighten($gdm_bg_color, 15%); }
+  &:checked { background-color: white; color: black; }
+  &:insensitive { color: transparentize($inverse_fg_color, 0.5); }
+
+  border-radius: $windows_radius - $screenshot_ui_shot_cast_spacing;
+
+  StIcon { icon-size: 16px; }
+}
+
+.screenshot-ui-show-pointer-button {
+  @extend %osd_button;
+  border-radius: 99px;
+  padding: $base_padding * 2 !important;
+  StIcon { icon-size: 16px; }
+}
+
+.screenshot-ui-area-indicator-shade {
+  background-color: rgba(0,0,0,.3);
+}
+
+.screenshot-ui-area-selector {
+  .screenshot-ui-area-indicator-shade {
+    background-color: rgba(0,0,0,.5);
+  }
+
+  .screenshot-ui-area-indicator-selection {
+    border: 2px white;
+  }
+}
+
+.screenshot-ui-area-selector-handle {
+  border-radius: 99px;
+  background-color: white;
+  box-shadow: 0 1px 3px 2px rgba(0,0,0,0.2);
+  width: 24px;
+  height: 24px;
+}
+
+.screenshot-ui-window-selector {
+  background-color: $gdm_bg_color;
+
+  .screenshot-ui-window-selector-window-container {
+    margin: 100px;
+  }
+
+  &:primary-monitor {
+    .screenshot-ui-window-selector-window-container {
+      // Make some room for the panel.
+      margin-bottom: 200px;
+    }
+  }
+}
+
+.screenshot-ui-window-selector-window-border {
+  transition-duration: 200ms;
+  border-radius: $windows_radius;
+  border: 6px transparent;
+}
+
+.screenshot-ui-window-selector-check {
+  transition-duration: 200ms;
+  color: transparent;
+  border-radius: 99px;
+  border-width: 12px;
+  icon-size: 24px;
+}
+
+.screenshot-ui-window-selector-window {
+  &:hover {
+    .screenshot-ui-window-selector-window-border {
+      border-color: darken($primary_color, 15%);
+    }
+  }
+  &:checked {
+    .screenshot-ui-window-selector-window-border {
+      border-color: $primary_color;
+      background-color: transparentize($primary_color, 0.8);
+    }
+
+    .screenshot-ui-window-selector-check {
+      color: $inverse_fg_color;
+      background-color: $primary_color;
+    }
+  }
+}
+
+.screenshot-ui-screen-selector {
+  transition-duration: 200ms;
+  background-color: rgba(0,0,0,.5);
+
+  &:hover { background-color: rgba(0,0,0,.3);}
+  &:active { background-color: rgba(0,0,0,.7);}
+  &:checked {
+    background-color: transparent;
+    border: 2px white;
+  }
+}
+
+.screenshot-ui-tooltip {
+  color: $inverse_fg_color;
+  background-color: $gdm_bg_color;
+  border-radius: 99px;
+  padding: $base_padding $base_padding * 2;
+  text-align: center;
+  -y-offset: 24px;
 }
