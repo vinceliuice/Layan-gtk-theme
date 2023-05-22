@@ -102,13 +102,11 @@ install() {
   mkdir -p                                                                           ${THEME_DIR}/gtk-3.0
   ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-3.0/assets
   cp -ur ${SRC_DIR}/src/gtk/3.0/gtk${color}${solid}.css                              ${THEME_DIR}/gtk-3.0/gtk.css
-  [[ ${color} != '-Dark' ]] && \
   cp -ur ${SRC_DIR}/src/gtk/3.0/gtk-Dark${solid}.css                                 ${THEME_DIR}/gtk-3.0/gtk-dark.css
 
   mkdir -p                                                                           ${THEME_DIR}/gtk-4.0
   ln -sf ../gtk-assets                                                               ${THEME_DIR}/gtk-4.0/assets
   cp -ur ${SRC_DIR}/src/gtk/4.0/gtk${color}${solid}.css                              ${THEME_DIR}/gtk-4.0/gtk.css
-  [[ ${color} != '-Dark' ]] && \
   cp -ur ${SRC_DIR}/src/gtk/4.0/gtk-Dark${solid}.css                                 ${THEME_DIR}/gtk-4.0/gtk-dark.css
 
   mkdir -p                                                                           ${THEME_DIR}/xfwm4

@@ -924,6 +924,8 @@ StScrollBar {
   transition-duration: 250ms;
   font-weight: bold;
   height: 2.2em;
+  border: none;
+  box-shadow: none;
   @extend %numeric;
 
   &:overview,
