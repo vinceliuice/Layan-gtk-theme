@@ -734,7 +734,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0 !important;
 }
 
-.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item:checked.selected {
   background-color: #6f70f7 !important;
   color: #FFFFFF !important;
 }
@@ -3363,17 +3363,17 @@ StWidget.focused .app-well-app-running-dot {
 
 .quick-toggle:checked {
   background-color: #5657f5 !important;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 
 .quick-toggle:checked:hover {
-  background-color: rgba(83, 84, 238, 0.979) !important;
-  color: #FFFFFF;
+  background-color: #6061f6 !important;
+  color: #FFFFFF !important;
 }
 
 .quick-toggle:checked:active {
-  background-color: rgba(79, 80, 226, 0.9475) !important;
-  color: #FFFFFF;
+  background-color: #6f70f7 !important;
+  color: #FFFFFF !important;
 }
 
 .quick-toggle > StBoxLayout {

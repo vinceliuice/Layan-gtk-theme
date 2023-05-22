@@ -344,16 +344,16 @@ $window_close_button_padding: 3px;
 
   &:checked {
     background-color: $primary_color !important;
-    color: $inverse_fg_color;
+    color: $inverse_fg_color !important;
 
     &:hover {
-      background-color: mix($button_fg_color, $primary_color, 6%) !important;
-      color: $inverse_fg_color;
+      background-color: mix($inverse_fg_color, $primary_color, 6%) !important;
+      color: $inverse_fg_color !important;
     }
 
     &:active {
-      background-color: mix($button_fg_color, $primary_color, 15%) !important;
-      color: $inverse_fg_color;
+      background-color: mix($inverse_fg_color, $primary_color, 15%) !important;
+      color: $inverse_fg_color !important;
     }
   }
 
