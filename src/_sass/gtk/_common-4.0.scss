@@ -3436,7 +3436,7 @@ filechooserbutton:drop(active) {
 
 .sidebar {
   border-style: none;
-  background-color: $lighter_bg_color;
+  background-color: $sidebar_bg_color;
 
   @at-root %sidebar_left,
   &:dir(ltr),
@@ -3472,6 +3472,10 @@ flap .sidebar { // reset
   &.right {
     border-left: none;
   }
+}
+
+separator.sidebar {
+  background-color: $border_color;
 }
 
 stacksidebar {

@@ -3855,7 +3855,7 @@ filechooserbutton:drop(active) {
  ***********/
 .sidebar {
   border-style: none;
-  background-color: #44454b;
+  background-color: #3c3c46;
 }
 
 .sidebar:dir(ltr), .sidebar.left, .sidebar.left:dir(rtl) {
@@ -3893,6 +3893,10 @@ leaflet .sidebar.right,
 flap .sidebar:dir(rtl),
 flap .sidebar.right {
   border-left: none;
+}
+
+separator.sidebar {
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 stacksidebar list.separators:not(.horizontal) > row:not(.separator) {

@@ -3822,7 +3822,7 @@ stacksidebar .frame list:dir(rtl) {
 
 .sidebar {
   border-style: none;
-  background-color: #f4f4f9;
+  background-color: #FFFFFF;
 }
 
 stacksidebar.sidebar:dir(ltr) list, stacksidebar.sidebar.left list, stacksidebar.sidebar.left:dir(rtl) list, .sidebar:dir(ltr), .sidebar.left {
