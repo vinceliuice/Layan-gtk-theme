@@ -1332,11 +1332,13 @@ StScrollBar {
 .events-button {
   .events-box {
     spacing: 6px;
+    color: $secondary_fg_color;
   }
 
   .events-list {
     spacing: 12px;
     text-shadow: none;
+    color: $secondary_fg_color;
   }
 
   .event-time {
