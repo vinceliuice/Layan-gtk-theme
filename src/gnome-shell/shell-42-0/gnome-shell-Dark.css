@@ -3152,9 +3152,6 @@ StWidget.focused .app-well-app-running-dot {
 
 #overviewGroup {
   background-color: #25252d;
-  background-image: url("assets/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #unlockDialogNotifications StButton#vhandle, #unlockDialogNotifications StButton#hhandle {
