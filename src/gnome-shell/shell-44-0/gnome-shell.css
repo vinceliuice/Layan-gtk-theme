@@ -352,8 +352,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Switches */
 .toggle-switch {
-  width: 40px;
-  height: 20px;
+  width: 46px;
+  height: 30px;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
 }

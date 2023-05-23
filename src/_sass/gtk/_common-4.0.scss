@@ -2352,6 +2352,8 @@ headerbar {
     min-height: $medium_size;
     padding: 0;
     box-shadow: inset 0 1px $titlebar_highlight_color;
+    background-color: $titlebar_bg_color;
+    background-image: none;
 
     .tiled &,
     .maximized &,
