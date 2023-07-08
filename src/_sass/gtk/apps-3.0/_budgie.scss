@@ -89,11 +89,17 @@
 
 .budgie-popover {
   border-color: rgba($lighter_bg_color, 1);
-  border-radius: $material_radius + 1px;
+  border-radius: $menu_radius + 1px;
   box-shadow: $shadow_2;
   background-color: rgba($menu_bg_color, 1);
 
-  .container { padding: 2px; }
+  .container {
+    padding: $container_padding;
+
+    .container {
+      padding: 0;
+    }
+  }
 
   border { border: none; }
 
@@ -109,6 +115,7 @@
 
   button {
     @extend %simple_flat_button;
+    border-radius: $menu_radius + 1px - $container_padding;
 
     &:checked {
       color: white;
@@ -145,22 +152,22 @@
   }
 
   &.user-menu {
-    .container { padding: 8px; }
-
-    separator { margin: 4px 0; }
+    separator { margin: $container_padding / 2 0; }
   }
 
   &.sound-popover {
-    separator { margin: 3px 0; }
+    separator { margin: $container_padding / 2 0; }
+  }
+
+  &.caffeine-popover {
+    .container { padding: $container_padding * 1.5; }
   }
 
   &.night-light-indicator {
-    .container { padding: 8px; }
+    .container { padding: $container_padding * 1.5; }
   }
 
   &.places-menu {
-    .container { padding: 8px; }
-
     .places-list:not(.always-expand) {
       margin-top: 4px;
       padding-top: 4px;
@@ -175,9 +182,9 @@
   }
 
   &.workspace-popover {
-    .container { padding: 2px 8px 8px; }
+    .container { padding: 2px $container_padding $container_padding; }
 
-    separator { margin: 4px 0; }
+    separator { margin: $container_padding / 2 0; }
 
     flowboxchild { padding: 0; }
   }
@@ -264,10 +271,14 @@ window.budgie-popover:not(.csd) {
   entry.search { background-color: transparent; }
 
   entry.search {
-    border-bottom: 1px solid $border_color;
     border-radius: 0;
-    box-shadow: none;
     font-size: 120%;
+
+    @include entry(flat-normal);
+
+    &:focus {
+      @include entry(flat-focus);
+    }
   }
 
   .categories {
@@ -296,6 +307,46 @@ window.budgie-popover:not(.csd) {
     padding: 0;
 
     &:hover { box-shadow: none; }
+  }
+
+  list.left-overlay-menu {
+    box-shadow: shadow_4, inset 0 1px $highlight_color;
+    background-color: $base_color;
+    padding: $container_padding;
+    margin: $container_padding;
+    border-radius: $menu_radius;
+
+    > row.activatable {
+      border-radius: $menu_radius - $container_padding;
+
+      &:not(:last-child) {
+        margin-bottom: $container_padding / 2;
+      }
+
+      button.menuitem {
+        border-radius: $menu_radius - $container_padding;
+      }
+    }
+  }
+
+  .budgie-menu-footer {
+    border-top: 1px solid $border_color;
+    padding: $container_padding;
+
+    button.flat {
+      min-height: 16px;
+      min-width: 16px;
+      padding: $container_padding;
+      border-radius: $menu_radius - $container_padding;
+
+      &.image-button {
+        border-radius: $circular_radius;
+
+        &:not(.last-child) {
+          margin-right: $container_padding;
+        }
+      }
+    }
   }
 }
 

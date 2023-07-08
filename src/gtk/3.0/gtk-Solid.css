@@ -7410,13 +7410,17 @@ box.vertical > stack > box.vertical .raven-background > viewport.frame list > ro
 
 .budgie-popover {
   border-color: #f4f4f9;
-  border-radius: 6px;
+  border-radius: 9px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06);
   background-color: #3c3c46;
 }
 
 .budgie-popover .container {
-  padding: 2px;
+  padding: 4px;
+}
+
+.budgie-popover .container .container {
+  padding: 0;
 }
 
 .budgie-popover border {
@@ -7438,6 +7442,10 @@ box.vertical > stack > box.vertical .raven-background > viewport.frame list > ro
 .budgie-popover switch {
   margin-left: 56px;
   margin-right: 6px;
+}
+
+.budgie-popover button {
+  border-radius: 5px;
 }
 
 .budgie-popover button:checked {
@@ -7480,24 +7488,20 @@ box.vertical > stack > box.vertical .raven-background > viewport.frame list > ro
   padding: 0;
 }
 
-.budgie-popover.user-menu .container {
-  padding: 8px;
-}
-
 .budgie-popover.user-menu separator {
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
 .budgie-popover.sound-popover separator {
-  margin: 3px 0;
+  margin: 2px 0;
+}
+
+.budgie-popover.caffeine-popover .container {
+  padding: 6px;
 }
 
 .budgie-popover.night-light-indicator .container {
-  padding: 8px;
-}
-
-.budgie-popover.places-menu .container {
-  padding: 8px;
+  padding: 6px;
 }
 
 .budgie-popover.places-menu .places-list:not(.always-expand) {
@@ -7512,11 +7516,11 @@ box.vertical > stack > box.vertical .raven-background > viewport.frame list > ro
 }
 
 .budgie-popover.workspace-popover .container {
-  padding: 2px 8px 8px;
+  padding: 2px 4px 4px;
 }
 
 .budgie-popover.workspace-popover separator {
-  margin: 4px 0;
+  margin: 2px 0;
 }
 
 .budgie-popover.workspace-popover flowboxchild {
@@ -7607,10 +7611,18 @@ window.budgie-popover:not(.csd) > frame.container > border {
 }
 
 .budgie-menu entry.search {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 0;
-  box-shadow: none;
   font-size: 120%;
+  transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.budgie-menu entry.search:focus {
+  border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
 }
 
 .budgie-menu .categories:dir(ltr) {
@@ -7643,6 +7655,46 @@ window.budgie-popover:not(.csd) > frame.container > border {
 
 .budgie-menu row:hover {
   box-shadow: none;
+}
+
+.budgie-menu list.left-overlay-menu {
+  box-shadow: shadow_4, inset 0 1px rgba(255, 255, 255, 0.4);
+  background-color: #FFFFFF;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 8px;
+}
+
+.budgie-menu list.left-overlay-menu > row.activatable {
+  border-radius: 4px;
+}
+
+.budgie-menu list.left-overlay-menu > row.activatable:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.budgie-menu list.left-overlay-menu > row.activatable button.menuitem {
+  border-radius: 4px;
+}
+
+.budgie-menu .budgie-menu-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 4px;
+}
+
+.budgie-menu .budgie-menu-footer button.flat {
+  min-height: 16px;
+  min-width: 16px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.budgie-menu .budgie-menu-footer button.flat.image-button {
+  border-radius: 9999px;
+}
+
+.budgie-menu .budgie-menu-footer button.flat.image-button:not(.last-child) {
+  margin-right: 4px;
 }
 
 popover.background.user-menu {
