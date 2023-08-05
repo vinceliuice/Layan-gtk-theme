@@ -3975,14 +3975,14 @@ headerbar {
     &:not(.empty) {
       &.start:dir(ltr),
       &.end:dir(rtl) {
-        padding: 0 $container-padding * 2;
-        margin-right: $container-padding;
+        padding: 0 $container_padding * 2;
+        margin-right: $container_padding;
       }
 
       &.start:dir(rtl),
       &.end:dir(ltr) {
-        padding: 0 $container-padding * 2;
-        margin-left: $container-padding;
+        padding: 0 $container_padding * 2;
+        margin-left: $container_padding;
       }
     }
 

@@ -34,8 +34,8 @@
 #shutdown_dialog,
 #restart_dialog {
   margin: 8px;
-  border-radius: $buttons_radius;
-  box-shadow: $shadow_2, inset 0 1px $highlight_color;
+  border-radius: 0;
+  box-shadow: none;
   background-color: $lighter_bg_color;
 }
 
@@ -43,6 +43,7 @@
 #content_frame {
   padding-bottom: 20px;
   border-bottom: 1px solid $border_color;
+  background-color: transparent;
 }
 
 #login_window {
@@ -54,35 +55,31 @@
 }
 
 // the buttons, alternatively this could also be done with a simple ".lightdm-gtk-greeter button"
-#login_window button,
-#shutdown_dialog button,
-#restart_dialog button {
-}
+// #login_window button,
+// #shutdown_dialog button,
+// #restart_dialog button { }
 
 .lightdm-gtk-greeter button { @extend %simple_flat_button; }
 
 // the user's avatar box
-#user_image {
-}
+// #user_image {}
 
 // the border around the user's avatar box
-#user_image_border {
-}
+// #user_image_border {}
 
 // the lower half of the login-window, in GtkDialog terms the buttonbox or action area
 #buttonbox_frame {
   padding-top: 24px;
 
-  button { margin: -16px; }
+  > box,
+  > buttonbox { margin: -16px; }
 }
 
 // the shutdown button
-#shutdown_button {
-}
+// #shutdown_button {}
 
 // the restart button
-#restart_button {
-}
+// #restart_button {}
 
 // the warning, in case a wrong password is entered or something else goes wrong according to PAM
 #greeter_infobar {
