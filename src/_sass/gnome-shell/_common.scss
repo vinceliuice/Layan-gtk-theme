@@ -923,9 +923,11 @@ StScrollBar {
   background-color: $panel_bg_color;
   transition-duration: 250ms;
   font-weight: bold;
-  height: 2.2em;
+  height: 2.4em;
   border: none;
   box-shadow: none;
+  border-radius: 0 0 14px 14px;
+  margin-bottom: 4px;
   @extend %numeric;
 
   &:overview,
@@ -961,10 +963,12 @@ StScrollBar {
     -minimum-hpadding: $base_padding * 2;
     font-weight: bold;
     color: $panel_secondary_fg_color;
+    background-color: $panel_button_bg_color;
     text-shadow: none;
     transition-duration: $longer_duration;
-    border-radius: 0;
+    border-radius: 14px;
     border: none;
+    margin: 4px;
 
     &.clock-display {
       &, &:active, &:overview, &:focus, &:checked {

@@ -8,7 +8,7 @@
 }
 
 @function fade($c) {
-  @return mix($c, $blue_grey_900, 50%);
+  @return mix($c, $purple_3, 50%);
 }
 
 // Foreground colors
@@ -41,7 +41,7 @@ $inverse_track_color:                 rgba($white, 0.3);
 $inverse_divider_color:               rgba($white, 0.12);
 
 $panel_fg_color:                      if($titlebar == 'light', rgba($white, 0.8), rgba($white, 0.8));
-$panel_secondary_fg_color:            if($titlebar == 'light', rgba($white, 0.68), rgba($white, 0.68));
+$panel_secondary_fg_color:            if($titlebar == 'light', rgba($purple_3, 0.68), rgba($purple_3, 0.68));
 $panel_hint_fg_color:                 if($titlebar == 'light', rgba($white, 0.5), rgba($white, 0.5));
 $panel_disabled_fg_color:             if($titlebar == 'light', rgba($white, 0.5), rgba($white, 0.5));
 $panel_disabled_secondary_fg_color:   if($titlebar == 'light', rgba($white, 0.3), rgba($white, 0.3));
@@ -49,30 +49,31 @@ $panel_track_color:                   if($titlebar == 'light', rgba($white, 0.3)
 $panel_divider_color:                 if($titlebar == 'light', rgba($white, 0.12), rgba($white, 0.12));
 
 // Background colors
-$bg_color:         if($variant == 'light', $blue_grey_50, fade($blue_grey_800));
+$bg_color:         if($variant == 'light', $blue_grey_50, fade($purple_1));
 $base_color:       if($variant == 'light', $white, fade($blue_grey_850));
 $alt_base_color:   if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 3%));
 $lighter_bg_color: if($variant == 'light', $blue_grey_50, $blue_grey_750);
-$alt_lighter_bg_color: if($variant == 'light', $blue_grey_100, fade($blue_grey_800)); // for gnome-shell sub menu
-$darker_bg_color:  if($variant == 'light', $blue_grey_200, fade($blue_grey_900));
-$keyboard_bg_color:  if($variant == 'light', $blue_grey_50, fade($blue_grey_800)); // for gnome-shell keyboard
-$alt_keyboard_bg_color:  if($variant == 'light', $blue_grey_200, fade($blue_grey_900)); // for gnome-shell keyboard
+$alt_lighter_bg_color: if($variant == 'light', $blue_grey_100, fade($purple_1)); // for gnome-shell sub menu
+$darker_bg_color:  if($variant == 'light', $blue_grey_200, fade($purple_3));
+$keyboard_bg_color:  if($variant == 'light', $blue_grey_50, fade($purple_1)); // for gnome-shell keyboard
+$alt_keyboard_bg_color:  if($variant == 'light', $blue_grey_200, fade($purple_3)); // for gnome-shell keyboard
 
 $button_bg_color: if($variant == 'light', $base_color, $lighter_bg_color);
 
 $titlebar_bg_color:     if($titlebar == 'light', $white, fade($blue_grey_850));
-$alt_titlebar_bg_color: if($titlebar == 'light', $blue_grey_50, $blue_grey_800);
+$alt_titlebar_bg_color: if($titlebar == 'light', $blue_grey_50, $purple_1);
 
 $sidebar_bg_color:      if($variant == 'light', $white, $blue_grey_850);
 $alt_sidebar_bg_color:  if($variant == 'light', $white, $blue_grey_850);
 
-$panel_bg_color:         rgba($blue_grey_900, $secondary_opacity + 0.1);
-$alt_panel_bg_color:     rgba($blue_grey_800, $secondary_opacity + 0.1);
+$panel_bg_color:         rgba($purple_1, $secondary_opacity + 0.1);
+$panel_button_bg_color:  rgba($green_4, $secondary_opacity + 0.1);
+$alt_panel_bg_color:     rgba($purple_1, $secondary_opacity + 0.1);
 $inverse_panel_bg_color: rgba($inverse_fg_color, 0.1);
-$solid_panel_bg_color:   if($titlebar == 'dark', $blue_grey_900, $blue_grey_900);
-$opaque_panel_bg_color:  if($titlebar == 'dark', $blue_grey_900, $blue_grey_900); // for Unity panel which cannot use translucent colors
+$solid_panel_bg_color:   if($titlebar == 'dark', $purple_3, $purple_3);
+$opaque_panel_bg_color:  if($titlebar == 'dark', $purple_3, $purple_3); // for Unity panel which cannot use translucent colors
 
-$gdm_bg_color:  if($variant == 'light', $blue_grey_800, $blue_grey_900);
+$gdm_bg_color:  if($variant == 'light', $purple_1, $purple_3);
 
 $menu_bg_color:     if($titlebar == 'light' and $variant == 'light', $base_color, $blue_grey_850);
 $menu_fg_color:     if($titlebar == 'light' and $variant == 'light', rgba($black, 0.54), rgba($white, 0.7));
@@ -130,7 +131,7 @@ $alt_highlight_color:      rgba($white, 0.2); // for selection-mode headerbar wh
 $titlebar_indicator_color: if($titlebar == 'dark', currentColor, $primary_color);
 
 // for Electron/Atom menu which cannot use translucent colors
-$opaque_fg_color:           if($variant == 'light', $blue_grey_900, $white);
+$opaque_fg_color:           if($variant == 'light', $purple_3, $white);
 $opaque_secondary_fg_color: if($variant == 'light', $blue_grey_600, mix($white, $base_color, percentage(0.7)));
 $opaque_disabled_fg_color:  if($variant == 'light', $blue_grey_500, mix($white, $base_color, percentage(0.5)));
 $opaque_divider_color:      if($variant == 'light', $blue_grey_300, mix($white, $base_color, percentage(0.12)));
