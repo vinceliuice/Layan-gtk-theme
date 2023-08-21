@@ -12,7 +12,7 @@ fi
 
 SRC_DIR=$(cd $(dirname $0) && pwd)
 
-THEME_NAME=Layan
+THEME_NAME=EVA-01-Rebuild
 COLOR_VARIANTS=('' '-Light' '-Dark')
 SOLID_VARIANTS=('' '-Solid')
 

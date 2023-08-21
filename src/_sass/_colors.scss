@@ -49,22 +49,22 @@ $panel_track_color:                   if($titlebar == 'light', rgba($white, 0.3)
 $panel_divider_color:                 if($titlebar == 'light', rgba($white, 0.12), rgba($white, 0.12));
 
 // Background colors
-$bg_color:         if($variant == 'light', $blue_grey_50, fade($purple_1));
-$base_color:       if($variant == 'light', $white, fade($blue_grey_850));
+$bg_color:         if($variant == 'light', $purple_0, fade($purple_1));
+$base_color:       if($variant == 'light', $white, fade($purple_3));
 $alt_base_color:   if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 3%));
-$lighter_bg_color: if($variant == 'light', $blue_grey_50, $blue_grey_750);
-$alt_lighter_bg_color: if($variant == 'light', $blue_grey_100, fade($purple_1)); // for gnome-shell sub menu
+$lighter_bg_color: if($variant == 'light', $purple_0, $purple_3);
+$alt_lighter_bg_color: if($variant == 'light', $blue_sky, fade($purple_1)); // for gnome-shell sub menu
 $darker_bg_color:  if($variant == 'light', $blue_grey_200, fade($purple_3));
-$keyboard_bg_color:  if($variant == 'light', $blue_grey_50, fade($purple_1)); // for gnome-shell keyboard
+$keyboard_bg_color:  if($variant == 'light', $purple_0, fade($purple_1)); // for gnome-shell keyboard
 $alt_keyboard_bg_color:  if($variant == 'light', $blue_grey_200, fade($purple_3)); // for gnome-shell keyboard
 
 $button_bg_color: if($variant == 'light', $base_color, $lighter_bg_color);
 
-$titlebar_bg_color:     if($titlebar == 'light', $white, fade($blue_grey_850));
-$alt_titlebar_bg_color: if($titlebar == 'light', $blue_grey_50, $purple_1);
+$titlebar_bg_color:     if($titlebar == 'light', $white, fade($purple_3));
+$alt_titlebar_bg_color: if($titlebar == 'light', $purple_0, $purple_1);
 
-$sidebar_bg_color:      if($variant == 'light', $white, $blue_grey_850);
-$alt_sidebar_bg_color:  if($variant == 'light', $white, $blue_grey_850);
+$sidebar_bg_color:      if($variant == 'light', $white, $purple_3);
+$alt_sidebar_bg_color:  if($variant == 'light', $white, $purple_3);
 
 $panel_bg_color:         rgba($purple_1, $secondary_opacity + 0.1);
 $panel_button_bg_color:  rgba($green_4, $secondary_opacity + 0.1);
@@ -75,7 +75,7 @@ $opaque_panel_bg_color:  if($titlebar == 'dark', $purple_3, $purple_3); // for U
 
 $gdm_bg_color:  if($variant == 'light', $purple_1, $purple_3);
 
-$menu_bg_color:     if($titlebar == 'light' and $variant == 'light', $base_color, $blue_grey_850);
+$menu_bg_color:     if($titlebar == 'light' and $variant == 'light', $base_color, $purple_3);
 $menu_fg_color:     if($titlebar == 'light' and $variant == 'light', rgba($black, 0.54), rgba($white, 0.7));
 $menu_disabled_fg:  if($titlebar == 'light' and $variant == 'light', rgba($black, 0.26), rgba($white, 0.3));
 $menu_border_color: if($titlebar == 'light' and $variant == 'light', rgba($black, 0.1), rgba($white, 0.1));
@@ -133,7 +133,7 @@ $titlebar_indicator_color: if($titlebar == 'dark', currentColor, $primary_color)
 // for Electron/Atom menu which cannot use translucent colors
 $opaque_fg_color:           if($variant == 'light', $purple_3, $white);
 $opaque_secondary_fg_color: if($variant == 'light', $blue_grey_600, mix($white, $base_color, percentage(0.7)));
-$opaque_disabled_fg_color:  if($variant == 'light', $blue_grey_500, mix($white, $base_color, percentage(0.5)));
+$opaque_disabled_fg_color:  if($variant == 'light', $purple_0, mix($white, $base_color, percentage(0.5)));
 $opaque_divider_color:      if($variant == 'light', $blue_grey_300, mix($white, $base_color, percentage(0.12)));
 
 // FIXME: gtk's @placeholder_text_color API really should use $secondary_fg_color,
