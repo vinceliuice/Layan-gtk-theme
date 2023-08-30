@@ -4148,7 +4148,7 @@ stackswitcher {
   }
 
   > button {
-    box-shadow: none;
+    @extend %flat_button;
     border-radius: $buttons_radius;
     padding-left: $container_padding + 2px;
     padding-right: $container_padding + 2px;

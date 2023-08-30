@@ -164,7 +164,11 @@
   }
 
   &.night-light-indicator {
-    .container { padding: $container_padding * 1.5; }
+    .view-header {
+      margin-left: 6px;
+    }
+
+    // .container { padding: $container_padding * 1.5; }
   }
 
   &.places-menu {
@@ -192,7 +196,6 @@
 
 // budgie specific popover widgets
 window.budgie-popover:not(.csd) {
-
   > frame.container {
     margin: 0 -1px -1px; // remove gap
 
@@ -310,7 +313,7 @@ window.budgie-popover:not(.csd) {
   }
 
   list.left-overlay-menu {
-    box-shadow: shadow_4, inset 0 1px $highlight_color;
+    box-shadow: $shadow_4, inset 0 1px $highlight_color;
     background-color: $base_color;
     padding: $container_padding;
     margin: $container_padding;
@@ -351,9 +354,9 @@ window.budgie-popover:not(.csd) {
 }
 
 // Menu Button
-button.budgie-menu-launcher {
-  // padding: 0 2px;
-}
+// button.budgie-menu-launcher {
+//   padding: 0 2px;
+// }
 
 // User Menu
 popover.background.user-menu {
@@ -436,6 +439,45 @@ popover.background.places-menu {
   font-weight: 500;
 
   &.transparent { background-color: $panel_bg_color; }
+
+  .bottom & {
+    &.dock-mode {
+      border-radius: $windows_radius $windows_radius 0 0;
+
+      .icon-tasklist {
+        > box > revealer {
+          &:first-child > button.launcher { border-top-left-radius: $windows_radius; }
+          &:last-child > button.launcher { border-top-right-radius: $windows_radius; }
+        }
+      }
+    }
+  }
+
+  .left & {
+    &.dock-mode {
+      border-radius: 0 $windows_radius $windows_radius 0;
+
+      .icon-tasklist {
+        > box > revealer {
+          &:first-child > button.launcher { border-top-right-radius: $windows_radius; }
+          &:last-child > button.launcher { border-bottom-right-radius: $windows_radius; }
+        }
+      }
+    }
+  }
+
+  .right & {
+    &.dock-mode {
+      border-radius: $windows_radius 0 0 $windows_radius;
+
+      .icon-tasklist {
+        > box > revealer {
+          &:first-child > button.launcher { border-top-left-radius: $windows_radius; }
+          &:last-child > button.launcher { border-bottom-left-radius: $windows_radius; }
+        }
+      }
+    }
+  }
 
   button {
     @extend %flat_button;
@@ -920,6 +962,18 @@ box.vertical > stack > box.vertical {
   }
 }
 
+.drop-shadow {
+  margin: 50px;
+  padding: $container_padding;
+  border-radius: $windows_radius;
+  box-shadow: $shadow_4, inset 0 1px $highlight_color;
+  background-color: rgba($lighter_bg_color, 0.95);
+
+  button { @extend %simple_flat_button; }
+
+  .linked > button { border-radius: $buttons_radius; }
+}
+
 // Notifications
 .budgie-notification-window { background-color: transparent; }
 
@@ -931,7 +985,7 @@ box.vertical > stack > box.vertical {
 
 // On Screen Display in Budgie
 .budgie-osd-window {
-  @extend .budgie-notification-window;
+  background-color: transparent;
 }
 
 // Internal part of the OSD
@@ -941,7 +995,7 @@ box.vertical > stack > box.vertical {
 
 // Alt+tab switcher in Budgie
 .budgie-switcher-window {
-  @extend .budgie-notification-window;
+  background-color: transparent;
 }
 
 // Internal part of the Switcher
@@ -949,16 +1003,18 @@ box.vertical > stack > box.vertical {
   @extend .budgie-notification;
 }
 
-.drop-shadow {
-  margin: 5px 9px;
-  padding: 3px;
-  border-radius: $buttons_radius;
-  box-shadow: $shadow_2, inset 0 1px $highlight_color;
-  background-color: rgba($lighter_bg_color, 0.95);
+// Session window
+.budgie-power-dialog {
+  &.background {
+    box-shadow: inset 0 1px $highlight_color;
+    background-color: rgba($lighter_bg_color, 0.95);
+    border-radius: $windows_radius + $container_padding;
+  }
 
-  button { @extend %simple_flat_button; }
-
-  .linked > button { border-radius: $buttons_radius; }
+  .titlebar {
+    background: none;
+    box-shadow: none;
+  }
 }
 
 %budgie_dialog {
@@ -1016,7 +1072,6 @@ box.vertical > stack > box.vertical {
 // Run Dialog
 .budgie-run-dialog {
   @extend %budgie_dialog;
-
   background-color: $base_color;
 
   entry.search {
