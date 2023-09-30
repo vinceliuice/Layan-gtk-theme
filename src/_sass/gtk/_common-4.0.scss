@@ -3929,34 +3929,30 @@ colorchooser .popover.osd {
  **********************/
 window {
   border: none;
-  outline: none;
-  transition: none;
 
   &.csd {
     border-radius: $windows_radius;
-    box-shadow: $shadow_4, 0 2px 2px transparent, 0 3px 3px transparent;
+    box-shadow: $shadow_4, 0 0 36px transparent;
     margin: 0;
+    outline: none;
+    transition: none;
 
     &:backdrop {
-      box-shadow: $shadow_2, 0 10px 16px transparent, 0 6px 10px transparent;
+      box-shadow: $shadow_2, 0 0 36px transparent;
       transition: $shadow_transition;
     }
 
-    // &.dialog.message {
-    //   border-radius: $windows_radius;
-    // }
+    &.maximized,
+    &.fullscreen,
+    &.tiled,
+    &.tiled-top,
+    &.tiled-right,
+    &.tiled-bottom,
+    &.tiled-left { border-radius: 0; }
+  
+    &.maximized,
+    &.fullscreen { box-shadow: none; }
   }
-
-  &.maximized,
-  &.fullscreen,
-  &.tiled,
-  &.tiled-top,
-  &.tiled-right,
-  &.tiled-bottom,
-  &.tiled-left { border-radius: 0; }
-
-  &.maximized,
-  &.fullscreen { box-shadow: none; }
 
   &.solid-csd {
     margin: 0;
@@ -3964,6 +3960,10 @@ window {
     border-radius: 0;
     box-shadow: inset 0 1px $highlight_color;
     background-color: $titlebar_bg_color;
+  }
+
+  &.ssd {
+    box-shadow: none;
   }
 }
 

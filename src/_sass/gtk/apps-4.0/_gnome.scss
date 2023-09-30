@@ -8,7 +8,7 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
               -gtk-scaled(url('assets/header-icon.png'), url('assets/header-icon@2.png')));
 
 .nautilus-window.background.csd {
-  &, .sidebar-pane {
+  &:not(.view), .sidebar-pane {
     background-image: $theme_image;
     background-size: 48px auto;
     background-position: left bottom;
@@ -28,6 +28,18 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     border: none;
 
     // > revealer > button { @extend %circular_button; } // Make operations button circular
+  }
+
+  .background {
+    .top-bar headerbar {
+      box-shadow: none;
+    }
+
+    list.navigation-sidebar {
+      background-color: transparent;
+
+      > row { border-radius: 0; }
+    }
   }
 
   .nautilus-grid-view {
@@ -61,12 +73,12 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
   }
 
   flap.unfolded > placessidebar,
-  toolbarview > placessidebar {
+  .sidebar-pane > toolbarview > placessidebar {
     background: none;
     margin-right: 6px;
 
     list.navigation-sidebar {
-      background: none;
+      background-color: transparent;
 
       > row {
         padding-left: 6px;
@@ -74,7 +86,7 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
         &, &:hover, &:selected, &:active, &:selected:hover, &:selected:active, &:focus {
           transition: none;
           animation: none;
-          background: none;
+          background-color: transparent;
           box-shadow: none;
         }
   
