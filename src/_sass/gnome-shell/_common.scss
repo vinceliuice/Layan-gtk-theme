@@ -1010,6 +1010,10 @@ StScrollBar {
       box-shadow: inset 0 -2px 0px $primary_color;
       color: $panel_fg_color;
 
+      &.clock-display {
+        box-shadow: inset 0 -2px 0px $primary_color !important;
+      }
+
       & > .system-status-icon { icon-shadow: none; }
     }
 
@@ -1018,6 +1022,26 @@ StScrollBar {
     .lock-screen & {
       color: $panel_secondary_fg_color;
       &:focus, &:hover, &:active { color: $panel_fg_color; }
+    }
+
+    &.screen-recording-indicator {
+      box-shadow: inset 0 0 0 100px $error_color;
+    }
+
+    &.screen-sharing-indicator {
+      box-shadow: inset 0 0 0 100px $warning_color;
+      StBoxLayout { margin: 0 $base_padding; }
+    }
+
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
+      StBoxLayout {
+        spacing: $base_padding;
+      }
+
+      StIcon {
+        icon-size: 16px;
+      }
     }
   }
 
@@ -1043,25 +1067,38 @@ StScrollBar {
 
 // Activities button
 #panel #panelActivities.panel-button {
-  > * {
-    background-image: url("assets/activities.svg");
-    background-position: center top;
-    width: 24px;
-    height: 24px;
-    background-color: transparent !important;
-    background-gradient-direction: none !important;
-    border: none;
-    color: transparent;
+  -natural-hpadding: $base_padding * 3;
+
+  StBoxLayout {
+    spacing: $base_padding;
   }
 
-  &:active, &:overview, &:focus, &:checked {
-    background-color: rgba($panel_bg_color, 0.01);
-    box-shadow: inset 0 -2px 0px $primary_color;
-    color: $panel_fg_color;
-    border: none;
-
-    > * { background-image: url("assets/activities-active.svg"); }
+  .workspace-dot {
+    border-radius: $circular_radius;
+    min-width: 8px;
+    min-height: 8px;
+    background-color: $panel_fg_color;
   }
+
+  // > * {
+  //   background-image: url("assets/activities.svg");
+  //   background-position: center top;
+  //   width: 24px;
+  //   height: 24px;
+  //   background-color: transparent !important;
+  //   background-gradient-direction: none !important;
+  //   border: none;
+  //   color: transparent;
+  // }
+
+  // &:active, &:overview, &:focus, &:checked {
+  //   background-color: rgba($panel_bg_color, 0.01);
+  //   box-shadow: inset 0 -2px 0px $primary_color;
+  //   color: $panel_fg_color;
+  //   border: none;
+
+  //   > * { background-image: url("assets/activities-active.svg"); }
+  // }
 }
 
 // calendar popover
@@ -1176,6 +1213,7 @@ StScrollBar {
   &:rtl { background-image: url("assets/calendar-arrow-left.svg"); }
 }
 
+.calendar-day,
 .calendar-day-base {
   @include font(caption);
   text-align: center;
@@ -1191,19 +1229,22 @@ StScrollBar {
 
   &:hover, &:focus {
     background-color: $divider_color;
-    box-shadow: none;
+    box-shadow: none !important;
+    border: none !important;
   }
 
   &:active {
     color: $secondary_fg_color;
     background-color: $track_color;
-    border-color: transparent; //avoid jumparound due to today
+    box-shadow: none !important;
+    border: none !important;
   }
 
   &:selected {
     color: $fg_color;
     background-color: $track_color;
-    border-color: transparent; //avoid jumparound due to today
+    box-shadow: none !important;
+    border: none !important;
   }
 
   &.calendar-day-heading {  //day of week heading
@@ -1239,11 +1280,15 @@ StScrollBar {
   &:hover, &:focus {
     background-color: lighten($primary_color, 3%);
     color: white;
+    box-shadow: none !important;
+    border: none !important;
   }
 
   &:active, &:selected {
     background-color: $primary_color;
     color: white;
+    box-shadow: none !important;
+    border: none !important;
 
     &:hover, &:focus {
       background-color: lighten($primary_color, 3%);
@@ -1262,9 +1307,9 @@ StScrollBar {
   }
 }
 
+.calendar-other-month,
 .calendar-other-month-day {
-  color: $disabled_secondary_fg_color;
-  opacity: 0.5;
+  color: $disabled_secondary_fg_color !important;
 }
 
 .calendar-week-number {

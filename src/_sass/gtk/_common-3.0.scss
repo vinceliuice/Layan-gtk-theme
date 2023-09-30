@@ -35,6 +35,30 @@
   &:focus { outline-color: gtkalpha(currentColor, 0.10); }
 }
 
+%circular_list {
+  border-radius: $buttons_radius + 1px;
+  box-shadow: none;
+  border: 1px solid $border_color;
+}
+
+%circular_row {
+  border-radius: 0;
+  margin: 0;
+
+  &:first-child {
+    border-top-left-radius: $buttons_radius;
+    border-top-right-radius: $buttons_radius;
+  }
+
+  &:last-child { // Not use ?
+    border-bottom-left-radius: $buttons_radius;
+    border-bottom-right-radius: $buttons_radius;
+  }
+
+  &:only-child {
+    border-radius: $buttons_radius;
+  }
+}
 
 /***************
  * Base States *
@@ -47,13 +71,6 @@
   &.csd { border-radius: 0 0 $windows_radius $windows_radius; } // Set csd windows bottom border radius
   &.maximized, &.solid-csd { border-radius: 0; } // No radius when windows maximized
 }
-
-/*
-   These wildcard seems unavoidable, need to investigate.
-   Wildcards are bad and troublesome, use them with care,
-   or better, just don't.
-   Everytime a wildcard is used a kitten dies, painfully.
-*/
 
 *:disabled { -gtk-icon-effect: dim; }
 

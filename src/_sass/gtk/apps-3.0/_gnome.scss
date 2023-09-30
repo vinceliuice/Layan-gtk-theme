@@ -576,6 +576,15 @@ paned.titlebar.horizontal { // show border
   }
 }
 
+leaflet list.navigation-sidebar {
+  background-color: $alt_base_color;
+  border-bottom-left-radius: $windows_radius;
+
+  > separator {
+    background-color: transparent;
+  }
+}
+
 .tweak {
   // padding-top: 3px;
   padding: 3px;
@@ -590,16 +599,9 @@ paned.titlebar.horizontal { // show border
   background-image: image($base_color);
 }
 
-.tweak-startup,
-.tweak-startup:hover {
-  // background-color: lighter(shade(@theme_bg_color, 0.9));
-  background-image: image($base_color);
-}
+
 
 .tweak-group-startup {
-  // background-color: @view_separators;
-  background-image: image($base_color);
-
   @extend %circular_list;
 
   row.activatable { @extend %circular_row; }
@@ -613,11 +615,14 @@ paned.titlebar.horizontal { // show border
 
 // Workaround for 3.26
 list {
-  &.tweak-group {
+  &.tweak-group, &#ListBoxTweakGroup {
     list {
+      padding: 0;
       @extend %circular_list;
 
-      row.activatable { @extend %circular_row; }
+      row.activatable {
+        @extend %circular_row;
+      }
     }
   }
 }
@@ -1250,28 +1255,6 @@ window.background > box.vertical box.horizontal {
  /************************
   * Gnome Control Center *
   ************************/
-
-%circular_list {
-  border-radius: $buttons_radius + 1px;
-  box-shadow: none;
-  border: 1px solid $border_color;
-}
-
-%circular_row {
-  &:first-child {
-    border-top-left-radius: $buttons_radius;
-    border-top-right-radius: $buttons_radius;
-  }
-
-  &:last-child { // Not use ?
-    border-bottom-left-radius: $buttons_radius;
-    border-bottom-right-radius: $buttons_radius;
-  }
-
-  &:only-child {
-    border-radius: $buttons_radius;
-  }
-}
 
 // users section
 stack > box.vertical > widget > overlay grid.horizontal > stack {

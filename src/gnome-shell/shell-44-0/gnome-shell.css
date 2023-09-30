@@ -801,7 +801,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0 !important;
 }
 
-.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item.selected:checked {
+.popup-menu .popup-menu-item:checked:hover, .popup-menu .popup-menu-item:checked:focus, .popup-menu .popup-menu-item:checked.selected {
   background-color: #6f70f7 !important;
   color: #FFFFFF !important;
 }
@@ -1190,6 +1190,10 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: rgba(255, 255, 255, 0.8);
 }
 
+#panel .panel-button:active.clock-display, #panel .panel-button:overview.clock-display, #panel .panel-button:focus.clock-display, #panel .panel-button:checked.clock-display {
+  box-shadow: inset 0 -2px 0px #5657f5 !important;
+}
+
 #panel .panel-button:active > .system-status-icon, #panel .panel-button:overview > .system-status-icon, #panel .panel-button:focus > .system-status-icon, #panel .panel-button:checked > .system-status-icon {
   icon-shadow: none;
 }
@@ -1200,6 +1204,26 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .unlock-screen #panel .panel-button:focus, .unlock-screen #panel .panel-button:hover, .unlock-screen #panel .panel-button:active, .login-screen #panel .panel-button:focus, .login-screen #panel .panel-button:hover, .login-screen #panel .panel-button:active, .lock-screen #panel .panel-button:focus, .lock-screen #panel .panel-button:hover, .lock-screen #panel .panel-button:active {
   color: rgba(255, 255, 255, 0.8);
+}
+
+#panel .panel-button.screen-recording-indicator {
+  box-shadow: inset 0 0 0 100px #DD2C00;
+}
+
+#panel .panel-button.screen-sharing-indicator {
+  box-shadow: inset 0 0 0 100px #FF6D00;
+}
+
+#panel .panel-button.screen-sharing-indicator StBoxLayout {
+  margin: 0 6px;
+}
+
+#panel .panel-button.screen-recording-indicator StBoxLayout, #panel .panel-button.screen-sharing-indicator StBoxLayout {
+  spacing: 6px;
+}
+
+#panel .panel-button.screen-recording-indicator StIcon, #panel .panel-button.screen-sharing-indicator StIcon {
+  icon-size: 16px;
 }
 
 #panel .system-status-icon {
@@ -1225,26 +1249,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   color: #FF6D00;
 }
 
-#panel #panelActivities.panel-button > * {
-  background-image: url("assets/activities.svg");
-  background-position: center top;
-  width: 24px;
-  height: 24px;
-  background-color: transparent !important;
-  background-gradient-direction: none !important;
-  border: none;
-  color: transparent;
+#panel #panelActivities.panel-button {
+  -natural-hpadding: 18px;
 }
 
-#panel #panelActivities.panel-button:active, #panel #panelActivities.panel-button:overview, #panel #panelActivities.panel-button:focus, #panel #panelActivities.panel-button:checked {
-  background-color: rgba(37, 37, 45, 0.01);
-  box-shadow: inset 0 -2px 0px #5657f5;
-  color: rgba(255, 255, 255, 0.8);
-  border: none;
+#panel #panelActivities.panel-button StBoxLayout {
+  spacing: 6px;
 }
 
-#panel #panelActivities.panel-button:active > *, #panel #panelActivities.panel-button:overview > *, #panel #panelActivities.panel-button:focus > *, #panel #panelActivities.panel-button:checked > * {
-  background-image: url("assets/activities-active.svg");
+#panel #panelActivities.panel-button .workspace-dot {
+  border-radius: 9999px;
+  min-width: 8px;
+  min-height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .clock-display-box {
@@ -1393,6 +1410,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   background-image: url("assets/calendar-arrow-left.svg");
 }
 
+.calendar-day,
 .calendar-day-base {
   font-size: 9pt;
   font-weight: 400;
@@ -1408,23 +1426,31 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   text-shadow: none;
 }
 
-.calendar-day-base:hover, .calendar-day-base:focus {
+.calendar-day:hover, .calendar-day:focus,
+.calendar-day-base:hover,
+.calendar-day-base:focus {
   background-color: rgba(0, 0, 0, 0.08);
-  box-shadow: none;
+  box-shadow: none !important;
+  border: none !important;
 }
 
+.calendar-day:active,
 .calendar-day-base:active {
   color: rgba(0, 0, 0, 0.55);
   background-color: rgba(0, 0, 0, 0.2);
-  border-color: transparent;
+  box-shadow: none !important;
+  border: none !important;
 }
 
+.calendar-day:selected,
 .calendar-day-base:selected {
   color: rgba(0, 0, 0, 0.75);
   background-color: rgba(0, 0, 0, 0.2);
-  border-color: transparent;
+  box-shadow: none !important;
+  border: none !important;
 }
 
+.calendar-day.calendar-day-heading,
 .calendar-day-base.calendar-day-heading {
   width: 28px;
   height: 21px;
@@ -1465,11 +1491,15 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar-today:hover, .calendar-today:focus {
   background-color: #6465f6;
   color: white;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .calendar-today:active, .calendar-today:selected {
   background-color: #5657f5;
   color: white;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .calendar-today:active:hover, .calendar-today:active:focus, .calendar-today:selected:hover, .calendar-today:selected:focus {
@@ -1487,9 +1517,9 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   font-weight: bold;
 }
 
+.calendar-other-month,
 .calendar-other-month-day {
-  color: rgba(0, 0, 0, 0.26);
-  opacity: 0.5;
+  color: rgba(0, 0, 0, 0.26) !important;
 }
 
 .calendar-week-number {
@@ -3970,8 +4000,35 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 /* Dash to Dock */
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
 #dashtodockContainer {
   background: transparent;
+}
+
+#dashtodockContainer .number-overlay {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+#dashtodockContainer .notification-badge {
+  color: #FFFFFF;
+  background-color: #5657f5;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 9999px;
+  margin: 2px;
+  padding: 0.25em 0.6em;
+  font-weight: bold;
+  text-align: center;
 }
 
 #dashtodockContainer #dash, #dashtodockContainer:overview #dash {
@@ -4030,6 +4087,7 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+/* OpenWeather Extension */
 .openweather-button, .openweather-button-action, .openweather-menu-button-container, .openweather-button-box {
   border: 1px solid transparent;
 }

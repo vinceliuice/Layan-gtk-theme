@@ -1,7 +1,35 @@
 /* Dash to Dock */
 
+// Scrollview style
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
 #dashtodockContainer {
   background: transparent;
+
+  .number-overlay {
+    color: $panel_fg_color;
+    background-color: rgba(black, 0.75);
+    text-align: center;
+  }
+
+  .notification-badge {
+    color: $inverse_fg_color;
+    background-color: $primary_color;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+    border-radius: $circular_radius;
+    margin: 2px;
+    padding: 0.25em 0.6em;
+    font-weight: bold;
+    text-align: center;
+  }
 
   #dash,
   &:overview #dash {
@@ -67,9 +95,8 @@
   }
 }
 
-// /*************************
-//  * OpenWeather Extension *
-//  *************************/
+
+/* OpenWeather Extension */
 
 .openweather {
   &-button,
