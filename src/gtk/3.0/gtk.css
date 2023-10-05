@@ -940,7 +940,7 @@ button.color {
  *********/
 *:link, button:link,
 button:visited {
-  color: #5657f5;
+  color: #039BE5;
 }
 
 *:link:visited, *:link:visited:hover, *:link:visited:active,
@@ -3698,6 +3698,26 @@ messagedialog list, messagedialog row, messagedialog .view, messagedialog textvi
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+messagedialog check, messagedialog radio {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+messagedialog check:hover, messagedialog check:active, messagedialog radio:hover, messagedialog radio:active {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+messagedialog check:disabled, messagedialog radio:disabled {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+messagedialog check:checked, messagedialog check:indeterminate, messagedialog radio:checked, messagedialog radio:indeterminate {
+  color: #7C4DFF;
+}
+
+messagedialog check:checked:disabled, messagedialog check:indeterminate:disabled, messagedialog radio:checked:disabled, messagedialog radio:indeterminate:disabled {
+  color: rgba(124, 77, 255, 0.5);
+}
+
 messagedialog .dialog-action-area button {
   padding: 4px 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -6220,6 +6240,10 @@ window.background.csd.unified.fullscreen > decoration-overlay {
 /*********
  * Tilix *
  *********/
+.tilix-background {
+  border-radius: 0;
+}
+
 overlay > revealer.left > scrolledwindow.frame, overlay > revealer.right > scrolledwindow.frame {
   border-style: none;
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25), 0 6px 10px rgba(0, 0, 0, 0.16);

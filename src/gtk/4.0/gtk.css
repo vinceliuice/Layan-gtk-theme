@@ -958,7 +958,7 @@ button.color > colorswatch:only-child, button.color > colorswatch:only-child > o
  *********/
 button.link,
 link {
-  color: #5657f5;
+  color: #039BE5;
 }
 
 button.link:visited,
@@ -970,7 +970,12 @@ link:visited:active {
 
 infobar.info *:link, infobar.question *:link, infobar.warning *:link, infobar.error *:link, headerbar.selection-mode .subtitle:link, button.link:selected, *:selected button.link,
 link:selected, *:selected link {
-  color: #FFFFFF;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.link selection {
+  color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 button.link > label {

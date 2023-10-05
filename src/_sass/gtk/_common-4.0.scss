@@ -720,7 +720,12 @@ link {
 
   @at-root %link_selected,
   &:selected,
-  *:selected & { color: $inverse_fg_color; }
+  *:selected & { color: $inverse_secondary_fg_color; }
+}
+
+.link selection {
+  color: $fg_color;
+  background-color: $semi_fill_color;
 }
 
 button.link {

@@ -322,17 +322,17 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 /* links */
 .shell-link {
   border-radius: 7px;
-  color: #5657f5;
+  color: #039BE5;
 }
 
 .shell-link:hover {
-  color: #5657f5;
-  background-color: rgba(86, 87, 245, 0.15);
+  color: #039BE5;
+  background-color: rgba(3, 155, 229, 0.15);
 }
 
 .shell-link:active {
-  color: #5657f5;
-  background-color: rgba(86, 87, 245, 0.3);
+  color: #039BE5;
+  background-color: rgba(3, 155, 229, 0.3);
 }
 
 .lowres-icon {
@@ -2305,7 +2305,7 @@ StWidget.focused .app-well-app-running-dot {
 
 /* NOTIFICATIONS & MESSAGE TRAY */
 .url-highlighter {
-  link-color: #5657f5;
+  link-color: #039BE5;
 }
 
 .notification-banner {
@@ -2970,11 +2970,11 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .lg-dialog .shell-link {
-  color: #5657f5;
+  color: #039BE5;
 }
 
 .lg-dialog .shell-link:hover {
-  color: #5657f5;
+  color: #039BE5;
 }
 
 .lg-completions-text {

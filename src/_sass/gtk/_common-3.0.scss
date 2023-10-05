@@ -3346,6 +3346,24 @@ messagedialog { // Message Dialog styling
     border-color: $popover_border;
   }
 
+  check, radio {
+    color: rgba($popover_fg, 0.75);
+
+    &:hover, &:active {
+      color: $popover_fg;
+    }
+
+    &:disabled {
+      color: rgba($popover_disabled_fg, 0.75);
+    }
+
+    &:checked, &:indeterminate {
+      color: $accent_color;
+
+      &:disabled { color: $disabled_accent_color; }
+    }
+  }
+
   .dialog-action-area button {
     @extend %simple_flat_button;
     padding: 4px 12px;
