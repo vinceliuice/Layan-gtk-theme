@@ -4612,7 +4612,7 @@ statusbar {
   background-color: rgba(255, 255, 255, 0.97);
 }
 
-.nautilus-window.background.csd > contents > toastoverlay headerbar,
+.nautilus-window.background.csd toastoverlay headerbar,
 .nautilus-window.background.csd .sidebar-pane headerbar {
   background-color: transparent;
   background-image: -gtk-scaled(url("assets/header-icon-alt.png"), url("assets/header-icon-alt@2.png"));
@@ -5477,6 +5477,28 @@ window > contents leaflet.unfolded > separator + box.vertical > headerbar {
 }
 
 window > contents leaflet > box > scrolledwindow > viewport > widget > stack {
+  background-color: #FFFFFF;
+}
+
+window > widget leaflet {
+  background-color: transparent;
+}
+
+window > widget leaflet stack.background {
+  background-color: transparent;
+}
+
+window > widget leaflet.unfolded stack.background > widget > overlay > leaflet > box > headerbar,
+window > widget leaflet.unfolded stack.background > widget > box > widget > headerbar,
+window > widget leaflet.unfolded > box:not(:last-child) headerbar {
+  border-top-left-radius: 0;
+}
+
+window > widget leaflet.unfolded > separator + box > headerbar {
+  border-top-right-radius: 0;
+}
+
+window > widget leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #FFFFFF;
 }
 

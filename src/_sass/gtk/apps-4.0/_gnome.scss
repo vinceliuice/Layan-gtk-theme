@@ -16,7 +16,7 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     background-color: if($solid == 'false', rgba($nautilus_bg_color, 0.97), $nautilus_bg_color);
   }
 
-  > contents > toastoverlay headerbar,
+  toastoverlay headerbar,
   .sidebar-pane headerbar {
     background-color: transparent;
     background-image: $header-icon;
@@ -874,6 +874,32 @@ window > contents leaflet {
 
   > box > scrolledwindow > viewport > widget > stack {
     background-color: $base_color;
+  }
+}
+
+window > widget {
+  leaflet {
+    background-color: transparent;
+
+    stack.background {
+      background-color: transparent;
+    }
+
+    &.unfolded {
+      stack.background > widget > overlay > leaflet > box > headerbar, // Control display header
+      stack.background > widget > box > widget > headerbar,
+      > box:not(:last-child) headerbar { // Calendar and Builder right header
+        border-top-left-radius: 0;
+      }
+
+      > separator + box > headerbar { // Calendar and control left header
+        border-top-right-radius: 0;
+      }
+    }
+
+    > box > scrolledwindow > viewport > widget > stack {
+      background-color: $base_color;
+    }
   }
 }
 
