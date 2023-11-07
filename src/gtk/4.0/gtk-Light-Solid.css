@@ -4612,8 +4612,7 @@ statusbar {
   background-color: #FFFFFF;
 }
 
-.nautilus-window.background.csd toastoverlay headerbar,
-.nautilus-window.background.csd .sidebar-pane headerbar {
+.nautilus-window.background.csd:not(.view) headerbar, .nautilus-window.background.csd .sidebar-pane headerbar {
   background-color: transparent;
   background-image: -gtk-scaled(url("assets/header-icon.png"), url("assets/header-icon@2.png"));
   background-size: 48px auto;
