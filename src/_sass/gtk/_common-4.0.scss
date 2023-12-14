@@ -3512,7 +3512,7 @@ stacksidebar {
 // Navigation Sidebar
 //
 .navigation-sidebar {
-  padding: $container_padding 0; //only vertical padding. horizontal row size would clip
+  padding: $container_padding; //only vertical padding. horizontal row size would clip
 
   > separator {
     margin: $container_padding;
@@ -3522,7 +3522,11 @@ stacksidebar {
     min-height: $menuitem_size;
     padding: $container_padding / 2 $container_padding;
     border-radius: $buttons_radius;
-    margin: 0 $container_padding $container_padding / 2;
+    margin: 0;
+
+    + row {
+      margin-top: $container_padding / 2;
+    }
 
     &:hover,
     &:focus-visible:focus-within {
@@ -3586,8 +3590,6 @@ placessidebar {
   > viewport.frame { border-style: none; }
 
   .navigation-sidebar {
-    padding: $base_padding 0;
-
     > row {
       // Needs overriding of the GtkListBoxRow padding
       min-height: 32px;

@@ -917,6 +917,7 @@ overlay-split-view {
     transition: background-color $longer_duration $deceleration_curve;
   }
 
+  .toolbar,
   .navigation-sidebar,
   headerbar,
   searchbar > revealer > box {

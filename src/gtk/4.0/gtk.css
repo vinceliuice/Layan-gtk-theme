@@ -3920,7 +3920,7 @@ stacksidebar row > label {
 }
 
 .navigation-sidebar {
-  padding: 4px 0;
+  padding: 4px;
 }
 
 .navigation-sidebar > separator {
@@ -3931,7 +3931,11 @@ stacksidebar row > label {
   min-height: 28px;
   padding: 2px 4px;
   border-radius: 7px;
-  margin: 0 4px 2px;
+  margin: 0;
+}
+
+.navigation-sidebar > row + row {
+  margin-top: 2px;
 }
 
 .navigation-sidebar > row:hover, .navigation-sidebar > row:focus-visible:focus-within {
@@ -4007,10 +4011,6 @@ row:selected image.sidebar-icon {
 
 placessidebar > viewport.frame {
   border-style: none;
-}
-
-placessidebar .navigation-sidebar {
-  padding: 6px 0;
 }
 
 placessidebar .navigation-sidebar > row {
@@ -5929,6 +5929,117 @@ agenda-view list.background {
   background-color: transparent;
 }
 
+.large-button {
+  padding: 4px;
+}
+
+.alarm-time {
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+.clocks-ampm-toggle-button,
+.clocks-secondary-standalone-label {
+  font-size: 18pt;
+}
+
+.clocks-standalone-label,
+.clocks-ringing-label {
+  font-size: 6em;
+  font-weight: 300;
+}
+
+.clocks-ringing-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.clocks-alarm-setup-time {
+  font-size: 32pt;
+}
+
+.clocks-timer-label,
+.clocks-spinbutton {
+  font-size: 48pt;
+}
+
+.timer-panel .timer-header {
+  font-size: 20pt;
+  font-weight: 300;
+}
+
+.timer-countdown {
+  font-size: 40pt;
+  font-weight: 300;
+}
+
+/* Stopwatch Panel */
+.lap-time {
+  font-weight: bold;
+}
+
+.stopped-stopwatch label,
+.running-stopwatch label,
+.paused-stopwatch label {
+  font-size: 70px;
+  font-weight: lighter;
+}
+
+.stopped-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+.running-stopwatch .seconds-label,
+.running-stopwatch .miliseconds-label {
+  color: #5657f5;
+}
+
+.stopped-stopwatch .miliseconds-label,
+.running-stopwatch .miliseconds-label,
+.paused-stopwatch .miliseconds-label {
+  font-size: 50px;
+}
+
+.running-stopwatch .seconds-label,
+.paused-stopwatch .seconds-label {
+  font-weight: 300;
+}
+
+.clock-location {
+  font-weight: bolder;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.clock-time {
+  font-size: 2em;
+  padding: 0.2em 0.5em;
+  border-radius: 1em;
+}
+
+.none .clock-time {
+  background: alpha(currentColor, 0.2);
+}
+
+.night .clock-time {
+  color: #1E88E5;
+  background-color: alpha(#2196F3, 0.25);
+}
+
+.naut .clock-time,
+.astro .clock-time {
+  color: #F57C00;
+  background-color: alpha(#FF9800, 0.25);
+}
+
+.civil .clock-time,
+.day .clock-time {
+  color: #F9A825;
+  background: alpha(#FDD835, 0.25);
+}
+
 avatar {
   border-radius: 9999px;
   font-weight: bold;
@@ -6873,6 +6984,7 @@ overlay-split-view > shadow.down {
   transition: background-color 225ms cubic-bezier(0, 0, 0.2, 1);
 }
 
+.sidebar-pane .toolbar,
 .sidebar-pane .navigation-sidebar,
 .sidebar-pane headerbar,
 .sidebar-pane searchbar > revealer > box {
