@@ -905,6 +905,14 @@ overlay-split-view {
   @include transition-shadows(rgba(black, 0.15));
 }
 
+toolbarview.undershoot-top scrolledwindow {
+  @include undershoot(top);
+}
+
+toolbarview.undershoot-bottom scrolledwindow {
+  @include undershoot(bottom);
+}
+
 // Sidebar
 .unfolded stacksidebar.sidebar { border: none; }
 
@@ -1062,6 +1070,10 @@ overlay-split-view {
 
 // Gnome >= 45.0
 .top-bar {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+
   headerbar,
   box > headerbar:only-child {
     &, &:backdrop {

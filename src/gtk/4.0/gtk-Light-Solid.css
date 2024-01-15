@@ -322,13 +322,13 @@ spinbutton:not(.vertical) > text > block-cursor, entry > text > block-cursor {
 }
 
 spinbutton:not(.vertical) undershoot.left > undershoot.left, entry undershoot.left > undershoot.left {
-  box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 spinbutton:not(.vertical) undershoot.right > undershoot.right, entry undershoot.right > undershoot.right {
-  box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 spinbutton.password:not(.vertical) image.caps-lock-indicator, entry.password image.caps-lock-indicator {
@@ -1260,7 +1260,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
 }
 
 searchbar > revealer > box {
-  border-spacing: 4px;
+  border-spacing: 0;
   padding: 4px;
   border-style: solid;
   border-width: 0 0 1px;
@@ -6970,6 +6970,16 @@ overlay-split-view > shadow.down {
   background-image: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.15), 0.7), alpha(rgba(0, 0, 0, 0.15), 0.14) 40px, alpha(rgba(0, 0, 0, 0.15), 0) 56px), linear-gradient(to top, alpha(rgba(0, 0, 0, 0.15), 0.4), alpha(rgba(0, 0, 0, 0.15), 0.14) 7px, alpha(rgba(0, 0, 0, 0.15), 0) 24px);
 }
 
+toolbarview.undershoot-top scrolledwindow > undershoot.top {
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
+}
+
+toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
+}
+
 .unfolded stacksidebar.sidebar {
   border: none;
 }
@@ -6994,43 +7004,43 @@ overlay-split-view > shadow.down {
 }
 
 .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top {
-  box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
-  box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-top > undershoot.top {
-  box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-bottom > undershoot.bottom {
-  box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
-  box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
-  box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
-  box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
-  box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .sidebar-pane flap > dimming,
@@ -7117,50 +7127,50 @@ overlay-split-view > shadow.down {
 
 .content-pane .sidebar-pane toolbarview.undershoot-top scrolledwindow > undershoot.top,
 .sidebar-pane .content-pane toolbarview.undershoot-top scrolledwindow > undershoot.top {
-  box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom,
 .sidebar-pane .content-pane toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
-  box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane scrolledwindow.undershoot-top > undershoot.top,
 .sidebar-pane .content-pane scrolledwindow.undershoot-top > undershoot.top {
-  box-shadow: none;
-  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to bottom, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane scrolledwindow.undershoot-bottom > undershoot.bottom,
 .sidebar-pane .content-pane scrolledwindow.undershoot-bottom > undershoot.bottom {
-  box-shadow: none;
-  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to top, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left,
 .sidebar-pane .content-pane scrolledwindow.undershoot-start:dir(ltr) > undershoot.left {
-  box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right,
 .sidebar-pane .content-pane scrolledwindow.undershoot-start:dir(rtl) > undershoot.right {
-  box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right,
 .sidebar-pane .content-pane scrolledwindow.undershoot-end:dir(ltr) > undershoot.right {
-  box-shadow: none;
-  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset -1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to left, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left,
 .sidebar-pane .content-pane scrolledwindow.undershoot-end:dir(rtl) > undershoot.left {
-  box-shadow: none;
-  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.1), 0.75), transparent 4px);
+  box-shadow: inset 1px 0 rgba(0, 0, 0, 0.08);
+  background: linear-gradient(to right, alpha(rgba(0, 0, 0, 0.08), 0.75), transparent 4px);
 }
 
 .content-pane .sidebar-pane flap > dimming,
@@ -7273,6 +7283,12 @@ overlay-split-view > shadow.down {
 .sidebar-pane .sidebar-pane {
   background-color: transparent;
   color: inherit;
+}
+
+.top-bar {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .top-bar headerbar, .top-bar headerbar:backdrop,
