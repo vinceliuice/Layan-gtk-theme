@@ -34,7 +34,7 @@
 }
 
 .background.csd {
-  border-radius: 11px;
+  border-radius: 13px;
   background-color: #f4f4f9;
 }
 
@@ -141,7 +141,7 @@ window.assistant.csd .sidebar {
 }
 
 window.assistant .sidebar label {
-  min-height: 32px;
+  min-height: 36px;
   padding: 0 12px;
   color: rgba(0, 0, 0, 0.38);
   font-weight: 500;
@@ -239,7 +239,7 @@ spinner:checked:disabled {
  * Text Entries *
  ****************/
 spinbutton:not(.vertical), entry {
-  min-height: 32px;
+  min-height: 36px;
   padding: 0 8px;
   border-radius: 7px;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
@@ -303,13 +303,13 @@ spinbutton:not(.vertical) image:disabled, entry image:disabled {
 }
 
 spinbutton:not(.vertical) image.left, entry image.left {
-  margin-left: 0px;
+  margin-left: 2px;
   margin-right: 6px;
 }
 
 spinbutton:not(.vertical) image.right, entry image.right {
   margin-left: 6px;
-  margin-right: 0px;
+  margin-right: 2px;
 }
 
 spinbutton:focus-within:not(.vertical) > placeholder, entry:focus-within > placeholder {
@@ -535,7 +535,7 @@ editablelabel > stack > text {
 button {
   min-height: 24px;
   min-width: 16px;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 7px;
   font-weight: 500;
   transition: 100ms;
@@ -664,17 +664,17 @@ button.text-button {
 
 button.image-button {
   min-width: 24px;
-  padding: 4px;
+  padding: 6px;
 }
 
 
 button.text-button.image-button label:first-child {
-  margin-left: 12px;
+  margin-left: 10px;
 }
 
 
 button.text-button.image-button label:last-child {
-  margin-right: 12px;
+  margin-right: 10px;
 }
 
 
@@ -719,7 +719,7 @@ banner > revealer > widget button:checked:disabled, infobar.info button:checked:
 
 
 button.osd {
-  padding: 8px 12px;
+  padding: 10px 14px;
   box-shadow: none;
   background-color: rgba(0, 0, 0, 0.65);
   color: white;
@@ -739,7 +739,7 @@ button.osd:active {
 
 
 button.osd.image-button {
-  padding: 8px;
+  padding: 10px;
 }
 
 
@@ -861,8 +861,8 @@ stackswitcher > button.text-button {
 }
 
 stackswitcher > button.image-button {
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 stackswitcher > button.needs-attention:checked > label,
@@ -884,8 +884,8 @@ button.round-button {
 }
 
 .nautilus-window.background.csd .floating-bar button, placessidebar .navigation-sidebar > row button.sidebar-button, notebook > header tab button.flat, spinbutton:not(.vertical) button {
-  min-height: 20px;
-  min-width: 20px;
+  min-height: 24px;
+  min-width: 24px;
   padding: 0;
   border-radius: 9999px;
 }
@@ -944,9 +944,9 @@ row .linked button:only-child, .linked:not(.vertical) > spinbutton:only-child:no
 }
 
 button.color {
-  min-height: 20px;
-  min-width: 20px;
-  padding: 4px;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 6px;
 }
 
 button.color > colorswatch:only-child, button.color > colorswatch:only-child > overlay {
@@ -1000,7 +1000,7 @@ spinbutton:not(.vertical) {
 
 notebook > stack:not(:only-child) spinbutton:not(.vertical) entry, notebook > stack:not(:only-child) spinbutton:not(.vertical) entry:focus, notebook > stack:not(:only-child) spinbutton:not(.vertical) entry:disabled,
 spinbutton:not(.vertical) text {
-  min-width: 24px;
+  min-width: 28px;
   margin: 0;
   padding-left: 12px;
   border-image: none;
@@ -1035,14 +1035,14 @@ spinbutton.vertical:drop(active) {
 }
 
 spinbutton.vertical text {
-  min-height: 32px;
-  min-width: 40px;
+  min-height: 36px;
+  min-width: 44px;
   padding: 0;
 }
 
 spinbutton.vertical button {
-  min-height: 32px;
-  min-width: 40px;
+  min-height: 36px;
+  min-width: 44px;
   padding: 0;
 }
 
@@ -1096,12 +1096,12 @@ combobox button.combo:checked {
 
 dropdown button.combo cellview:dir(ltr),
 combobox button.combo cellview:dir(ltr) {
-  margin-left: 0px;
+  margin-left: -2px;
 }
 
 dropdown button.combo cellview:dir(rtl),
 combobox button.combo cellview:dir(rtl) {
-  margin-right: 0px;
+  margin-right: -2px;
 }
 
 dropdown.linked button:nth-child(2):dir(ltr),
@@ -1189,7 +1189,7 @@ toolbar {
 .app-notification, .toolbar.osd,
 toolbar.osd {
   transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
-  padding: 4px;
+  padding: 6px;
   border-radius: 7px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
@@ -1256,12 +1256,12 @@ toolbar:not(.inline-toolbar):not(.osd) spinbutton button {
 
 .toolbar:not(.inline-toolbar):not(.osd) switch,
 toolbar:not(.inline-toolbar):not(.osd) switch {
-  margin: 6px 2px;
+  margin: 8px 2px;
 }
 
 searchbar > revealer > box {
   border-spacing: 0;
-  padding: 4px;
+  padding: 6px;
   border-style: solid;
   border-width: 0 0 1px;
   border-color: rgba(0, 0, 0, 0.08);
@@ -1279,7 +1279,7 @@ searchbar > revealer > box splitbutton {
 
 actionbar > revealer > box {
   box-shadow: none;
-  padding: 4px;
+  padding: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -1299,8 +1299,8 @@ actionbar > revealer > box splitbutton {
  ************/
 
 pathbar > button {
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
   border-radius: 7px;
 }
@@ -1319,8 +1319,8 @@ pathbar > button:checked:disabled {
 
 pathbar > button label,
 pathbar > button image {
-  margin-left: 2px;
-  margin-right: 2px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 
@@ -1502,7 +1502,7 @@ menubar {
 menubar > item {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
   min-height: 20px;
-  padding: 4px 8px;
+  padding: 6px 12px;
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -1521,7 +1521,7 @@ menubar > item label:disabled {
 }
 
 menubar > item popover.menu.background > contents {
-  padding: 4px;
+  padding: 6px;
 }
 
 menubar > item popover.menu popover.menu {
@@ -1538,7 +1538,7 @@ popover.menu {
 }
 
 popover.menu box.inline-buttons {
-  padding: 0 4px;
+  padding: 0 6px;
 }
 
 popover.menu box.inline-buttons button.image-button.model {
@@ -1550,7 +1550,7 @@ popover.menu box.inline-buttons button.image-button.model {
 }
 
 popover.menu box.circular-buttons button.circular.image-button.model {
-  padding: 4px;
+  padding: 6px;
   min-height: 28px;
   min-width: 28px;
 }
@@ -1559,13 +1559,13 @@ popover.menu arrow.left,
 popover.menu radio.left,
 popover.menu check.left {
   margin-left: -2px;
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
 popover.menu arrow.right,
 popover.menu radio.right,
 popover.menu check.right {
-  margin-left: 4px;
+  margin-left: 6px;
   margin-right: -2px;
 }
 
@@ -1585,7 +1585,7 @@ popover.background {
 popover.background > arrow,
 popover.background > contents {
   transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
-  padding: 4px;
+  padding: 6px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12), 0 4px 3px rgba(0, 0, 0, 0.16);
   background-color: rgba(60, 60, 70, 0.95);
   border-radius: 8px;
@@ -1607,11 +1607,6 @@ popover.background:backdrop > contents {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-popover.background > contents {
-  padding: 6px;
-  border-radius: 8px;
-}
-
 popover.background > contents > list,
 popover.background > contents > .view,
 popover.background > contents > toolbar {
@@ -1621,7 +1616,7 @@ popover.background > contents > toolbar {
 }
 
 popover.background > contents separator {
-  margin: 4px 0;
+  margin: 3px 0;
 }
 
 popover.background > contents list separator {
@@ -1634,8 +1629,8 @@ popover.background > contents listview.view {
 
 popover.background > contents listview.view > row {
   margin: 0;
-  border-radius: 3px;
-  padding: 4px 8px;
+  border-radius: 5px;
+  padding: 6px 12px;
 }
 
 popover.background > contents listview.view > row:selected {
@@ -1662,7 +1657,7 @@ popover.background > contents listview.view > row:selected {
 popover.background modelbutton {
   min-height: 20px;
   min-width: 40px;
-  padding: 4px 8px;
+  padding: 5px 8px;
   border-radius: 5px;
   box-shadow: none;
   animation: none;
@@ -1715,10 +1710,6 @@ popover.background radiobutton.text-button {
   outline-style: none;
 }
 
-popover.background separator {
-  margin: 4px 0;
-}
-
 popover.background list separator {
   margin: 0;
 }
@@ -1736,16 +1727,16 @@ frame > paned > notebook > header, notebook.frame > header {
 
 notebook, notebook.frame {
   background-color: #FFFFFF;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 notebook.frame frame > border {
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 notebook.frame frame > list row.activatable {
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 notebook > header {
@@ -1757,7 +1748,7 @@ notebook > header {
 
 notebook > header.top {
   border-bottom-style: solid;
-  border-radius: 7px 7px 0 0;
+  border-radius: 9px 9px 0 0;
 }
 
 notebook > header.top > tabs {
@@ -1774,7 +1765,7 @@ notebook > header.top > tabs > tab:checked {
 
 notebook > header.bottom {
   border-top-style: solid;
-  border-radius: 0 0 7px 7px;
+  border-radius: 0 0 9px 9px;
 }
 
 notebook > header.bottom > tabs {
@@ -1791,7 +1782,7 @@ notebook > header.bottom > tabs > tab:checked {
 
 notebook > header.left {
   border-right-style: solid;
-  border-radius: 7px 0 0 7px;
+  border-radius: 9px 0 0 9px;
 }
 
 notebook > header.left > tabs {
@@ -1808,7 +1799,7 @@ notebook > header.left > tabs > tab:checked {
 
 notebook > header.right {
   border-left-style: solid;
-  border-radius: 0 7px 7px 0;
+  border-radius: 0 9px 9px 0;
 }
 
 notebook > header.right > tabs {
@@ -1877,9 +1868,9 @@ notebook > header > tabs > arrow {
 
 notebook > header tab {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
-  min-height: 20px;
-  min-width: 20px;
-  padding: 4px 12px;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 6px 12px;
   outline-offset: -6px;
   border-width: 1px;
   border-color: transparent;
@@ -1922,13 +1913,13 @@ notebook > header tab button.flat {
 }
 
 notebook > header tab button.flat:last-child {
-  margin-left: 4px;
-  margin-right: -8px;
+  margin-left: 6px;
+  margin-right: -6px;
 }
 
 notebook > header tab button.flat:first-child {
-  margin-left: -8px;
-  margin-right: 4px;
+  margin-left: -6px;
+  margin-right: 6px;
 }
 
 notebook > header.top tabs, notebook > header.bottom tabs {
@@ -1969,7 +1960,7 @@ notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs t
 
 notebook > stack:not(:only-child) {
   background-color: #FFFFFF;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /**************
@@ -2128,10 +2119,10 @@ scrollbar.horizontal button.up {
  **********/
 switch {
   transition: all 225ms cubic-bezier(0, 0, 0.2, 1);
-  margin: 4px 0;
+  margin: 6px 0;
   padding: 0;
-  min-height: 16px;
-  min-width: 38px;
+  min-height: 20px;
+  min-width: 42px;
   border: 4px solid transparent;
   border-radius: 9999px;
   background-color: rgba(0, 0, 0, 0.2);
@@ -2155,9 +2146,9 @@ switch:checked:disabled {
 
 switch > slider {
   transition: 100ms, box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
-  min-width: 20px;
-  min-height: 20px;
-  margin: -4px -2px;
+  min-width: 24px;
+  min-height: 24px;
+  margin: -4px -3px;
   border-radius: 9999px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
   background-color: #FFFFFF;
@@ -2318,8 +2309,8 @@ check,
 radio {
   min-height: 24px;
   min-width: 24px;
-  margin: -8px;
-  padding: 8px;
+  margin: -10px;
+  padding: 10px;
   background-color: transparent;
   border: none;
   outline: none;
@@ -2562,13 +2553,13 @@ headerbar stackswitcher.linked:not(.vertical) > button:active:backdrop {
 
 headerbar {
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1), color 100ms cubic-bezier(0, 0, 0.2, 1);
-  min-height: 40px;
+  min-height: 44px;
   padding: 0;
   margin: 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.08);
   background-color: #31313a;
   color: #FFFFFF;
-  border-radius: 11px 11px 0 0;
+  border-radius: 13px 13px 0 0;
 }
 
 headerbar:disabled :not(button) > label {
@@ -2678,8 +2669,8 @@ headerbar button,
 headerbar stackswitcher,
 headerbar menubutton,
 headerbar splitbutton {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 headerbar menubutton > button,
@@ -2698,13 +2689,13 @@ headerbar splitbutton {
 }
 
 headerbar > windowhandle > box {
-  padding: 0 4px;
+  padding: 0 6px;
 }
 
 headerbar > windowhandle > box,
 headerbar > windowhandle > box > box.start,
 headerbar > windowhandle > box > box.end {
-  border-spacing: 4px;
+  border-spacing: 6px;
 }
 
 headerbar switch {
@@ -2794,7 +2785,7 @@ headerbar.selection-mode .selection-menu .arrow {
 }
 
 headerbar.default-decoration {
-  min-height: 32px;
+  min-height: 36px;
   padding: 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: #31313a;
@@ -2849,8 +2840,8 @@ window.devel headerbar.titlebar:backdrop {
  * GtkScale *
  ************/
 scale {
-  min-height: 0px;
-  min-width: 0px;
+  min-height: 4px;
+  min-width: 4px;
   padding: 16px;
 }
 
@@ -3134,7 +3125,7 @@ levelbar.horizontal block {
 }
 
 levelbar.horizontal.discrete block {
-  min-width: 32px;
+  min-width: 36px;
 }
 
 levelbar.horizontal.discrete block:not(:last-child) {
@@ -3146,7 +3137,7 @@ levelbar.vertical > trough > block {
 }
 
 levelbar.vertical.discrete block {
-  min-height: 32px;
+  min-height: 36px;
 }
 
 levelbar.vertical.discrete block:not(:last-child) {
@@ -3312,7 +3303,7 @@ list {
 
 listview > row,
 list > row {
-  padding: 2px;
+  padding: 3px;
   background-clip: padding-box;
 }
 
@@ -3323,7 +3314,7 @@ list > row.expander {
 
 listview > row.expander .row-header,
 list > row.expander .row-header {
-  padding: 2px;
+  padding: 3px;
 }
 
 listview.horizontal row.separator, listview.separators.horizontal > row:not(.separator),
@@ -3359,7 +3350,11 @@ treeview.view > header > button:active, row.activatable.has-open-popup, row.acti
 }
 
 row button.circular {
-  margin: 0 4px;
+  margin: 0 6px;
+}
+
+treeexpander {
+  border-spacing: 6px;
 }
 
 columnview > listview > row {
@@ -3379,24 +3374,8 @@ columnview.column-separators > listview > row > cell {
 }
 
 columnview.data-table > listview > row > cell {
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-
-treeexpander {
-  border-spacing: 4px;
-}
-
-columnview > listview > row {
-  padding: 0;
-}
-
-columnview > listview > row > cell {
-  padding: 8px 6px;
-}
-
-columnview > listview > row > cell:not(:first-child) {
-  border-left: 1px solid transparent;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 columnview > header > button {
@@ -3420,8 +3399,8 @@ columnview > listview:not(.horizontal).separators > row:not(.separator) {
 }
 
 columnview.data-table > listview > row > cell {
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 columnview ~ undershoot.top {
@@ -3446,7 +3425,7 @@ columnview row:not(:selected) cell editablelabel.editing text selection {
 }
 
 .rich-list > row {
-  padding: 8px 12px;
+  padding: 6px 12px;
   min-height: 32px;
   /* should be tall even when only containing a label */
 }
@@ -3466,7 +3445,7 @@ row > box.header {
   margin-left: 12px;
   margin-right: 12px;
   border-spacing: 6px;
-  min-height: 40px;
+  min-height: 54px;
 }
 
 row > box.header > .icon:disabled {
@@ -3545,7 +3524,7 @@ list.boxed-list > row.expander .osd row.header:focus:focus-visible, .osd row.exp
 
 row.expander {
   background: none;
-  padding: 0px;
+  padding: 0;
 }
 
 row.expander > box > list {
@@ -3732,7 +3711,7 @@ window.dialog.message.background {
 }
 
 window.dialog.message .titlebar {
-  min-height: 20px;
+  min-height: 24px;
   border-style: none;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
   background-color: rgba(63, 63, 63, 0.95);
@@ -3920,22 +3899,22 @@ stacksidebar row > label {
 }
 
 .navigation-sidebar {
-  padding: 4px;
+  padding: 6px;
 }
 
 .navigation-sidebar > separator {
-  margin: 4px;
+  margin: 6px;
 }
 
 .navigation-sidebar > row {
   min-height: 28px;
-  padding: 2px 4px;
+  padding: 3px 6px;
   border-radius: 7px;
   margin: 0;
 }
 
 .navigation-sidebar > row + row {
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .navigation-sidebar > row:hover, .navigation-sidebar > row:focus-visible:focus-within {
@@ -4181,20 +4160,21 @@ infobar.info > label, infobar.info, infobar.question > label, infobar.question, 
  * Tooltips *
  ************/
 tooltip {
+  padding: 6px;
   border-radius: 8px;
-  box-shadow: none;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
 }
 
-tooltip.background.csd {
+tooltip.background {
   border-radius: 8px;
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
-  background-color: rgba(63, 63, 63, 0.9);
-  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: none;
 }
 
 tooltip label {
   min-height: 20px;
-  padding: 0 2px;
+  padding: 0 3px;
 }
 
 tooltip > box {
@@ -4328,7 +4308,7 @@ window {
 }
 
 window.csd {
-  border-radius: 11px;
+  border-radius: 13px;
   box-shadow: 0 10px 16px rgba(0, 0, 0, 0.25), 0 6px 10px rgba(0, 0, 0, 0.16), 0 0 36px transparent;
   margin: 0;
   outline: none;
@@ -4368,13 +4348,13 @@ headerbar windowcontrols {
 }
 
 headerbar windowcontrols:not(.empty).start:dir(ltr), headerbar windowcontrols:not(.empty).end:dir(rtl) {
-  padding: 0 8px;
-  margin-right: 4px;
+  padding: 0 12px;
+  margin-right: 6px;
 }
 
 headerbar windowcontrols:not(.empty).start:dir(rtl), headerbar windowcontrols:not(.empty).end:dir(ltr) {
-  padding: 0 8px;
-  margin-left: 4px;
+  padding: 0 12px;
+  margin-left: 6px;
 }
 
 headerbar windowcontrols > button:not(.suggested-action):not(.destructive-action) > image {
@@ -4509,8 +4489,8 @@ stackswitcher button.text-button {
 
 stackswitcher button.circular,
 stackswitcher button.text-button.circular {
-  min-width: 32px;
-  min-height: 32px;
+  min-width: 36px;
+  min-height: 36px;
   padding: 0;
 }
 
@@ -4530,14 +4510,14 @@ popover.emoji-picker > contents {
 }
 
 .emoji-searchbar {
-  padding: 4px;
-  border-spacing: 4px;
+  padding: 6px;
+  border-spacing: 6px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .emoji-toolbar {
-  padding: 4px;
-  border-spacing: 4px;
+  padding: 6px;
+  border-spacing: 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -4545,7 +4525,7 @@ button.emoji-section {
   margin-top: -1px;
   padding: 0 8px;
   min-width: 24px;
-  min-height: 32px;
+  min-height: 36px;
   border-radius: 0;
   box-shadow: none;
 }
@@ -4573,8 +4553,8 @@ button.emoji-section:last-child {
 
 popover.emoji-picker emoji {
   font-size: x-large;
-  padding: 4px;
-  border-radius: 4px;
+  padding: 6px;
+  border-radius: 6px;
 }
 
 popover.emoji-picker emoji:focus, popover.emoji-picker emoji:hover {
@@ -4582,8 +4562,8 @@ popover.emoji-picker emoji:focus, popover.emoji-picker emoji:hover {
 }
 
 emoji-completion-row > box {
-  border-spacing: 4px;
-  padding: 2px 4px;
+  border-spacing: 6px;
+  padding: 2px 6px;
 }
 
 emoji-completion-row emoji:focus,
@@ -4598,7 +4578,7 @@ popover.entry-completion > contents {
 }
 
 statusbar {
-  padding: 4px 8px;
+  padding: 6px 10px;
 }
 
 /************
@@ -4644,7 +4624,7 @@ statusbar {
 }
 
 .nautilus-window.background.csd .nautilus-list-view {
-  margin: 0 4px 4px 0;
+  margin: 0 6px 6px 0;
 }
 
 .nautilus-window.background.csd .nautilus-list-view, .nautilus-window.background.csd .nautilus-list-view .view {
@@ -4672,11 +4652,17 @@ statusbar {
 .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar,
 .nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar {
   background-color: transparent;
+  padding: 0;
 }
 
 .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row,
 .nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row {
   padding-left: 6px;
+}
+
+.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row .sidebar-revealer,
+.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row .sidebar-revealer {
+  padding: 0 0 0 12px;
 }
 
 .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:hover, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:active, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected:hover, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected:active, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:focus,
@@ -4734,7 +4720,7 @@ statusbar {
 
 .nautilus-window.background.csd #NautilusPathBar {
   border-radius: 9999px;
-  margin: 4px 0;
+  margin: 6px 0;
   padding: 0;
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
   background-size: auto auto;
@@ -4799,7 +4785,7 @@ statusbar {
 .nautilus-window.background.csd #NautilusQueryEditor {
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
-  padding: 0 2px 0 6px;
+  padding: 0 4px 0 8px;
 }
 
 .nautilus-window.background.csd #NautilusQueryEditor:focus-within {
@@ -4813,7 +4799,7 @@ statusbar {
 .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button {
   min-width: 28px;
   min-height: 28px;
-  margin: 2px 0;
+  margin: 4px 0;
   padding: 0;
 }
 
@@ -4826,10 +4812,10 @@ statusbar {
 }
 
 .nautilus-window.background.csd #NautilusQueryEditorTag > button {
-  margin: 2px;
+  margin: 3px;
   padding: 0;
-  min-height: 18px;
-  min-width: 18px;
+  min-height: 22px;
+  min-width: 22px;
 }
 
 .nautilus-window.background.csd label.search-information {
@@ -4855,7 +4841,7 @@ statusbar {
   border-style: solid solid none;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.08);
-  border-radius: 11px 11px 0 0;
+  border-radius: 13px 13px 0 0;
   color: rgba(0, 0, 0, 0.75);
   background-color: #FFFFFF;
   background-clip: padding-box;
@@ -4867,18 +4853,18 @@ statusbar {
   margin-right: 7px;
   border-left-style: none;
   border-top-left-radius: 0;
-  border-bottom-left-radius: 11px;
+  border-bottom-left-radius: 13px;
 }
 
 .nautilus-window.background.csd .floating-bar.bottom.right {
   margin-left: 7px;
   border-right-style: none;
   border-top-right-radius: 0;
-  border-bottom-right-radius: 11px;
+  border-bottom-right-radius: 13px;
 }
 
 .nautilus-window.background.csd .floating-bar button {
-  margin: 6px;
+  margin: 4px;
 }
 
 .nautilus-window.background.csd.maximized .floating-bar {
@@ -4887,7 +4873,7 @@ statusbar {
 }
 
 .details-page {
-  margin: 16px 0px;
+  margin: 24px 0px;
 }
 
 .installed-overlay-box {
@@ -4905,15 +4891,15 @@ screenshot-carousel box.frame {
 
 screenshot-carousel button,
 .featured-carousel button {
-  margin: 8px;
+  margin: 12px;
 }
 
 .screenshot-image-main .image1,
 .screenshot-image-main .image2 {
-  margin-top: 4px;
-  margin-bottom: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin-top: 6px;
+  margin-bottom: 12px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 .app-tile-label {
@@ -4921,13 +4907,13 @@ screenshot-carousel button,
 }
 
 .review-textbox {
-  padding: 4px;
+  padding: 6px;
 }
 
 .origin-rounded-box {
   background-color: rgba(0, 0, 0, 0.08);
   border-radius: 9999px;
-  padding: 2px;
+  padding: 4px;
 }
 
 .origin-beta {
@@ -4935,7 +4921,7 @@ screenshot-carousel button,
 }
 
 .origin-button > button {
-  padding: 2px 6px;
+  padding: 3px 9px;
 }
 
 flowboxchild.card {
@@ -4946,7 +4932,7 @@ flowboxchild.card {
 }
 
 button.card.category-tile {
-  padding: 14px;
+  padding: 21px;
   border: none;
   border-radius: 7px;
   min-width: 140px;
@@ -4956,7 +4942,7 @@ button.card.category-tile {
 }
 
 button.card.category-tile.category-tile-iconless {
-  padding: 6px 10px;
+  padding: 9px 15px;
   min-width: 130px;
   font-size: 105%;
   font-weight: normal;
@@ -5070,8 +5056,8 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 .featured-tile label.title-1 {
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .featured-tile.narrow label.title-1 {
@@ -5103,8 +5089,8 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 .application-details-description .button {
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .install-progress {
@@ -5120,7 +5106,7 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 .review-row > * {
-  margin: 8px;
+  margin: 12px;
 }
 
 .review-row button {
@@ -5158,7 +5144,7 @@ review-bar {
 
 .overview-more-button {
   font-size: smaller;
-  padding: 0 12px;
+  padding: 0 16px;
 }
 
 .app-row-origin-text {
@@ -5166,7 +5152,7 @@ review-bar {
 }
 
 .app-listbox-header {
-  padding: 4px;
+  padding: 6px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -5202,7 +5188,7 @@ star-image {
 .update-failed-details {
   font-family: Monospace;
   font-size: smaller;
-  padding: 12px;
+  padding: 16px;
 }
 
 .upgrade-banner {
@@ -5217,34 +5203,34 @@ star-image {
 }
 
 .upgrade-buttons #button_upgrades_install {
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 banner > revealer > widget {
   background-color: #5657f5;
-  padding: 4px;
+  padding: 6px;
 }
 
 scrolledwindow.list-page > viewport > clamp > box {
-  margin: 16px 8px;
-  border-spacing: 16px;
+  margin: 24px 12px;
+  border-spacing: 24px;
 }
 
 .update-preferences preferencesgroup > box > box {
-  margin-top: 12px;
+  margin-top: 18px;
 }
 
 .section > label:not(:first-child) {
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .section > box:not(:first-child) {
-  margin-top: 8px;
+  margin-top: 12px;
 }
 
 clamp.status-page {
-  margin: 24px 8px;
+  margin: 36px 12px;
 }
 
 clamp.status-page .iconbox {
@@ -5259,18 +5245,18 @@ clamp.status-page .icon {
 }
 
 clamp.status-page .icon:not(:last-child) {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 clamp.status-page .title:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 app-context-bar .context-tile {
   border: 1px solid rgba(0, 0, 0, 0.08);
   background-color: transparent;
   border-radius: 0;
-  padding: 16px 8px 14px 8px;
+  padding: 24px 12px 21px 12px;
   outline-offset: 5px;
   border-bottom: none;
   border-right: none;
@@ -5316,7 +5302,7 @@ carousel.card {
 .context-tile-lozenge {
   min-height: 28px;
   min-width: 28px;
-  padding: 4px;
+  padding: 6px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 9999px;
@@ -5389,19 +5375,19 @@ window.narrow .app-developer {
 }
 
 scrolledwindow.fake-adw-status-page > viewport > box {
-  margin: 24px 8px;
+  margin: 36px 12px;
 }
 
 scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) {
-  margin-bottom: 24px;
+  margin-bottom: 36px;
 }
 
 scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 statuspage.icon-dropshadow image.icon {
@@ -5419,17 +5405,17 @@ window.info scrollbar.vertical trough {
 }
 
 row.app > box.header {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 row.app > box.header {
-  border-spacing: 8px;
+  border-spacing: 12px;
 }
 
 row.app > box.header > image {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 row.app label.warning {
@@ -5472,7 +5458,7 @@ window > contents leaflet.unfolded stack.background leaflet + headerbar {
 
 window > contents leaflet.unfolded > separator + box.vertical > headerbar {
   border-top-right-radius: 0;
-  border-top-left-radius: 11px;
+  border-top-left-radius: 13px;
 }
 
 window > contents leaflet > box > scrolledwindow > viewport > widget > stack {
@@ -5666,8 +5652,8 @@ datechooser navigator label {
 }
 
 datechooser navigator button, datechooser navigator button.popup, datechooser navigator button.image-button {
-  min-height: 32px;
-  min-width: 32px;
+  min-height: 36px;
+  min-width: 36px;
   padding: 0;
 }
 
@@ -5681,8 +5667,8 @@ datechooser button.day, datechooser button.day.text-button {
   font-weight: normal;
   margin: 3px;
   padding: 0;
-  min-height: 32px;
-  min-width: 32px;
+  min-height: 36px;
+  min-width: 36px;
   transition: none;
 }
 
@@ -5930,7 +5916,7 @@ agenda-view list.background {
 }
 
 .large-button {
-  padding: 4px;
+  padding: 6px;
 }
 
 .alarm-time {
@@ -6302,7 +6288,7 @@ splitbutton > separator {
 splitbutton.image-button > button {
   min-height: 24px;
   min-width: 24px;
-  padding: 4px;
+  padding: 6px;
 }
 
 splitbutton.text-button.image-button > button, splitbutton.image-text-button > button {
@@ -6493,7 +6479,7 @@ preferencesgroup > box > box.header:not(.single-line) {
 }
 
 preferencesgroup > box > box.single-line {
-  min-height: 32px;
+  min-height: 36px;
 }
 
 preferencesgroup > box button.background-preview-button.toggle {
@@ -6995,6 +6981,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane .toolbar,
+.sidebar-pane .sidebar,
 .sidebar-pane .navigation-sidebar,
 .sidebar-pane headerbar,
 .sidebar-pane searchbar > revealer > box {

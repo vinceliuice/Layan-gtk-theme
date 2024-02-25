@@ -1240,7 +1240,7 @@ menubar,
   > menuitem {
     transition: $shorter_transition;
     min-height: 20px;
-    padding: 4px 8px;
+    padding: $container_padding $container_padding * 2;
     color: $titlebar_secondary_fg_color;
 
     menu {
@@ -1271,8 +1271,8 @@ menubar,
 // .context-menu,
 // .menu,
 menu {
-  margin: 4px 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
-  padding: 4px;
+  margin: $container_padding 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
+  padding: $container_padding / 2;
   box-shadow: inset 0 1px rgba($menu_border_color, 0.06);
   background-color: $menu_bg_color;
   border: 1px solid $menu_border_color; // adds borders in a non composited env
@@ -1289,11 +1289,11 @@ menu {
     transition: background-color $shorter_duration $deceleration_curve;
     min-height: 20px;
     min-width: 40px;
-    padding: 4px 8px;
+    padding: $container_padding / 2 + 2px $container_padding + 4px;
     font: initial;
     text-shadow: none;
     color: $menu_fg_color;
-    border-radius: $menu_radius - 3px;
+    border-radius: $menu_radius - $container_padding / 2;
 
     &:hover {
       transition: none;
@@ -1330,7 +1330,7 @@ menu {
   > arrow {
     min-height: 16px;
     min-width: 16px;
-    padding: 4px;
+    padding: $container_padding;
     background-color: $menu_bg_color;
     color: $menu_fg_color;
     border-radius: $buttons_radius;
@@ -1846,7 +1846,7 @@ notebook {
                   background-image 0;
       min-height: $small_size;
       min-width: $small_size;
-      padding: $container_padding 12px;
+      padding: $container_padding $container_padding * 2;
 
       outline-offset: -6px;
 
@@ -1899,7 +1899,7 @@ notebook {
         @extend %small_button;
         min-height: 24px;
         min-width: 24px;
-        padding: 0;
+        padding: $container_padding - 4px;
         margin: 0;
 
         &:last-child {

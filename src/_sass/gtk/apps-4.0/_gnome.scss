@@ -78,46 +78,49 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
 
     list.navigation-sidebar {
       background-color: transparent;
+      padding: 0;
 
       > row {
-        padding-left: 6px;
-  
+        padding-left: $container_padding;
+
+        .sidebar-revealer { padding: 0 0 0 $container_padding * 2; }
+
         &, &:hover, &:selected, &:active, &:selected:hover, &:selected:active, &:focus {
           transition: none;
           animation: none;
           background-color: transparent;
           box-shadow: none;
         }
-  
+
         &:selected button.sidebar-button  { @extend %selected_sidebar_button; }
   
         image.sidebar-icon {
           color: $inverse_secondary_fg_color;
           margin-right: 6px;
         }
-  
+
         label.sidebar-label {
           padding-left: 18px;
           color: $secondary_fg_color;
           border-radius: 0 $buttons_radius $buttons_radius 0;
         }
-  
+
         &:hover {
           label.sidebar-label {
             background-color: rgba($divider_color, 0.03);
           }
         }
-  
+
         &:backdrop { opacity: 0.85; }
-  
+
         &:selected {
           // font-weight: bold;
-  
+
           label.sidebar-label {
             color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
             background-color: rgba($divider_color, 0.06);
           }
-  
+
           image.sidebar-icon { color: $inverse_fg_color; }
         }
       }

@@ -1172,7 +1172,7 @@ menubar {
   > item {
     transition: $shorter_transition;
     min-height: 20px;
-    padding: 4px 8px;
+    padding: $container_padding $container_padding * 2;
     color: $titlebar_secondary_fg_color;
 
     &:hover { // Seems like it :hover even with keyboard focus
@@ -1277,9 +1277,6 @@ popover.background {
   }
 
   > contents {
-    padding: 6px;
-    border-radius: $menu_radius;
-
     > list,
     > .view,
     > toolbar {
@@ -1289,7 +1286,7 @@ popover.background {
     }
 
     separator {
-      margin: $container_padding 0;
+      margin: $container_padding / 2 0;
     }
 
     list separator { margin: 0; }
@@ -1299,7 +1296,7 @@ popover.background {
 
       > row {
         margin: 0;
-        border-radius: 3px;
+        border-radius: $menu_radius - $container_padding / 2;
         padding: $container_padding $container_padding * 2;
 
         &:selected {
@@ -1344,8 +1341,8 @@ popover.background {
   modelbutton {
     min-height: 20px;
     min-width: 40px;
-    padding: 4px 8px;
-    border-radius: $menu_radius - 3px;
+    padding: $container_padding / 2 + 2px $container_padding + 2px;
+    border-radius: $menu_radius - $container_padding / 2;
     box-shadow: none;
     animation: none;
     transition: none;
@@ -1388,7 +1385,6 @@ popover.background {
   checkbutton.text-button,
   radiobutton.text-button { outline-style: none; }
 
-  separator { margin: 4px 0; }
   list separator { margin: 0; }
 
   label.separator { color: $disabled_fg_color; }
@@ -2859,12 +2855,12 @@ list {
   color: $secondary_fg_color;
 
   > row {
-    padding: 2px;
+    padding: $container_padding / 2;
     background-clip: padding-box;
   }
 
   > row.expander { padding: 0px; }
-  > row.expander .row-header { padding: 2px; }
+  > row.expander .row-header { padding: $container_padding / 2; }
 
   &.horizontal row.separator,
   &.separators.horizontal > row:not(.separator) {
@@ -2901,9 +2897,13 @@ row {
 
   &:selected { @extend %selected_items; }
 
-  button.circular { margin: 0 4px; } // To show the circular button shadow completely on row
+  button.circular { margin: 0 $container_padding; } // To show the circular button shadow completely on row
   button.image-button { @extend %circular_button; } // Use circular button for image buttons on row
   .linked button { @extend %linked; }
+}
+
+treeexpander {
+  border-spacing: $container_padding;
 }
 
 columnview {
@@ -2913,7 +2913,7 @@ columnview {
 
     // align horizontal sizing with header buttons
     > cell {
-      padding: 8px 6px;
+      padding: $container_padding + 2px $container_padding;
 
       &:not(:first-child) {
         border-left: 1px solid transparent;
@@ -2928,33 +2928,13 @@ columnview {
 
   // shrink vertically for .data-table
   &.data-table > listview > row > cell {
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-}
-
-treeexpander {
-  border-spacing: 4px;
-}
-
-columnview {
-  // move padding to child cells
-  > listview > row {
-    padding: 0;
-
-    // align horizontal sizing with header buttons
-    > cell {
-      padding: 8px 6px;
-
-      &:not(:first-child) {
-        border-left: 1px solid transparent;
-      }
-    }
+    padding-top: $container_padding / 2;
+    padding-bottom: $container_padding / 2;
   }
 
   > header > button {
-    padding-left: 6px;
-    padding-right: 6px;
+    padding-left: $container_padding;
+    padding-right: $container_padding;
     border-left: 1px solid transparent;
 
     &:first-child {
@@ -2977,8 +2957,8 @@ columnview {
 
   // shrink vertically for .data-table
   &.data-table > listview > row > cell {
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding-top: $container_padding / 2;
+    padding-bottom: $container_padding / 2;
   }
 
   ~ undershoot.top {
@@ -3003,11 +2983,11 @@ columnview {
 
 .rich-list { /* rich lists usually containing other widgets than just labels/text */
   & > row {
-    padding: 8px 12px;
+    padding: $container_padding $container_padding * 2;
     min-height: 32px; /* should be tall even when only containing a label */
 
     & > box {
-      border-spacing: 12px;
+      border-spacing: $container_padding * 2;
     }
   }
 }
@@ -3016,26 +2996,26 @@ columnview {
  * AdwActionRow *
  ****************/
 
- row {
+row {
   label.subtitle {
     font-size: smaller;
     @extend .dim-label;
   }
 
   > box.header {
-    margin-left: 12px;
-    margin-right: 12px;
-    border-spacing: 6px;
-    min-height: $large_size;
+    margin-left: $container_padding * 2;
+    margin-right: $container_padding * 2;
+    border-spacing: $container_padding;
+    min-height: $large_size + 10px;
 
     > .icon:disabled {
       filter: opacity(0.35);
     }
 
     > box.title {
-      margin-top: 6px;
-      margin-bottom: 6px;
-      border-spacing: 3px;
+      margin-top: $container_padding;
+      margin-bottom: $container_padding;
+      border-spacing: $container_padding / 2;
       padding: 0;
 
       // Specificity bump for header bar
@@ -3049,13 +3029,13 @@ columnview {
 
     > .prefixes,
     > .suffixes {
-      border-spacing: 6px;
+      border-spacing: $container_padding;
     }
 
     > .icon,
     > .prefixes {
-      &:dir(ltr) { margin-right: 6px; }
-      &:dir(rtl) { margin-left: 6px; }
+      &:dir(ltr) { margin-right: $container_padding; }
+      &:dir(rtl) { margin-left: $container_padding; }
     }
   }
 }
@@ -3116,7 +3096,7 @@ row.expander {
   // Drop transparent background on expander rows to let nested rows handle it,
   // avoiding double highlights.
   background: none;
-  padding: 0px;
+  padding: 0;
 
   > box > list {
     background: none;
@@ -3772,29 +3752,27 @@ infobar {
  * Tooltips *
  ************/
 tooltip {
-  &.background.csd {
+  &.background {
     // background-color needs to be set this way otherwise it gets drawn twice
     // see https://bugzilla.gnome.org/show_bug.cgi?id=736155 for details.
     border-radius: $menu_radius;
-    box-shadow: inset 0 1px $titlebar_highlight_color;
-    background-color: rgba($popover_bg, $higher_opacity);
-    color: $popover_fg;
+    background-color: rgba(black, 0.75);
+    color: white;
+    border: none;
   }
 
-  // @extend %osd;
-
-  // padding: 4px; /* not working */
+  padding: $container_padding;
   border-radius: $menu_radius;
-  box-shadow: none; // otherwise it gets inherited by windowframe.csd
+  box-shadow: inset 0 1px rgba(white, 0.08);
 
   label {
     // tooltip label already seems to have 6px margins
-    min-height: 32px - 6px * 2;
-    padding: 0 8px - 6px;
+    min-height: 20px;
+    padding: 0 $container_padding / 2;
   }
 
   > box {
-    border-spacing: 6px;
+    border-spacing: $container_padding;
   }
 }
 
