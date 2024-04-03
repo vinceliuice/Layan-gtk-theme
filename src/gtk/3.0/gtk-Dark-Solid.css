@@ -2806,6 +2806,7 @@ headerbar .title {
 headerbar .subtitle {
   padding: 0 12px;
   font-size: smaller;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 headerbar entry {

@@ -2874,23 +2874,22 @@ list {
 }
 
 // FIXME
-$row_transition: $shorter_transition, background-color 0, color 0;
+$row_transition: $shorter_transition, box-shadow 0, color 0;
 
 row {
   @at-root %row_activatable, &.activatable {
     transition: $row_transition;
-    box-shadow: inset 0 0 0 9999px transparent;
+    background-color: transparent;
 
     &:hover {
-      transition: $row_transition,
-                  box-shadow 0;
-      box-shadow: inset 0 0 0 9999px $row_fill_color;
+      transition: $row_transition, background-color 0;
+      background-color: $row_fill_color;
     }
 
     &.has-open-popup, // this is for indicathing which row generated a popover see https://bugzilla.gnome.org/show_bug.cgi?id=754411
     &:active {
       transition: $row_transition;
-      box-shadow: inset 0 0 0 9999px $fill_color;
+      background-color: $fill_color;
       background-size: 0% 0%;
     }
   }

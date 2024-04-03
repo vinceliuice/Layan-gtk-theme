@@ -2454,6 +2454,7 @@ treeview.view radio:checked {
   .subtitle {
     padding: 0 12px;
     font-size: smaller;
+    color: $titlebar_disabled_fg_color;
 
     @extend .dim-label;
   }

@@ -1,0 +1,24 @@
+// Search entry
+.search-entry {
+  border-radius: $forced_circular_radius;
+  margin-top: $base_padding * 2;
+  margin-bottom: $base_padding;
+  width: 24em;
+
+  @extend %system_entry;
+
+  .search-entry-icon {
+    icon-size: $scalable_icon_size;
+    margin-top: 2px; // center vertically
+    padding: 0 $base_margin;
+  }
+
+  .popup-menu & { // reset
+    @include entry(normal, $c:$fg_color, $bc:$menu_bg_color, $always_dark: false);
+    &:hover { @include entry(hover, $c:$fg_color, $bc:$menu_bg_color, $always_dark: false); }
+    &:focus { @include entry(focus, $c:$fg_color, $bc:$menu_bg_color, $always_dark: false); }
+    &:insensitive { @include entry(insensitive, $c:$fg_color, $bc:$menu_bg_color, $always_dark: false); }
+
+    StLabel.hint-text { color: transparentize($fg_color, 0.3); }
+  }
+}
