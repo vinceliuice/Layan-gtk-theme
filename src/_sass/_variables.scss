@@ -14,7 +14,7 @@ $disabled_opacity: 0.5;
 // sizes
 $small_size: if($compact == 'false', 24px, 20px);
 $medium_size: if($compact == 'false', 36px, 32px);
-$large_size: if($compact == 'false', 44px, 40px);
+$large_size: if($compact == 'false', 48px, 40px);
 
 $container_padding: if($compact == 'false', 6px, 4px);
 $base_padding: if($compact == 'false', 6px, 6px);

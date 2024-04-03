@@ -715,7 +715,7 @@ button.text-button.image-button image:not(:only-child) {
 button.osd {
   min-height: 24px;
   min-width: 24px;
-  padding: 10px;
+  padding: 12px;
   margin: 9px;
 }
 
@@ -968,7 +968,7 @@ spinbutton:not(.vertical) {
 
 .budgie-popover spinbutton:not(.vertical) entry, notebook > stack:not(:only-child) spinbutton:not(.vertical) entry, notebook > stack:not(:only-child) spinbutton:not(.vertical) entry:focus, notebook > stack:not(:only-child) spinbutton:not(.vertical) entry:disabled,
 spinbutton:not(.vertical) entry {
-  min-width: 28px;
+  min-width: 32px;
   margin: 0;
   border-image: none;
   border-radius: 0;
@@ -998,13 +998,13 @@ spinbutton.vertical:drop(active) {
 
 spinbutton.vertical entry {
   min-height: 36px;
-  min-width: 44px;
+  min-width: 48px;
   padding: 0;
 }
 
 spinbutton.vertical button {
   min-height: 36px;
-  min-width: 44px;
+  min-width: 48px;
   padding: 0;
 }
 
@@ -2565,8 +2565,8 @@ check,
 radio {
   min-height: 24px;
   min-width: 24px;
-  margin: -10px;
-  padding: 10px;
+  margin: -12px;
+  padding: 12px;
 }
 
 check:checked, check:indeterminate,
@@ -2637,8 +2637,8 @@ check:indeterminate {
 
 radio {
   -gtk-icon-source: -gtk-recolor(url("assets/scalable/radio-unchecked-symbolic.svg"));
-  border-image-slice: 22;
-  border-image-width: 22px;
+  border-image-slice: 24;
+  border-image-width: 24px;
 }
 
 
@@ -2653,12 +2653,12 @@ radio {
 
 
 radio:checked:not(:indeterminate) {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1136363636, to(#7C4DFF), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1041666667, to(#7C4DFF), to(transparent));
 }
 
 
 radio:checked:not(:indeterminate):disabled {
-  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1136363636, to(rgba(124, 77, 255, 0.5)), to(transparent));
+  border-image-source: -gtk-gradient(radial, center center, 0, center center, 0.1041666667, to(rgba(124, 77, 255, 0.5)), to(transparent));
 }
 
 window.background:not(.csd) > widget > checkbutton > check,
@@ -2779,7 +2779,7 @@ treeview.view radio:checked {
  ***************/
 headerbar {
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1), color 100ms cubic-bezier(0, 0, 0.2, 1);
-  min-height: 44px;
+  min-height: 48px;
   padding: 0 6px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(0, 0, 0, 0.08);
   background-color: #31313a;
@@ -2825,8 +2825,8 @@ headerbar button {
 }
 
 headerbar switch {
-  margin-top: 8px;
-  margin-bottom: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 headerbar spinbutton button {
@@ -8270,7 +8270,7 @@ frame.raven-frame > border {
 
 .raven .powerstrip button {
   margin: 2px 0 1px;
-  padding: 10px;
+  padding: 12px;
 }
 
 .raven .option-subtitle {
@@ -8327,7 +8327,7 @@ calendar.raven-calendar:selected {
 }
 
 .raven-mpris button.image-button {
-  padding: 10px;
+  padding: 12px;
 }
 
 box.vertical > stack > box.vertical .raven-background > viewport.frame {

@@ -3345,7 +3345,7 @@ StWidget.focused .app-well-app-running-dot {
   color: rgba(0, 0, 0, 0.55);
   border-radius: 100px;
   /* wish we could do 50% */
-  padding: 14px;
+  padding: 16px;
   border: none;
   -st-icon-style: symbolic;
 }
@@ -3354,7 +3354,7 @@ StWidget.focused .app-well-app-running-dot {
   background-color: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.75);
   border: none;
-  padding: 14px;
+  padding: 16px;
 }
 
 .system-menu-action:active {
