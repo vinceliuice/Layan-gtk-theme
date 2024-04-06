@@ -38,6 +38,7 @@ $forced_circular_radius: 999px;
 
 // radii of things that display over other things, e.g. popovers
 $modal_radius: $base_border_radius * 2;
+$card_radius: $base_border_radius * 1.5;
 
 // Chroma key to flag when a background-color is always occluded, not visible.
 // This allows any box-shadow behind it to be rendered more efficiently by
@@ -134,7 +135,7 @@ stage {
 
 // common style for card elements
 %card_common {
-  border-radius: $base_border_radius * 1.5;
+  border-radius: $card_radius;
   padding: $scaled_padding * 2;
   margin: $base_margin;
   background-color: $card_bg_color;

@@ -1331,6 +1331,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 0 0 12px 12px;
   margin-bottom: 6px;
   border: none;
+  background-color: #eeeeee;
 }
 
 .popup-sub-menu .popup-menu-item {
@@ -1347,38 +1348,38 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .popup-sub-menu .popup-menu-item:focus, .popup-sub-menu .popup-menu-item:hover {
   color: #282828;
-  background-color: #dbdbdb;
+  background-color: #d7d7d7;
 }
 
 .popup-sub-menu .popup-menu-item:active {
   color: #282828;
-  background-color: #cecece;
+  background-color: #cacaca;
 }
 
 .popup-sub-menu .popup-menu-item:active:hover {
-  background-color: #c4c4c4;
+  background-color: silver;
 }
 
 .popup-sub-menu .popup-menu-item:active:focus {
-  background-color: #c8c8d0;
+  background-color: #c4c4cc;
 }
 
 .popup-sub-menu .popup-menu-item:checked {
   color: #282828;
-  background-color: #d1d1d1;
+  background-color: #cdcdcd;
 }
 
 .popup-sub-menu .popup-menu-item:checked:hover {
-  background-color: #c6c6c6;
+  background-color: #c2c2c2;
 }
 
 .popup-sub-menu .popup-menu-item:checked:active {
-  background-color: #bababa;
+  background-color: #b6b6b6;
 }
 
 .popup-sub-menu .popup-menu-item:insensitive {
   color: rgba(40, 40, 40, 0.4);
-  background-color: #ededed;
+  background-color: #e9e9e9;
 }
 
 .popup-sub-menu .popup-menu-item:last-child {
@@ -1664,14 +1665,14 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .message-list:ltr {
   margin-left: 0;
   margin-right: 4px;
-  padding-right: 6px;
+  padding-right: 0;
   border-right-width: 1px;
 }
 
 .message-list:rtl {
   margin-right: 0;
   margin-left: 4px;
-  padding-left: 6px;
+  padding-left: 0;
   border-left-width: 1px;
 }
 
@@ -1687,6 +1688,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-list-sections {
   spacing: 12px;
+  padding: 2px;
 }
 
 .message-list-sections:ltr {
@@ -1857,12 +1859,12 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-media-control:hover {
-  background-color: #ebebeb;
+  background-color: rgba(40, 40, 40, 0.19);
   color: #282828;
 }
 
 .message-media-control:active {
-  background-color: #e6e6e6;
+  background-color: rgba(40, 40, 40, 0.24);
   color: #282828;
 }
 
@@ -1945,7 +1947,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   width: 34em;
   box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.05);
   border-radius: 16px;
-  margin: 4px;
+  margin: 8px;
 }
 
 .notification-buttons-bin {

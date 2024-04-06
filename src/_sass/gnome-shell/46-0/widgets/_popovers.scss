@@ -1,9 +1,8 @@
 /* Popovers/Menus */
 
-$menuitem_bg_color: lighten($menu_bg_color, 4%);
 $menuitem_border_radius: $base_border_radius * 1.5;
 
-$submenu_bg_color: lighten($menu_bg_color, 7%);
+$submenu_bg_color: mix($fg_color, $menu_bg_color, 8%);
 
 // the popover itself
 .popup-menu-boxpointer {
@@ -83,6 +82,7 @@ $submenu_bg_color: lighten($menu_bg_color, 7%);
   border-radius: 0 0 $menuitem_border_radius $menuitem_border_radius;
   margin-bottom: $base_padding;
   border: none;
+  background-color: $submenu_bg_color;
 
   @if $contrast == 'high' {
     border-color: $hc_inset_color;

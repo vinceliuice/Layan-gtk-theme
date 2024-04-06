@@ -7,8 +7,8 @@
   border: solid $borders_color;
 
   // padding and margins to account for scrollbar
-  &:ltr {margin-left: 0; margin-right: $base_margin; padding-right: $base_padding; border-right-width: 1px; }
-  &:rtl {margin-right: 0; margin-left: $base_margin; padding-left: $base_padding; border-left-width: 1px; }
+  &:ltr { margin-left: 0; margin-right: $base_margin; padding-right: 0; border-right-width: 1px; }
+  &:rtl { margin-right: 0; margin-left: $base_margin; padding-left: 0; border-left-width: 1px; }
 
   .message-list-placeholder {
     @extend %title_2;
@@ -31,6 +31,7 @@
   &:rtl { margin-left: $base_margin * 3; }
 
   spacing: $base_padding * 2;
+  padding: $base_margin / 2;
 }
 
 .message-list-section,
@@ -69,8 +70,8 @@
   border-radius: $modal_radius;
 
   // subtract side padding to accommodate the close button's border
-  &:ltr { padding-right:-2px; };
-  &:rtl { padding-left:-2px; };
+  &:ltr { padding-right: -2px; }
+  &:rtl { padding-left: -2px; }
 
   // message header
   .message-header {
@@ -104,8 +105,8 @@
         // Add bottom padding to align the app name with the time horizontally
         padding-bottom: to_em(1px);
 
-        &:ltr { text-align: right };
-        &:rtl { text-align: left };
+        &:ltr { text-align: right; }
+        &:rtl { text-align: left; }
       }
     }
 
@@ -116,10 +117,10 @@
       color: $fg_color;
       background-color: transparentize($fg_color, .9);
       padding: 4px;
-      &:hover { background-color: transparentize($fg_color, .81);}
+      &:hover { background-color: transparentize($fg_color, .81); }
       &:active,
-      &:active:hover { background-color: transparentize($fg_color, .76);}
-      &:insensitive { background-color: transparentize($fg_color, .93);}
+      &:active:hover { background-color: transparentize($fg_color, .76); }
+      &:insensitive { background-color: transparentize($fg_color, .93); }
     }
 
     .message-expand-button {
@@ -190,12 +191,12 @@
 
   // colors are lightened since the media controls are in a card
   &:hover {
-    background-color: lighten($hover_bg_color, 5%);
+    background-color: transparentize($fg_color, .81);
     color: $fg_color;
   }
 
   &:active {
-    background-color: lighten($active_bg_color, 5%);
+    background-color: transparentize($fg_color, .76);
     color: $fg_color;
   }
 
