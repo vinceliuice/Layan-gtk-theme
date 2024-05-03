@@ -169,11 +169,11 @@
   $button_bg_color: mix($tc, $c, $background_mix_factor);
 
   // background color override for card elements
-  @if $style == 'card' { $button_bg_color: $card_bg_color;}
+  @if $style == 'card' { $button_bg_color: $card_bg_color; }
   // background color mix override for flat style; the button bg color is the background color input
-  @if $style == 'flat' { $button_bg_color: $c;}
+  @if $style == 'flat' { $button_bg_color: $c; }
   // background color mix override for default button style
-  @if $style == 'default' { $button_bg_color: $c;}
+  @if $style == 'default' { $button_bg_color: $c; }
 
   // background color adjustment factors
   // the % a color is lightened or darkened for button states
@@ -370,7 +370,7 @@
   @extend %menuitem;
 
   // lighten the background color always
-  $bg: lighten($bg,5%);
+  $bg: lighten($bg, 5%);
 
   @if $style == 'flat' {
     @include button(undecorated);

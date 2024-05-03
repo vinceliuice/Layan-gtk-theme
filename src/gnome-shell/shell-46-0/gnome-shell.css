@@ -244,7 +244,7 @@ stage {
   background-color: #2d2ef3;
 }
 
-.popup-sub-menu .popup-menu-item, .popup-menu-item:active, .popup-menu-item:hover, .popup-menu-item {
+.popup-sub-menu .popup-menu-item {
   font-weight: normal;
   spacing: 6px;
   transition-duration: 100ms;
@@ -1152,146 +1152,35 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu-item {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
   border-radius: 12px;
-}
-
-.popup-menu-item:insensitive {
-  background-color: transparent !important;
-}
-
-.popup-menu-item:focus, .popup-menu-item:hover {
+  background-color: transparent;
   color: #282828;
-  background-color: #dbdbdb;
-}
-
-.popup-menu-item:active {
-  color: #282828;
-  background-color: #cecece;
-}
-
-.popup-menu-item:active:hover {
-  background-color: #c4c4c4;
-}
-
-.popup-menu-item:active:focus {
-  background-color: #c8c8d0;
-}
-
-.popup-menu-item:checked {
-  color: #282828;
-  background-color: #d1d1d1;
-}
-
-.popup-menu-item:checked:hover {
-  background-color: #c6c6c6;
-}
-
-.popup-menu-item:checked:active {
-  background-color: #bababa;
-}
-
-.popup-menu-item:insensitive {
-  color: rgba(40, 40, 40, 0.4);
-  background-color: #ededed;
+  border: none;
 }
 
 .popup-menu-item:hover {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.popup-menu-item:hover:insensitive {
-  background-color: transparent !important;
-}
-
-.popup-menu-item:hover:focus, .popup-menu-item:hover:hover {
-  color: #282828;
-  background-color: #c9c9c9;
-}
-
-.popup-menu-item:hover:active {
-  color: #282828;
-  background-color: #bcbcbc;
-}
-
-.popup-menu-item:hover:active:hover {
-  background-color: #b2b2b2;
-}
-
-.popup-menu-item:hover:active:focus {
-  background-color: #b7b7bf;
-}
-
-.popup-menu-item:hover:checked {
-  color: #282828;
-  background-color: #bfbfbf;
-}
-
-.popup-menu-item:hover:checked:hover {
-  background-color: #b4b4b4;
-}
-
-.popup-menu-item:hover:checked:active {
-  background-color: #a8a8a8;
-}
-
-.popup-menu-item:hover:insensitive {
-  color: rgba(40, 40, 40, 0.4);
-  background-color: #dbdbdb;
+  background-color: #5657f5;
+  color: #ffffff;
+  transition-duration: 0ms !important;
 }
 
 .popup-menu-item:active {
-  background-color: transparent;
-  border-color: transparent;
-  box-shadow: none;
-}
-
-.popup-menu-item:active:insensitive {
-  background-color: transparent !important;
-}
-
-.popup-menu-item:active:focus, .popup-menu-item:active:hover {
-  color: #282828;
-  background-color: #c5c5c5;
-}
-
-.popup-menu-item:active:active {
-  color: #282828;
-  background-color: #b8b8b8;
-}
-
-.popup-menu-item:active:active:hover {
-  background-color: #aeaeae;
-}
-
-.popup-menu-item:active:active:focus {
-  background-color: #b3b3bb;
-}
-
-.popup-menu-item:active:checked {
-  color: #282828;
-  background-color: #bbbbbb;
-}
-
-.popup-menu-item:active:checked:hover {
-  background-color: #b0b0b0;
-}
-
-.popup-menu-item:active:checked:active {
-  background-color: #a4a4a4;
-}
-
-.popup-menu-item:active:insensitive {
-  color: rgba(40, 40, 40, 0.4);
-  background-color: #d7d7d7;
+  background-color: #5152e1;
+  color: #ffffff;
 }
 
 .popup-menu-item:checked {
+  color: #282828;
+  background-color: #eeeeee;
   border-radius: 12px 12px 0 0 !important;
+}
+
+.popup-menu-item:checked:hover {
+  background-color: #e2e2e2;
+}
+
+.popup-menu-item:checked:active {
+  background-color: #d0d0d0;
 }
 
 .popup-menu-item:insensitive {
@@ -2544,7 +2433,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 #panel {
   background-color: whitesmoke;
   font-weight: bold;
-  height: 2.2em;
+  height: 2.5em;
   transition-duration: 250ms;
 }
 
@@ -3664,7 +3553,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .app-folder-dialog-container {
-  padding-top: 2.2em;
+  padding-top: 2.5em;
 }
 
 .app-folder-dialog {

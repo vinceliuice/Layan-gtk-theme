@@ -31,23 +31,33 @@ $submenu_bg_color: mix($fg_color, $menu_bg_color, 8%);
 
 // menu items
 .popup-menu-item {
-  @include menuitem($bg:$menu_bg_color);
   border-radius: $menuitem_border_radius;
+  background-color: transparent;
+  color: $fg_color;
+  border: none;
   
   &:hover {
-    @include menuitem($bg:$hover_bg_color);
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+    transition-duration: 0ms !important;
   }
 
   &:active {
-    @include menuitem($bg:$active_bg_color);
+    background-color: mix($fg_color, $selected_bg_color, 10%);
+    color: $selected_fg_color;
   }
 
   &:checked {
+    color: $fg_color;
+    background-color: $submenu_bg_color;
     border-radius: $menuitem_border_radius $menuitem_border_radius 0 0 !important;
 
-    @if $contrast == 'high' {
-      border: 1px solid $hc_inset_color;
-      border-bottom-width:0;
+    &:hover {
+      background-color: mix($fg_color, $submenu_bg_color, 6%);
+    }
+
+    &:active {
+      background-color: mix($fg_color, $submenu_bg_color, 15%);
     }
   }
 
@@ -83,10 +93,6 @@ $submenu_bg_color: mix($fg_color, $menu_bg_color, 8%);
   margin-bottom: $base_padding;
   border: none;
   background-color: $submenu_bg_color;
-
-  @if $contrast == 'high' {
-    border-color: $hc_inset_color;
-  }
 
   // submenu specific styles
   .popup-menu-item {

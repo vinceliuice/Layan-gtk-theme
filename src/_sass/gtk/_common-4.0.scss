@@ -691,10 +691,55 @@ button {
   }
 }
 
-// oldstyle toolbar buttons
-.toolbar button {
-  margin: 1px;
-  @extend %flat_button;
+// .linked >                  element            child
+$deprecated_linked_widgets: ("combobox",         "> box > button.combo"),
+                            ("appchooserbutton", "> combobox > box > button.combo");
+
+// .linked >        element       child
+$_linked_widgets: ("%button",     ""),
+                  ("button",      ""),
+                  ("menubutton",  "> button"),
+                  ("dropdown",    "> button"),
+                  ("colorbutton", "> button"),
+                  ("fontbutton",  "> button"),
+                  ("tabbutton",   "> button"),
+                  ("%entry",      ""),
+                  ("entry",       "");
+
+$_linked_widgets: join($_linked_widgets, $deprecated_linked_widgets);
+
+@each $widget, $child in $_linked_widgets {
+  .linked:not(.vertical) > {
+    #{$widget} {
+      &:dir(ltr):not(:first-child) #{$child},
+      &:dir(rtl):not(:last-child) #{$child} {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: 0;
+      }
+
+      &:dir(ltr):not(:last-child) #{$child},
+      &:dir(rtl):not(:first-child) #{$child} {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+
+  .linked.vertical {
+    #{$widget} {
+      &:not(:first-child) #{$child} {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: 0;
+      }
+
+      &:not(:last-child) #{$child} {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
 }
 
 button.color {
@@ -945,10 +990,10 @@ combobox {
  ************/
 .toolbar,
 toolbar {
-  padding: 2px;
+  padding: $container_padding;
   background-color: $bg_color;
 
-  button { @extend %flat_button; }
+  & > button { @extend %flat_button; }
 
   // on OSD
   .osd & { background-color: transparent; }
@@ -974,23 +1019,6 @@ toolbar {
   &.vertical > separator { margin: 2px; }
 
   &:not(.inline-toolbar):not(.osd) {
-    scale,
-    entry,
-    spinbutton,
-    button { margin: 2px; }
-
-    .linked entry,
-    .linked spinbutton,
-    .linked button {
-      &:not(:first-child) { margin-left: 0; }
-      &:not(:last-child) { margin-right: 0; }
-    }
-
-    spinbutton {
-      entry,
-      button { margin: 0; }
-    }
-
     switch { margin: 2px + $container_padding 2px; }
   }
 }
@@ -1015,6 +1043,8 @@ actionbar > revealer > box {
   box-shadow: none;
   padding: $container_padding;
   border-top: 1px solid $border_color;
+  background-color: $base_color;
+  color: $fg_color;
 
   button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
 

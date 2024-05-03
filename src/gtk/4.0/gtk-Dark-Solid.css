@@ -589,8 +589,8 @@ button:checked:disabled {
 placessidebar .navigation-sidebar > row button.sidebar-button, window.dialog.message.csd .linked.dialog-action-area:not(.vertical) > button, window.dialog.message .linked.dialog-action-area:not(.vertical) > button, check,
 radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button, banner > revealer > widget button, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .app-notification button, headerbar button:not(.suggested-action):not(.destructive-action), popover.background modelbutton, popover.menu box.circular-buttons button.circular.image-button.model, popover.menu box.inline-buttons button.image-button.model,
-pathbar > button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-toolbar button, .toolbar button,
+pathbar > button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .toolbar > button,
+toolbar > button,
 button.flat {
   transition: 100ms;
   box-shadow: none;
@@ -602,8 +602,8 @@ button.flat {
 placessidebar .navigation-sidebar > row button.sidebar-button:hover, window.dialog.message .linked:not(.vertical).dialog-action-area > button:hover, check:hover,
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover, banner > revealer > widget button:hover, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .app-notification button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), popover.background modelbutton:hover, popover.menu box.circular-buttons button.circular.image-button.model:hover, popover.menu box.inline-buttons button.image-button.model:hover,
-pathbar > button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-toolbar button:hover, .toolbar button:hover,
+pathbar > button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), .toolbar > button:hover,
+toolbar > button:hover,
 button.flat:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
@@ -613,8 +613,8 @@ button.flat:hover {
 placessidebar .navigation-sidebar > row button.sidebar-button:active, window.dialog.message .linked:not(.vertical).dialog-action-area > button:active, check:active,
 radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, splitbutton.flat > button:active,
 splitbutton.flat > menubutton > button:active, menubutton.flat > button:active, banner > revealer > widget button:active, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .app-notification button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), popover.background modelbutton:active, popover.menu box.circular-buttons button.circular.image-button.model:active, popover.menu box.inline-buttons button.image-button.model:active,
-pathbar > button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-toolbar button:active, .toolbar button:active,
+pathbar > button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), .toolbar > button:active,
+toolbar > button:active,
 button.flat:active {
   background-color: rgba(255, 255, 255, 0.15);
   color: #FFFFFF;
@@ -625,8 +625,8 @@ button.flat:active {
 placessidebar .navigation-sidebar > row button.sidebar-button:disabled, window.dialog.message .linked:not(.vertical).dialog-action-area > button:disabled, check:disabled,
 radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled, banner > revealer > widget button:disabled, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .app-notification button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), popover.background modelbutton:disabled, popover.menu box.circular-buttons button.circular.image-button.model:disabled, popover.menu box.inline-buttons button.image-button.model:disabled,
-pathbar > button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-toolbar button:disabled, .toolbar button:disabled,
+pathbar > button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .toolbar > button:disabled,
+toolbar > button:disabled,
 button.flat:disabled {
   box-shadow: none;
   background-color: transparent;
@@ -636,8 +636,8 @@ button.flat:disabled {
 
 splitbutton.flat > button:checked,
 splitbutton.flat > menubutton > button:checked, menubutton.flat > button:checked, banner > revealer > widget button:checked, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .app-notification button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), popover.background modelbutton:checked, popover.menu box.circular-buttons button.circular.image-button.model:checked, popover.menu box.inline-buttons button.image-button.model:checked,
-pathbar > button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-toolbar button:checked, .toolbar button:checked,
+pathbar > button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), .toolbar > button:checked,
+toolbar > button:checked,
 button.flat:checked {
   background-color: rgba(255, 255, 255, 0.2);
   color: #FFFFFF;
@@ -647,8 +647,8 @@ button.flat:checked {
 
 splitbutton.flat > button:checked:disabled,
 splitbutton.flat > menubutton > button:checked:disabled, menubutton.flat > button:checked:disabled, banner > revealer > widget button:checked:disabled, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .app-notification button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background modelbutton:checked:disabled, popover.menu box.circular-buttons button.circular.image-button.model:checked:disabled, popover.menu box.inline-buttons button.image-button.model:checked:disabled,
-pathbar > button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button),
-toolbar button:checked:disabled, .toolbar button:checked:disabled,
+pathbar > button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .toolbar > button:checked:disabled,
+toolbar > button:checked:disabled,
 button.flat:checked:disabled {
   background-color: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.5);
@@ -939,8 +939,224 @@ row .linked button:only-child, .linked:not(.vertical) > spinbutton:only-child:no
   border-radius: 7px;
 }
 
-.toolbar button {
-  margin: 1px;
+.linked:not(.vertical) > button:dir(ltr):not(:first-child), .linked:not(.vertical) > button:dir(rtl):not(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > button:dir(ltr):not(:last-child), .linked:not(.vertical) > button:dir(rtl):not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical button:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical button:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > menubutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > menubutton:dir(rtl):not(:last-child) > button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > menubutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > menubutton:dir(rtl):not(:first-child) > button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical menubutton:not(:first-child) > button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical menubutton:not(:last-child) > button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > dropdown:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > dropdown:dir(rtl):not(:last-child) > button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > dropdown:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > dropdown:dir(rtl):not(:first-child) > button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical dropdown:not(:first-child) > button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical dropdown:not(:last-child) > button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > colorbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > colorbutton:dir(rtl):not(:last-child) > button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > colorbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > colorbutton:dir(rtl):not(:first-child) > button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical colorbutton:not(:first-child) > button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical colorbutton:not(:last-child) > button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > fontbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > fontbutton:dir(rtl):not(:last-child) > button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > fontbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > fontbutton:dir(rtl):not(:first-child) > button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical fontbutton:not(:first-child) > button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical fontbutton:not(:last-child) > button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > tabbutton:dir(ltr):not(:first-child) > button, .linked:not(.vertical) > tabbutton:dir(rtl):not(:last-child) > button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > tabbutton:dir(ltr):not(:last-child) > button, .linked:not(.vertical) > tabbutton:dir(rtl):not(:first-child) > button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical tabbutton:not(:first-child) > button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical tabbutton:not(:last-child) > button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > spinbutton:dir(ltr):not(:first-child):not(.vertical), .linked:not(.vertical) > spinbutton:dir(rtl):not(:last-child):not(.vertical) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > spinbutton:dir(ltr):not(:last-child):not(.vertical), .linked:not(.vertical) > spinbutton:dir(rtl):not(:first-child):not(.vertical) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical spinbutton:not(:first-child):not(.vertical) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical spinbutton:not(:last-child):not(.vertical) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > entry:dir(ltr):not(:first-child), .linked:not(.vertical) > entry:dir(rtl):not(:last-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > entry:dir(ltr):not(:last-child), .linked:not(.vertical) > entry:dir(rtl):not(:first-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical entry:not(:first-child) {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical entry:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > combobox:dir(ltr):not(:first-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:last-child) > box > button.combo {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > combobox:dir(ltr):not(:last-child) > box > button.combo, .linked:not(.vertical) > combobox:dir(rtl):not(:first-child) > box > button.combo {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical combobox:not(:first-child) > box > button.combo {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical combobox:not(:last-child) > box > button.combo {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked:not(.vertical) > appchooserbutton:dir(ltr):not(:first-child) > combobox > box > button.combo, .linked:not(.vertical) > appchooserbutton:dir(rtl):not(:last-child) > combobox > box > button.combo {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.linked:not(.vertical) > appchooserbutton:dir(ltr):not(:last-child) > combobox > box > button.combo, .linked:not(.vertical) > appchooserbutton:dir(rtl):not(:first-child) > combobox > box > button.combo {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.linked.vertical appchooserbutton:not(:first-child) > combobox > box > button.combo {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-top: 0;
+}
+
+.linked.vertical appchooserbutton:not(:last-child) > combobox > box > button.combo {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 button.color {
@@ -1178,7 +1394,7 @@ notebook > stack:not(:only-child) button.combo:disabled, popover.background butt
  ************/
 .toolbar,
 toolbar {
-  padding: 2px;
+  padding: 6px;
   background-color: #34343b;
 }
 
@@ -1218,42 +1434,6 @@ toolbar.vertical > separator {
   margin: 2px;
 }
 
-.toolbar:not(.inline-toolbar):not(.osd) scale,
-.toolbar:not(.inline-toolbar):not(.osd) entry,
-.toolbar:not(.inline-toolbar):not(.osd) spinbutton,
-.toolbar:not(.inline-toolbar):not(.osd) button,
-toolbar:not(.inline-toolbar):not(.osd) scale,
-toolbar:not(.inline-toolbar):not(.osd) entry,
-toolbar:not(.inline-toolbar):not(.osd) spinbutton,
-toolbar:not(.inline-toolbar):not(.osd) button {
-  margin: 2px;
-}
-
-.toolbar:not(.inline-toolbar):not(.osd) .linked entry:not(:first-child),
-.toolbar:not(.inline-toolbar):not(.osd) .linked spinbutton:not(:first-child),
-.toolbar:not(.inline-toolbar):not(.osd) .linked button:not(:first-child),
-toolbar:not(.inline-toolbar):not(.osd) .linked entry:not(:first-child),
-toolbar:not(.inline-toolbar):not(.osd) .linked spinbutton:not(:first-child),
-toolbar:not(.inline-toolbar):not(.osd) .linked button:not(:first-child) {
-  margin-left: 0;
-}
-
-.toolbar:not(.inline-toolbar):not(.osd) .linked entry:not(:last-child),
-.toolbar:not(.inline-toolbar):not(.osd) .linked spinbutton:not(:last-child),
-.toolbar:not(.inline-toolbar):not(.osd) .linked button:not(:last-child),
-toolbar:not(.inline-toolbar):not(.osd) .linked entry:not(:last-child),
-toolbar:not(.inline-toolbar):not(.osd) .linked spinbutton:not(:last-child),
-toolbar:not(.inline-toolbar):not(.osd) .linked button:not(:last-child) {
-  margin-right: 0;
-}
-
-.toolbar:not(.inline-toolbar):not(.osd) spinbutton entry,
-.toolbar:not(.inline-toolbar):not(.osd) spinbutton button,
-toolbar:not(.inline-toolbar):not(.osd) spinbutton entry,
-toolbar:not(.inline-toolbar):not(.osd) spinbutton button {
-  margin: 0;
-}
-
 .toolbar:not(.inline-toolbar):not(.osd) switch,
 toolbar:not(.inline-toolbar):not(.osd) switch {
   margin: 8px 2px;
@@ -1281,6 +1461,8 @@ actionbar > revealer > box {
   box-shadow: none;
   padding: 6px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #31313a;
+  color: #FFFFFF;
 }
 
 actionbar > revealer > box .linked > button {
