@@ -209,7 +209,7 @@ assistant .sidebar label.highlight {
   color: rgba(0, 0, 0, 0.75);
 }
 
-.nautilus-window .floating-bar, .osd .scale-popup, .app-notification, popover.background.touch-selection, popover.background.magnifier, popover.background.osd, .osd {
+.nautilus-window .floating-bar, .osd .scale-popup, popover.background.touch-selection, popover.background.magnifier, popover.background.osd, .osd {
   opacity: 0.9;
 }
 
@@ -562,8 +562,9 @@ headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action
 
 .lightdm-gtk-greeter button, .budgie-polkit-dialog .linked.horizontal > button,
 .budgie-session-dialog .linked.horizontal > button, .drop-shadow button, .raven .raven-header.top stackswitcher button, .raven .raven-header:not(.top) button, .raven stackswitcher.linked > button, .budgie-popover button, .budgie-settings-window buttonbox.inline-toolbar button, #mate-menu button, popover.messagepopover .popover-action-area button, .gedit-search-slider button, placessidebar row button.sidebar-button, messagedialog.csd .dialog-action-area button, messagedialog .dialog-action-area button, calendar.button, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical button, spinbutton:not(.vertical) button, modelbutton.flat,
-.menuitem.button.flat {
+radio, scrollbar button, notebook > header > tabs > arrow, popover.background modelbutton.flat,
+popover.background menuitem.button.flat,
+popover.background spinbutton.vertical button, spinbutton.vertical button, spinbutton:not(.vertical) button {
   transition: 100ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 600ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px transparent;
   background-color: transparent;
@@ -576,16 +577,18 @@ radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical b
 
 .lightdm-gtk-greeter button:hover, .budgie-polkit-dialog .linked.horizontal > button:hover,
 .budgie-session-dialog .linked.horizontal > button:hover, .drop-shadow button:hover, .raven .raven-header.top stackswitcher button:hover, .raven .raven-header:not(.top) button:hover, .raven stackswitcher.linked > button:hover, .budgie-popover button:hover, .budgie-settings-window buttonbox.inline-toolbar button:hover, #mate-menu button:hover, popover.messagepopover .popover-action-area button:hover, .gedit-search-slider button:hover, placessidebar row button.sidebar-button:hover, messagedialog .dialog-action-area button:hover, calendar.button:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover, modelbutton.flat:hover,
-.menuitem.button.flat:hover {
+radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, popover.background modelbutton.flat:hover,
+popover.background menuitem.button.flat:hover,
+popover.background spinbutton.vertical button:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover {
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.1);
   color: rgba(0, 0, 0, 0.75);
 }
 
 .lightdm-gtk-greeter button:active, .budgie-polkit-dialog .linked.horizontal > button:active,
 .budgie-session-dialog .linked.horizontal > button:active, .drop-shadow button:active, .raven .raven-header.top stackswitcher button:active, .raven .raven-header:not(.top) button:active, .raven stackswitcher.linked > button:active, .budgie-popover button:active, .budgie-settings-window buttonbox.inline-toolbar button:active, #mate-menu button:active, popover.messagepopover .popover-action-area button:active, .gedit-search-slider button:active, placessidebar row button.sidebar-button:active, messagedialog .dialog-action-area button:active, calendar.button:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active, modelbutton.flat:active,
-.menuitem.button.flat:active {
+radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, popover.background modelbutton.flat:active,
+popover.background menuitem.button.flat:active,
+popover.background spinbutton.vertical button:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active {
   transition: 100ms, border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   animation: ripple_effect 100ms cubic-bezier(0, 0, 0.2, 1) forwards;
   box-shadow: inset 0 0 0 9999px rgba(0, 0, 0, 0.1);
@@ -596,8 +599,9 @@ radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, 
 
 .lightdm-gtk-greeter button:disabled, .budgie-polkit-dialog .linked.horizontal > button:disabled,
 .budgie-session-dialog .linked.horizontal > button:disabled, .drop-shadow button:disabled, .raven .raven-header.top stackswitcher button:disabled, .raven .raven-header:not(.top) button:disabled, .raven stackswitcher.linked > button:disabled, .budgie-popover button:disabled, .budgie-settings-window buttonbox.inline-toolbar button:disabled, #mate-menu button:disabled, popover.messagepopover .popover-action-area button:disabled, .gedit-search-slider button:disabled, placessidebar row button.sidebar-button:disabled, messagedialog .dialog-action-area button:disabled, calendar.button:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled, modelbutton.flat:disabled,
-.menuitem.button.flat:disabled {
+radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, popover.background modelbutton.flat:disabled,
+popover.background menuitem.button.flat:disabled,
+popover.background spinbutton.vertical button:disabled, spinbutton.vertical button:disabled, spinbutton:not(.vertical) button:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(0, 0, 0, 0.26);
@@ -903,32 +907,6 @@ row .linked button:only-child, .linked:not(.vertical) > spinbutton:only-child:no
   border-radius: 7px;
 }
 
-/* menu buttons */
-modelbutton.flat,
-.menuitem.button.flat {
-  min-height: 28px;
-  padding: 0 8px;
-  border-radius: 4px;
-  color: inherit;
-  -gtk-outline-radius: 2px;
-}
-
-modelbutton.flat arrow {
-  background: none;
-}
-
-modelbutton.flat arrow:hover {
-  background: none;
-}
-
-modelbutton.flat arrow.left {
-  -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
-}
-
-modelbutton.flat arrow.right {
-  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
-}
-
 button.color {
   min-height: 24px;
   min-width: 24px;
@@ -1145,7 +1123,7 @@ toolbar {
 frame.documents-dropdown, .app-notification, toolbar.osd {
   transition: box-shadow 100ms cubic-bezier(0, 0, 0.2, 1);
   padding: 6px;
-  border-radius: 7px;
+  border-radius: 13px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 1px rgba(255, 255, 255, 0.4);
   background-color: #FFFFFF;
 }
@@ -1700,15 +1678,15 @@ popover.background .dim-label, popover.background .budgie-notification .notifica
 }
 
 popover.background, .csd popover.background {
-  border-radius: 9px;
+  border-radius: 11px;
 }
 
 popover.background > stack {
-  margin: -4px;
+  margin: -6px;
 }
 
 popover.background > toolbar {
-  margin: -2px;
+  margin: -3px;
 }
 
 popover.background > toolbar {
@@ -1769,6 +1747,10 @@ popover.background scrollbar.overlay-indicator.dragging, popover.background scro
   background-color: rgba(50, 50, 50, 0.9);
 }
 
+popover.background button {
+  border-radius: 5px;
+}
+
 popover.background button.radio {
   background-color: rgba(255, 255, 255, 0.08);
 }
@@ -1779,25 +1761,51 @@ popover.background button.radio:hover {
 }
 
 .linked > popover.background button {
-  border-radius: 4px;
-  -gtk-outline-radius: 2px;
+  border-radius: 5px;
+  -gtk-outline-radius: 3px;
 }
 
 .linked > popover.background button:first-child {
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .linked > popover.background button:last-child {
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .linked > popover.background button:only-child {
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
-popover.background.menu button, popover.background button.model {
-  border-radius: 4px;
-  -gtk-outline-radius: 2px;
+popover.background.menu button,
+popover.background button.model,
+popover.background modelbutton.flat,
+popover.background .menuitem.button.flat {
+  border-radius: 5px;
+  -gtk-outline-radius: 3px;
+}
+
+popover.background modelbutton.flat,
+popover.background .menuitem.button.flat {
+  min-height: 28px;
+  padding: 0 8px;
+  color: inherit;
+}
+
+popover.background modelbutton.flat arrow {
+  background: none;
+}
+
+popover.background modelbutton.flat arrow:hover {
+  background: none;
+}
+
+popover.background modelbutton.flat arrow.left {
+  -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
+}
+
+popover.background modelbutton.flat arrow.right {
+  -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 popover.background button.suggested-action {
@@ -4389,18 +4397,18 @@ headerbar.default-decoration button.titlebutton.close:hover, headerbar.default-d
   box-shadow: none;
 }
 
-.budgie-menu button:checked, text:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, .view selection, .view:selected, iconview selection, iconview:selected, flowbox flowboxchild:selected, entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, row:selected, calendar:selected, filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow treeview.view:selected {
+.budgie-menu button:checked, text:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, .view selection, .view:selected, iconview selection, iconview:selected, flowbox flowboxchild:selected, entry selection, spinbutton:not(.vertical) selection, popover.background modelbutton.flat:selected,
+popover.background .menuitem.button.flat:selected, row:selected, calendar:selected, filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow treeview.view:selected {
   background-color: #5657f5;
 }
 
-row:selected label, label:selected, .budgie-menu button:checked, text:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, .view selection, .view:selected, iconview selection, iconview:selected, flowbox flowboxchild:selected, entry selection, modelbutton.flat:selected,
-.menuitem.button.flat:selected, spinbutton:not(.vertical) selection, row:selected, calendar:selected, filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow treeview.view:selected {
+row:selected label, label:selected, .budgie-menu button:checked, text:selected, .nemo-window .nemo-window-pane widget.entry:selected:focus, .nemo-window .nemo-window-pane widget.entry:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:selected, .view selection, .view:selected, iconview selection, iconview:selected, flowbox flowboxchild:selected, entry selection, spinbutton:not(.vertical) selection, popover.background modelbutton.flat:selected,
+popover.background .menuitem.button.flat:selected, row:selected, calendar:selected, filechooser stack.view scrolledwindow treeview.view selection, filechooser stack.view scrolledwindow treeview.view:selected {
   color: #FFFFFF;
 }
 
-row:selected label:disabled, label:disabled:selected, .budgie-menu button:disabled:checked, text:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:disabled:selected, .view selection:disabled, .view:disabled:selected, iconview selection:disabled, iconview:disabled:selected, flowbox flowboxchild:disabled:selected, entry selection:disabled, modelbutton.flat:disabled:selected,
-.menuitem.button.flat:disabled:selected, spinbutton:not(.vertical) selection:disabled, row:disabled:selected, calendar:disabled:selected, filechooser stack.view scrolledwindow treeview.view selection:disabled {
+row:selected label:disabled, label:disabled:selected, .budgie-menu button:disabled:checked, text:disabled:selected, .nemo-window .nemo-window-pane widget.entry:disabled:selected, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view selection:disabled, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:disabled:selected, .view selection:disabled, .view:disabled:selected, iconview selection:disabled, iconview:disabled:selected, flowbox flowboxchild:disabled:selected, entry selection:disabled, spinbutton:not(.vertical) selection:disabled, popover.background modelbutton.flat:disabled:selected,
+popover.background .menuitem.button.flat:disabled:selected, row:disabled:selected, calendar:disabled:selected, filechooser stack.view scrolledwindow treeview.view selection:disabled {
   color: rgba(255, 255, 255, 0.5);
 }
 

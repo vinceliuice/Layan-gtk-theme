@@ -1,0 +1,139 @@
+/* Dash to Dock */
+
+// Scrollview style
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background: transparent;
+
+  .number-overlay {
+    color: $panel_fg_color;
+    background-color: rgba(black, 0.75);
+    text-align: center;
+  }
+
+  .notification-badge {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+    border-radius: $forced_circular_radius;
+    margin: 2px;
+    padding: 0.25em 0.6em;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #dash {
+    background: none;
+
+    .dash-background {
+      background-color: $panel_bg_color;
+      padding: $dash_padding;
+    }
+
+    .app-grid-running-dot {
+      margin: 0 !important;
+      offset-y: 0 !important;
+      background-color: $panel_fg_color;
+    }
+
+    StWidget.focused .app-grid-running-dot {
+      background-color: $selected_bg_color;
+    }
+
+    .show-apps,
+    .overview-tile {
+      background: none;
+      box-shadow: none;
+      border: none;
+
+      .overview-icon {
+        color: $panel_fg_color;
+        background-color: transparent;
+      }
+
+      &:focus .overview-icon { background-color: rgba($panel_fg_color, 0.1); }
+      &:hover .overview-icon { background-color: rgba($panel_fg_color, 0.15); }
+      &:active .overview-icon { background-color: rgba($panel_fg_color, 0.25); }
+      &:checked .overview-icon { background-color: rgba($panel_fg_color, 0.2); }
+    }
+  }
+
+  &:overview #dash {
+    .dash-background { // overview-mode #1
+      background-color: $dash_background_color;
+    }
+
+    .app-grid-running-dot {
+      background-color: $system_fg_color;
+    }
+
+    .show-apps,
+    .overview-tile {
+      .overview-icon {
+        color: $system_fg_color;
+        background-color: transparent;
+      }
+
+      &:focus .overview-icon { background-color: rgba($system_fg_color, 0.1); }
+      &:hover .overview-icon { background-color: rgba($system_fg_color, 0.15); }
+      &:active .overview-icon { background-color: rgba($system_fg_color, 0.25); }
+      &:checked .overview-icon { background-color: rgba($system_fg_color, 0.2); }
+    }
+  }
+
+  &.extended {
+    #dash {
+      padding: 0;
+      margin: 0;
+
+      .dash-background {
+        background-color: $panel_bg_color;
+        padding: 0;
+        margin: 0;
+      }
+    }
+
+    &:overview #dash {
+      margin-bottom: 0;
+
+      .dash-background {
+        background-color: $dash_background_color;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &.opaque #dash .dash-background { // solid-mode
+    background-color: rgba($panel_bg_color, 1);
+  }
+
+  &.transparent #dash .dash-background { // translucent-mode
+    background-color: rgba($panel_bg_color, 0.75); // does not work
+  }
+
+  &.opaque:overview,
+  &.transparent:overview { // overview-mode #2
+    #dash {
+      background-color: transparent !important;
+      box-shadow: none !important;
+
+      .dash-background { background-color: transparent !important; }
+    }
+  }
+
+  &.opaque.extended:overview,
+  &.transparent.extended:overview {
+    #dash .dash-background {
+      background-color: $dash_background_color;
+    }
+  }
+}

@@ -1290,7 +1290,7 @@ popover.background {
     padding: $container_padding;
     box-shadow: $shadow_3;
     background-color: if($solid == 'false', rgba($menu_bg_color, 0.95), $menu_bg_color);
-    border-radius: $menu_radius;
+    border-radius: $popup_radius;
     color: $menu_fg_color;
     border: none;
 
@@ -1326,7 +1326,7 @@ popover.background {
 
       > row {
         margin: 0;
-        border-radius: $menu_radius - $container_padding / 2;
+        border-radius: $material_radius;
         padding: $container_padding $container_padding * 2;
 
         &:selected {
@@ -1347,23 +1347,25 @@ popover.background {
   }
 
   button {
+    border-radius: $material_radius;
+
     &.combo {
       @extend %combo_flat;
     }
 
     .linked > & {
-      border-radius: $buttons_radius;
+      border-radius: $material_radius;
 
       &:first-child {
-        border-radius: $buttons_radius;
+        border-radius: $material_radius;
       }
 
       &:last-child {
-        border-radius: $buttons_radius;
+        border-radius: $material_radius;
       }
 
       &:only-child {
-        border-radius: $buttons_radius;
+        border-radius: $material_radius;
       }
     }
   }
@@ -1372,7 +1374,7 @@ popover.background {
     min-height: 20px;
     min-width: 40px;
     padding: $container_padding / 2 + 2px $container_padding + 2px;
-    border-radius: $menu_radius - $container_padding / 2;
+    border-radius: $material_radius;
     box-shadow: none;
     animation: none;
     transition: none;
@@ -1410,7 +1412,7 @@ popover.background {
     }
   }
 
-  &.menu button, button.model { border-radius: $buttons_radius; }
+  &.menu button, button.model { border-radius: $material_radius; }
 
   checkbutton.text-button,
   radiobutton.text-button { outline-style: none; }

@@ -1061,14 +1061,14 @@ StEntry StLabel.hint-text {
 /* Switches */
 .toggle-switch {
   color: #282828;
-  height: 26px;
+  height: 30px;
   width: 46px;
   background-size: contain;
-  background-image: url("resource:///org/gnome/shell/theme/toggle-off-light.svg");
+  background-image: url("assets/toggle-off.svg");
 }
 
 .toggle-switch:checked {
-  background-image: url("resource:///org/gnome/shell/theme/toggle-on-light.svg");
+  background-image: url("assets/toggle-on.svg");
 }
 
 .toggle-switch StIcon {
@@ -3291,7 +3291,8 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 /* Dash */
 #dash {
-  margin-top: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 #dash .dash-background {
@@ -3390,7 +3391,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 #dash .dash-item-container .app-grid-running-dot {
-  margin-bottom: 21px;
+  offset-y: -12px;
 }
 
 #dash .dash-separator {
@@ -4660,4 +4661,174 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .login-dialog .user-widget.vertical .user-icon StIcon,
 .unlock-dialog .user-widget.vertical .user-icon StIcon {
   padding: 24px;
+}
+
+/* Dash to Dock */
+.bottom #dashtodockDashScrollview,
+.top #dashtodockDashScrollview {
+  -st-hfade-offset: 24px;
+}
+
+.left #dashtodockDashScrollview,
+.right #dashtodockDashScrollview {
+  -st-vfade-offset: 24px;
+}
+
+#dashtodockContainer {
+  background: transparent;
+}
+
+#dashtodockContainer .number-overlay {
+  color: #282828;
+  background-color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+#dashtodockContainer .notification-badge {
+  color: #ffffff;
+  background-color: #5657f5;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  margin: 2px;
+  padding: 0.25em 0.6em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#dashtodockContainer #dash {
+  background: none;
+}
+
+#dashtodockContainer #dash .dash-background {
+  background-color: whitesmoke;
+  padding: 12px;
+}
+
+#dashtodockContainer #dash .app-grid-running-dot {
+  margin: 0 !important;
+  offset-y: 0 !important;
+  background-color: #282828;
+}
+
+#dashtodockContainer #dash StWidget.focused .app-grid-running-dot {
+  background-color: #5657f5;
+}
+
+#dashtodockContainer #dash .show-apps,
+#dashtodockContainer #dash .overview-tile,
+#dashtodockContainer #dash .grid-search-result {
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+#dashtodockContainer #dash .show-apps .overview-icon,
+#dashtodockContainer #dash .overview-tile .overview-icon,
+#dashtodockContainer #dash .grid-search-result .overview-icon {
+  color: #282828;
+  background-color: transparent;
+}
+
+#dashtodockContainer #dash .show-apps:focus .overview-icon,
+#dashtodockContainer #dash .overview-tile:focus .overview-icon,
+#dashtodockContainer #dash .grid-search-result:focus .overview-icon {
+  background-color: rgba(40, 40, 40, 0.1);
+}
+
+#dashtodockContainer #dash .show-apps:hover .overview-icon,
+#dashtodockContainer #dash .overview-tile:hover .overview-icon,
+#dashtodockContainer #dash .grid-search-result:hover .overview-icon {
+  background-color: rgba(40, 40, 40, 0.15);
+}
+
+#dashtodockContainer #dash .show-apps:active .overview-icon,
+#dashtodockContainer #dash .overview-tile:active .overview-icon,
+#dashtodockContainer #dash .grid-search-result:active .overview-icon {
+  background-color: rgba(40, 40, 40, 0.25);
+}
+
+#dashtodockContainer #dash .show-apps:checked .overview-icon,
+#dashtodockContainer #dash .overview-tile:checked .overview-icon,
+#dashtodockContainer #dash .grid-search-result:checked .overview-icon {
+  background-color: rgba(40, 40, 40, 0.2);
+}
+
+#dashtodockContainer:overview #dash .dash-background {
+  background-color: #3d3d3d;
+}
+
+#dashtodockContainer:overview #dash .app-grid-running-dot {
+  background-color: whitesmoke;
+}
+
+#dashtodockContainer:overview #dash .show-apps .overview-icon,
+#dashtodockContainer:overview #dash .overview-tile .overview-icon,
+#dashtodockContainer:overview #dash .grid-search-result .overview-icon {
+  color: whitesmoke;
+  background-color: transparent;
+}
+
+#dashtodockContainer:overview #dash .show-apps:focus .overview-icon,
+#dashtodockContainer:overview #dash .overview-tile:focus .overview-icon,
+#dashtodockContainer:overview #dash .grid-search-result:focus .overview-icon {
+  background-color: rgba(245, 245, 245, 0.1);
+}
+
+#dashtodockContainer:overview #dash .show-apps:hover .overview-icon,
+#dashtodockContainer:overview #dash .overview-tile:hover .overview-icon,
+#dashtodockContainer:overview #dash .grid-search-result:hover .overview-icon {
+  background-color: rgba(245, 245, 245, 0.15);
+}
+
+#dashtodockContainer:overview #dash .show-apps:active .overview-icon,
+#dashtodockContainer:overview #dash .overview-tile:active .overview-icon,
+#dashtodockContainer:overview #dash .grid-search-result:active .overview-icon {
+  background-color: rgba(245, 245, 245, 0.25);
+}
+
+#dashtodockContainer:overview #dash .show-apps:checked .overview-icon,
+#dashtodockContainer:overview #dash .overview-tile:checked .overview-icon,
+#dashtodockContainer:overview #dash .grid-search-result:checked .overview-icon {
+  background-color: rgba(245, 245, 245, 0.2);
+}
+
+#dashtodockContainer.extended #dash {
+  padding: 0;
+  margin: 0;
+}
+
+#dashtodockContainer.extended #dash .dash-background {
+  background-color: whitesmoke;
+  padding: 0;
+  margin: 0;
+}
+
+#dashtodockContainer.extended:overview #dash {
+  margin-bottom: 0;
+}
+
+#dashtodockContainer.extended:overview #dash .dash-background {
+  background-color: #3d3d3d;
+  margin-bottom: 0;
+}
+
+#dashtodockContainer.opaque #dash .dash-background {
+  background-color: whitesmoke;
+}
+
+#dashtodockContainer.transparent #dash .dash-background {
+  background-color: rgba(245, 245, 245, 0.75);
+}
+
+#dashtodockContainer.opaque:overview #dash, #dashtodockContainer.transparent:overview #dash {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+#dashtodockContainer.opaque:overview #dash .dash-background, #dashtodockContainer.transparent:overview #dash .dash-background {
+  background-color: transparent !important;
+}
+
+#dashtodockContainer.opaque.extended:overview #dash .dash-background, #dashtodockContainer.transparent.extended:overview #dash .dash-background {
+  background-color: #3d3d3d;
 }

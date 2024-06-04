@@ -1770,7 +1770,7 @@ popover.background > contents {
   padding: 6px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.12), 0 4px 3px rgba(0, 0, 0, 0.16);
   background-color: rgba(60, 60, 70, 0.95);
-  border-radius: 8px;
+  border-radius: 11px;
   color: rgba(255, 255, 255, 0.7);
   border: none;
 }
@@ -1820,20 +1820,24 @@ popover.background > contents listview.view > row:selected {
   color: rgba(0, 0, 0, 0.75);
 }
 
+popover.background button {
+  border-radius: 5px;
+}
+
 .linked > popover.background button {
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 .linked > popover.background button:first-child {
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 .linked > popover.background button:last-child {
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 .linked > popover.background button:only-child {
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 popover.background modelbutton {
@@ -1884,7 +1888,7 @@ popover.background modelbutton:focus:not(:hover) {
 }
 
 popover.background.menu button, popover.background button.model {
-  border-radius: 7px;
+  border-radius: 5px;
 }
 
 popover.background checkbutton.text-button,

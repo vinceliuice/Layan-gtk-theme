@@ -1,7 +1,7 @@
 /* Switches */
 
 // these are equal to the size of the SVG assets
-$switch_height: 26px;
+$switch_height: 30px;
 $switch_width: 46px;
 
 .toggle-switch {
@@ -9,10 +9,9 @@ $switch_width: 46px;
   height: $switch_height;
   width: $switch_width;
   background-size: contain;
-  background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-off-light.svg"),url("resource:///org/gnome/shell/theme/toggle-off.svg"));
-  &:checked {
-    background-image: if($variant == 'light', url("resource:///org/gnome/shell/theme/toggle-on-light.svg"),url("resource:///org/gnome/shell/theme/toggle-on.svg"));
-  }
+  background-image: url("assets/toggle-off.svg");
 
-  & StIcon {icon-size: $base_icon_size;}
+  &:checked { background-image: url("assets/toggle-on.svg"); }
+
+  & StIcon {icon-size: $base_icon_size; }
 }

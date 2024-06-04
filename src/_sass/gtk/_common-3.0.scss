@@ -719,30 +719,6 @@ button {
   }
 }
 
-/* menu buttons */
-modelbutton.flat,
-.menuitem.button.flat {
-  min-height: $menuitem_size;
-  padding: 0 8px;
-  border-radius: $menu_radius / 2;
-  color: inherit;
-  -gtk-outline-radius: $menu_radius / 2 - 2px;
-
-  @extend %simple_flat_button;
-
-  &:selected { @extend %selected_items; }
-}
-
-modelbutton.flat arrow {
-  background: none;
-
-  &:hover { background: none; }
-
-  &.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
-
-  &.right { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
-}
-
 button.color {
   min-height: $small_size;
   min-width: $small_size;
@@ -1021,7 +997,7 @@ toolbar {
   @at-root %toolbar_osd, &.osd {
     transition: $shadow_transition;
     padding: $container_padding;
-    border-radius: $buttons_radius;
+    border-radius: $windows_radius;
     box-shadow: $shadow_2, inset 0 1px $highlight_color;
     background-color: $base_color;
 
@@ -1293,7 +1269,7 @@ menu {
     font: initial;
     text-shadow: none;
     color: $menu_fg_color;
-    border-radius: $menu_radius - $container_padding / 2;
+    border-radius: $material_radius;
 
     &:hover {
       transition: none;
@@ -1478,11 +1454,11 @@ popover.background {
   .dim-label { color: $popover_disabled_fg; }
 
   &, .csd & {
-    border-radius: $menu_radius + 1px;
+    border-radius: $popup_radius;
   }
 
-  > stack { margin: -4px; } // remove extra padding from menu style popovers
-  > toolbar { margin: -2px; }
+  > stack { margin: -6px; } // remove extra padding from menu style popovers
+  > toolbar { margin: -3px; }
 
   > toolbar {
     border-style: none;
@@ -1538,6 +1514,7 @@ popover.background {
 
   button {
     @extend %popover_button;
+    border-radius: $material_radius;
 
     &.combo {
       @extend %combo_flat;
@@ -1554,30 +1531,55 @@ popover.background {
     }
 
     .linked > & {
-      border-radius: $menu_radius / 2;
-      -gtk-outline-radius: $menu_radius / 2 - 2px;
+      border-radius: $material_radius;
+      -gtk-outline-radius: $material_radius - 2px;
 
       &:first-child {
-        border-radius: $menu_radius / 2;
+        border-radius: $material_radius;
       }
 
       &:last-child {
-        border-radius: $menu_radius / 2;
+        border-radius: $material_radius;
       }
 
       &:only-child {
-        border-radius: $menu_radius / 2;
+        border-radius: $material_radius;
       }
     }
   }
 
   modelbutton.flat,
   menuitem.button.flat,
-  spinbutton.vertical button { @extend %popover_flat_button; }
+  spinbutton.vertical button {
+    @extend %simple_flat_button;
+    @extend %popover_flat_button;
+  }
 
-  &.menu button, button.model {
-    border-radius: $menu_radius / 2;
-    -gtk-outline-radius: $menu_radius / 2 - 2px;
+  &.menu button,
+  button.model,
+  modelbutton.flat,
+  .menuitem.button.flat{
+    border-radius: $material_radius;
+    -gtk-outline-radius: $material_radius - 2px;
+  }
+
+  modelbutton.flat,
+  .menuitem.button.flat {
+    min-height: $menuitem_size;
+    padding: 0 8px;
+    color: inherit;
+
+    &:selected { @extend %selected_items; }
+  }
+
+  modelbutton.flat arrow {
+    background: none;
+  
+    &:hover { background: none; }
+  
+    &.left { -gtk-icon-source: -gtk-icontheme("pan-start-symbolic"); }
+  
+    &.right { -gtk-icon-source: -gtk-icontheme("pan-end-symbolic"); }
   }
 
     // Suggested and Destructive Action buttons
@@ -3245,7 +3247,6 @@ row {
  * App Notifications *
  *********************/
 .app-notification {
-  @extend %osd;
   @extend %toolbar_osd;
   margin: 8px;
 
