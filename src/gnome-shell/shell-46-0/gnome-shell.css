@@ -1776,6 +1776,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .candidate-popup-content {
   padding: 6px;
   spacing: 6px;
+  border-radius: 14px;
 }
 
 .candidate-index {
@@ -1789,9 +1790,13 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   border-radius: 8px;
 }
 
-.candidate-box:selected {
+.candidate-box:selected, .candidate-box:selected:hover {
   background-color: #5657f5;
   color: #ffffff;
+}
+
+.candidate-box:selected .candidate-index, .candidate-box:selected:hover .candidate-index {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .candidate-box:hover {

@@ -8,6 +8,7 @@
   padding: $base_padding;
   spacing: $base_padding;
   @extend .popup-menu-content;
+  border-radius: $base_border_radius + $base_padding;
 }
 
 .candidate-index {
@@ -19,7 +20,14 @@
 .candidate-box {
   padding: $base_padding $base_padding * 2 $base_padding $base_padding * 2;
   border-radius: $base_border_radius;
-  &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+  &:selected, &:selected:hover {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+
+    .candidate-index {
+      color: rgba($selected_fg_color, 0.5);
+    }
+  }
   &:hover { background-color: $hover_bg_color; color: $hover_fg_color; }
 }
 
