@@ -506,7 +506,7 @@ treeview entry {
   }
 }
 
-.budgie-panel button, PanelToplevel.horizontal > grid > button, .mate-panel-menu-bar button, .nemo-window .toolbar button, .nemo-window toolbar.primary-toolbar > toolitem > box > button, layouttabbar button, stackswitcher > button, infobar.info > revealer > box button, infobar.info:backdrop > revealer > box button, infobar.question > revealer > box button, infobar.question:backdrop > revealer > box button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, infobar.error > revealer > box button, infobar.error:backdrop > revealer > box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), headerbar button:not(.suggested-action):not(.destructive-action), .caja-pathbar button,
+.budgie-panel button, PanelToplevel.horizontal > grid > button, .mate-panel-menu-bar button, .nemo-window .toolbar button, layouttabbar button, stackswitcher > button, infobar.info > revealer > box button, infobar.info:backdrop > revealer > box button, infobar.question > revealer > box button, infobar.question:backdrop > revealer > box button, infobar.warning > revealer > box button, infobar.warning:backdrop > revealer > box button, infobar.error > revealer > box button, infobar.error:backdrop > revealer > box button, .app-notification button, actionbar > revealer > box button:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button, headerbar button:not(.suggested-action):not(.destructive-action), .caja-pathbar button,
 .path-bar button, toolbar button, button.flat {
   transition: 100ms, background-size 300ms cubic-bezier(0, 0, 0.2, 1), background-image 600ms cubic-bezier(0, 0, 0.2, 1);
   box-shadow: inset 0 0 0 9999px transparent;
@@ -518,13 +518,13 @@ treeview entry {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.budgie-panel button:hover, PanelToplevel.horizontal > grid > button:hover, .mate-panel-menu-bar button:hover, .nemo-window .toolbar button:hover, .nemo-window toolbar.primary-toolbar > toolitem > box > button:hover, layouttabbar button:hover, stackswitcher > button:hover, infobar.info > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.error > revealer > box button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), headerbar button:hover:not(.suggested-action):not(.destructive-action), .caja-pathbar button:hover,
+.budgie-panel button:hover, PanelToplevel.horizontal > grid > button:hover, .mate-panel-menu-bar button:hover, .nemo-window .toolbar button:hover, layouttabbar button:hover, stackswitcher > button:hover, infobar.info > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.error > revealer > box button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .caja-pathbar button:hover,
 .path-bar button:hover, toolbar button:hover, button.flat:hover {
   box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
 }
 
-.budgie-panel button:active, PanelToplevel.horizontal > grid > button:active, .mate-panel-menu-bar button:active, .nemo-window .toolbar button:active, .nemo-window toolbar.primary-toolbar > toolitem > box > button:active, layouttabbar button:active, stackswitcher > button:active, infobar.info > revealer > box button:active, infobar.question > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.error > revealer > box button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), headerbar button:active:not(.suggested-action):not(.destructive-action), .caja-pathbar button:active,
+.budgie-panel button:active, PanelToplevel.horizontal > grid > button:active, .mate-panel-menu-bar button:active, .nemo-window .toolbar button:active, layouttabbar button:active, stackswitcher > button:active, infobar.info > revealer > box button:active, infobar.question > revealer > box button:active, infobar.warning > revealer > box button:active, infobar.error > revealer > box button:active, .app-notification button:active, actionbar > revealer > box button:active:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), .caja-pathbar button:active,
 .path-bar button:active, toolbar button:active, button.flat:active {
   transition: 100ms, border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   animation: ripple_effect 100ms cubic-bezier(0, 0, 0.2, 1) forwards;
@@ -534,21 +534,21 @@ treeview entry {
   color: #FFFFFF;
 }
 
-.budgie-panel button:disabled, PanelToplevel.horizontal > grid > button:disabled, .mate-panel-menu-bar button:disabled, .nemo-window .toolbar button:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box > button:disabled, layouttabbar button:disabled, stackswitcher > button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), headerbar button:disabled:not(.suggested-action):not(.destructive-action), .caja-pathbar button:disabled,
+.budgie-panel button:disabled, PanelToplevel.horizontal > grid > button:disabled, .mate-panel-menu-bar button:disabled, .nemo-window .toolbar button:disabled, layouttabbar button:disabled, stackswitcher > button:disabled, infobar.info > revealer > box button:disabled, infobar.question > revealer > box button:disabled, infobar.warning > revealer > box button:disabled, infobar.error > revealer > box button:disabled, .app-notification button:disabled, actionbar > revealer > box button:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), .caja-pathbar button:disabled,
 .path-bar button:disabled, toolbar button:disabled, button.flat:disabled {
   box-shadow: none;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.3);
 }
 
-.budgie-panel button:checked, PanelToplevel.horizontal > grid > button:checked, .mate-panel-menu-bar button:checked, .nemo-window .toolbar button:checked, .nemo-window toolbar.primary-toolbar > toolitem > box > button:checked, layouttabbar button:checked, stackswitcher > button:checked, infobar.info > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.error > revealer > box button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), headerbar button:checked:not(.suggested-action):not(.destructive-action), .caja-pathbar button:checked,
+.budgie-panel button:checked, PanelToplevel.horizontal > grid > button:checked, .mate-panel-menu-bar button:checked, .nemo-window .toolbar button:checked, layouttabbar button:checked, stackswitcher > button:checked, infobar.info > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.error > revealer > box button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .caja-pathbar button:checked,
 .path-bar button:checked, toolbar button:checked, button.flat:checked {
   background-color: rgba(255, 255, 255, 0.2);
   background-image: radial-gradient(circle farthest-corner at center, transparent 10%, transparent 0%);
   color: #FFFFFF;
 }
 
-.budgie-panel button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nemo-window .toolbar button:checked:disabled, .nemo-window toolbar.primary-toolbar > toolitem > box > button:checked:disabled, layouttabbar button:checked:disabled, stackswitcher > button:checked:disabled, infobar.info > revealer > box button:checked:disabled, infobar.question > revealer > box button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, infobar.error > revealer > box button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .caja-pathbar button:checked:disabled,
+.budgie-panel button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nemo-window .toolbar button:checked:disabled, layouttabbar button:checked:disabled, stackswitcher > button:checked:disabled, infobar.info > revealer > box button:checked:disabled, infobar.question > revealer > box button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, infobar.error > revealer > box button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .caja-pathbar button:checked:disabled,
 .path-bar button:checked:disabled, toolbar button:checked:disabled, button.flat:checked:disabled {
   background-color: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.5);
@@ -835,7 +835,7 @@ button.destructive-action.flat:checked {
 
 .raven .expander-button, .raven .raven-header:not(.top) button.image-button, widget > box.terminal-titlebar > button.image-button, widget > box.terminal-titlebar > button.image-button.toggle, .terminix-session-sidebar button.tilix-sidebar-close-button,
 .tilix-session-sidebar button.tilix-sidebar-close-button, .nemo-window toolbar.primary-toolbar > toolitem > box > button, .nautilus-window headerbar > revealer > button, .solid-csd headerbar:not(.default-decoration) button.titlebutton, headerbar button.titlebutton,
-.titlebar button.titlebutton, row button.image-button, headerbar.default-decoration button.titlebutton, headerbar button.suggested-action, headerbar button.destructive-action, headerbar button:not(.suggested-action):not(.destructive-action), check,
+.titlebar button.titlebutton, row button.image-button, headerbar.default-decoration button.titlebutton, headerbar button.suggested-action, headerbar button.destructive-action, .nemo-window toolbar.primary-toolbar > toolitem > box > button, headerbar button:not(.suggested-action):not(.destructive-action), check,
 radio, button.close, button.circular {
   border-radius: 9999px;
   -gtk-outline-radius: 9999px;
@@ -1738,6 +1738,18 @@ popover.background scrollbar.overlay-indicator:not(.dragging):not(.hovering) but
 
 popover.background scrollbar.overlay-indicator.dragging, popover.background scrollbar.overlay-indicator.hovering {
   background-color: rgba(56, 57, 62, 0.9);
+}
+
+popover.background scale trough {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+popover.background scale trough:disabled {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+popover.background progressbar {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 popover.background button {
@@ -2778,29 +2790,29 @@ treeview.view radio:checked {
 /***************
  * Header bars *
  ***************/
-headerbar button:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button, headerbar button:not(.suggested-action):not(.destructive-action) {
   border-image: none;
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar button:hover:not(.suggested-action):not(.destructive-action), headerbar button:active:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .nemo-window toolbar.primary-toolbar > toolitem > box > button:active, headerbar button:active:not(.suggested-action):not(.destructive-action) {
   color: #FFFFFF;
 }
 
-headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-headerbar button:hover:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action) {
   box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
 }
 
-headerbar button:active:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:active, headerbar button:active:not(.suggested-action):not(.destructive-action) {
   box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
   background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
 }
 
-headerbar button:checked:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action) {
   border-image: none;
   background-color: #5657f5;
   color: #FFFFFF;
@@ -2811,29 +2823,29 @@ headerbar button:checked:not(.suggested-action):not(.destructive-action) {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
 }
 
-headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.5);
   background-color: rgba(86, 87, 245, 0.5);
 }
 
-headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop, headerbar button:backdrop:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:hover, headerbar button:backdrop:hover:not(.suggested-action):not(.destructive-action), .nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:active, headerbar button:backdrop:active:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:disabled, headerbar button:backdrop:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
-headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:checked, headerbar button:backdrop:checked:not(.suggested-action):not(.destructive-action) {
   background-image: none;
   color: rgba(255, 255, 255, 0.7);
 }
 
-headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
+.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:checked:disabled, headerbar button:backdrop:checked:disabled:not(.suggested-action):not(.destructive-action) {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -3542,9 +3554,19 @@ separator {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
+separator.sidebar {
+  min-width: 1px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
 preferences stacksidebar.sidebar list separator, .tweak-categories separator, button.font separator, button.file separator {
   min-width: 0;
   min-height: 0;
+  background-color: transparent;
+}
+
+preferences stacksidebar.sidebar list separator.sidebar, .tweak-categories separator.sidebar, button.font separator.sidebar, button.file separator.sidebar {
+  min-width: 0;
   background-color: transparent;
 }
 
@@ -3889,7 +3911,11 @@ stacksidebar.sidebar:dir(rtl) list, stacksidebar.sidebar.right list, .sidebar:di
 }
 
 paned .sidebar.left, paned .sidebar.right, paned .sidebar.left:dir(rtl), paned .sidebar:dir(rtl), paned .sidebar:dir(ltr), paned .sidebar {
-  border-style: none;
+  border: none;
+}
+
+separator.sidebar.left, separator.sidebar.right, separator.sidebar.left:dir(rtl), separator.sidebar:dir(rtl), separator.sidebar:dir(ltr), separator.sidebar {
+  border: none;
 }
 
 stacksidebar row {
@@ -5674,14 +5700,7 @@ dialog.background.csd > headerbar.titlebar > label:not(.title):not(.subtitle) {
 window.background.csd > headerbar.titlebar > box.horizontal > separator.sidebar,
 window.background.csd > headerbar.titlebar > hdyleaflet > separator.sidebar,
 window.background.csd > headerbar.titlebar > leaflet > separator.sidebar {
-  border-right-style: none;
-  background: none;
-  min-width: 0;
-}
-
-window.background.csd > box.horizontal > separator.sidebar,
-window.background.csd > hdyleaflet > separator.sidebar,
-window.background.csd > leaflet > separator.sidebar {
+  border-right: none;
   background: none;
   min-width: 0;
 }
@@ -5752,12 +5771,6 @@ hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(
 
 hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, hdyleaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected image, leaflet > box.vertical > scrolledwindow > viewport.frame list:not(.view):not(.tweak-group) row.activatable:selected label {
   color: #9e9ff9;
-}
-
-hdyleaflet > separator.sidebar, leaflet > separator.sidebar {
-  border-right-style: none;
-  background: none;
-  min-width: 0;
 }
 
 /************************
@@ -5979,23 +5992,28 @@ button.title label {
 /*********
  * Geary *
  *********/
-window.geary-main-window.background.csd box.vertical > paned.horizontal > box.sidebar.vertical,
-window#GearyMainWindow.background.csd box.vertical > paned.horizontal > box.sidebar.vertical {
+window.geary-main-window leaflet > separator,
+window#GearyMainWindow leaflet > separator {
+  box-shadow: inset 0 48px #31313a;
+}
+
+window.geary-main-window box.vertical > paned.horizontal > box.sidebar.vertical,
+window#GearyMainWindow box.vertical > paned.horizontal > box.sidebar.vertical {
   border-bottom-left-radius: 13px;
 }
 
-window.geary-main-window.background.csd box.vertical > paned.horizontal > box.sidebar.vertical statusbar,
-window#GearyMainWindow.background.csd box.vertical > paned.horizontal > box.sidebar.vertical statusbar {
+window.geary-main-window box.vertical > paned.horizontal > box.sidebar.vertical statusbar,
+window#GearyMainWindow box.vertical > paned.horizontal > box.sidebar.vertical statusbar {
   border-bottom-left-radius: 13px;
 }
 
-window.geary-main-window.background.csd stack#conversation_viewer,
-window#GearyMainWindow.background.csd stack#conversation_viewer {
+window.geary-main-window stack#conversation_viewer,
+window#GearyMainWindow stack#conversation_viewer {
   border-bottom-right-radius: 13px;
 }
 
-window.geary-main-window.background.csd stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox,
-window#GearyMainWindow.background.csd stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox {
+window.geary-main-window stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox,
+window#GearyMainWindow stack#conversation_viewer scrolledwindow.geary-conversation-scroller viewport.frame list.conversation-listbox {
   background: none;
   border-bottom-right-radius: 13px;
 }
@@ -6158,54 +6176,8 @@ window.background.csd.unified.fullscreen > decoration-overlay {
   min-height: 36px;
   min-width: 36px;
   margin: 6px 2px;
-  padding: 0 0;
+  padding: 0;
   border-image: none;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:hover, .nemo-window toolbar.primary-toolbar > toolitem > box > button:active {
-  color: #FFFFFF;
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:disabled {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:checked {
-  border-image: none;
-  background-color: #5657f5;
-  color: #FFFFFF;
-  background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
-  background-size: auto auto;
-  background-position: center center;
-  background-repeat: no-repeat;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:checked:disabled {
-  color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(86, 87, 245, 0.5);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:hover, .nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:active {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:disabled {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:checked {
-  background-image: none;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.nemo-window toolbar.primary-toolbar > toolitem > box > button:backdrop:checked:disabled {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .nemo-window toolbar.primary-toolbar .linked.path-bar > button {
@@ -6221,6 +6193,15 @@ window.background.csd.unified.fullscreen > decoration-overlay {
 
 .nemo-window toolbar.primary-toolbar .linked.path-bar > button:disabled {
   color: rgba(255, 255, 255, 0.3);
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button:hover {
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
+}
+
+.nemo-window toolbar.primary-toolbar .linked.path-bar > button:active {
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
 }
 
 .nemo-window toolbar.primary-toolbar .linked.path-bar > button:first-child, .nemo-window toolbar.primary-toolbar .linked.path-bar > button:last-child {
@@ -6407,10 +6388,6 @@ window.background:not(.csd) > widget > radiobutton > radio:not(:checked):active 
 window.background:not(.csd) > widget > checkbutton > check:not(:checked):disabled,
 window.background:not(.csd) > widget > radiobutton > radio:not(:checked):disabled {
   color: rgba(117, 117, 117, 0.5);
-}
-
-window.background:not(.csd) .menu {
-  border-radius: 0;
 }
 
 window.background:not(.csd) > window:not(.csd) > menu,

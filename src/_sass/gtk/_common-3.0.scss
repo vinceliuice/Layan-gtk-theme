@@ -1505,6 +1505,18 @@ popover.background {
     }
   }
 
+  scale {
+    trough {
+      background-color: rgba($popover_fg, 0.3);
+  
+      &:disabled { background-color: rgba($popover_fg, 0.15); }
+    }
+  }
+
+  progressbar {
+    color: $popover_disabled_fg;
+  }
+
   &.touch-selection,
   &.magnifier,
   &.osd { @extend %osd; }
@@ -3193,12 +3205,22 @@ separator {
   min-width: 1px;
   min-height: 1px;
   background-color: $border_color;
+
+  &.sidebar {
+    min-width: 1px;
+    background-color: $border_color;
+  }
 }
 
 %hide_separators {
   min-width: 0;
   min-height: 0;
   background-color: transparent;
+
+  &.sidebar {
+    min-width: 0;
+    background-color: transparent;
+  }
 }
 
 
@@ -3546,7 +3568,11 @@ filechooserbutton:drop(active) {
 
   list { background-color: transparent; }
 
-  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border-style: none; }}
+  paned & { &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border: none; }}
+}
+
+separator.sidebar {
+  &.left, &.right, &.left:dir(rtl), &:dir(rtl), &:dir(ltr), & { border: none; }
 }
 
 stacksidebar {
