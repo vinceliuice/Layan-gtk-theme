@@ -4,8 +4,12 @@ ROOT_UID=0
 DEST_DIR=
 
 # Destination directory
-if [ "$UID" -eq "$ROOT_UID" ]; then
+if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
+elif [[ -n "$XDG_DATA_HOME" ]]; then
+  DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.local/share/themes" ]]; then
+  DEST_DIR="$HOME/.local/share/themes"
 else
   DEST_DIR="$HOME/.themes"
 fi
@@ -257,14 +261,6 @@ link_theme() {
   done
 }
 
-clean_theme() {
-  for color in '' '-light' '-dark'; do
-    for solid in '' '-solid'; do
-      clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
-    done
-  done
-}
-
 uninstall() {
   local dest=${1}
   local name=${2}
@@ -276,9 +272,25 @@ uninstall() {
   [[ -d "$THEME_DIR" ]] && rm -rf "$THEME_DIR" && echo -e "Uninstalling "$THEME_DIR" ..."
 }
 
+clean_theme() {
+  for color in '' '-light' '-dark'; do
+    for solid in '' '-solid'; do
+      clean "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+    done
+  done
+
+  local dest="$HOME/.themes"
+
+  for color in "${COLOR_VARIANTS[@]}"; do
+    for solid in "${SOLID_VARIANTS[@]}"; do
+      uninstall "${dest}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
+    done
+  done
+}
+
 uninstall_theme() {
-  for color in "${colors[@]}"; do
-    for solid in "${solids[@]}"; do
+  for color in "${COLOR_VARIANTS[@]}"; do
+    for solid in "${SOLID_VARIANTS[@]}"; do
       uninstall "${dest:-${DEST_DIR}}" "${name:-${THEME_NAME}}" "${color}" "${solid}"
     done
   done
