@@ -1337,7 +1337,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .datemenu-popover {
-  border-radius: 30px;
+  border-radius: 26px;
 }
 
 .datemenu-calendar-column {
