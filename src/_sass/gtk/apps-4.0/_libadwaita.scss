@@ -688,12 +688,44 @@ tabbar {
   }
 
   tabbox {
-    padding-bottom: 0;
-    padding-top: 0;
-    min-height: 34px;
+    padding: 0;
+    min-height: $medium_size;
+    background-color: transparent;
 
     > tabboxchild {
-      border-radius: $buttons_radius;
+      border-radius: 0;
+      background-color: transparent;
+
+      > tab {
+        border-radius: 0;
+        background-color: transparent;
+        transition: background-color 150ms ease-in-out;
+
+        &:selected {
+          background-color: $base_color;
+          box-shadow: inset 0 -2px $primary_color;
+
+          &:hover {
+            background-color: mix($fg_color, $base_color, 3%);
+            box-shadow: inset 0 -2px $primary_color;
+          }
+
+          &:active {
+            background-color: mix($fg_color, $base_color, 8%);
+            box-shadow: inset 0 -2px $primary_color;
+          }
+        }
+
+        &:hover {
+          background-color: rgba($fg_color, 0.04);
+          box-shadow: inset 0 -2px $track_color;
+        }
+
+        &:active {
+          background-color: rgba($fg_color, 0.1);
+          box-shadow: inset 0 -2px $primary_color;
+        }
+      }
     }
 
     > separator {
@@ -712,20 +744,6 @@ tabbar {
       margin: 3px 6px;
       background: $primary_color;
     }
-  }
-
-  tab {
-    transition: background 150ms ease-in-out;
-
-    &:selected {
-      background-color: rgba($fg_color, 0.06);
-
-      &:hover { background-color: rgba($fg_color, 0.08); }
-      &:active { background-color: rgba($fg_color, 0.12); }
-    }
-
-    &:hover { background-color: rgba($fg_color, 0.04); }
-    &:active { background-color: rgba($fg_color, 0.1); }
   }
 
   tabbox.single-tab tab {
@@ -1072,8 +1090,20 @@ toolbarview.undershoot-bottom scrolledwindow {
 // Gnome >= 45.0
 .top-bar {
   padding: 0;
-  background-color: transparent;
+  background-color: $titlebar_bg_color;
   box-shadow: none;
+
+  &:backdrop {
+    background-color: $titlebar_bg_color;
+  }
+
+  .about &,
+  .sidebar-pane &,
+  .content-pane & {
+    &, &:backdrop {
+      background-color: transparent;
+    }
+  }
 
   headerbar,
   box > headerbar:only-child {
@@ -1095,7 +1125,6 @@ panelthemeselector { // Gnome builder
   margin: $container_padding * 1.5;
 
   checkbutton {
-    padding: 0;
     min-height: 44px;
     min-width: 44px;
     padding: 1px;
@@ -1129,6 +1158,7 @@ panelthemeselector { // Gnome builder
       min-height: 20px;
       min-width: 20px;
       padding: 0;
+      margin: 0;
 
       &:hover, &:active, &:checked {
         background-color: transparent;
