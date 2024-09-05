@@ -8,6 +8,8 @@ if [[ "$UID" -eq "$ROOT_UID" ]]; then
   DEST_DIR="/usr/share/themes"
 elif [[ -n "$XDG_DATA_HOME" ]]; then
   DEST_DIR="$XDG_DATA_HOME/themes"
+elif [[ -d "$HOME/.themes" ]]; then
+  DEST_DIR="$HOME/.themes"
 elif [[ -d "$HOME/.local/share/themes" ]]; then
   DEST_DIR="$HOME/.local/share/themes"
 else
@@ -279,7 +281,9 @@ clean_theme() {
     done
   done
 
-  local dest="$HOME/.themes"
+  if [[ "$DEST_DIR" == "$HOME/.themes" ]]; then
+    local dest="$HOME/.local/share/themes"
+  fi
 
   for color in "${COLOR_VARIANTS[@]}"; do
     for solid in "${SOLID_VARIANTS[@]}"; do

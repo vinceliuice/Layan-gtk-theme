@@ -1248,7 +1248,7 @@ menubar,
 // .menu,
 menu {
   margin: $container_padding 0; // See https://bugzilla.gnome.org/show_bug.cgi?id=591258
-  padding: $container_padding / 2;
+  padding: $container_padding;
   box-shadow: inset 0 1px rgba($menu_border_color, 0.06);
   background-color: $menu_bg_color;
   border: 1px solid $menu_border_color; // adds borders in a non composited env
@@ -1257,7 +1257,7 @@ menu {
 
   .csd & {
     border: none; // axes borders in a composited env
-    background-color: if($solid == 'false', rgba($menu_bg_color, 0.95), $menu_bg_color);
+    background-color: if($solid == 'false', rgba($menu_bg_color, 0.98), $menu_bg_color);
     box-shadow: none;
   }
 
@@ -1265,7 +1265,7 @@ menu {
     transition: background-color $shorter_duration $deceleration_curve;
     min-height: 20px;
     min-width: 40px;
-    padding: $container_padding / 2 + 2px $container_padding + 4px;
+    padding: $container_padding - 2px $container_padding;
     font: initial;
     text-shadow: none;
     color: $menu_fg_color;
@@ -3351,7 +3351,7 @@ calendar {
  ***********/
 messagedialog { // Message Dialog styling
   &.background {
-    background-color: rgba($popover_bg, 0.95);
+    background-color: rgba($popover_bg, 0.98);
     color: $popover_fg;
   }
 
@@ -3359,7 +3359,7 @@ messagedialog { // Message Dialog styling
     min-height: $small_size;
     border-style: none;
     box-shadow: inset 0 1px $titlebar_highlight_color;
-    background-color: rgba($popover_bg, 0.95);
+    background-color: rgba($popover_bg, 0.98);
     color: $popover_fg;
 		border-top-left-radius: $buttons_radius;
     border-top-right-radius: $buttons_radius;

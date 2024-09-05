@@ -779,6 +779,17 @@ button.link {
   > label { text-decoration-line: underline; }
 }
 
+%spinbutton_entry {
+  min-width: $large_size - 8px * 2;
+  // reset all the other props since the spinbutton node is styled here
+  margin: 0;
+  padding-left: 12px;
+  border-image: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: transparent;
+}
+
 /*****************
  * GtkSpinButton *
  *****************/
@@ -796,22 +807,11 @@ spinbutton {
     // behaves as the entry, so we extend the entry styling
     // and nuke the style on the internal entry
     @extend %entry;
-
     padding: 0;
 
-    %spinbutton_entry,
-    text {
-      min-width: $large_size - 8px * 2;
-      // reset all the other props since the spinbutton node is styled here
-      margin: 0;
-      padding-left: 12px;
-      border-image: none;
-      border-radius: 0;
-      box-shadow: none;
-      background-color: transparent;
-    }
+    > text { @extend %spinbutton_entry; }
 
-    button {
+    > button {
       // margin: $container_padding;
       border: solid 6px transparent;
       @extend %simple_flat_button;
@@ -824,12 +824,6 @@ spinbutton {
       &.down:dir(ltr) { margin-right: -3px; }
     }
   }
-
-  // OSD horizontal
-  // .osd &:not(.vertical) {
-  //   button {
-  //   }
-  // }
 
   // Vertical
   &.vertical {
@@ -845,13 +839,13 @@ spinbutton {
       box-shadow: none;
     }
 
-    text {
+    > text {
       min-height: $medium_size;
       min-width: $large_size;
       padding: 0;
     }
 
-    button {
+    > button {
       min-height: $medium_size;
       min-width: $large_size;
       padding: 0;
@@ -873,6 +867,24 @@ spinbutton {
     text {
       min-height: 0;
       padding: 1px 2px;
+    }
+  }
+
+  row.spin & {
+    min-height: 0;
+    padding: 0;
+
+    &, &:focus-within {
+      background: none;
+      box-shadow: none;
+    }
+
+    > text {
+      padding: 0;
+
+      &, &:focus-within {
+        background: none;
+      }
     }
   }
 
@@ -1443,7 +1455,7 @@ popover.background {
   modelbutton {
     min-height: 20px;
     min-width: 40px;
-    padding: $container_padding / 2 + 2px $container_padding + 2px;
+    padding: $container_padding / 2 $container_padding;
     border-radius: $material_radius;
     box-shadow: none;
     animation: none;
@@ -2991,7 +3003,7 @@ row {
     &.has-open-popup, // this is for indicathing which row generated a popover see https://bugzilla.gnome.org/show_bug.cgi?id=754411
     &:active {
       transition: $row_transition;
-      background-color: $fill_color;
+      background-color: $semi_fill_color;
       background-size: 0% 0%;
     }
   }
@@ -3661,6 +3673,11 @@ stacksidebar {
       background-color: rgba($fg_color, 0.06);
     }
 
+    &:active {
+      color: $fg_color;
+      background-color: rgba($fg_color, 0.1);
+    }
+
     &:selected {
       color: $fg_color;
       background-color: rgba($fg_color, 0.08);
@@ -3861,6 +3878,7 @@ video {
     min-height: 64px;
     border-radius: $circular_radius;
   }
+
   background: black;
 }
 

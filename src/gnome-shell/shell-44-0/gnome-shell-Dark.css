@@ -3458,7 +3458,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .quick-settings {
   padding: 12px !important;
-  border-radius: 32px !important;
+  border-radius: 44px !important;
   margin-top: 8px !important;
 }
 
@@ -3653,7 +3653,7 @@ StWidget.focused .app-well-app-running-dot {
 .quick-toggle-menu {
   background-color: #31313a !important;
   color: rgba(255, 255, 255, 0.8) !important;
-  border-radius: 24px;
+  border-radius: 33px;
   padding: 12px;
   margin: 12px 24px 0;
 }

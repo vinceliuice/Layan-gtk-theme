@@ -33,7 +33,7 @@ $subheading-size: if($compact == 'false', 16px, 15px);
 // radiuses
 $buttons_radius: 7px;
 $material_radius: 5px;
-$menu_radius: $material_radius + $container_padding / 2;
+$menu_radius: $material_radius + $container_padding;
 $icon_radius: 20px;
 $windows_radius: $buttons_radius + $container_padding;
 $popup_radius: $material_radius + $container_padding;
