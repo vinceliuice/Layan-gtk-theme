@@ -72,7 +72,7 @@ stage {
 
 .button:hover, .icon-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -140,7 +140,7 @@ StEntry:focus {
 StEntry:insensitive {
   color: rgba(0, 0, 0, 0.38);
   border-color: transparent;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 StEntry StIcon.capslock-warning {
@@ -180,7 +180,7 @@ StScrollView StScrollBar {
 StScrollBar StBin#trough {
   margin: 4px;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
@@ -260,7 +260,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .check-box:hover StBin {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .check-box:active StBin {
@@ -408,7 +408,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog-linked-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -711,7 +711,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:focus, .popup-menu .popup-menu-item.selected {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
   color: rgba(0, 0, 0, 0.75) !important;
   transition-duration: 0ms;
   box-shadow: none;
@@ -949,7 +949,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .switcher-list .item-box:outlined {
   padding: 8px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -1017,7 +1017,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .ws-switcher-box {
   height: 48px;
   border: none;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 13px;
 }
 
@@ -1238,7 +1238,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-calendar-column:hover, .datemenu-calendar-column:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .datemenu-calendar-column:active {
@@ -1282,7 +1282,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-today-button:hover, .datemenu-today-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .datemenu-today-button:active {
@@ -1303,7 +1303,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-month-label:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .pager-button {
@@ -1317,7 +1317,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .pager-button:hover, .pager-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .pager-button:active {
@@ -1362,7 +1362,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar-day:hover, .calendar-day:focus,
 .calendar-day-base:hover,
 .calendar-day-base:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   box-shadow: none !important;
   border: none !important;
 }
@@ -1487,7 +1487,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .events-button:hover,
 .events-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .world-clocks-button:active,
@@ -1637,7 +1637,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-list-clear-button.button:hover, .message-list-clear-button.icon-button:hover, .message-list-clear-button.button:focus, .message-list-clear-button.icon-button:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .message-list-clear-button.button:active, .message-list-clear-button.icon-button:active {
@@ -1695,7 +1695,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .message:hover, .popup-menu .message:focus {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 .popup-menu .message:active {
@@ -1765,7 +1765,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-close-button:hover, .message-close-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .message-close-button:active {
@@ -1790,7 +1790,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-media-control:hover, .message-media-control:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .message-media-control:active {
@@ -1824,7 +1824,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px;
   border: none;
   border-radius: 7px;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -1903,7 +1903,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-item:hover, .nm-dialog-item:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .nm-dialog-item:active {
@@ -2370,7 +2370,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .notification-banner .notification-button:hover, .notification-banner .notification-buttonfocus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -2584,7 +2584,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-box:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -3009,7 +3009,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .lg-obj-inspector-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -3304,7 +3304,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .hotplug-resident-mount:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .hotplug-resident-mount:active {
@@ -3351,7 +3351,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .system-menu-action:hover, .system-menu-action:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
   border: none;
   padding: 16px;
@@ -3725,7 +3725,7 @@ StWidget.focused #dashtodockContainer .app-well-app-running-dot {
 
 .openweather-provider:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;

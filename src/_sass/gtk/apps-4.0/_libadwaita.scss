@@ -37,308 +37,6 @@ avatar {
   &.image { background: none; }
 }
 
-$opaque_button_default_bg: mix($base_color, $fg_color, 85%);
-
-button {
-  @at-root %opaque-button {
-    box-shadow: none;
-
-    .osd &:focus:focus-visible {
-      outline: none;
-    }
-
-    &:hover {
-      background-image: image(gtkalpha(currentColor, .1));
-    }
-
-    &.keyboard-activating,
-    &:active {
-      background-image: image(transparentize(black, .8));
-    }
-
-    &:checked {
-      background-image: image(transparentize(black, .85));
-
-      &:hover {
-        background-image: image(transparentize(black, .95));
-      }
-
-      &.keyboard-activating,
-      &:active {
-        background-image: image(transparentize(black, .7));
-      }
-    }
-  }
-
-  &.opaque {
-    @extend %opaque-button;
-
-    background-color: $opaque_button_default_bg;
-    color: $fg_color;
-  }
-
-  &.destructive-action {
-    @extend %opaque-button;
-
-    color: on($destructive_color);
-
-    &, &:checked {
-      background-color: $destructive_color;
-    }
-  }
-
-  &.suggested-action {
-    @extend %opaque-button;
-
-    color: on($suggested_color);
-
-    &, &:checked {
-      background-color: $suggested_color;
-    }
-  }
-
-  // hide separators
-  &.font {
-    separator { background-color: transparent; }
-    > box { border-spacing: $base_padding; }
-    > box > box > label { font-weight: bold; }
-  }
-
-  @at-root %pill-button,
-  &.pill {
-    padding: 10px 32px;
-    border-radius: $circular_radius;
-  }
-
-  &.card {
-    background-clip: padding-box;
-    font-weight: inherit;
-    box-shadow: none;
-    transition: $shorter_transition;
-
-    &:hover {
-      @include button(hover);
-    }
-
-    &.keyboard-activating,
-    &:active {
-      @include button(active);
-    }
-
-    &:checked {
-      @include button(active);
-    }
-
-    &:drop(active) {
-      color: $warning_color;
-      box-shadow: inset 0 0 0 1px $warning_color;
-    }
-  }
-}
-
-menubutton {
-  &.osd {
-    background: none;
-    color: inherit;
-  }
-
-  &.circular > button { @extend %circular_button; }
-  &.flat > button { @extend %flat_button; }
-  &.pill > button { @extend %pill-button; }
-
-  &.suggested-action {
-    background-color: $suggested_color;
-    color: on($suggested_color);
-  }
-
-  &.destructive-action {
-    background-color: $destructive_color;
-    color: on($destructive_color);
-  }
-
-  &.opaque {
-    background-color: $opaque_button_default_bg;
-    color: $fg_color;
-  }
-
-  &.suggested-action,
-  &.destructive-action,
-  &.opaque {
-    border-radius: $buttons_radius;
-
-    &.circular, &.pill {
-      border-radius: $circular_radius;
-    }
-
-    > button {
-      @extend %opaque-button;
-
-      &, &:checked {
-        background-color: transparent;
-        color: inherit;
-      }
-    }
-  }
-
-  arrow {
-    min-height: 16px;
-    min-width: 16px;
-    &.none {
-      -gtk-icon-source: -gtk-icontheme('open-menu-symbolic');
-    }
-    &.down {
-      -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-    }
-    &.up {
-      -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
-    }
-    &.left {
-      -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
-    }
-    &.right {
-      -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-    }
-  }
-}
-
-splitbutton {
-  border-radius: $buttons_radius;
-
-  &:disabled {
-    filter: none;
-    opacity: 1;
-  }
-
-  &, & > separator {
-    transition: $shorter_transition;
-    transition-property: background;
-  }
-
-  > separator {
-    margin-top: $base_padding;
-    margin-bottom: $base_padding;
-    background: none;
-  }
-
-  // Since the inner button doesn't have any style classes on it,
-  // we have to add them manually
-  &.image-button > button {
-    min-height: 24px;
-    min-width: 24px;
-    padding: ($medium-size - 24px) / 2;
-  }
-
-  &.text-button.image-button > button,
-  &.image-text-button > button {
-    padding-left: $base_padding * 1.5;
-    padding-right: $base_padding * 1.5;
-
-    > box {
-      border-spacing: $base_padding;
-    }
-  }
-
-  // Reimplementing linked so we don't blow up css
-  > button:dir(ltr),
-  > menubutton > button:dir(rtl) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    margin-right: 0;
-  }
-
-  > button:dir(rtl),
-  > menubutton > button:dir(ltr) {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-left: 0;
-  }
-
-  @at-root %flat_split_button,
-  &.flat {
-    > separator {
-      background: $border_color;
-    }
-
-    &:hover,
-    &:active,
-    &:checked {
-      background: gtkalpha(currentColor, 0.1);
-      color: $fg_color;
-
-      > separator {
-        background: none;
-      }
-    }
-
-    &:focus-within:focus-visible > separator {
-      background: none;
-    }
-
-    > button,
-    > menubutton > button {
-      @extend %flat_button;
-
-      border-radius: $buttons_radius;
-    }
-  }
-
-  &.suggested-action {
-    background-color: $suggested_color;
-    color: on($suggested_color);
-  }
-
-  &.destructive-action {
-    background-color: $destructive_color;
-    color: on($destructive_color);
-  }
-
-  &.opaque {
-    background-color: $opaque_button_default_bg;
-    color: $fg_color;
-  }
-
-  &.suggested-action,
-  &.destructive-action,
-  &.opaque {
-    > button, > menubutton > button {
-      @extend %opaque-button;
-
-      &, &:checked {
-        color: inherit;
-        background-color: transparent;
-      }
-    }
-
-    > menubutton > button {
-      &:dir(ltr) { box-shadow: inset 1px 0 $border_color; }
-      &:dir(rtl) { box-shadow: inset -1px 0 $border_color; }
-    }
-  }
-
-  > menubutton > button > arrow.none {
-    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-  }
-}
-
-buttoncontent {
-  border-spacing: $base_padding;
-
-  > label {
-    font-weight: bold;
-
-    &:dir(ltr) { padding-right: 2px; }
-    &:dir(rtl) { padding-left: 2px; }
-  }
-
-  .arrow-button > box > &,
-  splitbutton > button > & {
-    > label {
-      &:dir(ltr) { padding-right: 0; }
-      &:dir(rtl) { padding-left: 0; }
-    }
-  }
-}
-
 //
 // Toasts
 //
@@ -482,8 +180,6 @@ viewswitcher {
     border-spacing: 0;
     border-radius: $circular_radius;
     background-color: rgba($titlebar_fg_color, 0.05);
-    margin-top: $base_padding;
-    margin-bottom: $base_padding;
 
     button.toggle {
       &:checked {
@@ -557,39 +253,59 @@ viewswitcher {
 }
 
 // AdwViewSwitcherBar
-viewswitcherbar actionbar > revealer > box {
-  padding: 0;
+viewswitcherbar {
+  border-spacing: 3px;
+  min-height: 34px;
 
-  viewswitcher.narrow button.toggle:not(.suggested-action):not(.destructive-action) {
-    transition: none;
+  &.narrow {
+    margin-top: -3px;
+    margin-bottom: -3px;
+    min-height: 6px;
+  }
 
-    &:hover {
-      color: $fg_color;
-      background-color: rgba($fg_color, 0.04);
-      box-shadow: inset 0 2px transparent;
-    }
-
-    &:active {
-      color: $fg_color;
-      background-color: rgba($fg_color, 0.1);
-      box-shadow: inset 0 2px $primary_color;
-    }
-
-    &:checked {
-      border-radius: 0;
-      color: $fg_color;
-
-      &, &:hover {
-        background-color: rgba($fg_color, 0.06);
+  actionbar > revealer > box {
+    padding: $container_padding 0 0;
+  
+    viewswitcher.narrow button.toggle:not(.suggested-action):not(.destructive-action) {
+      transition: none;
+  
+      &:hover {
+        color: $fg_color;
+        background-color: rgba($fg_color, 0.04);
+        box-shadow: inset 0 2px transparent;
+      }
+  
+      &:active {
+        color: $fg_color;
+        background-color: rgba($fg_color, 0.1);
         box-shadow: inset 0 2px $primary_color;
-        background-image: none;
+      }
+  
+      &:checked {
+        border-radius: 0;
+        color: $fg_color;
+  
+        &, &:hover {
+          background-color: rgba($fg_color, 0.06);
+          box-shadow: inset 0 2px $primary_color;
+          background-image: none;
+        }
+      }
+  
+      &:checked:backdrop, &:active:backdrop {
+        color: $secondary_fg_color;
+        box-shadow: inset 0 2px $disabled_fg_color;
       }
     }
+  }
+}
 
-    &:checked:backdrop, &:active:backdrop {
-      color: $secondary_fg_color;
-      box-shadow: inset 0 2px $disabled_fg_color;
-    }
+%viewswitcherbar-shrunk {
+  margin: $container_padding / 2 0;
+
+  actionbar > revealer > box {
+    // Not 0px because view switcher has negative margin
+    padding-top: $container_padding;
   }
 }
 
@@ -792,11 +508,12 @@ tabbar {
 }
 
 %tabbar-shrunk {
+  margin-bottom: -$container_padding / 2;
+
   tabbox,
   .start-action,
   .end-action {
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 0;
   }
 }
 

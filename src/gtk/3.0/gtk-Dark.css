@@ -269,7 +269,7 @@ popover.background spinbutton:not(.vertical), spinbutton.flat:not(.vertical), en
   border-radius: 0;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.23);
   background-color: transparent;
   color: #FFFFFF;
 }
@@ -279,14 +279,14 @@ popover.background spinbutton:not(.vertical), spinbutton.flat:not(.vertical), en
 notebook > stack:not(:only-child) spinbutton:focus:not(.vertical), popover.background .linked entry:focus, popover.background entry:focus,
 popover.background spinbutton:focus:not(.vertical), spinbutton.flat:focus:not(.vertical), entry.flat:focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.23);
 }
 
 #login_window entry:disabled, .raven .raven-background spinbutton:disabled:not(.vertical), .budgie-popover entry:disabled,
 .budgie-popover spinbutton:disabled:not(.vertical), window#whiskermenu-window entry:disabled, editortweak entry.search:disabled, layoutpane entry.search:disabled, entry.preferences-search:disabled, colorchooser .popover.osd spinbutton:disabled:not(.vertical), messagedialog entry:disabled, notebook > stack:not(:only-child) entry:disabled:not(.search),
 notebook > stack:not(:only-child) spinbutton:disabled:not(.vertical), popover.background .linked entry:disabled, popover.background entry:disabled,
 popover.background spinbutton:disabled:not(.vertical), spinbutton.flat:disabled:not(.vertical), entry.flat:disabled {
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.16);
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -315,7 +315,7 @@ spinbutton:not(.vertical) image.right, entry image.right {
 
 spinbutton:not(.vertical) undershoot.left, entry undershoot.left {
   background-color: transparent;
-  background-image: linear-gradient(to top, rgba(49, 49, 58, 0.3) 50%, rgba(255, 255, 255, 0.2) 50%);
+  background-image: linear-gradient(to top, rgba(49, 49, 58, 0.3) 50%, rgba(255, 255, 255, 0.23) 50%);
   padding-left: 1px;
   background-size: 1px 12px;
   background-repeat: repeat-y;
@@ -325,7 +325,7 @@ spinbutton:not(.vertical) undershoot.left, entry undershoot.left {
 
 spinbutton:not(.vertical) undershoot.right, entry undershoot.right {
   background-color: transparent;
-  background-image: linear-gradient(to top, rgba(49, 49, 58, 0.3) 50%, rgba(255, 255, 255, 0.2) 50%);
+  background-image: linear-gradient(to top, rgba(49, 49, 58, 0.3) 50%, rgba(255, 255, 255, 0.23) 50%);
   padding-right: 1px;
   background-size: 1px 12px;
   background-repeat: repeat-y;
@@ -366,7 +366,7 @@ spinbutton.error.flat:focus:not(.vertical), entry.error.flat:focus {
 }
 
 spinbutton.error.flat:disabled:not(.vertical), entry.error.flat:disabled {
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.16);
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -416,7 +416,7 @@ spinbutton.warning.flat:focus:not(.vertical), entry.warning.flat:focus {
 }
 
 spinbutton.warning.flat:disabled:not(.vertical), entry.warning.flat:disabled {
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.16);
   background-color: transparent;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -520,7 +520,7 @@ treeview entry {
 
 .budgie-panel button:hover, PanelToplevel.horizontal > grid > button:hover, .mate-panel-menu-bar button:hover, .nemo-window .toolbar button:hover, layouttabbar button:hover, stackswitcher > button:hover, infobar.info > revealer > box button:hover, infobar.question > revealer > box button:hover, infobar.warning > revealer > box button:hover, infobar.error > revealer > box button:hover, .app-notification button:hover, actionbar > revealer > box button:hover:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), .caja-pathbar button:hover,
 .path-bar button:hover, toolbar button:hover, button.flat:hover {
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
 }
 
@@ -528,8 +528,8 @@ treeview entry {
 .path-bar button:active, toolbar button:active, button.flat:active {
   transition: 100ms, border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   animation: ripple_effect 100ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
   color: #FFFFFF;
 }
@@ -543,14 +543,14 @@ treeview entry {
 
 .budgie-panel button:checked, PanelToplevel.horizontal > grid > button:checked, .mate-panel-menu-bar button:checked, .nemo-window .toolbar button:checked, layouttabbar button:checked, stackswitcher > button:checked, infobar.info > revealer > box button:checked, infobar.question > revealer > box button:checked, infobar.warning > revealer > box button:checked, infobar.error > revealer > box button:checked, .app-notification button:checked, actionbar > revealer > box button:checked:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), .caja-pathbar button:checked,
 .path-bar button:checked, toolbar button:checked, button.flat:checked {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.23);
   background-image: radial-gradient(circle farthest-corner at center, transparent 10%, transparent 0%);
   color: #FFFFFF;
 }
 
 .budgie-panel button:checked:disabled, PanelToplevel.horizontal > grid > button:checked:disabled, .mate-panel-menu-bar button:checked:disabled, .nemo-window .toolbar button:checked:disabled, layouttabbar button:checked:disabled, stackswitcher > button:checked:disabled, infobar.info > revealer > box button:checked:disabled, infobar.question > revealer > box button:checked:disabled, infobar.warning > revealer > box button:checked:disabled, infobar.error > revealer > box button:checked:disabled, .app-notification button:checked:disabled, actionbar > revealer > box button:checked:disabled:not(.suggested-action):not(.destructive-action):not(.server-list-button), .nemo-window toolbar.primary-toolbar > toolitem > box > button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), .caja-pathbar button:checked:disabled,
 .path-bar button:checked:disabled, toolbar button:checked:disabled, button.flat:checked:disabled {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.16);
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -574,7 +574,7 @@ popover.background spinbutton.vertical button, spinbutton.vertical button, spinb
 radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, popover.background modelbutton.flat:hover,
 popover.background menuitem.button.flat:hover,
 popover.background spinbutton.vertical button:hover, spinbutton.vertical button:hover, spinbutton:not(.vertical) button:hover {
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
   color: #FFFFFF;
 }
 
@@ -585,8 +585,8 @@ popover.background menuitem.button.flat:active,
 popover.background spinbutton.vertical button:active, spinbutton.vertical button:active, spinbutton:not(.vertical) button:active {
   transition: 100ms, border-image 225ms cubic-bezier(0, 0, 0.2, 1), background-size 0, background-image 0;
   animation: ripple_effect 100ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
   color: #FFFFFF;
 }
@@ -652,8 +652,8 @@ button:hover {
 button:active {
   transition: 100ms, background-size 0, background-image 0;
   animation: ripple_effect 100ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.06), inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
   color: #FFFFFF;
 }
@@ -1082,7 +1082,7 @@ combobox:drop(active) {
   font-weight: inherit;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.23);
   background-color: transparent;
   color: #FFFFFF;
 }
@@ -1227,7 +1227,7 @@ searchbar > revealer > box {
  * Tree Views *
  **************/
 treeview.view {
-  border-left-color: rgba(255, 255, 255, 0.2);
+  border-left-color: rgba(255, 255, 255, 0.23);
   border-top-color: rgba(255, 255, 255, 0.08);
 }
 
@@ -1614,7 +1614,7 @@ popover.background spinbutton:not(.vertical) {
 popover.background .linked entry:focus, popover.background entry:focus,
 popover.background spinbutton:focus:not(.vertical) {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.23);
 }
 
 popover.background .linked entry:disabled, popover.background entry:disabled,
@@ -2017,7 +2017,7 @@ notebook > header.top > tabs {
 }
 
 notebook > header.top > tabs > tab:hover {
-  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.23);
 }
 
 notebook > header.top > tabs > tab:checked {
@@ -2034,7 +2034,7 @@ notebook > header.bottom > tabs {
 }
 
 notebook > header.bottom > tabs > tab:hover {
-  box-shadow: inset 0 2px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px rgba(255, 255, 255, 0.23);
 }
 
 notebook > header.bottom > tabs > tab:checked {
@@ -2051,7 +2051,7 @@ notebook > header.left > tabs {
 }
 
 notebook > header.left > tabs > tab:hover {
-  box-shadow: inset -2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset -2px 0 rgba(255, 255, 255, 0.23);
 }
 
 notebook > header.left > tabs > tab:checked {
@@ -2068,7 +2068,7 @@ notebook > header.right > tabs {
 }
 
 notebook > header.right > tabs > tab:hover {
-  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.23);
 }
 
 notebook > header.right > tabs > tab:checked {
@@ -2135,7 +2135,7 @@ notebook > header tab {
   outline-offset: -6px;
   border-width: 1px;
   border-color: transparent;
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.2) 10%, transparent 0%);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.23) 10%, transparent 0%);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 0% 0%;
@@ -2393,14 +2393,14 @@ switch {
   min-width: 42px;
   border: 4px solid transparent;
   border-radius: 9999px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.23);
   background-clip: padding-box;
   color: transparent;
   font-size: 0;
 }
 
 switch:disabled {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 switch:checked {
@@ -2999,8 +2999,8 @@ headerbar .linked:not(.vertical).path-bar button:not(.suggested-action):not(.des
 headerbar .linked:not(.vertical):not(.path-bar).stack-switcher button:not(.suggested-action):not(.destructive-action):active, headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action):active {
   color: #FFFFFF;
   background-color: transparent;
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
 }
@@ -3054,7 +3054,7 @@ headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructi
 }
 
 headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructive-action):checked {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.08);
 }
 
 headerbar.default-decoration {
@@ -3173,11 +3173,11 @@ scale slider {
 scale trough {
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1);
   outline: none;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.23);
 }
 
 scale trough:disabled {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 scale highlight {
@@ -3191,7 +3191,7 @@ scale highlight:disabled {
 
 scale fill {
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1);
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.23);
 }
 
 scale fill:disabled {
@@ -3245,7 +3245,7 @@ scale value {
 }
 
 scale marks {
-  color: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.23);
 }
 
 scale marks.top {
@@ -3449,7 +3449,7 @@ levelbar block.full {
 }
 
 levelbar block.empty {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 /****************
@@ -3599,8 +3599,8 @@ list row {
 .budgie-menu button.has-open-popup, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.has-open-popup.view, filechooser stack.view scrolledwindow treeview.has-open-popup.view, .has-open-popup.view, iconview.has-open-popup, treeview.view header button.has-open-popup, .budgie-menu button:active, window#gnome-system-monitor.background.csd > box.vertical > stack > box.vertical > scrolledwindow treeview.view:active, filechooser stack.view scrolledwindow treeview.view:active, .view:active, iconview:active, treeview.view header button:active, row.activatable.has-open-popup, row.activatable:active {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), background-color 0, color 0, background-size 0, background-image 0;
   animation: ripple_effect 225ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
 }
 
@@ -3980,7 +3980,7 @@ placessidebar row > revealer {
 }
 
 placessidebar row:selected {
-  background-color: rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.05);
   color: #5657f5;
 }
 
@@ -4503,8 +4503,8 @@ stackswitcher > button {
 stackswitcher > button:active {
   color: #FFFFFF;
   background-color: transparent;
-  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.1);
-  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.1) 10%, transparent 0%);
+  box-shadow: inset 0 0 0 9999px rgba(255, 255, 255, 0.08);
+  background-image: radial-gradient(circle farthest-corner at center, rgba(255, 255, 255, 0.08) 10%, transparent 0%);
   background-size: 0% 0%;
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
 }
@@ -4555,7 +4555,7 @@ button.emoji-section {
 }
 
 button.emoji-section:hover {
-  box-shadow: inset 0 2px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px rgba(255, 255, 255, 0.23);
 }
 
 button.emoji-section:active, button.emoji-section:checked {
@@ -4892,7 +4892,7 @@ button.emoji-section:last-child {
 
 @keyframes needs_attention_keyframes {
   to {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -4913,7 +4913,7 @@ button.emoji-section:last-child {
 }
 
 .disk-space-display.free {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.16);
 }
 
 .conflict-row:not(:selected) {
@@ -5305,7 +5305,7 @@ docktab {
 }
 
 docktab:hover {
-  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -2px rgba(255, 255, 255, 0.23);
   color: #FFFFFF;
 }
 
@@ -5327,7 +5327,7 @@ dockoverlayedge docktabstrip {
 }
 
 dockoverlayedge.left-edge docktab:hover {
-  box-shadow: inset -2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset -2px 0 rgba(255, 255, 255, 0.23);
 }
 
 dockoverlayedge.left-edge docktab:checked {
@@ -5335,7 +5335,7 @@ dockoverlayedge.left-edge docktab:checked {
 }
 
 dockoverlayedge.right-edge docktab:hover {
-  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.23);
 }
 
 dockoverlayedge.right-edge docktab:checked {
@@ -5435,7 +5435,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(ltr) {
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(ltr):hover {
-  box-shadow: inset -2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset -2px 0 rgba(255, 255, 255, 0.23);
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(ltr):active, ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(ltr):checked {
@@ -5447,7 +5447,7 @@ ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(rtl) {
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(rtl):hover {
-  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.23);
 }
 
 ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(rtl):active, ideeditorutilities > dzldockpaned > box > stackswitcher button:dir(rtl):checked {
@@ -5664,12 +5664,12 @@ window.background > box.vertical box.horizontal > box.vertical > scrolledwindow 
 }
 
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.16);
   color: #5657f5;
 }
 
 window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:active, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:active:focus, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:checked, window.background > box.vertical box.horizontal > box.vertical > scrolledwindow > viewport.frame > list row.event.activatable.compressed-row-header:checked:focus {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.23);
   background-image: image(#31313a);
 }
 
@@ -6867,7 +6867,7 @@ window#whiskermenu-window scrolledwindow > viewport button.radio:not(:disabled) 
 }
 
 window#whiskermenu-window scrolledwindow > viewport button.radio:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.16);
 }
 
 window#whiskermenu-window scrolledwindow > viewport button.radio:checked {
@@ -7050,7 +7050,7 @@ PanelToplevel.vertical > grid > button {
 }
 
 PanelSeparator {
-  color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.16);
 }
 
 MatePanelAppletFrameDBus {
@@ -7071,7 +7071,7 @@ MatePanelAppletFrameDBus {
 }
 
 .mate-panel-menu-bar menubar > menuitem:hover {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.16);
   color: #FFFFFF;
 }
 
@@ -7620,14 +7620,14 @@ window.budgie-popover:not(.csd) > frame.container > border {
   font-size: 120%;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), border-image 225ms cubic-bezier(0, 0, 0.2, 1);
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 0%, transparent 0%) 0 0 0/0 0 0px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.23);
   background-color: transparent;
   color: #FFFFFF;
 }
 
 .budgie-menu entry.search:focus {
   border-image: radial-gradient(circle closest-corner at center calc(100% - 1px), #5657f5 100%, transparent 0%) 0 0 2/0 0 2px;
-  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.23);
 }
 
 .budgie-menu .categories:dir(ltr) {
@@ -8222,7 +8222,7 @@ frame.raven-frame > border {
 }
 
 .raven .raven-background > overlay > widget > image {
-  color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.16);
 }
 
 .raven .raven-background grid > label:first-child {

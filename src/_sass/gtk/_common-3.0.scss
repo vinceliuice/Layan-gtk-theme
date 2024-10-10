@@ -974,7 +974,7 @@ combobox {
   }
 
   &:disabled {
-    box-shadow: inset 0 -1px $divider_color;
+    box-shadow: inset 0 -1px $border_color;
     color: $disabled_fg_color;
   }
 }
@@ -2127,7 +2127,7 @@ switch {
   color: transparent;
   font-size: 0;
 
-  &:disabled { background-color: $divider_color; }
+  &:disabled { background-color: $fill_color; }
 
   &:checked {
     background-color: rgba($accent_color, 0.35);
@@ -2845,7 +2845,7 @@ scale {
     outline: none;
     background-color: $track_color;
 
-    &:disabled { background-color: $divider_color; }
+    &:disabled { background-color: $fill_color; }
   }
 
   // the colored part of the backing bit
@@ -3104,7 +3104,7 @@ levelbar {
 
     &.full { background-color: $success_color; }
 
-    &.empty { background-color: $divider_color; }
+    &.empty { background-color: $fill_color; }
   }
 }
 
@@ -3634,7 +3634,7 @@ placessidebar {
     > revealer { padding: 0 12px; }
 
     &:selected {
-      background-color: rgba($divider_color, 0.06);
+      background-color: $row_fill_color;
       color: $primary_color;
 
       image.sidebar-icon, label.sidebar-label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }

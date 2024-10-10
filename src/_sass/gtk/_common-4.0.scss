@@ -420,17 +420,20 @@ button {
     border-radius: $buttons_radius;
     font-weight: 500;
 
-    @include button(normal);
+    @at-root %button_basic_raised, & {
+      @include button(normal);
 
-    &:hover { @include button(hover); }
+      &:hover { @include button(hover); }
 
-    &:active { @include button(active); }
-
-    &:disabled { @include button(disabled); }
-
-    &:checked { @include button(checked); }
-
-    &:checked:disabled { @include button(checked-disabled); }
+      &.keyboard-activating,
+      &:active { @include button(active); }
+  
+      &:disabled { @include button(disabled); }
+  
+      &:checked { @include button(checked); }
+  
+      &:checked:disabled { @include button(checked-disabled); }
+    }
 
     @at-root %flat_button, &.flat {
       @at-root %simple_flat_button, & {
@@ -448,6 +451,14 @@ button {
       &:checked:disabled { @include button(flat-checked-disabled); }
     }
 
+    &:disabled {
+      filter: none;
+
+      label {
+        filter: none;
+      }
+    }
+
     &.text-button {
       padding-left: 16px;
       padding-right: 16px;
@@ -458,8 +469,8 @@ button {
       padding: ($medium_size - 24px) / 2;
     }
 
-    &.text-button.image-button {
-
+    &.text-button.image-button,
+    &.image-text-button {
       label {
         &:first-child { margin-left: 16px - ($medium_size - 24px) / 2; }
 
@@ -467,6 +478,17 @@ button {
       }
 
       image:not(:only-child) { margin: 0 (24px - 16px) / 2; }
+    }
+
+    &.arrow-button {
+      padding-left: $container_padding * 1.5;
+      padding-right: $container_padding * 1.5;
+
+      > box { border-spacing: 4px; }
+
+      &.text-button {
+        > box { border-spacing: 4px; }
+      }
     }
 
     .linked > & { @extend %linked; }
@@ -571,6 +593,35 @@ button {
     }
   }
 
+  @at-root %opaque_button, &.opaque {
+    box-shadow: none;
+
+    &:hover {
+      background-image: image(gtkalpha(currentColor, 0.1));
+      box-shadow: none;
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-image: image(gtkalpha(currentColor, 0.2));
+      box-shadow: none;
+    }
+
+    &:checked {
+      background-image: image(gtkalpha(currentColor, 0.15));
+      box-shadow: none;
+
+      &:hover {
+        background-image: image(gtkalpha(currentColor, 0.2));
+      }
+
+      &.keyboard-activating,
+      &:active {
+        background-image: image(gtkalpha(currentColor, 0.3));
+      }
+    }
+  }
+
   stackswitcher > & {
     // to position the needs attention dot, padding is added to the button
     // child, a label needs just lateral padding while an icon needs vertical
@@ -635,6 +686,260 @@ button {
     min-width: $small_size;
     padding: 0;
     border-radius: $circular_radius;
+  }
+
+  @at-root %pill_button,
+  &.pill {
+    padding: $container_padding * 1.5 $small_size;
+    border-radius: $circular_radius;
+  }
+
+  &.card {
+    background-color: $fill_color;
+    background-clip: padding-box;
+    font-weight: inherit;
+    padding: 0;
+
+    &:hover {
+      background-image: image($divider_color);
+    }
+
+    &.keyboard-activating,
+    &:active {
+      background-image: image($track_color);
+    }
+
+    &:checked {
+      background-color: $button_bg_color;
+      background-image: image($semi_fill_color);
+
+      &:hover { background-image: image($divider_color); }
+
+      &.keyboard-activating,
+      &:active { background-image: image($track_color); }
+
+      &.has-open-popup { background-image: image($disabled_secondary_fg_color); }
+
+      .osd & {
+        background-color: gtkalpha(currentColor, 0.1);
+      }
+    }
+  }
+}
+
+menubutton {
+  &.osd {
+    background: none;
+    color: inherit;
+  }
+
+  &.circular > button { @extend %circular_button; }
+  &.flat > button { @extend %flat_button; }
+  &.pill > button { @extend %pill_button; }
+
+  &.suggested-action,
+  &.opaque {
+    border-radius: $buttons_radius;
+
+    &.circular, &.pill {
+      border-radius: $circular_radius;
+    }
+
+    > button {
+      @extend %opaque_button;
+
+      &, &:checked {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+  }
+
+  &.image-button > button {
+    min-width: 24px;
+    padding-left: $container_padding;
+    padding-right: $container_padding;
+  }
+
+  &.card > button {
+    border-radius: $buttons_radius;
+  }
+
+  arrow {
+    min-height: 16px;
+    min-width: 16px;
+    &.none {
+      -gtk-icon-source: -gtk-icontheme('open-menu-symbolic');
+    }
+    &.down {
+      -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+    }
+    &.up {
+      -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+    }
+    &.left {
+      -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
+    }
+    &.right {
+      -gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+    }
+  }
+}
+
+splitbutton {
+  border-radius: $buttons_radius;
+
+  &, & > separator {
+    transition: $shorter_duration;
+    transition-property: background;
+  }
+
+  > separator {
+    margin-top: $container_padding;
+    margin-bottom: $container_padding;
+    background: none;
+  }
+
+  > menubutton > button {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  // Since the inner button doesn't have any style classes on it,
+  // we have to add them manually
+  &.image-button > button {
+    min-width: 24px;
+    padding-left: $container_padding;
+    padding-right: $container_padding;
+  }
+
+  &.text-button.image-button > button,
+  &.image-text-button > button {
+    padding-left: $container_padding * 1.5;
+    padding-right: $container_padding * 1.5;
+
+    > box {
+      border-spacing: $container_padding;
+    }
+  }
+
+  &:disabled {
+    filter: none;
+
+    > button, > menubutton > button {
+      filter: none;
+    }
+  }
+
+  // Reimplementing linked so we don't blow up css
+  > button:dir(ltr),
+  > menubutton > button:dir(rtl) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: -1px;
+  }
+
+  > button:dir(rtl),
+  > menubutton > button:dir(ltr) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  @at-root %flat_split_button,
+  &.flat {
+    > separator {
+      background: $border_color;
+    }
+
+    &:hover,
+    &:active,
+    &:checked {
+      background: $divider_color;
+
+      > separator {
+        background: none;
+      }
+    }
+
+    &:disabled {
+      filter: none;
+
+      > button:disabled, > menubutton > button:disabled {
+        filter: none;
+      }
+    }
+
+    &:focus-within:focus-visible > separator {
+      background: none;
+    }
+
+    > button,
+    > menubutton > button {
+      @extend %flat_button;
+
+      border-radius: $buttons_radius;
+    }
+  }
+
+  &.suggested-action,
+  &.opaque {
+    > button, > menubutton > button {
+      @extend %opaque_button;
+
+      &, &:checked {
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+
+    > menubutton > button {
+      &:dir(ltr) { box-shadow: inset 1px 0 $border_color; }
+      &:dir(rtl) { box-shadow: inset -1px 0 $border_color; }
+    }
+  }
+
+  > menubutton > button > arrow.none {
+    -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+  }
+}
+
+buttoncontent {
+  > box {
+    border-spacing: $container_padding;
+
+    > label {
+      font-weight: bold;
+
+      &:dir(ltr) { padding-right: 2px; }
+      &:dir(rtl) { padding-left: 2px; }
+    }
+  }
+
+  .arrow-button > box > &,
+  splitbutton > button > & {
+    > box > label {
+      &:dir(ltr) { padding-right: 0; }
+      &:dir(rtl) { padding-left: 0; }
+    }
+  }
+}
+
+tabbutton {
+  label {
+    font-weight: 800;
+    // We're intentionally using pixels here, as this label is a part of the icon
+    font-size: 10.5px;
+
+    &.small {
+      font-size: 8px;
+    }
+  }
+
+  indicatorbin > indicator,
+  indicatorbin > mask {
+    &:dir(ltr) { transform: translate(-1px, 1px); }
+    &:dir(rtl) { transform: translate(1px, 1px); }
   }
 }
 
@@ -830,7 +1135,7 @@ spinbutton {
     // in the vertical configuration, we treat the spinbutton
     // as a box, and tweak the style of the entry in the middle
     // so that it's linked
-    background-color: $divider_color;
+    background-color: $fill_color;
     border-radius: $buttons_radius;
 
     &:disabled { color: $disabled_fg_color; }
@@ -991,7 +1296,7 @@ combobox {
   }
 
   &:disabled {
-    box-shadow: inset 0 -1px $divider_color;
+    box-shadow: inset 0 -1px $border_color;
     color: $disabled_fg_color;
   }
 }
@@ -1000,10 +1305,80 @@ combobox {
 /************
  * Toolbars *
  ************/
-.toolbar,
-toolbar {
+
+%toolbar {
+  button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %flat_button;
+    }
+  }
+
+  menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.image-button > button {
+      @extend %flat_button;
+    }
+  }
+
+  .linked button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %button_basic_raised;
+    }
+  }
+
+  menubutton.raised > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+    &.arrow-button,
+    &.image-button,
+    &.image-text-button {
+      @extend %button_basic_raised;
+    }
+  }
+
+  menubutton.suggested-action,
+  menubutton.opaque {
+    > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      @extend %opaque_button;
+
+      color: inherit;
+      background-color: transparent;
+    }
+  }
+
+  switch {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  // Reset styles for popovers
+  popover {
+    button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &.arrow-button,
+      &.image-button,
+      &.image-text-button {
+        @extend %button_basic_raised;
+      }
+    }
+
+    menubutton:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
+      &.image-button > button {
+        @extend %button_basic_raised;
+      }
+    }
+  }
+}
+
+%toolbar-shrunk {
+  padding-top: $container_padding / 2;
+  padding-bottom: $container_padding / 2;
+}
+
+.toolbar {
   padding: $container_padding;
   background-color: $bg_color;
+  border-spacing: $container_padding;
 
   & > button { @extend %flat_button; }
 
@@ -1035,6 +1410,33 @@ toolbar {
   }
 }
 
+%searchbar-flat > revealer > box {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  border: none;
+  padding-bottom: $container_padding;
+}
+
+%searchbar-inline {
+  @extend %searchbar-flat;
+
+  > revealer > box:backdrop {
+    background-color: transparent;
+    transition: none;
+
+    > * {
+      filter: none;
+      transition: none;
+    }
+  }
+}
+
+%searchbar-shrunk > revealer > box {
+  padding-top: $container_padding / 2;
+  padding-bottom: $container_padding / 2;
+}
+
 searchbar > revealer > box {
   border-spacing: 0;
   padding: $container_padding;
@@ -1044,11 +1446,42 @@ searchbar > revealer > box {
   background-color: $bg_color;
   background-clip: border-box;
   box-shadow: none;
+  @extend %toolbar;
+
+  &:backdrop {
+    background-color: $bg_color;
+
+    > * {
+      filter: none;
+    }
+  }
 
   entry,
   button,
   menubutton,
   splitbutton { margin: 0; }
+
+  .close {
+    min-width: 18px;
+    min-height: 18px;
+    padding: 4px;
+    border-radius: 50%;
+    @extend %flat_button;
+
+    &:dir(ltr) {
+      margin-left: 10px;
+      margin-right: 4px;
+    }
+
+    &:dir(rtl) {
+      margin-left: 4px;
+      margin-right: 10px;
+    }
+  }
+}
+
+searchbar.inline {
+  @extend %searchbar-inline;
 }
 
 actionbar > revealer > box {
@@ -1062,10 +1495,125 @@ actionbar > revealer > box {
 
   .linked > button { border-radius: $buttons_radius; }
 
-  entry,
-  button,
-  menubutton,
-  splitbutton { margin: 0; }
+  &, > box.start, > box.end {
+    border-spacing: $container_padding;
+  }
+
+  &:backdrop {
+    background-color: $bg_color;
+
+    > * {
+      filter: none;
+    }
+  }
+}
+
+%actionbar-inline > revealer > box {
+  background-color: transparent;
+  color: inherit;
+  box-shadow: none;
+  border: none;
+  padding-top: $container_padding;
+
+  &:backdrop {
+    background-color: transparent;
+    transition: none;
+
+    > * {
+      filter: none;
+      transition: none;
+    }
+  }
+}
+
+%actionbar-shrunk > revealer > box {
+  padding-top: $container_padding / 2;
+  padding-bottom: $container_padding / 2;
+}
+
+//
+// AdwBanner
+//
+banner > revealer > widget {
+  /* There are 2 more instances in _sidebars.css, keep in sync with that */
+  background-color: mix($primary_color, $bg_color, 30%);
+  color: $fg_color;
+  padding: $container_padding;
+
+  &:backdrop {
+    background-color: mix($primary_color, $bg_color, 15%);
+
+    > label, > button {
+      filter: opacity(.5);
+    }
+  }
+}
+
+//
+// AdwToolbarView
+//
+toolbarview {
+  > .top-bar,
+  > .bottom-bar {
+    headerbar { @extend %headerbar-inline; }
+    searchbar { @extend %searchbar-inline; }
+    actionbar { @extend %actionbar-inline; }
+    menubar   { @extend %menubar-inline; }
+    tabbar    { @extend %tabbar-inline; }
+
+    .collapse-spacing {
+      padding-top: $container_padding / 2;
+      padding-bottom: $container_padding / 2;
+
+      headerbar { @extend %headerbar-shrunk; }
+      searchbar { @extend %searchbar-shrunk; }
+      actionbar { @extend %actionbar-shrunk; }
+      menubar   { @extend %menubar-shrunk; }
+      .toolbar  { @extend %toolbar-shrunk; }
+      tabbar    { @extend %tabbar-shrunk; }
+
+      viewswitcherbar { @extend %viewswitcherbar-shrunk; }
+    }
+
+    &.raised {
+      background-color: $titlebar_bg_color;
+      color: $titlebar_fg_color;
+
+      &:backdrop {
+        background-color: $alt_titlebar_bg_color;
+      }
+    }
+
+    &:backdrop > windowhandle {
+      filter: opacity(.5);
+    }
+  }
+
+  > .top-bar.raised {
+    box-shadow: 0 1px $border_color,
+                0 2px 6px rgba(black, 0.1);
+
+    &.border {
+      box-shadow: 0 1px $border_color;
+    }
+  }
+
+  > .bottom-bar.raised {
+    box-shadow: 0 -1px $border_color,
+                0 -2px 6px rgba(black, 0.1);
+
+    &.border {
+      box-shadow: 0 -1px $border_color;
+    }
+  }
+
+  &.undershoot-top    scrolledwindow { @include undershoot(top); }
+  &.undershoot-bottom scrolledwindow { @include undershoot(bottom); }
+
+  window.devel sheet & > .top-bar {
+    background-image: unset;
+    background-repeat: unset;
+  }
 }
 
 /************
@@ -1205,6 +1753,14 @@ treeview.view {
 /*********
  * Menus *
  *********/
+
+%menubar-inline {
+  box-shadow: none;
+  padding-bottom: 0;
+}
+
+%menubar-shrunk {}
+
 menubar {
   padding: 0;
   box-shadow: inset 0 -1px $border_color;
@@ -1923,7 +2479,7 @@ switch {
   color: transparent;
   font-size: 0;
 
-  &:disabled { background-color: $divider_color; }
+  &:disabled { background-color: $fill_color; }
 
   &:checked {
     background-color: rgba($accent_color, 0.35);
@@ -2245,6 +2801,7 @@ headerbar {
   background-color: $titlebar_bg_color;
   color: $titlebar_fg_color;
   border-radius: $windows_radius $windows_radius 0 0;
+  @extend %toolbar;
 
   &:disabled :not(button) > label { color: $titlebar_disabled_fg_color; }
 
@@ -2325,29 +2882,6 @@ headerbar {
       background-color: $titlebar_divider_color;
       color: $titlebar_disabled_fg_color;
     }
-  }
-
-  // add vertical margins to common widget on the headerbar to avoid them spanning the whole height
-  entry,
-  spinbutton,
-  button,
-  stackswitcher,
-  menubutton,
-  splitbutton {
-    margin-top: $container_padding;
-    margin-bottom: $container_padding;
-  }
-
-  // Reset margins for buttons inside menubutton
-  menubutton > button,
-  spinbutton > button,
-  splitbutton > button,
-  splitbutton > menubutton,
-  stackswitcher > button,
-  .linked > menubutton,
-  entry > menubutton {
-    margin-top: 0px;
-    margin-bottom: 0px;
   }
 
   splitbutton {
@@ -2496,6 +3030,61 @@ headerbar {
   }
 }
 
+%headerbar-flat {
+  background: none;
+  box-shadow: none;
+  color: inherit;
+  min-height: $large_size;
+
+  > windowhandle > box {
+    padding: $container_padding;
+  }
+
+  &.default-decoration {
+    min-height: $medium_size;
+
+    > windowhandle > box {
+      padding-top: $container_padding / 2;
+      padding-bottom: $container_padding / 2;
+    }
+  }
+}
+
+%headerbar-inline {
+  @extend %headerbar-flat;
+
+  &:backdrop {
+    transition: none;
+
+    > windowhandle {
+      filter: none;
+      transition: none;
+    }
+  }
+
+  window.devel & > windowhandle {
+    background-image: none;
+  }
+}
+
+%headerbar-shrunk {
+  min-height: $large_size - $container_padding;
+
+  > windowhandle > box {
+    padding-top: $container_padding / 2;
+    padding-bottom: $container_padding / 2;
+  }
+
+  &.default-decoration {
+    min-height: $medium_size - $container_padding;
+
+    > windowhandle > box {
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+  }
+}
+
 %header_separator {
   min-width: 0;
   min-height: 0;
@@ -2567,7 +3156,7 @@ scale {
     outline: none;
     background-color: $track_color;
 
-    &:disabled { background-color: $divider_color; }
+    &:disabled { background-color: $fill_color; }
 
     > slider {
       min-height: $slider_size;
@@ -2855,7 +3444,7 @@ levelbar {
 
     &.full { background-color: $success_color; }
 
-    &.empty { background-color: $divider_color; }
+    &.empty { background-color: $fill_color; }
   }
 }
 
@@ -3125,7 +3714,7 @@ row {
     margin-left: $container_padding * 2;
     margin-right: $container_padding * 2;
     border-spacing: $container_padding;
-    min-height: $large_size + 10px;
+    min-height: $large_size;
 
     > .icon:disabled {
       filter: opacity(0.35);
@@ -3746,7 +4335,7 @@ placessidebar {
       > revealer { padding: 0 12px; }
   
       &:selected {
-        background-color: rgba($divider_color, 0.06);
+        background-color: $row_fill_color;
         color: $primary_color;
   
         image.sidebar-icon, label.sidebar-label { color: if($variant == 'light', $primary_color, lighten($primary_color, 15%)); }

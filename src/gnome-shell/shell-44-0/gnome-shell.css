@@ -87,7 +87,7 @@ stage {
 
 .button:hover, .icon-button:hover, .background-app-item .close-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -207,7 +207,7 @@ StEntry:focus {
 StEntry:insensitive {
   color: rgba(0, 0, 0, 0.38);
   border-color: transparent;
-  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.08);
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.15);
 }
 
 StEntry StIcon.capslock-warning {
@@ -247,7 +247,7 @@ StScrollView StScrollBar {
 StScrollBar StBin#trough {
   margin: 4px;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 StScrollBar StButton#vhandle, StScrollBar StButton#hhandle {
@@ -327,7 +327,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .check-box:hover StBin {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .check-box:active StBin {
@@ -475,7 +475,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .modal-dialog-linked-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -778,7 +778,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .popup-menu-item:hover, .popup-menu .popup-menu-item:focus, .popup-menu .popup-menu-item.selected {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
   color: rgba(0, 0, 0, 0.75) !important;
   transition-duration: 0ms;
   box-shadow: none;
@@ -1016,7 +1016,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .switcher-list .item-box:outlined {
   padding: 8px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -1084,7 +1084,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .ws-switcher-box {
   height: 48px;
   border: none;
-  background: rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 13px;
 }
 
@@ -1305,7 +1305,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-calendar-column:hover, .datemenu-calendar-column:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .datemenu-calendar-column:active {
@@ -1349,7 +1349,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .datemenu-today-button:hover, .datemenu-today-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .datemenu-today-button:active {
@@ -1370,7 +1370,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .calendar-month-label:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .pager-button {
@@ -1384,7 +1384,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .pager-button:hover, .pager-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .pager-button:active {
@@ -1429,7 +1429,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .calendar-day:hover, .calendar-day:focus,
 .calendar-day-base:hover,
 .calendar-day-base:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   box-shadow: none !important;
   border: none !important;
 }
@@ -1554,7 +1554,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 .events-button:hover,
 .events-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .world-clocks-button:active,
@@ -1704,7 +1704,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .message-list-clear-button.button:hover, .message-list-clear-button.icon-button:hover, .background-app-item .message-list-clear-button.close-button:hover, .message-list-clear-button.button:focus, .message-list-clear-button.icon-button:focus, .background-app-item .message-list-clear-button.close-button:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .message-list-clear-button.button:active, .message-list-clear-button.icon-button:active, .background-app-item .message-list-clear-button.close-button:active {
@@ -1762,7 +1762,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .popup-menu .message:hover, .popup-menu .message:focus {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 .popup-menu .message:active {
@@ -1832,7 +1832,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-close-button:hover, .message-close-button:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .message-close-button:active {
@@ -1857,7 +1857,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 
 .message-media-control:hover, .message-media-control:focus {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .message-media-control:active {
@@ -1891,7 +1891,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px;
   border: none;
   border-radius: 7px;
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -1970,7 +1970,7 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
 }
 
 .nm-dialog-item:hover, .nm-dialog-item:focus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .nm-dialog-item:active {
@@ -2431,7 +2431,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .notification-banner .notification-button:hover, .notification-banner .notification-buttonfocus {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -2645,7 +2645,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .candidate-box:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.75);
 }
 
@@ -3070,7 +3070,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .lg-obj-inspector-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -3480,14 +3480,14 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .quick-toggle {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
   color: rgba(0, 0, 0, 0.75);
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */
 }
 
 .quick-toggle:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .quick-toggle:active {
@@ -3575,15 +3575,15 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .quick-menu-toggle .quick-toggle-arrow {
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
   padding: 6px 10.5px;
   border-width: 0;
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08) !important;
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 .quick-menu-toggle .quick-toggle-arrow:hover {
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .quick-menu-toggle .quick-toggle-arrow:active {
@@ -3643,11 +3643,11 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 .quick-slider .icon-button:hover, .quick-slider .background-app-item .close-button:hover, .background-app-item .quick-slider .close-button:hover {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 .quick-slider .icon-button:active, .quick-slider .background-app-item .close-button:active, .background-app-item .quick-slider .close-button:active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
 .quick-toggle-menu {
@@ -3665,7 +3665,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .quick-toggle-menu .popup-menu-item:focus, .quick-toggle-menu .popup-menu-item:hover, .quick-toggle-menu .popup-menu-item.selected {
   color: rgba(0, 0, 0, 0.65) !important;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .quick-toggle-menu .popup-menu-item > StIcon {
@@ -3687,7 +3687,7 @@ StWidget.focused .app-well-app-running-dot {
   icon-size: 24px;
   border-radius: 9999px;
   padding: 9px;
-  background-color: rgba(0, 0, 0, 0.1) !important;
+  background-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 .quick-toggle-menu .header .icon.active {
@@ -3709,7 +3709,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .quick-settings-system-item .icon-button:hover, .quick-settings-system-item .background-app-item .close-button:hover, .background-app-item .quick-settings-system-item .close-button:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
@@ -4067,7 +4067,7 @@ StWidget.focused .app-well-app-running-dot {
 }
 
 #dashtodockContainer.transparent #dash .dash-background {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 #dashtodockContainer:overview #dash .dash-background {
@@ -4105,7 +4105,7 @@ StWidget.focused .app-well-app-running-dot {
 
 .openweather-provider:hover {
   color: rgba(0, 0, 0, 0.75);
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.15);
   border-color: transparent;
   box-shadow: none;
   text-shadow: none;
