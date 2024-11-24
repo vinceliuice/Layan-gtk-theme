@@ -1089,8 +1089,9 @@ splitbutton > separator {
 }
 
 splitbutton > menubutton > button {
-  padding-left: 4px;
-  padding-right: 4px;
+  min-width: 24px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 splitbutton.image-button > button {
@@ -1932,8 +1933,8 @@ banner > revealer > widget:backdrop > label, banner > revealer > widget:backdrop
 
 toolbarview > .top-bar .collapse-spacing,
 toolbarview > .bottom-bar .collapse-spacing {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 toolbarview > .top-bar.raised,
@@ -2275,6 +2276,7 @@ popover.menu label.title {
 window.messagedialog .response-area button, window.dialog.message .dialog-action-area > button {
   color: rgba(255, 255, 255, 0.8);
   background-color: transparent;
+  box-shadow: none;
 }
 
 window.messagedialog .response-area button:hover, window.dialog.message .dialog-action-area > button:hover {
@@ -3305,7 +3307,7 @@ headerbar stackswitcher.linked:not(.vertical) > button:active:backdrop {
 
 headerbar {
   transition: background-color 100ms cubic-bezier(0, 0, 0.2, 1), color 100ms cubic-bezier(0, 0, 0.2, 1);
-  min-height: 48px;
+  min-height: 36px;
   padding: 0;
   margin: 0;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0), inset 0 -1px rgba(0, 0, 0, 0.08);
@@ -3420,7 +3422,7 @@ headerbar splitbutton {
 }
 
 headerbar > windowhandle > box {
-  padding: 0 6px;
+  padding: 6px;
 }
 
 headerbar > windowhandle > box,
@@ -3527,6 +3529,11 @@ headerbar.default-decoration {
   box-shadow: none;
 }
 
+headerbar.default-decoration > windowhandle > box {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 headerbar.default-decoration windowcontrols button {
   min-height: 16px;
   min-width: 16px;
@@ -3544,7 +3551,7 @@ toolbarview > .bottom-bar headerbar {
   background: none;
   box-shadow: none;
   color: inherit;
-  min-height: 48px;
+  min-height: 36px;
 }
 
 toolbarview > .top-bar headerbar > windowhandle > box,
@@ -3559,8 +3566,8 @@ toolbarview > .bottom-bar headerbar.default-decoration {
 
 toolbarview > .top-bar headerbar.default-decoration > windowhandle > box,
 toolbarview > .bottom-bar headerbar.default-decoration > windowhandle > box {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 toolbarview > .top-bar headerbar:backdrop,
@@ -3582,24 +3589,24 @@ toolbarview > .bottom-bar window.devel headerbar > windowhandle {
 
 toolbarview > .top-bar .collapse-spacing headerbar,
 toolbarview > .bottom-bar .collapse-spacing headerbar {
-  min-height: 42px;
+  min-height: 36px;
 }
 
 toolbarview > .top-bar .collapse-spacing headerbar > windowhandle > box,
 toolbarview > .bottom-bar .collapse-spacing headerbar > windowhandle > box {
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
 toolbarview > .top-bar .collapse-spacing headerbar.default-decoration,
 toolbarview > .bottom-bar .collapse-spacing headerbar.default-decoration {
-  min-height: 30px;
+  min-height: 36px;
 }
 
 toolbarview > .top-bar .collapse-spacing headerbar.default-decoration > windowhandle > box,
 toolbarview > .bottom-bar .collapse-spacing headerbar.default-decoration > windowhandle > box {
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 headerbar separator.titlebutton {
@@ -4305,18 +4312,13 @@ row.combo popover > contents {
 /******************
  * AdwExpanderRow *
  ******************/
-list.content > row, list.content > row.expander row.header,
-list.boxed-list > row,
-list.boxed-list > row.expander row.header, row.expander list.nested > row {
+list.boxed-list-separate > row.expander row.header, list.boxed-list > row, list.boxed-list > row.expander row.header, row.expander list.nested > row {
   transition: 200ms cubic-bezier(0, 0, 0.2, 1);
   color: rgba(0, 0, 0, 0.55);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.osd list.content > row:focus:focus-visible, .osd list.content > row.expander row.header:focus:focus-visible, list.content > row.expander .osd row.header:focus:focus-visible,
-.osd list.boxed-list > row:focus:focus-visible,
-.osd list.boxed-list > row.expander row.header:focus:focus-visible,
-list.boxed-list > row.expander .osd row.header:focus:focus-visible, .osd row.expander list.nested > row:focus:focus-visible, row.expander .osd list.nested > row:focus:focus-visible {
+.osd list.boxed-list-separate > row.expander row.header:focus:focus-visible, list.boxed-list-separate > row.expander .osd row.header:focus:focus-visible, .osd list.boxed-list > row:focus:focus-visible, .osd list.boxed-list > row.expander row.header:focus:focus-visible, list.boxed-list > row.expander .osd row.header:focus:focus-visible, .osd row.expander list.nested > row:focus:focus-visible, row.expander .osd list.nested > row:focus:focus-visible {
   outline-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -4374,32 +4376,48 @@ row.expander image.expander-row-arrow:disabled {
 /*****************
  * Boxed Lists *
  *****************/
-list.content > row.expander,
+list.boxed-list > .dim-label, list.boxed-list > label.separator, headerbar list.boxed-list > .subtitle, row list.boxed-list > label.subtitle, row.expander:not(:checked) list.boxed-list > image.expander-row-arrow {
+  padding: 18px;
+}
+
 list.boxed-list > row.expander {
   border: none;
 }
 
-list.content > row:first-child, list.content > row:first-child.expander row.header,
-list.boxed-list > row:first-child,
-list.boxed-list > row:first-child.expander row.header {
+list.boxed-list > row:first-child, list.boxed-list > row:first-child.expander row.header {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
 
-list.content > row:last-child, list.content > row:last-child.expander:not(:checked), list.content > row:last-child.expander:not(:checked) row.header, list.content > row:last-child.expander:checked list.nested, list.content > row:last-child.expander:checked list.nested > row:last-child, list.content > row:only-child, list.content > row:only-child.expander:not(:checked), list.content > row:only-child.expander:not(:checked) row.header, list.content > row:only-child.expander:checked list.nested, list.content > row:only-child.expander:checked list.nested > row:last-child,
-list.boxed-list > row:last-child,
-list.boxed-list > row:last-child.expander:not(:checked),
-list.boxed-list > row:last-child.expander:not(:checked) row.header,
-list.boxed-list > row:last-child.expander:checked list.nested,
-list.boxed-list > row:last-child.expander:checked list.nested > row:last-child,
-list.boxed-list > row:only-child,
-list.boxed-list > row:only-child.expander:not(:checked),
-list.boxed-list > row:only-child.expander:not(:checked) row.header,
-list.boxed-list > row:only-child.expander:checked list.nested,
-list.boxed-list > row:only-child.expander:checked list.nested > row:last-child {
+list.boxed-list > row:last-child, list.boxed-list > row:last-child.expander:not(:checked), list.boxed-list > row:last-child.expander:not(:checked) row.header, list.boxed-list > row:last-child.expander:checked list.nested, list.boxed-list > row:last-child.expander:checked list.nested > row:last-child, list.boxed-list > row:only-child, list.boxed-list > row:only-child.expander:not(:checked), list.boxed-list > row:only-child.expander:not(:checked) row.header, list.boxed-list > row:only-child.expander:checked list.nested, list.boxed-list > row:only-child.expander:checked list.nested > row:last-child {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px;
   border-bottom-width: 0;
+}
+
+list.boxed-list-separate {
+  background: none;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+list.boxed-list-separate > row {
+  border: none;
+  margin-bottom: 12px;
+}
+
+list.boxed-list-separate > row:last-child {
+  margin-bottom: 0;
+}
+
+list.boxed-list-separate > row.expander row.header {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+list.boxed-list-separate > row.expander:not(:checked) row.header, list.boxed-list-separate > row.expander.expander:checked list.nested, list.boxed-list-separate > row.expander.expander:checked list.nested > row:last-child {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-bottom: none;
 }
 
 /*********************
@@ -4541,23 +4559,16 @@ window.dialog.message list, window.dialog.message row, window.dialog.message .vi
   border-color: rgba(255, 255, 255, 0.12);
 }
 
+window.dialog.message .dialog-action-area {
+  padding: 12px;
+}
+
 window.dialog.message .dialog-action-area > button {
   padding: 8px 16px;
   border: none;
-  border-radius: 0;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   border-spacing: 0;
-}
-
-window.dialog.message .dialog-action-area > button:first-child {
-  border-bottom-left-radius: 13px;
-  border-top-left-radius: 0;
-}
-
-window.dialog.message .dialog-action-area > button:last-child {
-  border-bottom-right-radius: 13px;
-  border-top-right-radius: 0;
 }
 
 window.dialog.message .linked:not(.vertical).dialog-action-area > button.suggested-action, window.dialog.message .linked:not(.vertical).dialog-action-area > button.suggested-action:hover {
@@ -4621,24 +4632,9 @@ window.messagedialog.background {
   background-color: rgba(63, 63, 63, 0.95);
 }
 
-window.messagedialog .message-area {
-  padding: 24px 30px;
-  border-spacing: 10px;
-}
-
 window.messagedialog .response-area button {
-  margin: 0;
   padding: 8px 16px;
   border: none;
-  border-radius: 0;
-}
-
-window.messagedialog .response-area button:first-child {
-  margin-left: 0;
-}
-
-window.messagedialog .response-area button:last-child {
-  margin-right: 0;
 }
 
 window.messagedialog .response-area button.suggested {
@@ -4651,6 +4647,77 @@ window.messagedialog .response-area button.destructive {
 
 window.messagedialog separator {
   background-color: rgba(255, 255, 255, 0.12);
+}
+
+window.messagedialog .message-area,
+dialog.alert .message-area {
+  padding-top: 32px;
+  padding-bottom: 9px;
+  border-spacing: 24px;
+}
+
+window.messagedialog .message-area.has-heading.has-body,
+dialog.alert .message-area.has-heading.has-body {
+  border-spacing: 10px;
+}
+
+window.messagedialog .message-area.has-heading.has-body > .child,
+dialog.alert .message-area.has-heading.has-body > .child {
+  margin-top: 8px;
+}
+
+window.messagedialog .message-area > .heading-bin, window.messagedialog .message-area > .body, window.messagedialog .message-area > .child,
+dialog.alert .message-area > .heading-bin,
+dialog.alert .message-area > .body,
+dialog.alert .message-area > .child {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+window.messagedialog .response-area,
+dialog.alert .response-area {
+  padding: 12px;
+  padding-top: 12px;
+  border-spacing: 12px;
+}
+
+window.messagedialog .response-area > button,
+dialog.alert .response-area > button {
+  min-height: 24px;
+  min-width: 60px;
+  padding: 10px 20px;
+  border-radius: 7px;
+}
+
+window.messagedialog.short .message-area,
+dialog.alert.short .message-area {
+  padding-top: 24px;
+  border-spacing: 18px;
+}
+
+window.messagedialog.short .message-area > .heading-bin, window.messagedialog.short .message-area > .body, window.messagedialog.short .message-area > .child,
+dialog.alert.short .message-area > .heading-bin,
+dialog.alert.short .message-area > .body,
+dialog.alert.short .message-area > .child {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+window.messagedialog.short .message-area.has-heading.has-body,
+dialog.alert.short .message-area.has-heading.has-body {
+  border-spacing: 6px;
+}
+
+window.messagedialog.short .response-area,
+dialog.alert.short .response-area {
+  padding: 12px;
+  padding-top: 9px;
+}
+
+window.messagedialog.short .response-area > button,
+dialog.alert.short .response-area > button {
+  min-width: 0;
+  padding: 8px 16px;
 }
 
 filechooser .dialog-action-box {
@@ -5555,7 +5622,6 @@ statusbar {
 
 .nautilus-window.background.csd #NautilusPathBar {
   border-radius: 9999px;
-  margin: 6px 0;
   padding: 0;
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
   background-size: auto auto;
@@ -5631,6 +5697,10 @@ statusbar {
   color: rgba(0, 0, 0, 0.26);
 }
 
+.nautilus-window.background.csd #NautilusQueryEditor > menubutton {
+  margin: 0;
+}
+
 .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button {
   min-width: 28px;
   min-height: 28px;
@@ -5672,11 +5742,11 @@ statusbar {
 .nautilus-window.background.csd .floating-bar {
   min-height: 32px;
   padding: 0;
-  margin: 0;
-  border-style: solid solid none;
+  margin: 3px;
+  border-style: solid;
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.08);
-  border-radius: 13px 13px 0 0;
+  border-radius: 7px;
   color: rgba(0, 0, 0, 0.75);
   background-color: #FFFFFF;
   background-clip: padding-box;
@@ -5684,27 +5754,8 @@ statusbar {
   box-shadow: none;
 }
 
-.nautilus-window.background.csd .floating-bar.bottom.left {
-  margin-right: 7px;
-  border-left-style: none;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 13px;
-}
-
-.nautilus-window.background.csd .floating-bar.bottom.right {
-  margin-left: 7px;
-  border-right-style: none;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 13px;
-}
-
 .nautilus-window.background.csd .floating-bar button {
   margin: 4px;
-}
-
-.nautilus-window.background.csd.maximized .floating-bar {
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
 }
 
 .details-page {
@@ -7007,8 +7058,7 @@ statuspage.compact > scrolledwindow > viewport > box > clamp > box > .title {
   font-size: 18pt;
 }
 
-list.content,
-list.boxed-list, .card {
+list.boxed-list, list.boxed-list-separate > row, .card {
   border-radius: 7px;
   box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.08);

@@ -801,8 +801,9 @@ splitbutton {
   }
 
   > menubutton > button {
-    padding-left: 4px;
-    padding-right: 4px;
+    min-width: 24px;
+    padding-left: $container_padding;
+    padding-right: $container_padding;
   }
 
   // Since the inner button doesn't have any style classes on it,
@@ -1562,8 +1563,8 @@ toolbarview {
     tabbar    { @extend %tabbar-inline; }
 
     .collapse-spacing {
-      padding-top: $container_padding / 2;
-      padding-bottom: $container_padding / 2;
+      padding-top: 0;
+      padding-bottom: 0;
 
       headerbar { @extend %headerbar-shrunk; }
       searchbar { @extend %searchbar-shrunk; }
@@ -1851,6 +1852,7 @@ popover.menu {
 %popover_flat_button {
   color: $popover_fg;
   background-color: transparent;
+  box-shadow: none;
 
   &:hover {
     background-color: $inverse_divider_color;
@@ -2794,7 +2796,7 @@ treeview.view radio:checked {
 
 headerbar {
   transition: background-color $shorter_duration $deceleration_curve, color $shorter_duration $deceleration_curve;
-  min-height: $large_size;
+  min-height: $medium_size;
   padding: 0;
   margin: 0;
   box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
@@ -2889,7 +2891,7 @@ headerbar {
   }
 
   > windowhandle > box {
-    padding: 0 $container_padding;
+    padding: $container_padding;
 
     &,
     > box.start,
@@ -3011,6 +3013,11 @@ headerbar {
     .maximized &,
     .fullscreen & { box-shadow: none; }
 
+    > windowhandle > box {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
     windowcontrols {
       button {
         @extend %circular_button;
@@ -3034,7 +3041,7 @@ headerbar {
   background: none;
   box-shadow: none;
   color: inherit;
-  min-height: $large_size;
+  min-height: $medium_size;
 
   > windowhandle > box {
     padding: $container_padding;
@@ -3044,8 +3051,8 @@ headerbar {
     min-height: $medium_size;
 
     > windowhandle > box {
-      padding-top: $container_padding / 2;
-      padding-bottom: $container_padding / 2;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 }
@@ -3068,19 +3075,19 @@ headerbar {
 }
 
 %headerbar-shrunk {
-  min-height: $large_size - $container_padding;
+  min-height: $medium_size;
 
   > windowhandle > box {
-    padding-top: $container_padding / 2;
-    padding-bottom: $container_padding / 2;
+    padding-top: $container_padding;
+    padding-bottom: $container_padding;
   }
 
   &.default-decoration {
-    min-height: $medium_size - $container_padding;
+    min-height: $medium_size;
 
     > windowhandle > box {
-      padding-top: 0px;
-      padding-bottom: 0px;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
 }
@@ -3860,9 +3867,10 @@ row.expander {
  *****************/
 
 // Deprecated: use .boxed-list instead
-list.content,
 list.boxed-list {
   @extend %card;
+
+  > .dim-label { padding: $container_padding * 3; }
 
   > row {
     // Regular rows and expander header rows background
@@ -3892,6 +3900,37 @@ list.boxed-list {
         border-bottom-left-radius: $boxed_radius;
         border-bottom-right-radius: $boxed_radius;
         border-bottom-width: 0;
+      }
+    }
+  }
+}
+
+list.boxed-list-separate {
+  background: none;
+  color: $fg_color;
+
+  > row {
+    border: none;
+    margin-bottom: 12px;
+    @extend %card;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &.expander {
+      row.header {
+        @extend %boxed_list_row;
+        border-top-left-radius: $boxed_radius;
+        border-top-right-radius: $boxed_radius;
+      }
+
+      &:not(:checked) row.header,
+      &.expander:checked list.nested,
+      &.expander:checked list.nested > row:last-child {
+        border-bottom-left-radius: $boxed_radius;
+        border-bottom-right-radius: $boxed_radius;
+        border-bottom: none;
       }
     }
   }
@@ -4035,23 +4074,16 @@ window.dialog.message { // Message Dialog styling
     border-color: $popover_border;
   }
 
-  .dialog-action-area > button {
-    @extend %popover_flat_button;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 0;
-    color: $popover_fg;
-    margin: 0;
-    border-spacing: 0;
+  .dialog-action-area {
+    padding: $container_padding * 2;
 
-    &:first-child {
-      border-bottom-left-radius: $windows_radius;
-      border-top-left-radius: 0;
-    }
-
-    &:last-child {
-      border-bottom-right-radius: $windows_radius;
-      border-top-right-radius: 0;
+    > button {
+      @extend %popover_flat_button;
+      padding: 8px 16px;
+      border: none;
+      color: $popover_fg;
+      margin: 0;
+      border-spacing: 0;
     }
   }
 
@@ -4103,26 +4135,11 @@ window.messagedialog {
     background-color: rgba($popover_bg, 0.95);
   }
 
-  .message-area {
-    padding: 24px 30px;
-    border-spacing: 10px;
-  }
-
   .response-area {
     button {
       @extend %popover_flat_button;
-      margin: 0;
       padding: 8px 16px;
       border: none;
-      border-radius: 0;
-  
-      &:first-child {
-        margin-left: 0;
-      }
-  
-      &:last-child {
-        margin-right: 0;
-      }
   
       &.suggested {
         color: $primary_color;
@@ -4136,6 +4153,67 @@ window.messagedialog {
 
   separator {
     background-color: $inverse_divider_color;
+  }
+}
+
+window.messagedialog,
+dialog.alert {
+  .message-area {
+    padding-top: 32px;
+    padding-bottom: 9px;
+    border-spacing: 24px;
+
+    &.has-heading.has-body {
+      border-spacing: 10px;
+
+      > .child {
+        margin-top: 8px;
+      }
+    }
+
+    > .heading-bin, > .body, > .child {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+  .response-area {
+    padding: $container_padding * 2;
+    padding-top: 12px;
+    border-spacing: 12px;
+
+    > button {
+      min-height: 24px;
+      min-width: 60px;
+      padding: 10px 20px;
+      border-radius: $buttons_radius;
+    }
+  }
+
+  &.short {
+    .message-area {
+      padding-top: 24px;
+      border-spacing: 18px;
+
+      > .heading-bin, > .body, > .child {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      &.has-heading.has-body {
+        border-spacing: 6px;
+      }
+    }
+
+    .response-area {
+      padding: $container_padding * 2;
+      padding-top: 9px;
+
+      > button {
+        min-width: 0;
+        padding: 8px 16px;
+      }
+    }
   }
 }
 
