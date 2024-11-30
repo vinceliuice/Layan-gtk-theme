@@ -2796,7 +2796,7 @@ treeview.view radio:checked {
 
 headerbar {
   transition: background-color $shorter_duration $deceleration_curve, color $shorter_duration $deceleration_curve;
-  min-height: $medium_size;
+  min-height: $large_size;
   padding: 0;
   margin: 0;
   box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
@@ -3041,7 +3041,7 @@ headerbar {
   background: none;
   box-shadow: none;
   color: inherit;
-  min-height: $medium_size;
+  min-height: $large_size;
 
   > windowhandle > box {
     padding: $container_padding;
@@ -3075,7 +3075,7 @@ headerbar {
 }
 
 %headerbar-shrunk {
-  min-height: $medium_size;
+  min-height: $large_size;
 
   > windowhandle > box {
     padding-top: $container_padding;
@@ -4034,6 +4034,12 @@ calendar {
 /***********
  * Dialogs *
  ***********/
+window.dialog {
+  .dialog-content {
+    padding: $container_padding $container_padding * 2;
+  }
+}
+
 window.dialog.message { // Message Dialog styling
   color: $popover_fg;
 
