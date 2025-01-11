@@ -7433,11 +7433,6 @@ tabbar.inline .box:backdrop > .end-action {
   transition: none;
 }
 
-toolbarview > .top-bar .collapse-spacing tabbar,
-toolbarview > .bottom-bar .collapse-spacing tabbar {
-  margin-bottom: -3px;
-}
-
 toolbarview > .top-bar .collapse-spacing tabbar tabbox,
 toolbarview > .bottom-bar .collapse-spacing tabbar tabbox,
 toolbarview > .top-bar .collapse-spacing tabbar .start-action,
@@ -7735,12 +7730,12 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 }
 
 .sidebar-pane banner > revealer > widget {
-  background-color: gtkmix(#5657f5, #eaeaf4, 30%);
+  background-color: mix(#5657f5,#eaeaf4,0.7);
   color: rgba(0, 0, 0, 0.75);
 }
 
 .sidebar-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(#5657f5, #eaeaf4, 30%);
+  background-color: mix(#5657f5,#eaeaf4,0.7);
 }
 
 .sidebar-pane:dir(ltr), .sidebar-pane:dir(ltr) banner > revealer > widget, .sidebar-pane.end:dir(rtl), .sidebar-pane.end:dir(rtl) banner > revealer > widget {
@@ -7894,13 +7889,13 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .content-pane .sidebar-pane banner > revealer > widget,
 .sidebar-pane .content-pane banner > revealer > widget {
-  background-color: gtkmix(#5657f5, #FFFFFF, 30%);
+  background-color: mix(#5657f5,#FFFFFF,0.7);
   color: rgba(0, 0, 0, 0.75);
 }
 
 .content-pane .sidebar-pane banner > revealer > widget:backdrop,
 .sidebar-pane .content-pane banner > revealer > widget:backdrop {
-  background-color: gtkmix(#5657f5, #FFFFFF, 30%);
+  background-color: mix(#5657f5,#FFFFFF,0.7);
 }
 
 .content-pane .sidebar-pane:dir(ltr), .content-pane .sidebar-pane:dir(ltr) banner > revealer > widget, .content-pane .sidebar-pane.end:dir(rtl), .content-pane .sidebar-pane.end:dir(rtl) banner > revealer > widget,

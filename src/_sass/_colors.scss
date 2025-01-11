@@ -7,6 +7,11 @@
   @return unquote("alpha(#{$c}, #{$a})");
 }
 
+@function gtkmix($c1,$c2,$r) {
+  $ratio: 1 -  $r / 100%; // match SCSS mix()
+  @return unquote("mix(#{$c1},#{$c2},#{$ratio})");
+}
+
 @function fade($c) {
   @return mix($c, $blue_grey_900, 50%);
 }
