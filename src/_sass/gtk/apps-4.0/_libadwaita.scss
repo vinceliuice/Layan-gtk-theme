@@ -807,12 +807,8 @@ toolbarview.undershoot-bottom scrolledwindow {
 // Gnome >= 45.0
 .top-bar {
   padding: 0;
-  background-color: $titlebar_bg_color;
+  // background-color: $titlebar_bg_color;
   box-shadow: none;
-
-  &:backdrop {
-    background-color: $titlebar_bg_color;
-  }
 
   .about &,
   .sidebar-pane &,

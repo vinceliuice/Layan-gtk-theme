@@ -1722,15 +1722,32 @@ treeview.view {
       @extend %row_activatable;
 
       padding: 2px 6px;
-      border-style: none solid solid none;
-      border-width: 1px;
-      border-color: $border_color;
-      border-radius: 0;
       background-clip: border-box;
+      border-style: none solid none none;
+      border-color: transparent;
+      border-radius: 0;
+      border-image: linear-gradient(to bottom,
+                                    $base_color 20%,
+                                    $border_color 20%,
+                                    $border_color 80%,
+                                    $base_color 80%) 0 1 0 0 / 0 1px 0 0 stretch;
 
       &, &:hover, &:active { box-shadow: none; }
       &, &:disabled { background-color: $base_color; }
       &:last-child { border-right-style: none; }
+
+      sort-indicator {
+        &.ascending {
+          -gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+        }
+
+        &.descending {
+          -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+        }
+
+        min-height: 16px;
+        min-width: 16px;
+      }
     }
   }
 
@@ -1981,7 +1998,7 @@ popover.background {
   &.magnifier,
   &.osd { @extend %osd; }
 
-  .linked entry, entry,
+  .linked > entry, entry,
   spinbutton:not(.vertical) {
     @extend %flat_entry;
   }
@@ -2315,6 +2332,8 @@ notebook {
 
     entry:not(.search),
     spinbutton:not(.vertical) { @extend %flat_entry; }
+
+    .linked > entry:not(.vertical) { &:first-child, &:last-child, &:only-child { border-radius: 0; } }
 
     spinbutton:not(.vertical) entry { &, &:focus, &:disabled { @extend %spinbutton_entry; }}
 

@@ -1474,3 +1474,11 @@ agenda-view list.background {
   color: $yellow_800;
   background: gtkalpha($yellow_600, 0.25);
 }
+
+//
+// Gnome monitor
+//
+
+window.background.view:not(.nautilus-window) {
+  background-color: $base_color;
+}

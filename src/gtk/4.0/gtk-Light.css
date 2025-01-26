@@ -264,7 +264,7 @@ spinbutton:disabled:not(.vertical), entry:disabled {
 }
 
 colorchooser .popover.osd spinbutton:not(.vertical), notebook > stack:not(:only-child) entry:not(.search),
-notebook > stack:not(:only-child) spinbutton:not(.vertical), popover.background .linked entry, popover.background entry,
+notebook > stack:not(:only-child) spinbutton:not(.vertical), popover.background .linked > entry, popover.background entry,
 popover.background spinbutton:not(.vertical), spinbutton.flat:not(.vertical), entry.flat {
   border-radius: 0;
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1), box-shadow 225ms cubic-bezier(0, 0, 0.2, 1);
@@ -2134,11 +2134,11 @@ treeview.view.trough:selected {
 columnview.view > header > button,
 treeview.view > header > button {
   padding: 2px 6px;
-  border-style: none solid solid none;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.08);
-  border-radius: 0;
   background-clip: border-box;
+  border-style: none solid none none;
+  border-color: transparent;
+  border-radius: 0;
+  border-image: linear-gradient(to bottom, #FFFFFF 20%, rgba(0, 0, 0, 0.08) 20%, rgba(0, 0, 0, 0.08) 80%, #FFFFFF 80%) 0 1 0 0/0 1px 0 0 stretch;
 }
 
 columnview.view > header > button, columnview.view > header > button:hover, columnview.view > header > button:active,
@@ -2157,6 +2157,22 @@ treeview.view > header > button:disabled {
 columnview.view > header > button:last-child,
 treeview.view > header > button:last-child {
   border-right-style: none;
+}
+
+columnview.view > header > button sort-indicator,
+treeview.view > header > button sort-indicator {
+  min-height: 16px;
+  min-width: 16px;
+}
+
+columnview.view > header > button sort-indicator.ascending,
+treeview.view > header > button sort-indicator.ascending {
+  -gtk-icon-source: -gtk-icontheme("pan-up-symbolic");
+}
+
+columnview.view > header > button sort-indicator.descending,
+treeview.view > header > button sort-indicator.descending {
+  -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
 }
 
 columnview.view button.dnd,
@@ -2714,6 +2730,10 @@ notebook > header.left tabs tab.reorderable-page, notebook > header.right tabs t
 notebook > stack:not(:only-child) {
   background-color: #FFFFFF;
   border-radius: 10px;
+}
+
+notebook > stack:not(:only-child) .linked > entry:not(.vertical):first-child, notebook > stack:not(:only-child) .linked > entry:not(.vertical):last-child, notebook > stack:not(:only-child) .linked > entry:not(.vertical):only-child {
+  border-radius: 0;
 }
 
 /**************
@@ -6916,6 +6936,10 @@ agenda-view list.background {
   background: alpha(#FDD835, 0.25);
 }
 
+window.background.view:not(.nautilus-window) {
+  background-color: #FFFFFF;
+}
+
 avatar {
   border-radius: 9999px;
   font-weight: bold;
@@ -7923,12 +7947,7 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .top-bar {
   padding: 0;
-  background-color: #FFFFFF;
   box-shadow: none;
-}
-
-.top-bar:backdrop {
-  background-color: #FFFFFF;
 }
 
 .about .top-bar, .about .top-bar:backdrop, .sidebar-pane .top-bar, .sidebar-pane .top-bar:backdrop, .content-pane .top-bar, .content-pane .top-bar:backdrop {
