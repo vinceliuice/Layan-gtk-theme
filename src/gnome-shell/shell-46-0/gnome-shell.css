@@ -1061,8 +1061,8 @@ StEntry StLabel.hint-text {
 /* Switches */
 .toggle-switch {
   color: #282828;
-  height: 30px;
-  width: 46px;
+  height: 34px;
+  width: 50px;
   background-size: contain;
   background-image: url("assets/toggle-off.svg");
 }

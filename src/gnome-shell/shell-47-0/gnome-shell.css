@@ -1078,17 +1078,17 @@ StEntry StLabel.hint-text {
 
 /* Switches */
 .toggle-switch {
-  width: 36px;
-  height: 20px;
-  border-radius: 999px;
-  transition-duration: 100ms;
   color: #282828;
-  border: 10px solid #ffffff;
-  background: rgba(0, 0, 0, 0.15);
+  height: 34px;
+  width: 50px;
+  background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+  background-color: transparent;
 }
 
-.toggle-switch:hover {
-  background: rgba(0, 0, 0, 0.2);
+.toggle-switch:checked {
+  background-image: url("assets/toggle-on.svg");
+  background-color: transparent;
 }
 
 .toggle-switch StIcon {
@@ -1097,26 +1097,20 @@ StEntry StLabel.hint-text {
 
 .toggle-switch .handle {
   margin: 0;
-  width: 28px;
-  height: 28px;
+  width: 0;
+  height: 0;
   border-radius: 999px;
-  background: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition-duration: 100ms;
-}
-
-.toggle-switch:checked {
-  background: rgba(86, 87, 245, 0.35);
-  color: #ffffff;
+  background: none;
+  box-shadow: none;
+  transition-duration: 0;
 }
 
 .toggle-switch:checked:hover {
-  background-color: rgba(86, 87, 245, 0.4);
-  color: white;
+  background-color: transparent;
 }
 
 .toggle-switch:checked .handle {
-  background: #5657f5;
+  background: none;
 }
 
 /* Slider */

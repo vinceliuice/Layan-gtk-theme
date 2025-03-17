@@ -1,29 +1,20 @@
 /* Switches */
 
-$switch_width: 36px;
-$switch_height: 20px;
-$switch_handle_size: 28px;
+$switch_height: 34px;
+$switch_width: 50px;
+$switch_handle_size: 0;
 
 .toggle-switch {
-  width: $switch_width;
-  height: $switch_height;
-  border-radius: $forced_circular_radius;
-  transition-duration: 100ms;
   color: $fg_color;
-  border: 10px solid $menu_bg_color;
+  height: $switch_height;
+  width: $switch_width;
+  background-size: contain;
+  background-image: url("assets/toggle-off.svg");
+  background-color: transparent;
 
-  @if $contrast == 'high' {
-    background: transparentize(if($variant == 'light', black, white), .7);
-
-    &:hover {
-      background: transparentize(if($variant == 'light', black, white), .6);
-    }
-  } @else {
-    background: transparentize(if($variant == 'light', black, white), .85);
-
-    &:hover {
-      background: transparentize(if($variant == 'light', black, white), .8);
-    }
+  &:checked {
+    background-image: url("assets/toggle-on.svg");
+    background-color: transparent;
   }
 
   StIcon {
@@ -35,22 +26,18 @@ $switch_handle_size: 28px;
     width: $switch_handle_size;
     height: $switch_handle_size;
     border-radius: $forced_circular_radius;
-    background: if($variant == 'light', white, mix(white, $bg_color, 80%));
-    box-shadow: 0 1px 3px transparentize(black, .9);
-    transition-duration: 100ms;
+    background: none;
+    box-shadow: none;
+    transition-duration: 0;
   }
 
   &:checked {
-    background: transparentize($selected_bg_color, 0.65);
-    color: $selected_fg_color;
-
     &:hover {
-      background-color: transparentize($selected_bg_color, 0.6);
-      color: lighten($selected_fg_color, 5%);
+      background-color: transparent;
     }
 
     .handle {
-      background: $selected_bg_color;
+      background: none;
     }
   }
 }
