@@ -212,7 +212,7 @@
 
   // background color override for buttons that use transparency
   // styles: notification bubbles, lockscreen
-  @if $style == 'bubble' or $style == 'lockscreen' {
+  @if $style == 'bubble' or $style == 'dialog' or $style == 'lockscreen' {
     $button_bg_color: transparentize($tc, .9);
     $hover_button_bg_color: transparentize($tc, .87);
     $active_button_bg_color: transparentize($tc, .84);

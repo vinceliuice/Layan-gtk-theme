@@ -233,6 +233,20 @@ stage {
   }
 }
 
+// buttons in dialogs
+%dialog_button {
+  font-weight: bold;
+  padding: $base_padding * 2;
+  border-radius: $base_border_radius * 1.5;
+
+  @include button(normal, $style: dialog);
+  &:focus { @include button(focus, $style: dialog);}
+  &:hover { @include button(hover, $style: dialog);}
+  &:active { @include button(active, $style: dialog);}
+  &:checked { @include button(checked, $style: dialog);}
+  &:insensitive { @include button(insensitive, $style: dialog);}
+}
+
 // tooltip
 %tooltip {
   background-color: transparentize(black, 0.1);
