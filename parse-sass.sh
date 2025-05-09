@@ -17,7 +17,7 @@ for color in '' '-Light' '-Dark'; do
 done
 
 for color in '' '-Dark'; do
-  for shell in '3-36' '40-0' '42-0' '44-0' '46-0' '47-0'; do
+  for shell in '3-36' '40-0' '42-0' '44-0' '46-0' '47-0' '48-0'; do
     echo ">> generating ${shell} gnome-shell${color}.css."
     sassc $SASSC_OPT src/gnome-shell/shell-${shell}/gnome-shell${color}.{scss,css}
   done

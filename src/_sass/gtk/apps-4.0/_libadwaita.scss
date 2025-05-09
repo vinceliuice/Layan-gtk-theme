@@ -832,6 +832,10 @@ toolbarview.undershoot-bottom scrolledwindow {
   }
 }
 
+.bottom-bar {
+  .toolbar { background-color: transparent; }
+}
+
 // ThemeSelector
 themeselector, // Gnome text editor
 panelthemeselector { // Gnome builder

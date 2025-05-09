@@ -962,7 +962,7 @@ button.round-button {
   border-radius: 9999px;
 }
 
-.nautilus-window.background.csd .floating-bar button, placessidebar .navigation-sidebar > row button.sidebar-button, notebook > header tab button.flat, spinbutton:not(.vertical) > button {
+.floating-bar button, placessidebar .navigation-sidebar > row button.sidebar-button, notebook > header tab button.flat, spinbutton:not(.vertical) > button {
   min-height: 24px;
   min-width: 24px;
   padding: 0;
@@ -5277,13 +5277,15 @@ headerbar windowcontrols {
   border-spacing: 6px;
 }
 
+headerbar windowcontrols:not(.empty) {
+  padding: 10px 12px;
+}
+
 headerbar windowcontrols:not(.empty).start:dir(ltr), headerbar windowcontrols:not(.empty).end:dir(rtl) {
-  padding: 0 12px;
   margin-right: 6px;
 }
 
 headerbar windowcontrols:not(.empty).start:dir(rtl), headerbar windowcontrols:not(.empty).end:dir(ltr) {
-  padding: 0 12px;
   margin-left: 6px;
 }
 
@@ -5763,7 +5765,7 @@ statusbar {
   border: none;
 }
 
-.nautilus-window.background.csd .floating-bar {
+.floating-bar {
   min-height: 32px;
   padding: 0;
   margin: 3px;
@@ -5778,7 +5780,7 @@ statusbar {
   box-shadow: none;
 }
 
-.nautilus-window.background.csd .floating-bar button {
+.floating-bar button {
   margin: 4px;
 }
 
@@ -7964,6 +7966,10 @@ toolbarview.undershoot-bottom scrolledwindow > undershoot.bottom {
 
 .top-bar .collapse-spacing {
   padding: 0;
+}
+
+.bottom-bar .toolbar {
+  background-color: transparent;
 }
 
 themeselector,

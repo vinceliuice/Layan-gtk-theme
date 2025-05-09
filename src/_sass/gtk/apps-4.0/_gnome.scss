@@ -242,27 +242,27 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     background-color: transparent;
     border: none;
   }
+}
 
-  // Floating status bar
-  .floating-bar {
-    min-height: 32px;
-    padding: 0;
-    margin: 3px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: $border_color;
-    border-radius: $buttons_radius;
-    color: $fg_color;
-    background-color: $base_color;
-    background-clip: $extra_background_clip;
-    transition: $longer_transition, border-width 0;
-    box-shadow: none;
+// Floating status bar
+.floating-bar {
+  min-height: 32px;
+  padding: 0;
+  margin: 3px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: $border_color;
+  border-radius: $buttons_radius;
+  color: $fg_color;
+  background-color: $base_color;
+  background-clip: $extra_background_clip;
+  transition: $longer_transition, border-width 0;
+  box-shadow: none;
 
-    button {
-      margin: (32px - $small_size) / 2;
+  button {
+    margin: (32px - $small_size) / 2;
 
-      @extend %small_button;
-    }
+    @extend %small_button;
   }
 }
 

@@ -1727,13 +1727,13 @@ treeview.view {
       border-color: transparent;
       border-radius: 0;
       border-image: linear-gradient(to bottom,
-                                    $base_color 20%,
+                                    transparent 20%,
                                     $border_color 20%,
                                     $border_color 80%,
-                                    $base_color 80%) 0 1 0 0 / 0 1px 0 0 stretch;
+                                    transparent 80%) 0 1 0 0 / 0 1px 0 0 stretch;
 
       &, &:hover, &:active { box-shadow: none; }
-      &, &:disabled { background-color: $base_color; }
+      &, &:disabled { background-color: transparent; }
       &:last-child { border-right-style: none; }
 
       sort-indicator {
@@ -4818,15 +4818,15 @@ headerbar {
     border-spacing: 6px;
 
     &:not(.empty) {
+      padding: ($large_size - $container_padding * 2 - 16px) / 2 $container_padding * 2;
+
       &.start:dir(ltr),
       &.end:dir(rtl) {
-        padding: 0 $container_padding * 2;
         margin-right: $container_padding;
       }
 
       &.start:dir(rtl),
       &.end:dir(ltr) {
-        padding: 0 $container_padding * 2;
         margin-left: $container_padding;
       }
     }
