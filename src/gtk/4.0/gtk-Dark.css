@@ -2138,7 +2138,7 @@ treeview.view > header > button {
   border-style: none solid none none;
   border-color: transparent;
   border-radius: 0;
-  border-image: linear-gradient(to bottom, #31313a 20%, rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08) 80%, #31313a 80%) 0 1 0 0/0 1px 0 0 stretch;
+  border-image: linear-gradient(to bottom, transparent 20%, rgba(255, 255, 255, 0.08) 20%, rgba(255, 255, 255, 0.08) 80%, transparent 80%) 0 1 0 0/0 1px 0 0 stretch;
 }
 
 columnview.view > header > button, columnview.view > header > button:hover, columnview.view > header > button:active,
@@ -2151,7 +2151,7 @@ treeview.view > header > button:active {
 columnview.view > header > button, columnview.view > header > button:disabled,
 treeview.view > header > button,
 treeview.view > header > button:disabled {
-  background-color: #31313a;
+  background-color: transparent;
 }
 
 columnview.view > header > button:last-child,
