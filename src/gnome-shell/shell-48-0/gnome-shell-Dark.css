@@ -1676,18 +1676,19 @@ StScrollBar StButton#vhandle:active, StScrollBar StButton#hhandle:active {
   padding: 6px;
   margin: 0;
   border-radius: 16px;
+  border: none;
   background-color: #4e4e4e;
 }
 
 .message:second-in-stack {
   background-color: #3f3f3f;
-  box-shadow: 0 1px 1px 0 transparent;
+  box-shadow: none;
 }
 
 .message:lower-in-stack {
   background-color: #373737;
   box-shadow: none;
-  border-color: transparent;
+  border: none;
 }
 
 .message .message-header {

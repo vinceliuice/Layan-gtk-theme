@@ -1492,7 +1492,7 @@ actionbar > revealer > box {
   background-color: $base_color;
   color: $fg_color;
 
-  button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
+  // button:not(.suggested-action):not(.destructive-action):not(.server-list-button) { @extend %flat_button; }
 
   .linked > button { border-radius: $buttons_radius; }
 
