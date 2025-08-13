@@ -2917,6 +2917,18 @@ headerbar {
     > box.end {
       border-spacing: $container_padding;
     }
+
+    &, > widget {
+      > box.start:dir(ltr),
+      > box.end:dir(rtl) {
+        margin-right: 0;
+      }
+
+      > box.start:dir(rtl),
+      > box.end:dir(ltr) {
+        margin-left: 0;
+      }
+    }
   }
 
   switch {

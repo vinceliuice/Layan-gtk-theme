@@ -49,7 +49,7 @@
 
   @if $t == disabled {
     box-shadow: none;
-    background-color: $alt_base_color;
+    background-color: rgba($button_bg_color, $disabled_opacity);
     color: $disabled_fg_color;
   }
 
@@ -123,7 +123,7 @@
 
   @if $t == disabled {
     box-shadow: none;
-    background-color: $alt_base_color;
+    background-color: rgba($button_bg_color, $disabled_opacity);
     color: if($c == $lighter_bg_color, $disabled_secondary_fg_color, $disabled_fg_color);
   }
 

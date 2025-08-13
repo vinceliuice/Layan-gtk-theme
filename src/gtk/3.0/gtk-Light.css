@@ -136,7 +136,7 @@ textview text {
 }
 
 textview border {
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -234,7 +234,7 @@ spinner:checked {
 }
 
 spinner:checked:disabled {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 /****************
@@ -258,7 +258,7 @@ spinbutton:focus:not(.vertical), entry:focus {
 
 spinbutton:disabled:not(.vertical), entry:disabled {
   box-shadow: none;
-  background-color: #eaeaf4;
+  background-color: rgba(255, 255, 255, 0.45);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -348,7 +348,7 @@ spinbutton.error:focus:not(.vertical), entry.error:focus {
 
 spinbutton.error:disabled:not(.vertical), entry.error:disabled {
   box-shadow: none;
-  background-color: #eaeaf4;
+  background-color: rgba(255, 255, 255, 0.45);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -398,7 +398,7 @@ spinbutton.warning:focus:not(.vertical), entry.warning:focus {
 
 spinbutton.warning:disabled:not(.vertical), entry.warning:disabled {
   box-shadow: none;
-  background-color: #eaeaf4;
+  background-color: rgba(255, 255, 255, 0.45);
   color: rgba(0, 0, 0, 0.38);
 }
 
@@ -660,7 +660,7 @@ button:active {
 
 button:disabled {
   box-shadow: none;
-  background-color: #eaeaf4;
+  background-color: rgba(255, 255, 255, 0.45);
   color: rgba(0, 0, 0, 0.26);
 }
 
@@ -675,7 +675,7 @@ button:checked {
 
 button:checked:disabled {
   background-color: rgba(86, 87, 245, 0.3);
-  color: rgba(86, 87, 245, 0.5);
+  color: rgba(86, 87, 245, 0.45);
   background-image: none;
 }
 
@@ -732,7 +732,7 @@ button.suggested-action {
 
 button.suggested-action:disabled {
   box-shadow: none;
-  background-color: #eaeaf4;
+  background-color: rgba(255, 255, 255, 0.45);
   color: rgba(0, 0, 0, 0.38);
   background-image: none;
 }
@@ -770,7 +770,7 @@ button.destructive-action {
 
 button.destructive-action:disabled {
   box-shadow: none;
-  background-color: #eaeaf4;
+  background-color: rgba(255, 255, 255, 0.45);
   color: rgba(0, 0, 0, 0.38);
   background-image: none;
 }
@@ -1170,7 +1170,7 @@ toolbar:not(.inline-toolbar):not(.osd) switch {
   border-style: solid;
   border-width: 0 1px 1px;
   border-color: rgba(0, 0, 0, 0.08);
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
 }
 
 searchbar > revealer > box,
@@ -1975,7 +1975,7 @@ popover.background.combo list > row.activatable {
  * Notebooks *
  *************/
 frame > paned > notebook > header, notebook.frame > header {
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
 }
 
 notebook, notebook.frame {
@@ -2149,7 +2149,7 @@ notebook > header tab:hover {
 
 notebook > header tab:hover.reorderable-page {
   border-color: rgba(0, 0, 0, 0.08);
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
 }
 
 notebook > header tab:disabled {
@@ -2439,7 +2439,7 @@ switch:checked slider {
 }
 
 switch:disabled slider {
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
 }
 
 switch:checked:disabled slider {
@@ -3433,7 +3433,7 @@ levelbar trough {
 }
 
 levelbar trough:disabled {
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
 }
 
 levelbar block.low {
@@ -4238,7 +4238,7 @@ colorswatch#add-color-button overlay {
 }
 
 colorswatch:disabled {
-  opacity: 0.5;
+  opacity: 0.45;
 }
 
 colorswatch:disabled overlay {
@@ -5088,7 +5088,7 @@ paned.titlebar.horizontal headerbar {
 }
 
 leaflet list.navigation-sidebar {
-  background-color: #eaeaf4;
+  background-color: mix(#FFFFFF,#f4f4f9,0.5);
   border-bottom-left-radius: 13px;
 }
 
@@ -8727,7 +8727,7 @@ text foreground color of insensitive widgets */
 @define-color insensitive_fg_color alpha(currentColor, 0.5);
 /*
 insensitive text widgets and the like base background color */
-@define-color insensitive_base_color #eaeaf4;
+@define-color insensitive_base_color mix(#FFFFFF,#f4f4f9,0.5);
 /*
 widget text/foreground color on backdrop windows */
 @define-color theme_unfocused_fg_color rgba(0, 0, 0, 0.75);

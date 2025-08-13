@@ -59,7 +59,7 @@ $panel_divider_color:                 if($titlebar == 'light', rgba($white, 0.12
 // Background colors
 $bg_color:               if($variant == 'light', $blue_grey_50, fade($blue_grey_800));
 $base_color:             if($variant == 'light', $white, fade($blue_grey_850));
-$alt_base_color:         if($variant == 'light', darken($bg_color, 3%), lighten($bg_color, 3%));
+$alt_base_color:         gtkmix($base_color, $bg_color, 50%);
 $lighter_bg_color:       if($variant == 'light', $blue_grey_50, $blue_grey_750);
 $alt_lighter_bg_color:   if($variant == 'light', $blue_grey_100, fade($blue_grey_800)); // for gnome-shell sub menu
 $darker_bg_color:        if($variant == 'light', $blue_grey_200, fade($blue_grey_900));
