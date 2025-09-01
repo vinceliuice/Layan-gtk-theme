@@ -592,7 +592,8 @@ button:checked:disabled {
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button, check,
-radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, banner > revealer > widget button, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .app-notification button, headerbar button:not(.suggested-action):not(.destructive-action), popover.background modelbutton, popover.menu box.circular-buttons button.circular.image-button.model, popover.menu box.inline-buttons button.image-button.model,
+radio, scrollbar button, notebook > header > tabs > arrow, spinbutton.vertical > button, spinbutton:not(.vertical) > button, banner > revealer > widget button, #NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button, infobar.info button, infobar.question button, infobar.warning button, infobar.error button, .app-notification button, headerbar button:not(.suggested-action):not(.destructive-action), popover.background modelbutton, popover.menu box.circular-buttons button.circular.image-button.model, popover.menu box.inline-buttons button.image-button.model,
 pathbar > button, searchbar > revealer > box .close, .toolbar > button, headerbar menubutton.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button, searchbar > revealer > box menubutton.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > button, headerbar button.arrow-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), splitbutton.flat > button,
 splitbutton.flat > menubutton > button, menubutton.flat > button,
 button.flat {
@@ -604,7 +605,8 @@ button.flat {
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:hover, check:hover,
-radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, banner > revealer > widget button:hover, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .app-notification button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), popover.background modelbutton:hover, popover.menu box.circular-buttons button.circular.image-button.model:hover, popover.menu box.inline-buttons button.image-button.model:hover,
+radio:hover, scrollbar button:hover, notebook > header > tabs > arrow:hover, spinbutton.vertical > button:hover, spinbutton:not(.vertical) > button:hover, banner > revealer > widget button:hover, #NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button:hover,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button:hover, infobar.info button:hover, infobar.question button:hover, infobar.warning button:hover, infobar.error button:hover, .app-notification button:hover, headerbar button:hover:not(.suggested-action):not(.destructive-action), popover.background modelbutton:hover, popover.menu box.circular-buttons button.circular.image-button.model:hover, popover.menu box.inline-buttons button.image-button.model:hover,
 pathbar > button:hover, searchbar > revealer > box .close:hover, .toolbar > button:hover, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:hover, headerbar button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:hover:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), splitbutton.flat > button:hover,
 splitbutton.flat > menubutton > button:hover, menubutton.flat > button:hover,
 button.flat:hover {
@@ -614,7 +616,8 @@ button.flat:hover {
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:active, check:active,
-radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, banner > revealer > widget button:active, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .app-notification button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), popover.background modelbutton:active, popover.menu box.circular-buttons button.circular.image-button.model:active, popover.menu box.inline-buttons button.image-button.model:active,
+radio:active, scrollbar button:active, notebook > header > tabs > arrow:active, spinbutton.vertical > button:active, spinbutton:not(.vertical) > button:active, banner > revealer > widget button:active, #NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button:active,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button:active, infobar.info button:active, infobar.question button:active, infobar.warning button:active, infobar.error button:active, .app-notification button:active, headerbar button:active:not(.suggested-action):not(.destructive-action), popover.background modelbutton:active, popover.menu box.circular-buttons button.circular.image-button.model:active, popover.menu box.inline-buttons button.image-button.model:active,
 pathbar > button:active, searchbar > revealer > box .close:active, .toolbar > button:active, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:active, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:active, headerbar button.arrow-button:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), splitbutton.flat > button:active,
 splitbutton.flat > menubutton > button:active, menubutton.flat > button:active,
 button.flat:active {
@@ -625,7 +628,8 @@ button.flat:active {
 }
 
 placessidebar .navigation-sidebar > row button.sidebar-button:disabled, check:disabled,
-radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, banner > revealer > widget button:disabled, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .app-notification button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), popover.background modelbutton:disabled, popover.menu box.circular-buttons button.circular.image-button.model:disabled, popover.menu box.inline-buttons button.image-button.model:disabled,
+radio:disabled, scrollbar button:disabled, notebook > header > tabs > arrow:disabled, spinbutton.vertical > button:disabled, spinbutton:not(.vertical) > button:disabled, banner > revealer > widget button:disabled, #NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button:disabled,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button:disabled, infobar.info button:disabled, infobar.question button:disabled, infobar.warning button:disabled, infobar.error button:disabled, .app-notification button:disabled, headerbar button:disabled:not(.suggested-action):not(.destructive-action), popover.background modelbutton:disabled, popover.menu box.circular-buttons button.circular.image-button.model:disabled, popover.menu box.inline-buttons button.image-button.model:disabled,
 pathbar > button:disabled, searchbar > revealer > box .close:disabled, .toolbar > button:disabled, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:disabled, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:disabled, headerbar button.arrow-button:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), splitbutton.flat > button:disabled,
 splitbutton.flat > menubutton > button:disabled, menubutton.flat > button:disabled,
 button.flat:disabled {
@@ -635,7 +639,8 @@ button.flat:disabled {
   outline: none;
 }
 
-banner > revealer > widget button:checked, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .app-notification button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), popover.background modelbutton:checked, popover.menu box.circular-buttons button.circular.image-button.model:checked, popover.menu box.inline-buttons button.image-button.model:checked,
+banner > revealer > widget button:checked, #NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button:checked,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button:checked, infobar.info button:checked, infobar.question button:checked, infobar.warning button:checked, infobar.error button:checked, .app-notification button:checked, headerbar button:checked:not(.suggested-action):not(.destructive-action), popover.background modelbutton:checked, popover.menu box.circular-buttons button.circular.image-button.model:checked, popover.menu box.inline-buttons button.image-button.model:checked,
 pathbar > button:checked, searchbar > revealer > box .close:checked, .toolbar > button:checked, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked, headerbar button.arrow-button:checked:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:checked:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:checked:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:checked:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:checked:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:checked:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), splitbutton.flat > button:checked,
 splitbutton.flat > menubutton > button:checked, menubutton.flat > button:checked,
 button.flat:checked {
@@ -645,7 +650,8 @@ button.flat:checked {
   outline: none;
 }
 
-banner > revealer > widget button:checked:disabled, .nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .app-notification button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background modelbutton:checked:disabled, popover.menu box.circular-buttons button.circular.image-button.model:checked:disabled, popover.menu box.inline-buttons button.image-button.model:checked:disabled,
+banner > revealer > widget button:checked:disabled, #NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button:checked:disabled,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button:checked:disabled, infobar.info button:checked:disabled, infobar.question button:checked:disabled, infobar.warning button:checked:disabled, infobar.error button:checked:disabled, .app-notification button:checked:disabled, headerbar button:checked:disabled:not(.suggested-action):not(.destructive-action), popover.background modelbutton:checked:disabled, popover.menu box.circular-buttons button.circular.image-button.model:checked:disabled, popover.menu box.inline-buttons button.image-button.model:checked:disabled,
 pathbar > button:checked:disabled, searchbar > revealer > box .close:checked:disabled, .toolbar > button:checked:disabled, headerbar menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:disabled, searchbar > revealer > box menubutton:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque).image-button > button:checked:disabled, headerbar button.arrow-button:checked:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.arrow-button:checked:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-button:checked:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-button:checked:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), headerbar button.image-text-button:checked:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), searchbar > revealer > box button.image-text-button:checked:disabled:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque), splitbutton.flat > button:checked:disabled,
 splitbutton.flat > menubutton > button:checked:disabled, menubutton.flat > button:checked:disabled,
 button.flat:checked:disabled {
@@ -1744,11 +1750,6 @@ headerbar menubutton.opaque > button:not(.raised):not(.suggested-action):not(.de
 searchbar > revealer > box menubutton.opaque > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
   color: inherit;
   background-color: transparent;
-}
-
-headerbar switch, searchbar > revealer > box switch {
-  margin-top: 4px;
-  margin-bottom: 4px;
 }
 
 toolbarview > .top-bar .collapse-spacing .toolbar,
@@ -2892,7 +2893,6 @@ scrollbar.horizontal button.up {
  **********/
 switch {
   transition: all 225ms cubic-bezier(0, 0, 0.2, 1);
-  margin: 6px 0;
   padding: 0;
   min-height: 20px;
   min-width: 42px;
@@ -3463,11 +3463,6 @@ headerbar > windowhandle > box > widget > box.end:dir(ltr) {
   margin-left: 0;
 }
 
-headerbar switch {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
 headerbar spinbutton button {
   margin-top: 0;
   margin-bottom: 0;
@@ -3475,10 +3470,6 @@ headerbar spinbutton button {
 
 headerbar.titlebar, .titlebar headerbar, .solid-csd headerbar, box > headerbar:only-child {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(255, 255, 255, 0.08);
-}
-
-headerbar.titlebar.default-decoration, .csd headerbar.titlebar.default-decoration {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 box headerbar:not(:only-child):first-child, box headerbar:not(:only-child):last-child {
@@ -3646,18 +3637,6 @@ headerbar separator.titlebutton {
   min-height: 0;
   background-color: transparent;
   border: none;
-}
-
-window.csd > .titlebar:not(headerbar) {
-  padding: 0;
-  background-color: transparent;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-}
-
-.titlebar:not(headerbar) > separator {
-  background-color: #31313a;
 }
 
 window.devel headerbar.titlebar {
@@ -4894,30 +4873,42 @@ stacksidebar row > label {
 /****************
  * File chooser *
  ****************/
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button {
   color: rgba(86, 87, 245, 0.75);
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:hover,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:hover, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:active,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:active {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:hover,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:hover,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:hover, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:active,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:active,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:active,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:active {
   color: #5657f5;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:disabled,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:disabled {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:disabled,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:disabled,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:disabled,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:disabled {
   color: rgba(86, 87, 245, 0.35);
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked {
   background-color: rgba(86, 87, 245, 0.1);
   color: #5657f5;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked:disabled,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked:disabled {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked:disabled,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked:disabled,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked:disabled,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected button.sidebar-button:checked:disabled {
   background-color: rgba(86, 87, 245, 0.05);
   color: rgba(86, 87, 245, 0.55);
 }
@@ -5524,7 +5515,8 @@ statusbar {
 /************
  * Nautilus *
  ************/
-.nautilus-window.background.csd:not(.view), .nautilus-window.background.csd .sidebar-pane {
+#NautilusFileChooser .sidebar-pane,
+.nautilus-window .sidebar-pane {
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
   background-size: 48px auto;
   background-position: left bottom;
@@ -5532,7 +5524,8 @@ statusbar {
   background-color: #31313a;
 }
 
-.nautilus-window.background.csd:not(.view) headerbar, .nautilus-window.background.csd .sidebar-pane headerbar {
+#NautilusFileChooser .sidebar-pane headerbar,
+.nautilus-window .sidebar-pane headerbar {
   background-color: transparent;
   background-image: -gtk-scaled(url("assets/header-icon.png"), url("assets/header-icon@2.png"));
   background-size: 48px auto;
@@ -5543,122 +5536,173 @@ statusbar {
   border: none;
 }
 
-.nautilus-window.background.csd .background .top-bar headerbar {
+#NautilusFileChooser .background .top-bar headerbar,
+.nautilus-window .background .top-bar headerbar {
   box-shadow: none;
 }
 
-.nautilus-window.background.csd .background list.navigation-sidebar {
+#NautilusFileChooser .background list.navigation-sidebar,
+.nautilus-window .background list.navigation-sidebar {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd .background list.navigation-sidebar > row {
+#NautilusFileChooser .background list.navigation-sidebar > row,
+.nautilus-window .background list.navigation-sidebar > row {
   border-radius: 0;
 }
 
-.nautilus-window.background.csd .nautilus-grid-view, .nautilus-window.background.csd .nautilus-grid-view gridview.view {
+#NautilusFileChooser .nautilus-grid-view, #NautilusFileChooser .nautilus-grid-view gridview.view,
+.nautilus-window .nautilus-grid-view,
+.nautilus-window .nautilus-grid-view gridview.view {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd .nautilus-grid-view gridview.view {
+#NautilusFileChooser .nautilus-grid-view gridview.view,
+.nautilus-window .nautilus-grid-view gridview.view {
   padding: 3px 0;
 }
 
-.nautilus-window.background.csd .nautilus-list-view {
+#NautilusFileChooser .nautilus-list-view,
+.nautilus-window .nautilus-list-view {
   margin: 0 6px 6px 0;
 }
 
-.nautilus-window.background.csd .nautilus-list-view, .nautilus-window.background.csd .nautilus-list-view .view {
+#NautilusFileChooser .nautilus-list-view, #NautilusFileChooser .nautilus-list-view .view,
+.nautilus-window .nautilus-list-view,
+.nautilus-window .nautilus-list-view .view {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd placesview label {
+#NautilusFileChooser placesview label,
+.nautilus-window placesview label {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.background.csd placesview label:disabled {
+#NautilusFileChooser placesview label:disabled,
+.nautilus-window placesview label:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.nautilus-window.background.csd placesview list, .nautilus-window.background.csd placesview actionbar, .nautilus-window.background.csd placesview actionbar > revealer > box {
+#NautilusFileChooser placesview list, #NautilusFileChooser placesview actionbar, #NautilusFileChooser placesview actionbar > revealer > box,
+.nautilus-window placesview list,
+.nautilus-window placesview actionbar,
+.nautilus-window placesview actionbar > revealer > box {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar {
+#NautilusFileChooser flap.unfolded > placessidebar,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar,
+.nautilus-window flap.unfolded > placessidebar,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar {
   background: none;
   margin-right: 6px;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar {
   background-color: transparent;
   padding: 0;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row {
   padding-left: 6px;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row .sidebar-revealer,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row .sidebar-revealer {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row .sidebar-revealer,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row .sidebar-revealer,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row .sidebar-revealer,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row .sidebar-revealer {
   padding: 0 0 0 12px;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:hover, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:active, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected:hover, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected:active, .nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:focus,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:hover,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:active,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected:hover,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected:active,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:focus {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:hover, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:active, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected:hover, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected:active, #NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:focus,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:active,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected:hover,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected:active,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:focus,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:hover,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:active,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected:hover,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected:active,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:focus,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:hover,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:active,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected:hover,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected:active,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:focus {
   transition: none;
   animation: none;
   background-color: transparent;
   box-shadow: none;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row image.sidebar-icon,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row image.sidebar-icon {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row image.sidebar-icon,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row image.sidebar-icon,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row image.sidebar-icon {
   color: rgba(255, 255, 255, 0.7);
   margin-right: 6px;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row label.sidebar-label,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row label.sidebar-label {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row label.sidebar-label,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row label.sidebar-label,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row label.sidebar-label {
   padding-left: 18px;
   color: rgba(255, 255, 255, 0.7);
   border-radius: 0 7px 7px 0;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:hover label.sidebar-label,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:hover label.sidebar-label {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:hover label.sidebar-label,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:hover label.sidebar-label,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:hover label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:hover label.sidebar-label {
   background-color: rgba(255, 255, 255, 0.03);
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:backdrop,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:backdrop {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:backdrop,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:backdrop,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:backdrop,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:backdrop {
   opacity: 0.85;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected label.sidebar-label,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected label.sidebar-label {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected label.sidebar-label,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected label.sidebar-label,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected label.sidebar-label,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected label.sidebar-label {
   color: #9e9ff9;
   background-color: rgba(255, 255, 255, 0.06);
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar list.navigation-sidebar > row:selected image.sidebar-icon,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected image.sidebar-icon {
+#NautilusFileChooser flap.unfolded > placessidebar list.navigation-sidebar > row:selected image.sidebar-icon,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected image.sidebar-icon,
+.nautilus-window flap.unfolded > placessidebar list.navigation-sidebar > row:selected image.sidebar-icon,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar list.navigation-sidebar > row:selected image.sidebar-icon {
   color: #FFFFFF;
 }
 
-.nautilus-window.background.csd flap.unfolded > placessidebar separator,
-.nautilus-window.background.csd .sidebar-pane > toolbarview > placessidebar separator {
+#NautilusFileChooser flap.unfolded > placessidebar separator,
+#NautilusFileChooser .sidebar-pane > toolbarview > placessidebar separator,
+.nautilus-window flap.unfolded > placessidebar separator,
+.nautilus-window .sidebar-pane > toolbarview > placessidebar separator {
   background-color: transparent;
 }
 
-.nautilus-window.background.csd #NautilusPathBar {
+#NautilusFileChooser #NautilusPathBar,
+.nautilus-window #NautilusPathBar {
   border-radius: 9999px;
   padding: 0;
   background-image: linear-gradient(to bottom, #6C6AF2, #4648FB);
@@ -5668,105 +5712,139 @@ statusbar {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.15), 0 2px 3px rgba(0, 0, 0, 0.12);
 }
 
-.nautilus-window.background.csd #NautilusPathBar .dim-label, .nautilus-window.background.csd #NautilusPathBar label.separator, .nautilus-window.background.csd #NautilusPathBar entry > text > placeholder, .nautilus-window.background.csd #NautilusPathBar spinbutton:not(.vertical) > text > placeholder, .nautilus-window.background.csd #NautilusPathBar headerbar .subtitle, headerbar .nautilus-window.background.csd #NautilusPathBar .subtitle, .nautilus-window.background.csd #NautilusPathBar row label.subtitle, row .nautilus-window.background.csd #NautilusPathBar label.subtitle, .nautilus-window.background.csd #NautilusPathBar row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) .nautilus-window.background.csd #NautilusPathBar image.expander-row-arrow {
+#NautilusFileChooser #NautilusPathBar .dim-label, #NautilusFileChooser #NautilusPathBar label.separator, #NautilusFileChooser #NautilusPathBar entry > text > placeholder, #NautilusFileChooser #NautilusPathBar spinbutton:not(.vertical) > text > placeholder, #NautilusFileChooser #NautilusPathBar headerbar .subtitle, headerbar #NautilusFileChooser #NautilusPathBar .subtitle, #NautilusFileChooser #NautilusPathBar row label.subtitle, row #NautilusFileChooser #NautilusPathBar label.subtitle, #NautilusFileChooser #NautilusPathBar row.expander:not(:checked) image.expander-row-arrow, row.expander:not(:checked) #NautilusFileChooser #NautilusPathBar image.expander-row-arrow,
+.nautilus-window #NautilusPathBar .dim-label,
+.nautilus-window #NautilusPathBar label.separator,
+.nautilus-window #NautilusPathBar entry > text > placeholder,
+.nautilus-window #NautilusPathBar spinbutton:not(.vertical) > text > placeholder,
+.nautilus-window #NautilusPathBar headerbar .subtitle,
+headerbar .nautilus-window #NautilusPathBar .subtitle,
+.nautilus-window #NautilusPathBar row label.subtitle,
+row .nautilus-window #NautilusPathBar label.subtitle,
+.nautilus-window #NautilusPathBar row.expander:not(:checked) image.expander-row-arrow,
+row.expander:not(:checked) .nautilus-window #NautilusPathBar image.expander-row-arrow {
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action) {
+#NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action),
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action) {
   margin: 0;
   color: rgba(255, 255, 255, 0.7);
 }
 
-.nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action):hover {
+#NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action):hover,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action):hover {
   background-color: rgba(255, 255, 255, 0.12);
   box-shadow: none;
 }
 
-.nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action):active, .nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action):checked {
+#NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action):active, #NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action):checked,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action):active,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action):checked {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   background-image: none;
 }
 
-.nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action):hover, .nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action):active, .nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action):checked {
+#NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action):hover, #NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action):active, #NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action):checked,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action):hover,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action):active,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action):checked {
   color: #FFFFFF;
 }
 
-.nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir {
+#NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir {
   color: #FFFFFF;
 }
 
-.nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir:hover, .nautilus-window.background.csd #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir:active {
+#NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir:hover, #NautilusFileChooser #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir:active,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir:hover,
+.nautilus-window #NautilusPathBar button:not(.suggested-action):not(.destructive-action).current-dir:active {
   background: none;
   box-shadow: none;
 }
 
-.nautilus-window.background.csd #NautilusPathBar > menubutton {
+#NautilusFileChooser #NautilusPathBar > menubutton,
+.nautilus-window #NautilusPathBar > menubutton {
   margin: 0;
 }
 
-.nautilus-window.background.csd #NautilusPathBar > menubutton > button {
+#NautilusFileChooser #NautilusPathBar > menubutton > button,
+.nautilus-window #NautilusPathBar > menubutton > button {
   border-radius: 9999px;
   margin: 0;
 }
 
-.nautilus-window.background.csd #NautilusPathBar > menubutton > button:checked {
+#NautilusFileChooser #NautilusPathBar > menubutton > button:checked,
+.nautilus-window #NautilusPathBar > menubutton > button:checked {
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   background-image: none;
 }
 
-.nautilus-window.background.csd #NautilusViewCell clamp box {
+#NautilusFileChooser #NautilusViewCell clamp box,
+.nautilus-window #NautilusViewCell clamp box {
   margin: 0;
   border-spacing: 0;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditor {
+#NautilusFileChooser #NautilusQueryEditor,
+.nautilus-window #NautilusQueryEditor {
   border-radius: 9999px;
   color: rgba(255, 255, 255, 0.7);
   padding: 0 4px 0 8px;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditor:focus-within {
+#NautilusFileChooser #NautilusQueryEditor:focus-within,
+.nautilus-window #NautilusQueryEditor:focus-within {
   color: #FFFFFF;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditor:disabled {
+#NautilusFileChooser #NautilusQueryEditor:disabled,
+.nautilus-window #NautilusQueryEditor:disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.nautilus-window.background.csd #NautilusQueryEditor > menubutton {
+#NautilusFileChooser #NautilusQueryEditor > menubutton,
+.nautilus-window #NautilusQueryEditor > menubutton {
   margin: 0;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditor > menubutton > button.image-button {
+#NautilusFileChooser #NautilusQueryEditor > menubutton > button.image-button,
+.nautilus-window #NautilusQueryEditor > menubutton > button.image-button {
   min-width: 28px;
   min-height: 28px;
   margin: 4px 0;
   padding: 0;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditor > text {
+#NautilusFileChooser #NautilusQueryEditor > text,
+.nautilus-window #NautilusQueryEditor > text {
   margin: 0;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditorTag {
+#NautilusFileChooser #NautilusQueryEditorTag,
+.nautilus-window #NautilusQueryEditorTag {
   border-radius: 9999px;
 }
 
-.nautilus-window.background.csd #NautilusQueryEditorTag > button {
+#NautilusFileChooser #NautilusQueryEditorTag > button,
+.nautilus-window #NautilusQueryEditorTag > button {
   margin: 3px;
   padding: 0;
   min-height: 22px;
   min-width: 22px;
 }
 
-.nautilus-window.background.csd label.search-information {
+#NautilusFileChooser label.search-information,
+.nautilus-window label.search-information {
   margin: 2px;
   border-radius: 3px;
 }
 
-.nautilus-window.background.csd flap > separator {
+#NautilusFileChooser flap > separator,
+.nautilus-window flap > separator {
   min-width: 20px;
   color: transparent;
   background-image: url("assets/scalable/side-paned.svg");

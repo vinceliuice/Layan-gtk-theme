@@ -1371,6 +1371,13 @@ menubar,
   color: rgba(255, 255, 255, 0.7);
 }
 
+headerbar menubar, headerbar .menubar {
+  box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+}
+
 menubar > menuitem,
 .menubar > menuitem {
   transition: all 100ms cubic-bezier(0, 0, 0.2, 1);
@@ -3059,7 +3066,7 @@ headerbar.windowhandle viewswitcher button:not(.suggested-action):not(.destructi
 
 headerbar.default-decoration {
   min-height: 24px;
-  padding: 6px 12px;
+  padding: 6px;
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
@@ -3085,10 +3092,6 @@ headerbar.default-decoration button.titlebutton {
 
 .csd headerbar, headerbar.titlebar, .titlebar headerbar, .solid-csd headerbar, box headerbar:only-child {
   box-shadow: inset 0 1px rgba(255, 255, 255, 0.1), inset 0 -1px rgba(255, 255, 255, 0.08);
-}
-
-headerbar.titlebar.default-decoration, .csd headerbar.titlebar.default-decoration {
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
 box headerbar:not(:only-child):first-child, box headerbar:not(:only-child):last-child {
@@ -4404,10 +4407,10 @@ headerbar > box.left,
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-headerbar.default-decoration button.titlebutton.close:hover, headerbar.default-decoration button.titlebutton.close:active, headerbar.default-decoration button.titlebutton.close:checked, .csd headerbar.default-decoration button.titlebutton.close:hover, .csd headerbar.default-decoration button.titlebutton.close:active, .csd headerbar.default-decoration button.titlebutton.close:checked,
+headerbar.default-decoration button.titlebutton.close:hover, headerbar.default-decoration button.titlebutton.close:active, headerbar.default-decoration button.titlebutton.close:checked,
 .titlebar.default-decoration button.titlebutton.close:hover,
 .titlebar.default-decoration button.titlebutton.close:active,
-.titlebar.default-decoration button.titlebutton.close:checked, .csd .titlebar.default-decoration button.titlebutton.close:hover, .csd .titlebar.default-decoration button.titlebutton.close:active, .csd .titlebar.default-decoration button.titlebutton.close:checked {
+.titlebar.default-decoration button.titlebutton.close:checked {
   padding: 0;
   margin: 0 2px;
   box-shadow: none;

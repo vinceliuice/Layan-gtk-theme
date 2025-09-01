@@ -7,8 +7,9 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
               -gtk-scaled(url('assets/header-icon-alt.png'), url('assets/header-icon-alt@2.png')),
               -gtk-scaled(url('assets/header-icon.png'), url('assets/header-icon@2.png')));
 
-.nautilus-window.background.csd {
-  &:not(.view), .sidebar-pane {
+#NautilusFileChooser,
+.nautilus-window {
+  .sidebar-pane {
     background-image: $theme_image;
     background-size: 48px auto;
     background-position: left bottom;

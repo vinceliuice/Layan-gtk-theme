@@ -1213,6 +1213,13 @@ menubar,
   background-color: $titlebar_bg_color;
   color: $titlebar_secondary_fg_color;
 
+  headerbar & {
+    box-shadow: none;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+  }
+
   > menuitem {
     transition: $shorter_transition;
     min-height: 20px;
@@ -2691,7 +2698,7 @@ headerbar {
 
   &.default-decoration {
     min-height: $small_size;
-    padding: $container_padding $container_padding * 2;
+    padding: $container_padding;
     box-shadow: inset 0 1px $titlebar_highlight_color;
 
     .tiled &,
@@ -2724,11 +2731,6 @@ headerbar {
   box &:only-child {
     // draw hilight and shadows
     box-shadow: inset 0 1px $titlebar_highlight_color, inset 0 -1px $border_color;
-  }
-
-  &.titlebar.default-decoration,
-  .csd &.titlebar.default-decoration {
-    box-shadow: inset 0 1px $titlebar_highlight_color;
   }
 
   // override unwanted side-borders
@@ -4110,8 +4112,7 @@ headerbar,
     }
   }
 
-  &.default-decoration,
-  .csd &.default-decoration {
+  &.default-decoration {
     button.titlebutton {
       &.close { // Reset Close button
         &:hover, &:active, &:checked {
