@@ -296,12 +296,12 @@ window.background:not(.csd) {
 //
 
 #MozillaGtkWidget.background {
-  &, decoration { border-radius: 2px 2px 0 0; } // enforce radius
+  &, decoration { border-radius: $windows_radius; } // enforce radius
 
   // FIXME: unset all our specific titlebuttons
   // until upstream stops rendering useless (weird) icons
   headerbar.titlebar {
-    border-radius: 2px 2px 0 0;
+    border-radius: $windows_radius $windows_radius 0 0;
 
     &.default-decoration button.titlebutton {
       min-width: 20px;

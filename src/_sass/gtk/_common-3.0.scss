@@ -2770,25 +2770,18 @@ headerbar {
   }
 }
 
-.titlebar,
-.titlebar .background {
-  border-top-left-radius: $windows_radius;
-  border-top-right-radius: $windows_radius;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
+.titlebar {
+  border-radius: $windows_radius $windows_radius 0 0;
 
-.background.tiled .titlebar,
-.background.tiled-top .titlebar,
-.background.tiled-right .titlebar,
-.background.tiled-bottom .titlebar,
-.background.tiled-left .titlebar,
-.background.maximized .titlebar,
-.background.solid-csd .titlebar {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .maximized &,
+  .solid-csd & {
+    border-radius: 0;
+  }
 }
 
 %header_separator {
@@ -3353,7 +3346,7 @@ calendar {
  ***********/
 messagedialog { // Message Dialog styling
   &.background {
-    background-color: rgba($popover_bg, 0.98);
+    background-color: rgba($popover_bg, 0.95);
     color: $popover_fg;
   }
 
@@ -3363,8 +3356,6 @@ messagedialog { // Message Dialog styling
     box-shadow: inset 0 1px $titlebar_highlight_color;
     background-color: rgba($popover_bg, 0.98);
     color: $popover_fg;
-		border-top-left-radius: $buttons_radius;
-    border-top-right-radius: $buttons_radius;
 
     &:backdrop { color: $popover_disabled_fg; }
   }
@@ -3444,12 +3435,6 @@ messagedialog { // Message Dialog styling
   &.csd { // rounded bottom border styling for csd version
     color: $popover_fg;
 
-    &.background {
-      // bigger radius for better antialiasing
-      border-bottom-left-radius: $buttons_radius;
-      border-bottom-right-radius: $buttons_radius;
-    }
-
     .dialog-action-area button {
       @extend %simple_flat_button;
       padding: 8px 16px;
@@ -3458,12 +3443,12 @@ messagedialog { // Message Dialog styling
       color: $popover_fg;
 
       &:first-child {
-        border-bottom-left-radius: $buttons_radius;
+        border-bottom-left-radius: $windows_radius;
         border-top-left-radius: 0;
       }
 
       &:last-child {
-        border-bottom-right-radius: $buttons_radius;
+        border-bottom-right-radius: $windows_radius;
         border-top-right-radius: 0;
       }
     }
@@ -4031,13 +4016,6 @@ decoration {
   tooltip.csd & {
     border-radius: $buttons_radius;
     box-shadow: $shadow_2;
-  }
-
-  messagedialog.csd & {
-    border-radius: $buttons_radius;
-    // box-shadow: $shadow_4, 0 16px 16px transparent;
-
-    // &:backdrop { box-shadow: $shadow_2, 0 16px 16px transparent; }
   }
 
   .solid-csd & {

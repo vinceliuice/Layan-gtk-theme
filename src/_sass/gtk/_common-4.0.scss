@@ -15,7 +15,6 @@
 
   &.csd { // Set csd windows bottom border radius
     border-radius: $windows_radius;
-    background-color: rgba($bg_color, 1);
   }
 
   &.maximized, &.tiled, &.fullscreen, &.solid-csd { // No radius when windows maximized

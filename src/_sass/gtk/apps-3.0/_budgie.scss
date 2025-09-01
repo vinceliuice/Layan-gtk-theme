@@ -1018,11 +1018,11 @@ box.vertical > stack > box.vertical {
 }
 
 %budgie_dialog {
-  border-radius: $buttons_radius;
+  border-radius: $windows_radius;
   background-color: $lighter_bg_color;
 
-  decoration { border-radius: $buttons_radius; }
-  &.background { border-radius: $buttons_radius; }
+  decoration { border-radius: $windows_radius; }
+  &.background { border-radius: $windows_radius; }
 }
 
 // Session Dialog
@@ -1040,8 +1040,8 @@ box.vertical > stack > box.vertical {
 
     @extend %simple_flat_button;
 
-    &:first-child { border-bottom-left-radius: $buttons_radius; }
-    &:last-child { border-bottom-right-radius: $buttons_radius; }
+    &:first-child { border-bottom-left-radius: $windows_radius; }
+    &:last-child { border-bottom-right-radius: $windows_radius; }
   }
 
   @each $b_type, $b_color in (suggested-action, $suggested_color),
