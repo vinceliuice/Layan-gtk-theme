@@ -2,10 +2,10 @@
  * Nautilus *
  ************/
 
-$nautilus_bg_color: if($titlebar == 'dark' and $variant == 'light', $base_color, $titlebar_bg_color);
-$header-icon: if($titlebar == 'dark' and $variant == 'light',
-              -gtk-scaled(url('assets/header-icon-alt.png'), url('assets/header-icon-alt@2.png')),
-              -gtk-scaled(url('assets/header-icon.png'), url('assets/header-icon@2.png')));
+$nautilus_bg_color: if($titlebar =='dark' and $variant =='light', $base_color, $titlebar_bg_color);
+$header-icon: if($titlebar =='dark' and $variant =='light',
+    -gtk-scaled(url('assets/header-icon-alt.png'), url('assets/header-icon-alt@2.png')),
+    -gtk-scaled(url('assets/header-icon.png'), url('assets/header-icon@2.png')));
 
 #NautilusFileChooser,
 .nautilus-window {
@@ -14,7 +14,7 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     background-size: 48px auto;
     background-position: left bottom;
     background-repeat: no-repeat;
-    background-color: if($solid == 'false', rgba($nautilus_bg_color, 0.97), $nautilus_bg_color);
+    background-color: if($solid =='false', rgba($nautilus_bg_color, 0.97), $nautilus_bg_color);
 
     headerbar {
       background-color: transparent;
@@ -25,7 +25,7 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
       padding-left: 54px;
       box-shadow: inset 0 1px $titlebar_highlight_color;
       border: none;
-  
+
       // > revealer > button { @extend %circular_button; } // Make operations button circular
     }
   }
@@ -38,7 +38,9 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     list.navigation-sidebar {
       background-color: transparent;
 
-      > row { border-radius: 0; }
+      > row {
+        border-radius: 0;
+      }
     }
   }
 
@@ -50,12 +52,56 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     gridview.view {
       padding: 3px 0;
     }
+
+    child.activatable {
+      padding: 0;
+
+      #NautilusViewCell {
+        padding: 0;
+
+        .icon-ui-labels-box {
+          margin: 0 0 $container_padding * 1.5;
+          border-spacing: 0;
+        }
+
+        .dim-label {
+          border-spacing: 0;
+        }
+      }
+    }
   }
 
   .nautilus-list-view {
-    margin: 0 $container_padding $container_padding 0;
+    margin: $container_padding;
+    padding: 0;
+    border-spacing: 0;
 
-    &, .view { background-color: transparent; }
+    &, .view {
+      background-color: transparent;
+    }
+
+    listview.view {
+      padding: 0;
+      margin: 0;
+      border-spacing: $container_padding / 2;
+
+      > row.activatable {
+        padding: 0;
+        margin: 0;
+
+        > cell {
+          padding: 0;
+
+          > widget#NautilusViewCell {
+            padding: $container_padding / 2 $container_padding * 1.5;
+          }
+        }
+
+        &:nth-child(odd):not(:disabled) {
+          background-image: image(gtkalpha(currentColor, 0.03));
+        }
+      }
+    }
   }
 
   placesview {
@@ -84,7 +130,9 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
       > row {
         padding-left: $container_padding;
 
-        .sidebar-revealer { padding: 0 0 0 $container_padding * 2; }
+        .sidebar-revealer {
+          padding: 0 0 0 $container_padding * 2;
+        }
 
         &, &:hover, &:selected, &:active, &:selected:hover, &:selected:active, &:focus {
           transition: none;
@@ -93,8 +141,10 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
           box-shadow: none;
         }
 
-        &:selected button.sidebar-button  { @extend %selected_sidebar_button; }
-  
+        &:selected button.sidebar-button {
+          @extend %selected_sidebar_button;
+        }
+
         image.sidebar-icon {
           color: $inverse_secondary_fg_color;
           margin-right: 6px;
@@ -112,22 +162,28 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
           }
         }
 
-        &:backdrop { opacity: 0.85; }
+        &:backdrop {
+          opacity: 0.85;
+        }
 
         &:selected {
           // font-weight: bold;
 
           label.sidebar-label {
-            color: if($variant == 'light', $primary_color, lighten($primary_color, 15%));
+            color: if($variant =='light', $primary_color, lighten($primary_color, 15%));
             background-color: rgba($divider_color, 0.06);
           }
 
-          image.sidebar-icon { color: $inverse_fg_color; }
+          image.sidebar-icon {
+            color: $inverse_fg_color;
+          }
         }
       }
     }
 
-    separator { background-color: transparent; }
+    separator {
+      background-color: transparent;
+    }
   }
 
   #NautilusPathBar {
@@ -137,9 +193,11 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     background-size: auto auto;
     background-position: center center;
     background-repeat: no-repeat;
-    box-shadow: if($variant == 'light', $header_shadow_light, $header_shadow_dark);
+    box-shadow: if($variant =='light', $header_shadow_light, $header_shadow_dark);
 
-    .dim-label { color: $inverse_secondary_fg_color; }
+    .dim-label {
+      color: $inverse_secondary_fg_color;
+    }
 
     button:not(.suggested-action):not(.destructive-action) {
       margin: 0;
@@ -176,7 +234,7 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
       > button {
         border-radius: $circular_radius;
         margin: 0;
-  
+
         &:checked {
           background-color: $inverse_track_color;
           box-shadow: none;
@@ -193,14 +251,19 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     }
   }
 
-  #NautilusQueryEditor { // search entry
+  #NautilusQueryEditor {
+    // search entry
     border-radius: $circular_radius;
     color: $titlebar_secondary_fg_color;
     padding: 0 ($medium_size - $menuitem_size) / 2 0 ($container_padding + 2px);
 
-    &:focus-within { color: $titlebar_fg_color; }
+    &:focus-within {
+      color: $titlebar_fg_color;
+    }
 
-    &:disabled { color: $titlebar_disabled_secondary_fg_color; }
+    &:disabled {
+      color: $titlebar_disabled_secondary_fg_color;
+    }
 
     > menubutton {
       margin: 0;
@@ -214,17 +277,19 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
       }
     }
 
-    > text { margin: 0; }
+    > text {
+      margin: 0;
+    }
   }
 
   #NautilusQueryEditorTag {
     border-radius: $circular_radius;
 
     > button {
-     margin: $container_padding / 2;
-     padding: 0;
-     min-height: $small_size - 2px;
-     min-width: $small_size - 2px;
+      margin: $container_padding / 2;
+      padding: 0;
+      min-height: $small_size - 2px;
+      min-width: $small_size - 2px;
     }
   }
 
@@ -233,7 +298,8 @@ $header-icon: if($titlebar == 'dark' and $variant == 'light',
     border-radius: 3px;
   }
 
-  flap > separator  { // Ensure paned separator rendering. See issue #84 for details.
+  flap > separator {
+    // Ensure paned separator rendering. See issue #84 for details.
     min-width: 20px;
     color: transparent;
     background-image: url("assets/scalable/side-paned.svg");
@@ -424,11 +490,12 @@ button.card.category-tile {
   }
 
   &.category-work {
-    padding: 1px; /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
+    padding: 1px;
+    /* FIXME: work around https://gitlab.gnome.org/GNOME/gtk/-/issues/4324 */
     color: #1c71d8;
-    background-color:#fdf8d7;
+    background-color: #fdf8d7;
     background-image: linear-gradient($border_color 1px, transparent 1px),
-             linear-gradient(90deg, $border_color 1px, transparent 1px);
+      linear-gradient(90deg, $border_color 1px, transparent 1px);
     background-size: 10px 10px, 10px 10px;
     background-position: -1px -4px, center -1px;
 
@@ -436,14 +503,14 @@ button.card.category-tile {
       color: #1c71d8;
       background-color: lighten(#fdf8d7, 5%);
       background-image: linear-gradient($border_color 1px, transparent 1px),
-               linear-gradient(90deg, $border_color 1px, transparent 1px);
+        linear-gradient(90deg, $border_color 1px, transparent 1px);
     }
 
     &:active {
       color: #1c71d8;
       background-color: darken(#fdf8d7, 5%);
       background-image: linear-gradient($border_color 1px, transparent 1px),
-               linear-gradient(90deg, $border_color 1px, transparent 1px);
+        linear-gradient(90deg, $border_color 1px, transparent 1px);
     }
   }
 }
@@ -484,9 +551,17 @@ clamp.large .category-tile:not(.category-tile-iconless) {
 }
 
 @keyframes install-progress-unknown-move {
-  0% { background-position: 0%; }
-  50% { background-position: 100%; }
-  100% { background-position: 0%; }
+  0% {
+    background-position: 0%;
+  }
+
+  50% {
+    background-position: 100%;
+  }
+
+  100% {
+    background-position: 0%;
+  }
 }
 
 .application-details-description .button {
@@ -502,13 +577,17 @@ clamp.large .category-tile:not(.category-tile-iconless) {
   transition: none;
 }
 
-.install-progress:dir(rtl) { background-position: 100% bottom; }
+.install-progress:dir(rtl) {
+  background-position: 100% bottom;
+}
 
 .review-row > * {
   margin: $container_padding * 2;
 }
 
-.review-row button { font-size: smaller; }
+.review-row button {
+  font-size: smaller;
+}
 
 .review-row .vote-buttons button {
   margin-right: -1px;
@@ -624,12 +703,16 @@ scrolledwindow.list-page > viewport > clamp > box {
   margin-top: $container_padding * 3;
 }
 
-.section > label:not(:first-child) { margin-top: $container_padding; }
+.section > label:not(:first-child) {
+  margin-top: $container_padding;
+}
 
-.section > box:not(:first-child) { margin-top: $container_padding * 2; }
+.section > box:not(:first-child) {
+  margin-top: $container_padding * 2;
+}
 
 clamp.status-page {
-	margin: $container_padding * 6 $container_padding * 2;
+  margin: $container_padding * 6 $container_padding * 2;
 }
 
 clamp.status-page .iconbox {
@@ -673,7 +756,7 @@ app-context-bar {
 
   &.horizontal .context-tile,
   &.vertical box:first-child .context-tile {
-  	border-top: none;
+    border-top: none;
   }
 
   > box:not(:first-child) > button.flat {
@@ -713,8 +796,10 @@ carousel.card {
   &.large {
     font-size: 24px;
     padding: 16px;
-    min-width: 24px;  /* 60px minus the left and right padding */
-    min-height: 24px;  /* 60px minus the top and bottom padding */
+    min-width: 24px;
+    /* 60px minus the left and right padding */
+    min-height: 24px;
+    /* 60px minus the top and bottom padding */
   }
 
   &.wide-image image {
@@ -722,7 +807,9 @@ carousel.card {
     margin-bottom: -28px;
   }
 
-  image { -gtk-icon-style: symbolic; }
+  image {
+    -gtk-icon-style: symbolic;
+  }
 
   &.grey {
     color: $fg_color;
@@ -774,17 +861,28 @@ window.narrow .app-developer {
   font-feature-settings: "tnum";
 }
 
-scrolledwindow.fake-adw-status-page > viewport > box { margin: $container_padding * 6 $container_padding * 2; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box { margin-bottom: $container_padding * 6; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) { margin-bottom: $container_padding * 6; }
-scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) { margin-bottom: $container_padding * 2; }
+scrolledwindow.fake-adw-status-page > viewport > box {
+  margin: $container_padding * 6 $container_padding * 2;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp:not(:last-child) > box {
+  margin-bottom: $container_padding * 6;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .icon:not(:last-child) {
+  margin-bottom: $container_padding * 6;
+}
+
+scrolledwindow.fake-adw-status-page > viewport > box > clamp > box > .title:not(:last-child) {
+  margin-bottom: $container_padding * 2;
+}
 
 statuspage.icon-dropshadow image.icon {
-	-gtk-icon-shadow: 0 1px 12px rgba(0,0,0,0.05),
-	                  0 -1px rgba(0,0,0,0.05),
-	                  1px 0 rgba(0,0,0,0.1),
-	                  0 1px rgba(0,0,0,0.3),
-	                  -1px 0 rgba(0,0,0,0.1);
+  -gtk-icon-shadow: 0 1px 12px rgba(0, 0, 0, 0.05),
+    0 -1px rgba(0, 0, 0, 0.05),
+    1px 0 rgba(0, 0, 0, 0.1),
+    0 1px rgba(0, 0, 0, 0.3),
+    -1px 0 rgba(0, 0, 0, 0.1);
 }
 
 window.info scrollbar.vertical {
@@ -820,12 +918,19 @@ row.app label.warning {
 
 // Ensure the spinner is hidden before the animation is triggered.
 @keyframes pre-delay {
-  from { opacity: 0; }
-  to { opacity: 0; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-in {
-  from { filter: opacity(0%); }
+  from {
+    filter: opacity(0%);
+  }
 }
 
 /* Give a fade-in animation to spinners. */
@@ -847,6 +952,7 @@ window > contents leaflet {
   }
 
   &.unfolded {
+
     stack.background leaflet box.vertical:last-child > headerbar,
     stack.background leaflet + headerbar {
       border-top-left-radius: 0;
@@ -873,12 +979,15 @@ window > widget {
 
     &.unfolded {
       stack.background > widget > overlay > leaflet > box > headerbar, // Control display header
+
       stack.background > widget > box > widget > headerbar,
-      > box:not(:last-child) headerbar { // Calendar and Builder right header
+      > box:not(:last-child) headerbar {
+        // Calendar and Builder right header
         border-top-left-radius: 0;
       }
 
-      > separator + box > headerbar { // Calendar and control left header
+      > separator + box > headerbar {
+        // Calendar and control left header
         border-top-right-radius: 0;
       }
     }
@@ -918,7 +1027,7 @@ datechooser {
       min-width: 24px;
       padding: $base_padding;
     }
-  
+
     &.day.text-button {
       &:selected {
         box-shadow: none;
@@ -1076,14 +1185,17 @@ button:checked:not(:backdrop) .calendar-color-image,
 
 // month/year controls
 datechooser {
-  navigator { // add some space between the two controls
+  navigator {
+    // add some space between the two controls
     margin-right: $base_padding;
     margin-left: $base_padding;
     margin-bottom: $base_padding;
   }
 
   navigator {
-    label { font-weight: bold; }
+    label {
+      font-weight: bold;
+    }
 
     button, button.popup, button.image-button {
       min-height: $medium-size;
@@ -1120,27 +1232,36 @@ datechooser {
       color: $inverse_fg_color;
       font-weight: bold;
 
-      dot { background-color: $inverse_fg_color; }
+      dot {
+        background-color: $inverse_fg_color;
+      }
     }
 
     &.today {
       color: $primary_color;
 
-      dot { background-color: $primary_color; }
+      dot {
+        background-color: $primary_color;
+      }
     }
 
     &.other-month {
+
       &:not(:hover),
       &:backdrop {
         color: gtkalpha(currentColor, 0.1);
 
-        dot { background-color: gtkalpha(currentColor, 0.1); }
+        dot {
+          background-color: gtkalpha(currentColor, 0.1);
+        }
       }
 
       &:hover:not(:backdrop) {
         color: $disabled_fg_color;
 
-        dot { background-color: $disabled_fg_color; }
+        dot {
+          background-color: $disabled_fg_color;
+        }
       }
     }
   }
@@ -1214,10 +1335,14 @@ monthcell {
       background-color: gtkalpha($primary_color, 0.2);
     }
 
-    label.day-label { font-weight: bold; }
+    label.day-label {
+      font-weight: bold;
+    }
   }
 
-  &:nth-child(7n + 1) { border-left-width: 0; }
+  &:nth-child(7n + 1) {
+    border-left-width: 0;
+  }
 
   &.today {
     background-color: gtkalpha($primary_color, 0.2);
@@ -1316,7 +1441,7 @@ menubutton {
     border-radius: 0;
     border-top-style: none;
     border-bottom-style: none;
-    
+
     &:hover:not(:backdrop) {
       background-image: none;
       text-shadow: none;

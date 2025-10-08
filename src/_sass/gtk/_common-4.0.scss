@@ -1309,7 +1309,7 @@ combobox {
 %toolbar {
   button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     &.arrow-button,
-    &.image-button,
+    &.image-button:not(.close):not(.minimize):not(.maximize),
     &.image-text-button {
       @extend %flat_button;
     }
@@ -1323,7 +1323,7 @@ combobox {
 
   .linked button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     &.arrow-button,
-    &.image-button,
+    &.image-button:not(.close):not(.minimize):not(.maximize),
     &.image-text-button {
       @extend %button_basic_raised;
     }
@@ -1331,7 +1331,7 @@ combobox {
 
   menubutton.raised > button:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
     &.arrow-button,
-    &.image-button,
+    &.image-button:not(.close):not(.minimize):not(.maximize),
     &.image-text-button {
       @extend %button_basic_raised;
     }
@@ -1356,7 +1356,7 @@ combobox {
   popover {
     button:not(.flat):not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) {
       &.arrow-button,
-      &.image-button,
+      &.image-button:not(.close):not(.minimize):not(.maximize),
       &.image-text-button {
         @extend %button_basic_raised;
       }
