@@ -107,11 +107,6 @@ gridview > child {
   padding: 3px;
 }
 
-gridview > child box {
-  border-spacing: 8px;
-  margin: 12px;
-}
-
 coverflow cover {
   color: rgba(0, 0, 0, 0.75);
   background-color: #FFFFFF;
@@ -5568,12 +5563,12 @@ statusbar {
 
 #NautilusFileChooser .nautilus-grid-view child.activatable #NautilusViewCell,
 .nautilus-window .nautilus-grid-view child.activatable #NautilusViewCell {
-  padding: 0;
+  padding: 6px;
 }
 
 #NautilusFileChooser .nautilus-grid-view child.activatable #NautilusViewCell .icon-ui-labels-box,
 .nautilus-window .nautilus-grid-view child.activatable #NautilusViewCell .icon-ui-labels-box {
-  margin: 0 0 9px;
+  margin: 0 0 6px;
   border-spacing: 0;
 }
 
@@ -5615,6 +5610,7 @@ row.expander:not(:checked) .nautilus-window .nautilus-grid-view child.activatabl
 .nautilus-window .nautilus-list-view listview.view > row.activatable {
   padding: 0;
   margin: 0;
+  border-radius: 7px;
 }
 
 #NautilusFileChooser .nautilus-list-view listview.view > row.activatable > cell,

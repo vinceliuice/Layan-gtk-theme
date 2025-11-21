@@ -57,10 +57,10 @@ $header-icon: if($titlebar =='dark' and $variant =='light',
       padding: 0;
 
       #NautilusViewCell {
-        padding: 0;
+        padding: $container_padding;
 
         .icon-ui-labels-box {
-          margin: 0 0 $container_padding * 1.5;
+          margin: 0 0 $container_padding;
           border-spacing: 0;
         }
 
@@ -88,6 +88,7 @@ $header-icon: if($titlebar =='dark' and $variant =='light',
       > row.activatable {
         padding: 0;
         margin: 0;
+        border-radius: $buttons_radius;
 
         > cell {
           padding: 0;

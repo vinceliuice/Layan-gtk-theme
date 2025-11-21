@@ -98,11 +98,6 @@ gridview {
     &:selected {
       @extend %selected_items;
     }
-
-    box { //cells
-      border-spacing: 8px; //label separation
-      margin: 12px;
-    }
   }
 }
 
