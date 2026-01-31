@@ -918,6 +918,13 @@ button.opaque:checked:active {
   background-image: image(alpha(currentColor, 0.3));
 }
 
+
+button.accent,
+button.accent.text-button {
+  color: #5657f5;
+  background-color: alpha(#5657f5, 0.15);
+}
+
 stackswitcher > button {
   outline-offset: -4px;
 }
