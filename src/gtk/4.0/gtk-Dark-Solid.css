@@ -6551,6 +6551,92 @@ window > widget leaflet > box > scrolledwindow > viewport > widget > stack {
   background-color: #31313a;
 }
 
+preferencesgroup button.accent,
+preferencesgroup button.accent-button {
+  min-height: 24px;
+  min-width: 24px;
+  padding: 3px;
+  border-radius: 9999px;
+  background: var(--accent-bg-color);
+  outline: none;
+  background-clip: content-box;
+  box-shadow: none;
+  border: none;
+}
+
+preferencesgroup button.accent:hover,
+preferencesgroup button.accent-button:hover {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.16);
+  background: var(--accent-bg-color);
+  background-clip: content-box;
+}
+
+preferencesgroup button.accent:checked, preferencesgroup button.accent:checked:hover,
+preferencesgroup button.accent-button:checked,
+preferencesgroup button.accent-button:checked:hover {
+  box-shadow: 0 0 0 3px var(--accent-bg-color);
+  background: var(--accent-bg-color);
+  background-clip: content-box;
+}
+
+preferencesgroup button.accent.blue, preferencesgroup button.accent.teal, preferencesgroup button.accent.green, preferencesgroup button.accent.yellow, preferencesgroup button.accent.orange, preferencesgroup button.accent.red, preferencesgroup button.accent.pink, preferencesgroup button.accent.purple, preferencesgroup button.accent.slate,
+preferencesgroup button.accent-button.blue,
+preferencesgroup button.accent-button.teal,
+preferencesgroup button.accent-button.green,
+preferencesgroup button.accent-button.yellow,
+preferencesgroup button.accent-button.orange,
+preferencesgroup button.accent-button.red,
+preferencesgroup button.accent-button.pink,
+preferencesgroup button.accent-button.purple,
+preferencesgroup button.accent-button.slate {
+  --accent-color: oklab(from var(--accent-bg-color) var(--standalone-color-oklab));
+}
+
+preferencesgroup button.accent.blue,
+preferencesgroup button.accent-button.blue {
+  --accent-bg-color: var(--accent-blue);
+}
+
+preferencesgroup button.accent.teal,
+preferencesgroup button.accent-button.teal {
+  --accent-bg-color: var(--accent-teal);
+}
+
+preferencesgroup button.accent.green,
+preferencesgroup button.accent-button.green {
+  --accent-bg-color: var(--accent-green);
+}
+
+preferencesgroup button.accent.yellow,
+preferencesgroup button.accent-button.yellow {
+  --accent-bg-color: var(--accent-yellow);
+}
+
+preferencesgroup button.accent.orange,
+preferencesgroup button.accent-button.orange {
+  --accent-bg-color: var(--accent-orange);
+}
+
+preferencesgroup button.accent.red,
+preferencesgroup button.accent-button.red {
+  --accent-bg-color: var(--accent-red);
+}
+
+preferencesgroup button.accent.pink,
+preferencesgroup button.accent-button.pink {
+  --accent-bg-color: var(--accent-pink);
+}
+
+preferencesgroup button.accent.purple,
+preferencesgroup button.accent-button.purple {
+  --accent-bg-color: var(--accent-purple);
+}
+
+preferencesgroup button.accent.slate,
+preferencesgroup button.accent-button.slate {
+  --accent-bg-color: var(--accent-slate);
+}
+
 .contacts-contact-list list.navigation-sidebar {
   background: none;
 }
